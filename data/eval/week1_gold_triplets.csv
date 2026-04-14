@@ -1,0 +1,4 @@
+id,question,ground_truth,contexts,category
+1,What is the operating temperature range of Product_X?,"Product_X operates from -20C to 60C.","[""Operating Temperature: -20C to 60C""]",specifications
+2,Is Sensor_A compatible with Controller_B firmware v3.2?,"Sensor_A is compatible with Controller_B from v3.1 onward, including v3.2.","[""Sensor_A supports Controller_B firmware v3.1, v3.2, v3.3""]",compatibility
+3,What ingress protection rating does Device_M have?,"Device_M has an IP67 rating.","[""Enclosure Rating: IP67""]",specifications
