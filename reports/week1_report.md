@@ -14,7 +14,7 @@
 - Faithfulness
 - Answer Relevancy
 - Context Precision
-- (Optional) Context Recall
+- Context Recall
 
 ### Why these metrics
 
@@ -41,7 +41,7 @@ It is used in Week 3 when human reviewers annotate the same outputs and you need
 | Faithfulness | TBD |
 | Answer Relevancy | TBD |
 | Context Precision | TBD |
-| Context Recall (optional) | TBD |
+| Context Recall | TBD |
 
 ## 6) Screenshots checklist
 

@@ -2,13 +2,18 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from uuid import uuid4
 
 import pandas as pd
 from ragas import EvaluationDataset, evaluate
-from ragas.metrics import answer_relevancy, context_precision, faithfulness
+from ragas.embeddings import LangchainEmbeddingsWrapper
+from ragas.llms import LangchainLLMWrapper
+from ragas.metrics import answer_relevancy, context_precision, context_recall, faithfulness
 from tqdm import tqdm
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_groq import ChatGroq
 
-from src.config import get_settings
+from src.config import get_settings, require_groq_api_key
 from src.rag_pipeline import answer_question
 
 
@@ -34,39 +39,70 @@ def _parse_contexts(value: object) -> list[str]:
 
 
 def run_predictions(eval_df: pd.DataFrame) -> pd.DataFrame:
+    run_id = str(uuid4())
     rows = []
     for _, row in tqdm(eval_df.iterrows(), total=len(eval_df), desc="Running baseline RAG"):
         output = answer_question(str(row["question"]))
         rows.append(
             {
-                "id": row.get("id", ""),
+                "id": row.get("id", output["query_id"]),
                 "question": row["question"],
                 "ground_truth": row["ground_truth"],
                 "contexts": _parse_contexts(row["contexts"]),
                 "category": row.get("category", ""),
                 "answer": output["answer"],
                 "retrieved_contexts": output["retrieved_contexts"],
-                "retrieved_sources": output["retrieved_sources"],
+                "latency_ms": output["latency_ms"],
+                "model_name": output["model_name"],
+                "timestamp_utc": output["timestamp_utc"],
+                "run_id": run_id,
             }
         )
     return pd.DataFrame(rows)
 
 
+def _serialize_prediction_export(pred_df: pd.DataFrame) -> pd.DataFrame:
+    export_df = pred_df.copy()
+    for column in ("contexts", "retrieved_contexts"):
+        export_df[column] = export_df[column].apply(json.dumps)
+    return export_df
+
+
 def run_ragas(pred_df: pd.DataFrame) -> dict:
+    settings = get_settings()
+    api_key = require_groq_api_key(settings)
+
     dataset = EvaluationDataset.from_list(
         [
             {
                 "user_input": row["question"],
                 "response": row["answer"],
-                "retrieved_contexts": row["retrieved_contexts"],
+                "retrieved_contexts": [
+                    item["text"] if isinstance(item, dict) else str(item)
+                    for item in row["retrieved_contexts"]
+                ],
                 "reference": row["ground_truth"],
             }
             for _, row in pred_df.iterrows()
         ]
     )
+
+    ragas_llm = LangchainLLMWrapper(
+        ChatGroq(
+            model=settings.groq_model,
+            api_key=api_key,
+            temperature=settings.temperature,
+        )
+    )
+    ragas_embeddings = LangchainEmbeddingsWrapper(
+        HuggingFaceEmbeddings(model_name=settings.embedding_model)
+    )
+
     result = evaluate(
         dataset=dataset,
-        metrics=[faithfulness, answer_relevancy, context_precision],
+        metrics=[faithfulness, answer_relevancy, context_precision, context_recall],
+        llm=ragas_llm,
+        embeddings=ragas_embeddings,
     )
     return result.to_pandas().mean(numeric_only=True).to_dict()
 
@@ -84,7 +120,8 @@ def main() -> None:
 
     pred_df = run_predictions(eval_df)
     _ensure_parent(settings.predictions_csv)
-    pred_df.to_csv(settings.predictions_csv, index=False)
+    export_df = _serialize_prediction_export(pred_df)
+    export_df.to_csv(settings.predictions_csv, index=False)
 
     scores = run_ragas(pred_df)
     _ensure_parent(settings.ragas_scores_json)
