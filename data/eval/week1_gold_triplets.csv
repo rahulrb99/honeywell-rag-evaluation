@@ -1,7 +1,7 @@
 id,question,ground_truth,contexts,category
-1,What is the operating temperature range of Product_X?,"Product_X operates from -20C to 60C.","[""Operating Temperature: -20C to 60C""]",specifications
-2,Is Sensor_A compatible with Controller_B firmware v3.2?,"Sensor_A is compatible with Controller_B from v3.1 onward, including v3.2.","[""Sensor_A supports Controller_B firmware v3.1, v3.2, v3.3""]",compatibility
-3,What ingress protection rating does Device_M have?,"Device_M has an IP67 rating.","[""Enclosure Rating: IP67""]",specifications
+1,How many operating modes does a Honeywell VNT5070H1000 Ventilation System have?,"A Honeywell VNT5070H1000 Ventilation System has 2 operating modes (Intermittent and Continuous Ventilation)","[""2 operating modes (Intermittent and Continuous Ventilation)""]",specifications
+2,What is the point of a Honeywell Ventilation System's Matrix Hood?,"A Honeywell VNT5070H1000 Ventilation System Matrix Hood's purpose is to allow supply exhaust from a single part to exterior wall.","[""The 2 in 1 venitlation, Matrix Hood (50063805-009) allows supply exhaust from a single part to exterior wall.""]",specifications
+3,Can I install a Honeywell Ventilation System myself?,"Not if you are not a qualified service technician. To install a Honeywell VNT5070H1000 Ventilation System you must be a qualified service technician.","[""WARNING: Installation must be performed by a qualified service technician and must comply with local codes.""]",instructions
 4,What is the expected battery life of an LTEM-PA?,"An LTEM-PA battery last for approximately five years.","[""EXPECTED BATTERY LIFE 5 Years (approx.)""],specifications
 5,What is the power supply of an LTEM-PV?,"An LTEM-PV power supply is a 9VDC Power Adapter.","[""POWER SUPPLY 9VDC Power Adapter included (Part # 300-04705v1)""]",specifications
 6,Where should I install a Honeywell INNCOM e7 Thermostat?,"Install a Honeywell INNCOM e7 Thermostat about 1.5m (5ft.) above the floor with good air circulation at average temperature.","[""Select a location about 1.5m (5ft.) above the floor with good air circulation at average temperature.""]",instructions
