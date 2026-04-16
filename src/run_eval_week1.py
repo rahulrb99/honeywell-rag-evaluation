@@ -1,71 +1,46 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
-from uuid import uuid4
 
 import pandas as pd
-from ragas import EvaluationDataset, evaluate
+from ragas import EvaluationDataset, RunConfig, evaluate
 from ragas.embeddings import LangchainEmbeddingsWrapper
 from ragas.llms import LangchainLLMWrapper
-from ragas.metrics import answer_relevancy, context_precision, context_recall, faithfulness
-from tqdm import tqdm
+from ragas.metrics._answer_relevance import AnswerRelevancy
+from ragas.metrics._context_precision import context_precision
+from ragas.metrics._context_recall import context_recall
+from ragas.metrics._faithfulness import faithfulness
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 
 from src.config import get_settings, require_groq_api_key
-from src.rag_pipeline import answer_question
 
 
 def _ensure_parent(path: str) -> None:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
 
 
-def _parse_contexts(value: object) -> list[str]:
+def _parse_json_list_cell(value: object) -> list:
     if isinstance(value, list):
-        return [str(v) for v in value]
+        return value
     if isinstance(value, str):
         raw = value.strip()
         if not raw:
             return []
-        try:
-            parsed = json.loads(raw)
-            if isinstance(parsed, list):
-                return [str(v) for v in parsed]
-            return [str(parsed)]
-        except json.JSONDecodeError:
-            return [raw]
+        return json.loads(raw)
     return []
 
 
-def run_predictions(eval_df: pd.DataFrame) -> pd.DataFrame:
-    run_id = str(uuid4())
-    rows = []
-    for _, row in tqdm(eval_df.iterrows(), total=len(eval_df), desc="Running baseline RAG"):
-        output = answer_question(str(row["question"]))
-        rows.append(
-            {
-                "id": row.get("id", output["query_id"]),
-                "question": row["question"],
-                "ground_truth": row["ground_truth"],
-                "contexts": _parse_contexts(row["contexts"]),
-                "category": row.get("category", ""),
-                "answer": output["answer"],
-                "retrieved_contexts": output["retrieved_contexts"],
-                "latency_ms": output["latency_ms"],
-                "model_name": output["model_name"],
-                "timestamp_utc": output["timestamp_utc"],
-                "run_id": run_id,
-            }
-        )
-    return pd.DataFrame(rows)
-
-
-def _serialize_prediction_export(pred_df: pd.DataFrame) -> pd.DataFrame:
-    export_df = pred_df.copy()
-    for column in ("contexts", "retrieved_contexts"):
-        export_df[column] = export_df[column].apply(json.dumps)
-    return export_df
+def load_predictions_df(predictions_path: Path) -> pd.DataFrame:
+    df = pd.read_csv(predictions_path)
+    required = {"question", "ground_truth", "answer", "retrieved_contexts"}
+    if not required.issubset(df.columns):
+        raise ValueError(f"Predictions CSV must contain columns: {sorted(required)}")
+    out = df.copy()
+    out["retrieved_contexts"] = out["retrieved_contexts"].apply(_parse_json_list_cell)
+    return out
 
 
 def run_ragas(pred_df: pd.DataFrame) -> dict:
@@ -87,15 +62,28 @@ def run_ragas(pred_df: pd.DataFrame) -> dict:
         ]
     )
 
+    # Groq default max_retries=2 is thin for TPM bursts; RAGAS sends many LLM calls.
+    groq_retries = int(os.getenv("GROQ_MAX_RETRIES", "8"))
     ragas_llm = LangchainLLMWrapper(
         ChatGroq(
             model=settings.groq_model,
             api_key=api_key,
             temperature=settings.temperature,
+            max_retries=groq_retries,
         )
     )
     ragas_embeddings = LangchainEmbeddingsWrapper(
         HuggingFaceEmbeddings(model_name=settings.embedding_model)
+    )
+
+    # Groq chat completions return n=1; AnswerRelevancy(strictness=3) triggers
+    # "LLM returned 1 generations instead of requested 3" and weaker scores.
+    answer_relevancy = AnswerRelevancy(strictness=1)
+    # Groq on-demand TPM is low; parallel metric jobs easily hit 429. Default to 1 worker;
+    # raise RAGAS_MAX_WORKERS only if your org tier allows higher concurrency.
+    run_config = RunConfig(
+        timeout=int(os.getenv("RAGAS_TIMEOUT_SEC", "600")),
+        max_workers=int(os.getenv("RAGAS_MAX_WORKERS", "1")),
     )
 
     result = evaluate(
@@ -103,32 +91,29 @@ def run_ragas(pred_df: pd.DataFrame) -> dict:
         metrics=[faithfulness, answer_relevancy, context_precision, context_recall],
         llm=ragas_llm,
         embeddings=ragas_embeddings,
+        run_config=run_config,
     )
     return result.to_pandas().mean(numeric_only=True).to_dict()
 
 
 def main() -> None:
     settings = get_settings()
-    eval_path = Path(settings.eval_csv)
-    if not eval_path.exists():
-        raise FileNotFoundError(f"Missing eval dataset: {settings.eval_csv}")
+    predictions_path = Path(
+        os.getenv("PREDICTIONS_CSV", settings.predictions_csv)
+    )
+    if not predictions_path.exists():
+        raise FileNotFoundError(
+            f"Missing predictions file: {predictions_path}. "
+            "Generate baseline predictions with the RAG pipeline, then run this script."
+        )
 
-    eval_df = pd.read_csv(eval_path)
-    required_cols = {"id", "question", "ground_truth", "contexts", "category"}
-    if not required_cols.issubset(eval_df.columns):
-        raise ValueError(f"CSV must contain columns: {sorted(required_cols)}")
-
-    pred_df = run_predictions(eval_df)
-    _ensure_parent(settings.predictions_csv)
-    export_df = _serialize_prediction_export(pred_df)
-    export_df.to_csv(settings.predictions_csv, index=False)
-
+    pred_df = load_predictions_df(predictions_path)
     scores = run_ragas(pred_df)
     _ensure_parent(settings.ragas_scores_json)
     with open(settings.ragas_scores_json, "w", encoding="utf-8") as f:
         json.dump(scores, f, indent=2)
 
-    print(f"Saved predictions -> {settings.predictions_csv}")
+    print(f"Loaded predictions from -> {predictions_path}")
     print(f"Saved scores -> {settings.ragas_scores_json}")
     print("Baseline RAGAS mean scores:", scores)
 
