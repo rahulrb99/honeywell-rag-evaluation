@@ -2,7 +2,7 @@ id,question,ground_truth,contexts,category
 1,How many operating modes does a Honeywell VNT5070H1000 Ventilation System have?,"A Honeywell VNT5070H1000 Ventilation System has 2 operating modes (Intermittent and Continuous Ventilation)","[""Ventilation System Manual.pdf""]",specifications
 2,What is the point of a Honeywell Ventilation System's Matrix Hood?,"A Honeywell VNT5070H1000 Ventilation System Matrix Hood's purpose is to allow supply exhaust from a single part to exterior wall.","[""Ventilation System Manual.pdf""]",specifications
 3,Can I install a Honeywell Ventilation System myself?,"Not if you are not a qualified service technician. To install a Honeywell VNT5070H1000 Ventilation System you must be a qualified service technician.","[""Ventilation System Manual.pdf""]",instructions
-4,What is the expected battery life of an LTEM-PA?,"An LTEM-PA battery last for approximately five years.","[""communicator_datasheet.pdf""],specifications
+4,What is the expected battery life of an LTEM-PA?,"An LTEM-PA battery last for approximately five years.","[""communicator_datasheet.pdf""]",specifications
 5,What is the power supply of an LTEM-PV?,"An LTEM-PV power supply is a 9VDC Power Adapter.","[""communicator_datasheet.pdf""]",specifications
 6,Where should I install a Honeywell INNCOM e7 Thermostat?,"Install a Honeywell INNCOM e7 Thermostat about 1.5m (5ft.) above the floor with good air circulation at average temperature.","[""hbt-bms-e7-INSTALLATION-INSTRUCTIONS.pdf""]",instructions
 7,How to exit INITIALIZATION MODE on a Honeywell INNCOM e7 Thermostat?,"Exit INITIALIZATION MODE by pressing the F/C key.","[""hbt-bms-e7-INSTALLATION-INSTRUCTIONS.pdf""]",instructions
