@@ -1,14 +1,18 @@
-# Week 1 Baseline RAG Evaluation (Honeywell Product Catalog)
+# Week 1 Baseline RAG Evaluation (Honeywell)
 
-This starter project provides a simple baseline RAG pipeline and Week 1 evaluation skeleton.
+This project provides a baseline RAG pipeline for document ingestion and answer evaluation.
+It now includes a Graph-RAG-oriented evaluation track for these domains:
+
+- Product Information and Compatibility
+- Regulatory Compliance Navigation
 
 ## What this includes
 
 - Ingestion + chunking + FAISS vector index build
 - Retrieval + grounded answer generation using Groq
 - Prediction export for evaluation
-- RAGAS evaluation runner skeleton
-- Week 1 gold dataset and report templates
+- RAGAS evaluation runners (generic and graph-rag domain view)
+- Week 1 and Graph-RAG gold dataset templates
 
 ## Project structure
 
@@ -19,6 +23,7 @@ This starter project provides a simple baseline RAG pipeline and Week 1 evaluati
 - `src/run_eval_llm_judge.py` - run LLM-as-a-judge scoring
 - `src/run_consistency_check.py` - run paraphrase consistency and judge-vs-RAGAS comparison
 - `data/eval/week1_gold_triplets.csv` - fill 20-30 QA/context rows
+- `data/eval/graph_rag_gold_triplets.csv` - 30-question starter set for graph-rag domains
 - `reports/week1_report.md` - Week 1 report template
 
 ## Quick start
@@ -42,8 +47,10 @@ This starter project provides a simple baseline RAG pipeline and Week 1 evaluati
 
 ## Notes
 
-- This is intentionally simple for Week 1.
-- Other teams' advanced MDM/Graph RAG systems can be evaluated later using the same dataset/eval approach.
+- This baseline is intentionally simple so you can compare future Graph RAG systems against it.
+- `src/run_eval_graph_rag.py` writes:
+  - predictions: `outputs/graph_rag_predictions.csv`
+  - metrics: `outputs/graph_rag_scores.json`
 - Retrieval uses MMR with configurable defaults (`TOP_K=4`, `FETCH_K=12`, `LAMBDA_MULT=0.5`).
 - Keep `TEMPERATURE=0` for reproducible evaluation comparisons.
 - `LOG_RETRIEVED_CONTEXTS=true` logs raw retrieved chunk text before generation for debugging.
