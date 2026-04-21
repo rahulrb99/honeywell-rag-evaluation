@@ -14,7 +14,9 @@ load_dotenv()
 class Settings:
     groq_api_key: Optional[str]
     groq_model: str
+    judge_model: str
     temperature: float
+    judge_temperature: float
     embedding_model: str
     chunk_size: int
     chunk_overlap: int
@@ -27,6 +29,10 @@ class Settings:
     eval_csv: str = "data/eval/week1_gold_triplets.csv"
     predictions_csv: str = "outputs/week1_predictions.csv"
     ragas_scores_json: str = "outputs/week1_ragas_scores.json"
+    judge_scores_json: str = "outputs/week1_judge_scores.json"
+    judge_scores_csv: str = "outputs/week1_judge_scores.csv"
+    judge_consistency_json: str = "outputs/week1_judge_consistency.json"
+    judge_compare_json: str = "outputs/week1_judge_vs_ragas.json"
 
 
 def get_settings() -> Settings:
@@ -34,7 +40,9 @@ def get_settings() -> Settings:
     return Settings(
         groq_api_key=api_key,
         groq_model=os.getenv("GROQ_MODEL", "llama-3.1-8b-instant"),
+        judge_model=os.getenv("JUDGE_MODEL", "llama-3.1-70b-versatile"),
         temperature=float(os.getenv("TEMPERATURE", "0")),
+        judge_temperature=float(os.getenv("JUDGE_TEMPERATURE", "0")),
         embedding_model=os.getenv(
             "EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2"
         ),
@@ -46,6 +54,12 @@ def get_settings() -> Settings:
         log_retrieved_contexts=os.getenv("LOG_RETRIEVED_CONTEXTS", "true").lower()
         in {"1", "true", "yes", "on"},
         vectorstore_dir=os.getenv("VECTORSTORE_DIR", "data/vectorstore"),
+        judge_scores_json=os.getenv("JUDGE_SCORES_JSON", "outputs/week1_judge_scores.json"),
+        judge_scores_csv=os.getenv("JUDGE_SCORES_CSV", "outputs/week1_judge_scores.csv"),
+        judge_consistency_json=os.getenv(
+            "JUDGE_CONSISTENCY_JSON", "outputs/week1_judge_consistency.json"
+        ),
+        judge_compare_json=os.getenv("JUDGE_COMPARE_JSON", "outputs/week1_judge_vs_ragas.json"),
     )
 
 

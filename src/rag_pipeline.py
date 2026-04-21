@@ -31,6 +31,7 @@ Answer in 3-6 lines with concise, factual wording."""
 )
 
 logger = logging.getLogger(__name__)
+_VECTORSTORE = None
 
 
 def load_retriever():
@@ -65,14 +66,23 @@ def _keyword_score(question: str, text: str) -> int:
     return overlap + boosts
 
 
-def _retrieve_docs(question: str):
+def _get_vectorstore():
+    global _VECTORSTORE
+    if _VECTORSTORE is not None:
+        return _VECTORSTORE
     settings = get_settings()
     embeddings = HuggingFaceEmbeddings(model_name=settings.embedding_model)
-    vectorstore = FAISS.load_local(
+    _VECTORSTORE = FAISS.load_local(
         settings.vectorstore_dir,
         embeddings,
         allow_dangerous_deserialization=True,
     )
+    return _VECTORSTORE
+
+
+def _retrieve_docs(question: str):
+    settings = get_settings()
+    vectorstore = _get_vectorstore()
 
     mmr_docs = vectorstore.max_marginal_relevance_search(
         question,
