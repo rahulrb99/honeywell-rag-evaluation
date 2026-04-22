@@ -33,8 +33,8 @@ def _parse_json_list_cell(value: object) -> list:
     return []
 
 
-def load_predictions_df(predictions_path: Path) -> pd.DataFrame:
-    df = pd.read_csv(predictions_path)
+def load_rag_outputs_df(rag_outputs_path: Path) -> pd.DataFrame:
+    df = pd.read_csv(rag_outputs_path)
     required = {"question", "ground_truth", "answer", "retrieved_contexts"}
     if not required.issubset(df.columns):
         raise ValueError(f"Predictions CSV must contain columns: {sorted(required)}")
@@ -98,22 +98,20 @@ def run_ragas(pred_df: pd.DataFrame) -> dict:
 
 def main() -> None:
     settings = get_settings()
-    predictions_path = Path(
-        os.getenv("PREDICTIONS_CSV", settings.predictions_csv)
-    )
-    if not predictions_path.exists():
+    rag_outputs_path = Path(os.getenv("PREDICTIONS_CSV", settings.predictions_csv))
+    if not rag_outputs_path.exists():
         raise FileNotFoundError(
-            f"Missing predictions file: {predictions_path}. "
-            "Generate baseline predictions with the RAG pipeline, then run this script."
+            f"Missing RAG outputs file: {rag_outputs_path}. "
+            "Generate raw RAG outputs first, then run this script."
         )
 
-    pred_df = load_predictions_df(predictions_path)
+    pred_df = load_rag_outputs_df(rag_outputs_path)
     scores = run_ragas(pred_df)
     _ensure_parent(settings.ragas_scores_json)
     with open(settings.ragas_scores_json, "w", encoding="utf-8") as f:
         json.dump(scores, f, indent=2)
 
-    print(f"Loaded predictions from -> {predictions_path}")
+    print(f"Loaded RAG outputs from -> {rag_outputs_path}")
     print(f"Saved scores -> {settings.ragas_scores_json}")
     print("Baseline RAGAS mean scores:", scores)
 
