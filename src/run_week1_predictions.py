@@ -57,6 +57,7 @@ def main() -> None:
                 "contexts": _parse_contexts(row["contexts"]),
                 "category": row.get("category", ""),
                 "answer": output["answer"],
+                "metadata_filter_used": json.dumps(output.get("metadata_filter_used")),
                 "retrieved_contexts": output["retrieved_contexts"],
                 "latency_ms": output["latency_ms"],
                 "model_name": output["model_name"],

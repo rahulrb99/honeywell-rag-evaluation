@@ -4,12 +4,36 @@ import re
 from pathlib import Path
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PDFPlumberLoader
 from langchain_community.document_loaders import TextLoader
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
 from src.config import get_settings
+
+# Maps lowercased filename-stem substrings to doc_type and platform metadata.
+# First matching key wins. Fallback: {"doc_type": "unknown", "platform": "general"}.
+_DOC_META: dict[str, dict[str, str]] = {
+    "sps-ast-space-products-ebook": {"doc_type": "ebook",     "platform": "space"},
+    "ventilation system manual":    {"doc_type": "manual",    "platform": "hvac"},
+    "communicator_datasheet":       {"doc_type": "datasheet", "platform": "fire_alarm"},
+    "hbt-bms-e7":                   {"doc_type": "manual",    "platform": "hvac"},
+    "l-series_installation_guide":  {"doc_type": "manual",    "platform": "fire_alarm"},
+    "l-series_speakers_strobes":    {"doc_type": "datasheet", "platform": "fire_alarm"},
+    "zone_expander":                {"doc_type": "datasheet", "platform": "fire_alarm"},
+    "public address speakers":      {"doc_type": "datasheet", "platform": "fire_alarm"},
+    "hbt-fire":                     {"doc_type": "datasheet", "platform": "fire_alarm"},
+}
+
+_FALLBACK_META: dict[str, str] = {"doc_type": "unknown", "platform": "general"}
+
+
+def _resolve_doc_meta(path: Path) -> dict[str, str]:
+    stem = path.stem.lower()
+    for key, meta in _DOC_META.items():
+        if key in stem:
+            return meta
+    return _FALLBACK_META
 
 
 def load_documents(raw_dir: str) -> list:
@@ -25,15 +49,18 @@ def load_documents(raw_dir: str) -> list:
         if suffix not in {".txt", ".md", ".pdf"}:
             continue
         if suffix == ".pdf":
-            loader = PyPDFLoader(str(path))
+            loader = PDFPlumberLoader(str(path))
         else:
             loader = TextLoader(str(path), encoding="utf-8")
         loaded = loader.load()
         doc_id = _build_doc_id(path, root)
+        extra_meta = _resolve_doc_meta(path)
         for d in loaded:
             d.metadata["doc_id"] = doc_id
             d.metadata["source_path"] = str(path)
             d.metadata["source_type"] = suffix.lstrip(".")
+            d.metadata["doc_type"] = extra_meta["doc_type"]
+            d.metadata["platform"] = extra_meta["platform"]
         docs.extend(loaded)
     return docs
 

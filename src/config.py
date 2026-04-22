@@ -33,6 +33,9 @@ class Settings:
     judge_scores_csv: str = "outputs/week1_judge_scores.csv"
     judge_consistency_json: str = "outputs/week1_judge_consistency.json"
     judge_compare_json: str = "outputs/week1_judge_vs_ragas.json"
+    groundedness_csv: str = "outputs/week1_groundedness.csv"
+    retrieval_recall_csv: str = "outputs/week1_retrieval_recall.csv"
+    experiments_dir: str = "outputs/experiments"
 
 
 def get_settings() -> Settings:
@@ -46,8 +49,8 @@ def get_settings() -> Settings:
         embedding_model=os.getenv(
             "EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2"
         ),
-        chunk_size=int(os.getenv("CHUNK_SIZE", "800")),
-        chunk_overlap=int(os.getenv("CHUNK_OVERLAP", "120")),
+        chunk_size=int(os.getenv("CHUNK_SIZE", "500")),
+        chunk_overlap=int(os.getenv("CHUNK_OVERLAP", "80")),
         top_k=int(os.getenv("TOP_K", "5")),
         fetch_k=int(os.getenv("FETCH_K", "20")),
         lambda_mult=float(os.getenv("LAMBDA_MULT", "0.7")),

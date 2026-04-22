@@ -9,3 +9,4 @@ faiss-cpu
 sentence-transformers
 ragas
 pypdf
+pdfplumber
