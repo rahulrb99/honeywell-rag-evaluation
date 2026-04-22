@@ -26,15 +26,22 @@ class Settings:
     log_retrieved_contexts: bool
     vectorstore_dir: str
     raw_data_dir: str = "data/raw"
-    eval_csv: str = "data/eval/week1_gold_triplets.csv"
-    predictions_csv: str = "outputs/week1_predictions.csv"
-    ragas_scores_json: str = "outputs/week1_ragas_scores.json"
-    judge_scores_json: str = "outputs/week1_judge_scores.json"
-    judge_scores_csv: str = "outputs/week1_judge_scores.csv"
-    judge_consistency_json: str = "outputs/week1_judge_consistency.json"
-    judge_compare_json: str = "outputs/week1_judge_vs_ragas.json"
-    groundedness_csv: str = "outputs/week1_groundedness.csv"
-    retrieval_recall_csv: str = "outputs/week1_retrieval_recall.csv"
+    eval_csv: str = "data/eval/week1_gold_triplets_20.csv"
+    predictions_csv: str = "outputs/debug/week1_rag_outputs.csv"
+    ragas_scores_json: str = "outputs/debug/week1_ragas_scores.json"
+    judge_scores_json: str = "outputs/debug/week1_judge_scores.json"
+    judge_scores_csv: str = "outputs/debug/week1_judge_scores.csv"
+    judge_consistency_json: str = "outputs/debug/week1_judge_consistency.json"
+    judge_compare_json: str = "outputs/debug/week1_judge_vs_ragas.json"
+    groundedness_csv: str = "outputs/debug/week1_groundedness.csv"
+    retrieval_recall_csv: str = "outputs/debug/week1_retrieval_metrics.csv"
+    retrieval_only_csv: str = "outputs/debug/week1_retrieval_metrics.csv"
+    retrieval_only_json: str = "outputs/debug/week1_retrieval_only.json"
+    generation_only_csv: str = "outputs/debug/week1_generation_only.csv"
+    generation_only_json: str = "outputs/debug/week1_generation_only.json"
+    eval_rows_csv: str = "outputs/week1_eval_rows.csv"
+    eval_summary_json: str = "outputs/week1_eval_summary.json"
+    failure_dashboard_html: str = "outputs/dashboard/failure_dashboard.html"
     experiments_dir: str = "outputs/experiments"
 
 
@@ -57,12 +64,35 @@ def get_settings() -> Settings:
         log_retrieved_contexts=os.getenv("LOG_RETRIEVED_CONTEXTS", "true").lower()
         in {"1", "true", "yes", "on"},
         vectorstore_dir=os.getenv("VECTORSTORE_DIR", "data/vectorstore"),
-        judge_scores_json=os.getenv("JUDGE_SCORES_JSON", "outputs/week1_judge_scores.json"),
-        judge_scores_csv=os.getenv("JUDGE_SCORES_CSV", "outputs/week1_judge_scores.csv"),
+        eval_csv=os.getenv("EVAL_CSV", "data/eval/week1_gold_triplets_20.csv"),
+        judge_scores_json=os.getenv("JUDGE_SCORES_JSON", "outputs/debug/week1_judge_scores.json"),
+        judge_scores_csv=os.getenv("JUDGE_SCORES_CSV", "outputs/debug/week1_judge_scores.csv"),
         judge_consistency_json=os.getenv(
-            "JUDGE_CONSISTENCY_JSON", "outputs/week1_judge_consistency.json"
+            "JUDGE_CONSISTENCY_JSON", "outputs/debug/week1_judge_consistency.json"
         ),
-        judge_compare_json=os.getenv("JUDGE_COMPARE_JSON", "outputs/week1_judge_vs_ragas.json"),
+        judge_compare_json=os.getenv("JUDGE_COMPARE_JSON", "outputs/debug/week1_judge_vs_ragas.json"),
+        groundedness_csv=os.getenv("GROUNDEDNESS_CSV", "outputs/debug/week1_groundedness.csv"),
+        retrieval_recall_csv=os.getenv(
+            "RETRIEVAL_RECALL_CSV", "outputs/debug/week1_retrieval_metrics.csv"
+        ),
+        retrieval_only_csv=os.getenv("RETRIEVAL_ONLY_CSV", "outputs/debug/week1_retrieval_metrics.csv"),
+        retrieval_only_json=os.getenv(
+            "RETRIEVAL_ONLY_JSON", "outputs/debug/week1_retrieval_only.json"
+        ),
+        generation_only_csv=os.getenv(
+            "GENERATION_ONLY_CSV", "outputs/debug/week1_generation_only.csv"
+        ),
+        generation_only_json=os.getenv(
+            "GENERATION_ONLY_JSON", "outputs/debug/week1_generation_only.json"
+        ),
+        eval_rows_csv=os.getenv("EVAL_ROWS_CSV", "outputs/week1_eval_rows.csv"),
+        eval_summary_json=os.getenv(
+            "EVAL_SUMMARY_JSON", "outputs/week1_eval_summary.json"
+        ),
+        failure_dashboard_html=os.getenv(
+            "FAILURE_DASHBOARD_HTML", "outputs/dashboard/failure_dashboard.html"
+        ),
+        experiments_dir=os.getenv("EXPERIMENTS_DIR", "outputs/experiments"),
     )
 
 

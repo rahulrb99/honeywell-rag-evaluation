@@ -32,7 +32,7 @@ def main() -> None:
     settings = get_settings()
     pred_path = Path(settings.predictions_csv)
     if not pred_path.exists():
-        raise FileNotFoundError(f"Missing predictions file: {pred_path}")
+        raise FileNotFoundError(f"Missing RAG outputs file: {pred_path}")
 
     pred_df = pd.read_csv(pred_path)
     required = {"id", "question", "ground_truth", "answer", "retrieved_contexts"}

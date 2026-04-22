@@ -1,6 +1,6 @@
-"""Run groundedness analysis on week1_predictions.csv.
+"""Run groundedness analysis on configured raw RAG outputs.
 
-Reads predictions + judge scores, computes per-row chunk attribution using
+Reads raw RAG outputs + judge scores, computes per-row chunk attribution using
 dual-threshold cosine similarity, and writes week1_groundedness.csv.
 
 Usage:
@@ -42,7 +42,7 @@ def main() -> None:
 
     pred_path = Path(settings.predictions_csv)
     if not pred_path.exists():
-        raise FileNotFoundError(f"Missing predictions: {pred_path}")
+        raise FileNotFoundError(f"Missing RAG outputs: {pred_path}")
 
     pred_df = pd.read_csv(pred_path)
     required = {"id", "question", "answer", "retrieved_contexts"}
