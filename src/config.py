@@ -25,6 +25,7 @@ class Settings:
     lambda_mult: float
     log_retrieved_contexts: bool
     vectorstore_dir: str
+    product_records_path: str
     raw_data_dir: str = "data/raw"
     eval_csv: str = "data/eval/week1_gold_triplets_20.csv"
     predictions_csv: str = "outputs/debug/week1_rag_outputs.csv"
@@ -64,7 +65,9 @@ def get_settings() -> Settings:
         log_retrieved_contexts=os.getenv("LOG_RETRIEVED_CONTEXTS", "true").lower()
         in {"1", "true", "yes", "on"},
         vectorstore_dir=os.getenv("VECTORSTORE_DIR", "data/vectorstore"),
+        product_records_path=os.getenv("PRODUCT_RECORDS_PATH", "outputs/structured/product_records.json"),
         eval_csv=os.getenv("EVAL_CSV", "data/eval/week1_gold_triplets_20.csv"),
+        predictions_csv=os.getenv("PREDICTIONS_CSV", "outputs/debug/week1_rag_outputs.csv"),
         judge_scores_json=os.getenv("JUDGE_SCORES_JSON", "outputs/debug/week1_judge_scores.json"),
         judge_scores_csv=os.getenv("JUDGE_SCORES_CSV", "outputs/debug/week1_judge_scores.csv"),
         judge_consistency_json=os.getenv(
