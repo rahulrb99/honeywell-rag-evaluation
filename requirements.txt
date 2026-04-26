@@ -10,3 +10,6 @@ sentence-transformers
 ragas
 pypdf
 pdfplumber
+openai
+neo4j
+rdflib
