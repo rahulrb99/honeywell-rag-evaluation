@@ -10,7 +10,7 @@ import pandas as pd
 from tqdm import tqdm
 
 from src.config import get_settings
-from src.rag_pipeline import answer_question
+from src.week1_vector_rag.rag_pipeline import answer_question
 
 
 def _ensure_parent(path: str) -> None:

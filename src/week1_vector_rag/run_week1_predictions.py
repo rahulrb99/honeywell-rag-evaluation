@@ -5,7 +5,7 @@ Use `python -m src.run_rag_outputs` for the canonical command.
 
 from __future__ import annotations
 
-from src.run_rag_outputs import main
+from src.week1_vector_rag.run_rag_outputs import main
 
 
 if __name__ == "__main__":

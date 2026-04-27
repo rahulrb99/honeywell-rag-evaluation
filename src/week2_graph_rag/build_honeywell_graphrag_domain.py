@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 from langchain_community.document_loaders import PDFPlumberLoader
 
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 GRAPH_DIR = ROOT_DIR / "graph_rag_baseline"
 OUTPUT_DIR = ROOT_DIR / "outputs" / "graph_rag"
 

@@ -15,7 +15,7 @@ from tqdm import tqdm
 from src.config import get_settings
 
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 GRAPH_DIR = ROOT_DIR / "graph_rag_baseline"
 sys.path.insert(0, str(GRAPH_DIR))
 
@@ -67,7 +67,7 @@ def _domain_exists(driver, domain_name: str) -> bool:
 
 def main() -> None:
     settings = get_settings()
-    eval_csv = Path(os.getenv("GRAPH_EVAL_CSV", os.getenv("EVAL_CSV", settings.eval_csv)))
+    eval_csv = Path(os.getenv("GRAPH_EVAL_CSV", "data/eval/week2_honeywell_eval.csv"))
     output_csv = Path(
         os.getenv("GRAPH_PREDICTIONS_CSV", "outputs/graph_rag/week2_graphrag_predictions.csv")
     )

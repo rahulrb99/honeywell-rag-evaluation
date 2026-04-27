@@ -13,7 +13,7 @@ from tqdm import tqdm
 
 from src.config import get_settings, require_groq_api_key
 from src.llm_judge import METRIC_KEYS, score_answer
-from src.rag_pipeline import answer_question
+from src.week1_vector_rag.rag_pipeline import answer_question
 
 
 PARAPHRASE_PROMPT = ChatPromptTemplate.from_template(
