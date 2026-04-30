@@ -68,14 +68,14 @@ def _print_outputs() -> None:
 def main() -> None:
     _ensure_inputs()
     _run("src.ingest")
-    _run("src.run_rag_outputs")
-    _run("src.run_eval_week1")
-    _run("src.run_eval_retrieval_only")
-    _run("src.run_eval_llm_judge")
-    _run("src.run_groundedness")
-    _run("src.run_eval_generation_only")
-    _run("src.build_eval_artifacts")
-    _run("src.build_failure_dashboard")
+    _run("src.week1_vector_rag.run_rag_outputs")
+    _run("src.week1_vector_rag.run_eval_week1")
+    _run("src.week1_vector_rag.run_eval_retrieval_only")
+    _run("src.week1_vector_rag.run_eval_llm_judge")
+    _run("src.week1_vector_rag.run_groundedness")
+    _run("src.week1_vector_rag.run_eval_generation_only")
+    _run("src.week1_vector_rag.build_eval_artifacts")
+    _run("src.week1_vector_rag.build_failure_dashboard")
     _print_outputs()
 
 

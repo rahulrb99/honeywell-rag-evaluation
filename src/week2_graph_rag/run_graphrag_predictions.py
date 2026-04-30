@@ -15,11 +15,12 @@ from tqdm import tqdm
 from src.config import get_settings
 
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 GRAPH_DIR = ROOT_DIR / "graph_rag_baseline"
 sys.path.insert(0, str(GRAPH_DIR))
 
 load_dotenv(GRAPH_DIR / ".env", override=True)
+load_dotenv(ROOT_DIR / ".env")  # pick up GROQ_API_KEY from project root
 
 from graph import Neo4jClient, query_graph_rag  # noqa: E402
 
@@ -66,12 +67,12 @@ def _domain_exists(driver, domain_name: str) -> bool:
 
 def main() -> None:
     settings = get_settings()
-    eval_csv = Path(os.getenv("GRAPH_EVAL_CSV", os.getenv("EVAL_CSV", settings.eval_csv)))
+    eval_csv = Path(os.getenv("GRAPH_EVAL_CSV", "data/eval/week2_honeywell_eval.csv"))
     output_csv = Path(
         os.getenv("GRAPH_PREDICTIONS_CSV", "outputs/graph_rag/week2_graphrag_predictions.csv")
     )
     domain_name = os.getenv("GRAPH_DOMAIN_NAME", "honeywell_pa_wall_subset_20260423")
-    model_name = os.getenv("GRAPH_MODEL_NAME", "gpt-4o-mini")
+    model_name = os.getenv("GRAPH_MODEL_NAME", "llama-3.3-70b-versatile")
 
     if not eval_csv.exists():
         raise FileNotFoundError(f"Missing eval CSV: {eval_csv}")
