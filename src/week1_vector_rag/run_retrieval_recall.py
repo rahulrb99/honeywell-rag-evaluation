@@ -1,4 +1,7 @@
-"""Compatibility wrapper for retrieval metrics."""
+"""Compatibility wrapper for retrieval metrics.
+
+Use `python -m src.run_eval_retrieval_only` for the canonical evaluator.
+"""
 
 from __future__ import annotations
 

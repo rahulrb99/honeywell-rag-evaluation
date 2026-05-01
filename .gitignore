@@ -1,5 +1,11 @@
 __pycache__/
 *.pyc
+.pytest_cache/
+pytest-cache-files-*/
 .env
 data/vectorstore/
 outputs/
+.DS_Store
+graph_rag_baseline_local_backup/
+reports/graphrag_first_deliverable_bundle/
+reports/week3_benchmarking_comparative_analysis.md

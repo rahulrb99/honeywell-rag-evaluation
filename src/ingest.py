@@ -11,6 +11,8 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 
 from src.config import get_settings
+from src.product_records import extract_product_records, save_product_records
+from src.text_normalization import normalize_pdf_text
 
 # Maps lowercased filename-stem substrings to doc_type and platform metadata.
 # First matching key wins. Fallback: {"doc_type": "unknown", "platform": "general"}.
@@ -23,12 +25,18 @@ _DOC_META: dict[str, dict[str, str]] = {
     "l-series_speakers_strobes":    {"doc_type": "datasheet", "platform": "fire_alarm"},
     "zone_expander":                {"doc_type": "datasheet", "platform": "fire_alarm"},
     "public address speakers":      {"doc_type": "datasheet", "platform": "fire_alarm"},
+    "firstcommand fire fighter telephone": {"doc_type": "datasheet", "platform": "fire_alarm"},
+    "notifier first command remote microphone": {"doc_type": "datasheet", "platform": "fire_alarm"},
+    "lsecs info guide":             {"doc_type": "manual", "platform": "fire_alarm"},
+    "slc wiring manual":            {"doc_type": "manual", "platform": "fire_alarm"},
+    "daa2 amplifier manual":        {"doc_type": "manual", "platform": "fire_alarm"},
+    "afp-3030 installation manual": {"doc_type": "installation", "platform": "fire_alarm"},
     "hbt-fire":                     {"doc_type": "datasheet", "platform": "fire_alarm"},
 }
 
 _FALLBACK_META: dict[str, str] = {"doc_type": "unknown", "platform": "general"}
 _PDF_SECTION_HEADER_PATTERN = re.compile(
-    r"^\s*(installation|specifications?|instructions?)\s*$",
+    r"^\s*(installation|specifications?|technical specifications|features(?: and benefits)?|functions|description|general|electrical|mechanical|environmental|ordering information|parameters|input/output|approvals?)\s*$",
     flags=re.IGNORECASE,
 )
 
@@ -65,8 +73,11 @@ def is_noise_chunk(text: str) -> bool:
     if "figure" in t and len(t.split()) < 30:
         return True
 
-    # Too short to be meaningful
-    if len(t.split()) < 15:
+    # Too short to be meaningful, unless it contains dense structured specs
+    if len(t.split()) < 15 and not re.search(
+        r"(voltage|power|candela|zones?|inputs?|outputs?|rated|temperature|capacity|impedance|l-pcm|rk-zone|l-series|\d)",
+        t,
+    ):
         return True
 
     return False
@@ -83,6 +94,24 @@ def get_text_splitter(doc_type: str):
             chunk_overlap=max(chunk_overlap, 200),
             separators=["\n\n", "\n", "1.", "2.", "3.", ".", " "],
         )
+    if doc_type == "datasheet":
+        return RecursiveCharacterTextSplitter(
+            chunk_size=max(chunk_size, 700),
+            chunk_overlap=max(chunk_overlap, 120),
+            separators=[
+                "\nTechnical Specifications\n",
+                "\nSpecifications\n",
+                "\nFeatures and Benefits\n",
+                "\nFeatures\n",
+                "\nElectrical\n",
+                "\nMechanical\n",
+                "\nEnvironmental\n",
+                "\nDescription\n",
+                "\nGeneral\n",
+                "\n\n",
+                "\n",
+            ],
+        )
     else:
         return RecursiveCharacterTextSplitter(
             chunk_size=max(chunk_size, 800),
@@ -97,7 +126,7 @@ def _split_pdf_into_sections(doc: Document) -> list[Document]:
     Applies only to PDF content to repair common structure loss in OCR/extraction.
     If no known headings are found, returns the original document unchanged.
     """
-    text = str(doc.page_content or "")
+    text = normalize_pdf_text(str(doc.page_content or ""))
     if not text.strip():
         return [doc]
 
@@ -110,6 +139,8 @@ def _split_pdf_into_sections(doc: Document) -> list[Document]:
         return [doc]
 
     spans: list[tuple[int, int]] = []
+    if hits[0] > 0:
+        spans.append((0, hits[0]))
     for i, start in enumerate(hits):
         end = hits[i + 1] if i + 1 < len(hits) else len(lines)
         spans.append((start, end))
@@ -120,7 +151,10 @@ def _split_pdf_into_sections(doc: Document) -> list[Document]:
         section_text = "\n".join(section_lines).strip()
         if not section_text:
             continue
-        header = section_lines[0].strip().lower()
+        if start < hits[0]:
+            header = "preamble"
+        else:
+            header = section_lines[0].strip().lower()
         meta = dict(doc.metadata)
         meta["section_header"] = header
         meta["pdf_section_index"] = section_idx
@@ -151,6 +185,15 @@ def load_documents(raw_dir: str) -> list:
             for d in loaded:
                 sectioned.extend(_split_pdf_into_sections(d))
             loaded = sectioned
+        cleaned_loaded: list[Document] = []
+        for d in loaded:
+            d.page_content = normalize_pdf_text(str(d.page_content or ""))
+            if not d.page_content.strip():
+                continue
+            cleaned_loaded.append(d)
+        loaded = cleaned_loaded
+        if not loaded:
+            continue
         doc_id = _build_doc_id(path, root)
         extra_meta = _resolve_doc_meta(path)
         inferred_doc_type = infer_doc_type(str(path))
@@ -161,6 +204,15 @@ def load_documents(raw_dir: str) -> list:
             # Keep existing metadata fields; override doc_type with explicit infer_doc_type.
             d.metadata["doc_type"] = inferred_doc_type or extra_meta["doc_type"]
             d.metadata["platform"] = extra_meta["platform"]
+            section_header = str(d.metadata.get("section_header", "")).lower()
+            if "spec" in section_header or "electrical" in section_header or "mechanical" in section_header:
+                d.metadata["block_type"] = "specification"
+            elif "feature" in section_header or "benefit" in section_header:
+                d.metadata["block_type"] = "features"
+            elif "install" in section_header or "instruction" in section_header:
+                d.metadata["block_type"] = "procedure"
+            else:
+                d.metadata["block_type"] = "general"
         docs.extend(loaded)
     return docs
 
@@ -187,6 +239,9 @@ def main() -> None:
     if not docs:
         raise ValueError("No source documents found. Add files to data/raw first.")
 
+    product_records = extract_product_records(docs)
+    save_product_records(settings.product_records_path, product_records)
+
     chunks: list[Document] = []
     for doc in docs:
         doc_type = str(doc.metadata.get("doc_type", "other"))
@@ -206,6 +261,7 @@ def main() -> None:
 
     print(f"Indexed {len(chunks)} chunks from {len(docs)} source documents.")
     print(f"Saved vector store at: {settings.vectorstore_dir}")
+    print(f"Saved {len(product_records)} product records to: {settings.product_records_path}")
 
 
 if __name__ == "__main__":

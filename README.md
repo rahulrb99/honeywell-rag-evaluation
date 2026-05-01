@@ -1,80 +1,175 @@
-# Week 1 Baseline RAG Evaluation (Honeywell)
+# GraphEval-Ragas
 
-This project provides a baseline RAG pipeline for document ingestion and answer evaluation.
+GraphEval-Ragas compares GraphRAG against a vector RAG baseline on Honeywell technical documentation. The final deliverable is a static dashboard that shows system wins, query-class performance, failure modes, and reproducible proxy metrics.
 
-## What this includes
+## Quickstart
 
-- Ingestion + chunking + FAISS vector index build
-- Retrieval + grounded answer generation using Groq
-- Prediction export for evaluation
-- RAGAS evaluation runner for Week 1 baseline
-- Week 1 gold dataset template
+This path builds the dashboard from supplied CSV files. It does not require Neo4j, Groq, OpenAI, RAGAS, FAISS, LangChain, or sentence-transformers.
 
-## Project structure
+```powershell
+python -m venv .venv
+.\.venv\Scripts\pip install -r requirements-dashboard.txt
+.\.venv\Scripts\python -m src.run_week3_pipeline `
+  --dataset path\to\dataset.csv `
+  --graph-output path\to\graphrag_outputs.csv `
+  --vector-output path\to\vector_outputs.csv
+```
 
-- `src/ingest.py` - build vector index from `data/raw/`
-- `src/rag_pipeline.py` - query pipeline (retrieve + generate)
-- `src/run_rag_outputs.py` - generate raw RAG outputs CSV
-- `src/run_eval_week1.py` - run RAGAS metrics on raw RAG outputs
-- `src/run_eval_llm_judge.py` - run LLM-as-a-judge scoring
-- `src/run_consistency_check.py` - run paraphrase consistency and judge-vs-RAGAS comparison
-- `src/run_eval_retrieval_only.py` - retrieval coverage metrics: retrieval-only diagnostics + recall@k
-- `src/run_eval_generation_only.py` - generation-only evaluation using gold contexts
-- `src/build_eval_artifacts.py` - consolidate eval outputs into one row CSV and one summary JSON
-- `src/build_failure_dashboard.py` - aggregate failures into an HTML dashboard
-- `src/run_all.py` - one-command full pipeline (ingest + evals + dashboard)
-- `data/eval/week1_gold_triplets_20.csv` - fill 20-30 QA/context rows
-- `reports/week1_report.md` - Week 1 report template
+Open:
 
-## Quick start
+```text
+outputs/week3/week3_dashboard.html
+```
 
-1. Create and activate a virtual environment.
-2. Install dependencies:
-   - `pip install -r requirements.txt`
-3. Copy `.env.example` to `.env`, then add your Groq key.
-4. Put source documents into `data/raw/` as `.txt`, `.md`, or `.pdf`.
-5. Build vector store:
-   - `python -m src.ingest`
-6. Fill `data/eval/week1_gold_triplets_20.csv` with at least 20 rows.
-7. Generate raw RAG outputs:
-   - `python -m src.run_rag_outputs`
-8. Run RAGAS evaluation:
-   - `python -m src.run_eval_week1`
-9. Run LLM judge evaluation:
-   - `python -m src.run_eval_llm_judge`
-10. Run paraphrase consistency + comparison:
-   - `python -m src.run_consistency_check`
-11. Run retrieval coverage evaluation:
-   - `python -m src.run_eval_retrieval_only`
-12. Run generation-only evaluation (gold contexts):
-   - `python -m src.run_eval_generation_only`
-13. Build consolidated eval artifacts:
-   - `python -m src.build_eval_artifacts`
-14. Build failure dashboard:
-   - `python -m src.build_failure_dashboard`
-15. One-command dashboard refresh (PowerShell):
-   - Dashboard only: `.\refresh_dashboard.ps1`
-   - Recompute new eval outputs + dashboard: `.\refresh_dashboard.ps1 -Full`
-16. One-command full pipeline:
-   - Python: `python -m src.run_all`
-   - PowerShell wrapper: `.\refresh_dashboard.ps1 -All`
+See [docs/quickstart.md](docs/quickstart.md) for the exact input contract and optional flags.
 
-## Notes
+## Input Contract
 
-- This baseline is intentionally simple so you can compare future RAG variants against it.
-- Retrieval uses MMR with configurable defaults (`TOP_K=4`, `FETCH_K=12`, `LAMBDA_MULT=0.5`).
-- Keep `TEMPERATURE=0` for reproducible evaluation comparisons.
-- `LOG_RETRIEVED_CONTEXTS=true` logs raw retrieved chunk text before generation for debugging.
-- Judge artifacts are written under `outputs/`:
-  - `week1_judge_scores.csv`
-  - `week1_judge_scores.json`
-  - `week1_judge_consistency.json`
-  - `week1_judge_vs_ragas.json`
-- Additional 4-eval artifacts:
-  - `week1_eval_rows.csv`
-  - `week1_eval_summary.json`
-  - `dashboard/failure_dashboard.html`
-  - Debug/intermediate files are written under `outputs/debug/`
-- Useful env overrides for judge runs:
-  - `JUDGE_MODEL`, `JUDGE_TEMPERATURE`
-  - `PARAPHRASE_VARIANTS` (default 5), `CONSISTENCY_QUESTIONS` (default 5)
+Dataset CSV required columns:
+
+```text
+id, question, ground_truth, contexts, query_class
+```
+
+Recommended dataset columns:
+
+```text
+source_product, source_fields, category, reasoning_type
+```
+
+Each RAG output CSV required columns:
+
+```text
+id, answer, retrieved_contexts
+```
+
+`contexts` and `retrieved_contexts` should be JSON arrays. A retrieved context can be a string or an object with a `text` field.
+
+The pipeline validates required columns, ID uniqueness, dataset/prediction ID coverage, and JSON array formatting before writing dashboard artifacts.
+
+## Milestones
+
+| Milestone | What was built | Main artifacts |
+|---|---|---|
+| Week 1 | Vector RAG baseline with ingestion, FAISS retrieval, answer generation, and initial eval outputs. | `src/week1_vector_rag/`, `src/ingest.py`, `src/run_all.py` |
+| Week 2 | GraphRAG integration using Neo4j-backed graph construction and GraphRAG prediction exports. | `src/week2_graph_rag/`, `graph_rag_baseline/` |
+| Week 3 | Comparative benchmark layer, RAGAS-compatible packaging, failure analysis, kappa checks, and static dashboard. | `src/week3_benchmark/`, `src/grapheval_ragas/`, `src/run_week3_pipeline.py` |
+
+## Final Pipeline
+
+The final entry point is:
+
+```powershell
+python -m src.run_week3_pipeline
+```
+
+Typical supplied-output run:
+
+```powershell
+python -m src.run_week3_pipeline `
+  --dataset data\eval\honeywell_hard_labels_28.csv `
+  --graph-output outputs\graph_rag\honeywell_hard_labels_28_graphrag.csv `
+  --vector-output outputs\week3\vector_rag_hard_labels_28_predictions.csv
+```
+
+If no vector output CSV is supplied, the pipeline can generate one:
+
+```powershell
+python -m src.run_week3_pipeline `
+  --dataset data\eval\honeywell_hard_labels_28.csv `
+  --graph-output outputs\graph_rag\honeywell_hard_labels_28_graphrag.csv `
+  --vector-output outputs\week3\vector_rag_hard_labels_28_predictions.csv `
+  --generate-vector-output
+```
+
+That optional path requires the full `requirements.txt` environment, a built vector store, and LLM credentials.
+
+## Generated Outputs
+
+The pipeline writes generated artifacts under `outputs/week3/`:
+
+```text
+week3_dashboard.html
+week3_eval_results.csv
+week3_summary_by_query_class.csv
+week3_failure_analysis.csv
+week3_metric_summary.json
+week3_benchmarking_comparative_analysis.md
+```
+
+Optional inputs can add kappa and RAGAS smoke cards to the dashboard:
+
+```powershell
+python -m src.run_week3_pipeline `
+  --dataset path\to\dataset.csv `
+  --graph-output path\to\graphrag_outputs.csv `
+  --vector-output path\to\vector_outputs.csv `
+  --manual-review path\to\manual_review.csv `
+  --llm-judge path\to\llm_judge.csv `
+  --ragas-scores path\to\ragas_scores.json
+```
+
+If API credentials are available, run pairwise LLM-as-a-judge validation:
+
+```powershell
+python -m src.run_week3_pipeline `
+  --dataset path\to\dataset.csv `
+  --graph-output path\to\graphrag_outputs.csv `
+  --vector-output path\to\vector_outputs.csv `
+  --run-llm-judge
+```
+
+## Evaluation Notes
+
+The dashboard uses deterministic proxy metrics for full-coverage reproducibility:
+
+- entity recall proxy
+- context precision proxy
+- faithfulness proxy
+- answer relevancy proxy
+- answer correctness proxy
+
+These metrics are designed for ranking, debugging, and failure analysis. They are not claimed to be perfect human correctness judgments. Human review, pairwise LLM-as-a-judge, and live RAGAS smoke scores are supported validation layers.
+
+## Tests
+
+Run the lightweight test suite:
+
+```powershell
+python -m pytest -p no:cacheprovider
+```
+
+Current tests cover metric helpers, failure-mode logic, CSV schema validation, result construction, and dashboard HTML rendering.
+
+## Repository Map
+
+```text
+data/eval/                 Benchmark CSVs
+data/raw/                  Honeywell source documents
+docs/quickstart.md         Short dashboard build guide
+reports/week3_runbook.md   Full reproduction notes
+src/run_week3_pipeline.py  Final dashboard pipeline
+src/week1_vector_rag/      Week 1 vector RAG baseline
+src/week2_graph_rag/       Week 2 GraphRAG integration
+src/week3_benchmark/       Week 3 comparison and dashboard code
+src/grapheval_ragas/       RAGAS-compatible sample packaging
+tests/                     Lightweight pytest suite
+```
+
+## Dependency Profiles
+
+Use the minimal dashboard dependencies for normal grading:
+
+```powershell
+pip install -r requirements-dashboard.txt
+```
+
+Use the full dependencies only for from-scratch vector, GraphRAG, or live RAGAS work:
+
+```powershell
+pip install -r requirements.txt
+```
+
+## Security
+
+Do not commit `.env`, API keys, local vector stores, or generated `outputs/` artifacts. Generated outputs are intentionally ignored and should be rebuilt from supplied inputs.
