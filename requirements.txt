@@ -13,3 +13,4 @@ pdfplumber
 openai
 neo4j
 rdflib
+pytest

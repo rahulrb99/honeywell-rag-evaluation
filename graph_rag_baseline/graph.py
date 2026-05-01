@@ -46,7 +46,7 @@ class Neo4jClient:
 
     def __init__(self) -> None:
         self._uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
-        self._user = os.getenv("NEO4J_USER", "neo4j")
+        self._user = os.getenv("NEO4J_USER") or os.getenv("NEO4J_USERNAME", "neo4j")
         self._password = os.getenv("NEO4J_PASSWORD", "")
         self._driver = None
 
@@ -68,7 +68,7 @@ class Neo4jClient:
             self._driver = None
             raise RuntimeError(
                 f"Cannot connect to Neo4j at {self._uri}.\n"
-                "Set NEO4J_URI / NEO4J_USER / NEO4J_PASSWORD in "
+                "Set NEO4J_URI / NEO4J_USER or NEO4J_USERNAME / NEO4J_PASSWORD in "
                 "graph_rag_baseline/.env (leave NEO4J_PASSWORD blank for "
                 "instances started with NEO4J_AUTH=none).\n"
                 f"Original error: {exc}"

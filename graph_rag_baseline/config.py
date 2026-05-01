@@ -12,7 +12,7 @@ OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
 GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
 
 NEO4J_URI: str = os.getenv("NEO4J_URI", "bolt://localhost:7687")
-NEO4J_USER: str = os.getenv("NEO4J_USER", "neo4j")
+NEO4J_USER: str = os.getenv("NEO4J_USER") or os.getenv("NEO4J_USERNAME", "neo4j")
 NEO4J_PASSWORD: str = os.getenv("NEO4J_PASSWORD", "")
 
 _GROQ_BASE_URL = "https://api.groq.com/openai/v1"
