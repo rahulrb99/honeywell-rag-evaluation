@@ -51,7 +51,7 @@ def get_settings() -> Settings:
     return Settings(
         groq_api_key=api_key,
         groq_model=os.getenv("GROQ_MODEL", "llama-3.1-8b-instant"),
-        judge_model=os.getenv("JUDGE_MODEL", "llama-3.1-70b-versatile"),
+        judge_model=os.getenv("JUDGE_MODEL", "llama-3.3-70b-versatile"),
         temperature=float(os.getenv("TEMPERATURE", "0")),
         judge_temperature=float(os.getenv("JUDGE_TEMPERATURE", "0")),
         embedding_model=os.getenv(

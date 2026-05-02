@@ -15,8 +15,7 @@ OUTPUT_DIR = ROOT_DIR / "outputs" / "graph_rag"
 
 sys.path.insert(0, str(GRAPH_DIR))
 
-load_dotenv(GRAPH_DIR / ".env", override=True)
-load_dotenv(ROOT_DIR / ".env")  # pick up GROQ_API_KEY from project root
+load_dotenv(ROOT_DIR / ".env")
 
 from app import call_prompt_1a, validate_ttl  # noqa: E402
 from config import make_llm_client  # noqa: E402
