@@ -10,7 +10,7 @@ from langchain_community.document_loaders import PDFPlumberLoader
 
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
-GRAPH_DIR = ROOT_DIR / "graph_rag_baseline"
+GRAPH_DIR = ROOT_DIR / "graphrag_engine"
 OUTPUT_DIR = ROOT_DIR / "outputs" / "graph_rag"
 
 sys.path.insert(0, str(GRAPH_DIR))

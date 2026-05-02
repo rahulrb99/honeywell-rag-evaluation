@@ -40,7 +40,7 @@ def _winner(row: pd.Series) -> str:
 
 
 def main() -> None:
-    graph_csv = Path(os.getenv("GRAPH_PREDICTIONS_CSV", "outputs/graph_rag/week2_graphrag_predictions.csv"))
+    graph_csv = Path(os.getenv("GRAPH_PREDICTIONS_CSV", "outputs/predictions/week2_graphrag_predictions.csv"))
     baseline_csv = Path(
         os.getenv("BASELINE_PREDICTIONS_CSV", "outputs/comparison/week2_structured_baseline_predictions.csv")
     )

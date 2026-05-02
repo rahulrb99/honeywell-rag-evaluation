@@ -6,9 +6,9 @@ from pathlib import Path
 import pandas as pd
 
 
-ROOT = Path(__file__).resolve().parent.parent
-MANUAL_CSV = ROOT / "data" / "eval" / "honeywell_graph_subset_24.csv"
-AUTOQ_CSV = ROOT / "data" / "eval" / "autoq_honeywell_structured.csv"
+ROOT = Path(__file__).resolve().parents[2]
+MANUAL_CSV = ROOT / "data" / "eval" / "archive" / "honeywell_graph_subset_24.csv"
+AUTOQ_CSV = ROOT / "data" / "eval" / "archive" / "autoq_honeywell_structured.csv"
 OUTPUT_CSV = ROOT / "data" / "eval" / "week2_honeywell_eval.csv"
 
 

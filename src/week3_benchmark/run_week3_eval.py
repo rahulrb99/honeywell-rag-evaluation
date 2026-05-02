@@ -16,11 +16,11 @@ from tqdm import tqdm
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BENCHMARK = ROOT / "data" / "eval" / "honeywell_hard_labels_28.csv"
-DEFAULT_GRAPH = ROOT / "outputs" / "graph_rag" / "honeywell_hard_labels_28_graphrag.csv"
-DEFAULT_VECTOR = ROOT / "outputs" / "week3" / "vector_rag_hard_labels_28_predictions.csv"
+DEFAULT_GRAPH = ROOT / "outputs" / "predictions" / "honeywell_hard_labels_28_graphrag.csv"
+DEFAULT_VECTOR = ROOT / "outputs" / "predictions" / "vector_rag_hard_labels_28_predictions.csv"
 DEFAULT_MANUAL = ROOT / "outputs" / "comparison" / "honeywell_graph_vs_vector_24_manual_comparison.csv"
-DEFAULT_OUT_DIR = ROOT / "outputs" / "week3"
-DEFAULT_REPORT = ROOT / "reports" / "week3_benchmarking_comparative_analysis.md"
+DEFAULT_OUT_DIR = ROOT / "outputs" / "eval_outputs"
+DEFAULT_REPORT = ROOT / "outputs" / "eval_outputs" / "benchmarking_comparative_analysis.md"
 
 HARD_QUERY_CLASSES = {"multi_hop", "theme_summary", "relationship_reasoning", "comparison"}
 REQUIRED_BENCHMARK_COLUMNS = {"id", "question", "ground_truth", "contexts", "query_class"}
@@ -578,8 +578,8 @@ Main claim: GraphRAG is not universally better than vector RAG; its value is con
 
 - Benchmark: `data/eval/honeywell_hard_labels_28.csv`
 - Rows evaluated: `{len(results)}`
-- GraphRAG predictions: `outputs/graph_rag/honeywell_hard_labels_28_graphrag.csv`
-- Vector RAG predictions: `outputs/week3/vector_rag_hard_labels_28_predictions.csv`
+- GraphRAG predictions: `outputs/predictions/honeywell_hard_labels_28_graphrag.csv`
+- Vector RAG predictions: `outputs/predictions/vector_rag_hard_labels_28_predictions.csv`
 
 The benchmark contains labeled question classes including direct factual lookup, numeric specifications, list retrieval, comparison, multi-hop synthesis, theme summary, and relationship reasoning.
 
@@ -660,10 +660,10 @@ def main() -> None:
         raise RuntimeError(f"Expected {len(benchmark)} result rows, got {len(results)}")
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    results_path = out_dir / "week3_eval_results.csv"
-    summary_path = out_dir / "week3_summary_by_query_class.csv"
-    failure_path = out_dir / "week3_failure_analysis.csv"
-    metric_path = out_dir / "week3_metric_summary.json"
+    results_path = out_dir / "eval_results.csv"
+    summary_path = out_dir / "summary_by_query_class.csv"
+    failure_path = out_dir / "failure_analysis.csv"
+    metric_path = out_dir / "metric_summary.json"
 
     results.to_csv(results_path, index=False)
     summary_by_class = _summarize_by_query_class(results)

@@ -1,7 +1,7 @@
 """Run full RAG pipeline from raw docs + gold dataset to dashboard.
 
 Usage:
-    python -m src.run_all
+    python -m src.week1_vector_rag.run_all
 """
 
 from __future__ import annotations

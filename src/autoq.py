@@ -330,7 +330,7 @@ def main() -> None:
             f"No product records found at {settings.product_records_path}. Run ingestion first."
         )
     df = build_autoq_dataframe(records)
-    out_path = Path("data/eval/autoq_honeywell_structured.csv")
+    out_path = Path("data/eval/archive/autoq_honeywell_structured.csv")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(out_path, index=False)
     print(f"Loaded {len(records)} records from -> {settings.product_records_path}")

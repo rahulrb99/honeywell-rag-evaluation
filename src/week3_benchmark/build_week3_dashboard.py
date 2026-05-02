@@ -9,13 +9,13 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_RESULTS = ROOT / "outputs" / "week3" / "week3_eval_results.csv"
-DEFAULT_SUMMARY = ROOT / "outputs" / "week3" / "week3_summary_by_query_class.csv"
-DEFAULT_METRICS = ROOT / "outputs" / "week3" / "week3_metric_summary.json"
-DEFAULT_KAPPA = ROOT / "outputs" / "week3" / "week3_kappa_summary.json"
-DEFAULT_RAGAS = ROOT / "outputs" / "week3" / "ragas_smoke_graphrag_5_scores.json"
-DEFAULT_LLM_JUDGE = ROOT / "outputs" / "week3" / "week3_pairwise_llm_judge_summary.json"
-DEFAULT_OUT = ROOT / "outputs" / "week3" / "week3_dashboard.html"
+DEFAULT_RESULTS = ROOT / "outputs" / "eval_outputs" / "eval_results.csv"
+DEFAULT_SUMMARY = ROOT / "outputs" / "eval_outputs" / "summary_by_query_class.csv"
+DEFAULT_METRICS = ROOT / "outputs" / "eval_outputs" / "metric_summary.json"
+DEFAULT_KAPPA = ROOT / "outputs" / "eval_outputs" / "kappa_summary.json"
+DEFAULT_RAGAS = ROOT / "outputs" / "eval_outputs" / "ragas_smoke_graphrag_5_scores.json"
+DEFAULT_LLM_JUDGE = ROOT / "outputs" / "eval_outputs" / "pairwise_llm_judge_summary.json"
+DEFAULT_OUT = ROOT / "outputs" / "eval_outputs" / "dashboard.html"
 
 
 def _parse_args() -> argparse.Namespace:

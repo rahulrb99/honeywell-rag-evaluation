@@ -16,7 +16,7 @@ from src.config import get_settings
 
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
-GRAPH_DIR = ROOT_DIR / "graph_rag_baseline"
+GRAPH_DIR = ROOT_DIR / "graphrag_engine"
 sys.path.insert(0, str(GRAPH_DIR))
 
 load_dotenv(GRAPH_DIR / ".env", override=True)
@@ -69,9 +69,9 @@ def main() -> None:
     settings = get_settings()
     eval_csv = Path(os.getenv("GRAPH_EVAL_CSV", "data/eval/week2_honeywell_eval.csv"))
     output_csv = Path(
-        os.getenv("GRAPH_PREDICTIONS_CSV", "outputs/graph_rag/week2_graphrag_predictions.csv")
+        os.getenv("GRAPH_PREDICTIONS_CSV", "outputs/predictions/week2_graphrag_predictions.csv")
     )
-    domain_name = os.getenv("GRAPH_DOMAIN_NAME", "honeywell_pa_wall_subset_20260423")
+    domain_name = os.getenv("GRAPH_DOMAIN_NAME", "honeywell_fire_comms_subset_20260425")
     model_name = os.getenv("GRAPH_MODEL_NAME", "llama-3.3-70b-versatile")
 
     if not eval_csv.exists():
