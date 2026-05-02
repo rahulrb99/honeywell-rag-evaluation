@@ -30,5 +30,5 @@ def make_llm_client() -> OpenAI:
         return OpenAI(api_key=GROQ_API_KEY, base_url=_GROQ_BASE_URL)
     raise ValueError(
         "Neither OPENAI_API_KEY nor GROQ_API_KEY is set. "
-        "Add one to graphrag_engine/.env or the project root .env."
+        "Add one to the project root .env."
     )
