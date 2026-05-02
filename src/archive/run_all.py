@@ -1,7 +1,7 @@
 """Run full RAG pipeline from raw docs + gold dataset to dashboard.
 
 Usage:
-    python -m src.run_all
+    python -m src.archive.run_all
 """
 
 from __future__ import annotations
@@ -68,14 +68,14 @@ def _print_outputs() -> None:
 def main() -> None:
     _ensure_inputs()
     _run("src.ingest")
-    _run("src.run_rag_outputs")
+    _run("src.archive.run_rag_outputs")
     _run("src.run_eval_week1")
-    _run("src.run_eval_retrieval_only")
+    _run("src.archive.run_eval_retrieval_only")
     _run("src.run_eval_llm_judge")
     _run("src.run_groundedness")
-    _run("src.run_eval_generation_only")
-    _run("src.build_eval_artifacts")
-    _run("src.build_failure_dashboard")
+    _run("src.archive.run_eval_generation_only")
+    _run("src.archive.build_eval_artifacts")
+    _run("src.archive.build_failure_dashboard")
     _print_outputs()
 
 

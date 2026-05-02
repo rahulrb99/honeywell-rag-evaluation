@@ -1,6 +1,6 @@
 """Compatibility wrapper for retrieval metrics.
 
-Use `python -m src.run_eval_retrieval_only` for the canonical evaluator.
+Use `python -m src.week1_vector_rag.run_eval_retrieval_only` for the canonical Week 1 evaluator.
 """
 
 from __future__ import annotations

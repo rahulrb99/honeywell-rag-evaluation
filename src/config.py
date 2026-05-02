@@ -27,7 +27,7 @@ class Settings:
     vectorstore_dir: str
     product_records_path: str
     raw_data_dir: str = "data/raw"
-    eval_csv: str = "data/eval/week1_gold_triplets_20.csv"
+    eval_csv: str = "data/eval/archive/week1_gold_triplets_20.csv"
     predictions_csv: str = "outputs/debug/week1_rag_outputs.csv"
     ragas_scores_json: str = "outputs/debug/week1_ragas_scores.json"
     judge_scores_json: str = "outputs/debug/week1_judge_scores.json"
@@ -66,7 +66,7 @@ def get_settings() -> Settings:
         in {"1", "true", "yes", "on"},
         vectorstore_dir=os.getenv("VECTORSTORE_DIR", "data/vectorstore"),
         product_records_path=os.getenv("PRODUCT_RECORDS_PATH", "outputs/structured/product_records.json"),
-        eval_csv=os.getenv("EVAL_CSV", "data/eval/week1_gold_triplets_20.csv"),
+        eval_csv=os.getenv("EVAL_CSV", "data/eval/archive/week1_gold_triplets_20.csv"),
         predictions_csv=os.getenv("PREDICTIONS_CSV", "outputs/debug/week1_rag_outputs.csv"),
         judge_scores_json=os.getenv("JUDGE_SCORES_JSON", "outputs/debug/week1_judge_scores.json"),
         judge_scores_csv=os.getenv("JUDGE_SCORES_CSV", "outputs/debug/week1_judge_scores.csv"),

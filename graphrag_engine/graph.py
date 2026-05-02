@@ -69,7 +69,7 @@ class Neo4jClient:
             raise RuntimeError(
                 f"Cannot connect to Neo4j at {self._uri}.\n"
                 "Set NEO4J_URI / NEO4J_USER or NEO4J_USERNAME / NEO4J_PASSWORD in "
-                "graph_rag_baseline/.env (leave NEO4J_PASSWORD blank for "
+                "graphrag_engine/.env (leave NEO4J_PASSWORD blank for "
                 "instances started with NEO4J_AUTH=none).\n"
                 f"Original error: {exc}"
             ) from exc

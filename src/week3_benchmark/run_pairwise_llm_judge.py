@@ -16,9 +16,9 @@ from src.week3_benchmark.run_week3_eval import _context_texts
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_RESULTS = ROOT / "outputs" / "week3" / "week3_eval_results.csv"
-DEFAULT_OUT_CSV = ROOT / "outputs" / "week3" / "week3_pairwise_llm_judge.csv"
-DEFAULT_OUT_JSON = ROOT / "outputs" / "week3" / "week3_pairwise_llm_judge_summary.json"
+DEFAULT_RESULTS = ROOT / "outputs" / "eval_outputs" / "eval_results.csv"
+DEFAULT_OUT_CSV = ROOT / "outputs" / "eval_outputs" / "pairwise_llm_judge.csv"
+DEFAULT_OUT_JSON = ROOT / "outputs" / "eval_outputs" / "pairwise_llm_judge_summary.json"
 
 PROMPT = ChatPromptTemplate.from_template(
     """You are a strict evaluator comparing two RAG answers.

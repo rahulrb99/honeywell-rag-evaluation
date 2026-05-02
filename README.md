@@ -4,24 +4,22 @@ GraphEval-Ragas compares GraphRAG against a vector RAG baseline on Honeywell tec
 
 ## Quickstart
 
-This path builds the dashboard from supplied CSV files. It does not require Neo4j, Groq, OpenAI, RAGAS, FAISS, LangChain, or sentence-transformers.
+The default command runs the full Week 3 pipeline: GraphRAG generation, vector RAG baseline generation, metrics, 5-row live RAGAS smoke scoring, pairwise LLM-as-a-judge, and dashboard build.
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\pip install -r requirements-dashboard.txt
-.\.venv\Scripts\python -m src.run_week3_pipeline `
-  --dataset path\to\dataset.csv `
-  --graph-output path\to\graphrag_outputs.csv `
-  --vector-output path\to\vector_outputs.csv
+.\.venv\Scripts\pip install -r requirements.txt
+.\.venv\Scripts\python -m src.ingest
+.\.venv\Scripts\python -m src.run_week3_pipeline
 ```
 
 Open:
 
 ```text
-outputs/week3/week3_dashboard.html
+outputs/eval_outputs/dashboard.html
 ```
 
-See [docs/quickstart.md](docs/quickstart.md) for the exact input contract and optional flags.
+See [quickstart.md](quickstart.md) for the input contract, required environment variables, and fast dashboard-only mode.
 
 ## Input Contract
 
@@ -51,8 +49,8 @@ The pipeline validates required columns, ID uniqueness, dataset/prediction ID co
 
 | Milestone | What was built | Main artifacts |
 |---|---|---|
-| Week 1 | Vector RAG baseline with ingestion, FAISS retrieval, answer generation, and initial eval outputs. | `src/week1_vector_rag/`, `src/ingest.py`, `src/run_all.py` |
-| Week 2 | GraphRAG integration using Neo4j-backed graph construction and GraphRAG prediction exports. | `src/week2_graph_rag/`, `graph_rag_baseline/` |
+| Week 1 | Vector RAG baseline with ingestion, FAISS retrieval, answer generation, and initial eval outputs. | `src/week1_vector_rag/`, `src/ingest.py` |
+| Week 2 | GraphRAG integration using Neo4j-backed graph construction and GraphRAG prediction exports. | `src/week2_graph_rag/`, `graphrag_engine/` |
 | Week 3 | Comparative benchmark layer, RAGAS-compatible packaging, failure analysis, kappa checks, and static dashboard. | `src/week3_benchmark/`, `src/grapheval_ragas/`, `src/run_week3_pipeline.py` |
 
 ## Final Pipeline
@@ -63,41 +61,52 @@ The final entry point is:
 python -m src.run_week3_pipeline
 ```
 
-Typical supplied-output run:
+By default this command:
+
+1. builds or updates the Neo4j GraphRAG domain,
+2. writes GraphRAG predictions,
+3. generates the vector RAG baseline when missing,
+4. computes Week 3 metrics,
+5. runs live 5-row RAGAS smoke scoring,
+6. runs pairwise LLM-as-a-judge,
+7. builds the static dashboard.
+
+Fast dashboard-only run from supplied outputs:
 
 ```powershell
 python -m src.run_week3_pipeline `
   --dataset data\eval\honeywell_hard_labels_28.csv `
-  --graph-output outputs\graph_rag\honeywell_hard_labels_28_graphrag.csv `
-  --vector-output outputs\week3\vector_rag_hard_labels_28_predictions.csv
+  --graph-output outputs\predictions\honeywell_hard_labels_28_graphrag.csv `
+  --vector-output outputs\predictions\vector_rag_hard_labels_28_predictions.csv `
+  --skip-graph-output-generation `
+  --skip-vector-output-generation `
+  --skip-live-ragas `
+  --skip-llm-judge
 ```
 
-If no vector output CSV is supplied, the pipeline can generate one:
+If the Neo4j graph domain already exists and you only need fresh GraphRAG predictions:
 
 ```powershell
 python -m src.run_week3_pipeline `
-  --dataset data\eval\honeywell_hard_labels_28.csv `
-  --graph-output outputs\graph_rag\honeywell_hard_labels_28_graphrag.csv `
-  --vector-output outputs\week3\vector_rag_hard_labels_28_predictions.csv `
-  --generate-vector-output
+  --skip-graph-domain-build
 ```
 
-That optional path requires the full `requirements.txt` environment, a built vector store, and LLM credentials.
+The full path requires `requirements.txt`, `.env` credentials for Groq/OpenAI and Neo4j, and a built vector store from `python -m src.ingest`.
 
 ## Generated Outputs
 
-The pipeline writes generated artifacts under `outputs/week3/`:
+The pipeline writes generated artifacts under `outputs/eval_outputs/`:
 
 ```text
-week3_dashboard.html
-week3_eval_results.csv
-week3_summary_by_query_class.csv
-week3_failure_analysis.csv
-week3_metric_summary.json
-week3_benchmarking_comparative_analysis.md
+dashboard.html
+eval_results.csv
+summary_by_query_class.csv
+failure_analysis.csv
+metric_summary.json
+benchmarking_comparative_analysis.md
 ```
 
-Optional inputs can add kappa and RAGAS smoke cards to the dashboard:
+Manual review and existing judge/RAGAS artifacts can be supplied when available:
 
 ```powershell
 python -m src.run_week3_pipeline `
@@ -107,16 +116,6 @@ python -m src.run_week3_pipeline `
   --manual-review path\to\manual_review.csv `
   --llm-judge path\to\llm_judge.csv `
   --ragas-scores path\to\ragas_scores.json
-```
-
-If API credentials are available, run pairwise LLM-as-a-judge validation:
-
-```powershell
-python -m src.run_week3_pipeline `
-  --dataset path\to\dataset.csv `
-  --graph-output path\to\graphrag_outputs.csv `
-  --vector-output path\to\vector_outputs.csv `
-  --run-llm-judge
 ```
 
 ## Evaluation Notes
@@ -146,8 +145,9 @@ Current tests cover metric helpers, failure-mode logic, CSV schema validation, r
 ```text
 data/eval/                 Benchmark CSVs
 data/raw/                  Honeywell source documents
-docs/quickstart.md         Short dashboard build guide
-reports/week3_runbook.md   Full reproduction notes
+outputs/predictions/       GraphRAG and vector RAG prediction CSVs
+outputs/eval_outputs/     Evaluation summaries, RAGAS/judge artifacts, dashboard
+quickstart.md              Short dashboard build guide
 src/run_week3_pipeline.py  Final dashboard pipeline
 src/week1_vector_rag/      Week 1 vector RAG baseline
 src/week2_graph_rag/       Week 2 GraphRAG integration

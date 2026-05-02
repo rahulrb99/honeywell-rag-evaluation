@@ -11,9 +11,9 @@ from sklearn.metrics import cohen_kappa_score
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MANUAL = ROOT / "outputs" / "comparison" / "honeywell_hard_labels_28_manual_review.csv"
 DEFAULT_LLM_JUDGE = ROOT / "outputs" / "comparison" / "honeywell_hard_labels_28_pairwise_judge.csv"
-DEFAULT_WEEK3 = ROOT / "outputs" / "week3" / "week3_eval_results.csv"
-DEFAULT_OUT_CSV = ROOT / "outputs" / "week3" / "week3_kappa_analysis.csv"
-DEFAULT_OUT_JSON = ROOT / "outputs" / "week3" / "week3_kappa_summary.json"
+DEFAULT_WEEK3 = ROOT / "outputs" / "eval_outputs" / "eval_results.csv"
+DEFAULT_OUT_CSV = ROOT / "outputs" / "eval_outputs" / "kappa_analysis.csv"
+DEFAULT_OUT_JSON = ROOT / "outputs" / "eval_outputs" / "kappa_summary.json"
 
 
 def _parse_args() -> argparse.Namespace:

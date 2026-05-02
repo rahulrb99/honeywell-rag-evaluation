@@ -4,7 +4,14 @@ __pycache__/
 pytest-cache-files-*/
 .env
 data/vectorstore/
-outputs/
+outputs/*
+!outputs/.gitkeep
+!outputs/predictions/
+outputs/predictions/*
+!outputs/predictions/.gitkeep
+!outputs/eval_outputs/
+outputs/eval_outputs/*
+!outputs/eval_outputs/.gitkeep
 .DS_Store
 graph_rag_baseline_local_backup/
 reports/graphrag_first_deliverable_bundle/

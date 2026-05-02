@@ -1,8 +1,8 @@
 """Run RAGAS evaluation on week 2 GraphRAG predictions.
 
-Reads:  outputs/graph_rag/week2_graphrag_predictions.csv  (or GRAPH_PREDICTIONS_CSV)
-Writes: outputs/graph_rag/week2_ragas_scores.json   – mean metric scores
-        outputs/graph_rag/week2_ragas_rows.csv       – per-row metric scores
+Reads:  outputs/predictions/week2_graphrag_predictions.csv  (or GRAPH_PREDICTIONS_CSV)
+Writes: outputs/eval_outputs/week2_ragas_scores.json   – mean metric scores
+        outputs/eval_outputs/week2_ragas_rows.csv       – per-row metric scores
 
 Usage:
     python -m src.week2_graph_rag.run_eval_week2
@@ -29,9 +29,9 @@ from src.config import get_settings, require_groq_api_key
 from src.week1_vector_rag.run_eval_week1 import load_rag_outputs_df
 
 
-_DEFAULT_PREDICTIONS = "outputs/graph_rag/week2_graphrag_predictions.csv"
-_DEFAULT_SCORES_JSON = "outputs/graph_rag/week2_ragas_scores.json"
-_DEFAULT_ROWS_CSV    = "outputs/graph_rag/week2_ragas_rows.csv"
+_DEFAULT_PREDICTIONS = "outputs/predictions/week2_graphrag_predictions.csv"
+_DEFAULT_SCORES_JSON = "outputs/eval_outputs/week2_ragas_scores.json"
+_DEFAULT_ROWS_CSV    = "outputs/eval_outputs/week2_ragas_rows.csv"
 
 
 def run_ragas_week2(pred_df: pd.DataFrame) -> tuple[dict, pd.DataFrame]:

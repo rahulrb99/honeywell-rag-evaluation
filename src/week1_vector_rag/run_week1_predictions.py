@@ -1,6 +1,6 @@
 """Compatibility wrapper for raw RAG output generation.
 
-Use `python -m src.run_rag_outputs` for the canonical command.
+Use `python -m src.week1_vector_rag.run_rag_outputs` for the canonical Week 1 command.
 """
 
 from __future__ import annotations
