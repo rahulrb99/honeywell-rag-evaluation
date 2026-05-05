@@ -57,20 +57,46 @@ def _run_async(coro):
 # ---------------------------------------------------------------------------
 class Neo4jClient:
     def __init__(self, uri: str = "", user: str = "", password: str = ""):
-        self.uri = uri or NEO4J_URI
-        self.user = user or NEO4J_USERNAME
-        self.password = password or NEO4J_PASSWORD
-        if not self.uri or not self.user or not self.password:
-            raise AttributeError("Neo4j URI, username, or password is missing.")
-        self.driver = GraphDatabase.driver(self.uri, auth=(self.user, self.password))
-        logger.info(f"Connected to Neo4j at: {self.uri}")
-
-    def close(self):
-        self.driver.close()
-        logger.info("Neo4j connection closed.")
+        self._uri = uri or NEO4J_URI
+        self._user = user or NEO4J_USERNAME
+        self._password = password or NEO4J_PASSWORD
+        self._driver: Driver | None = None
+        if not self._uri:
+            raise AttributeError("Neo4j URI is missing.")
+        if self._password and not self._user:
+            raise AttributeError("Neo4j username is missing.")
 
     def __call__(self) -> Driver:
-        return self.driver
+        """Return (and lazily create) the Neo4j driver.
+
+        When NEO4J_PASSWORD is blank the driver is created without credentials,
+        which works for instances started with NEO4J_AUTH=none.
+        """
+        if self._driver is not None:
+            return self._driver
+        auth = (self._user, self._password) if self._password else None
+        try:
+            self._driver = GraphDatabase.driver(self._uri, auth=auth)
+            # Eagerly verify connectivity so auth errors surface here with a
+            # clear message rather than on the first Cypher call.
+            self._driver.verify_connectivity()
+        except Exception as exc:
+            self._driver = None
+            raise RuntimeError(
+                f"Cannot connect to Neo4j at {self._uri}.\n"
+                "Set NEO4J_URI / NEO4J_USER or NEO4J_USERNAME / NEO4J_PASSWORD in "
+                "the project root .env (leave NEO4J_PASSWORD blank for "
+                "instances started with NEO4J_AUTH=none).\n"
+                f"Original error: {exc}"
+            ) from exc
+        logger.info(f"Connected to Neo4j at: {self._uri}")
+        return self._driver
+
+    def close(self) -> None:
+        if self._driver is not None:
+            self._driver.close()
+            self._driver = None
+            logger.info("Neo4j connection closed.")
 
 
 # ---------------------------------------------------------------------------
