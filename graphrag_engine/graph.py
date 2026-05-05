@@ -1,469 +1,818 @@
-"""Neo4j graph layer for the Honeywell GraphRAG baseline.
-
-Public API consumed by the build and prediction scripts:
-    Neo4jClient            – driver lifecycle wrapper
-    ontology_to_schema     – parse TTL → {node_types, rel_types}
-    build_knowledge_graph  – extract entities from docs and write to Neo4j
-    tag_new_nodes_with_domain – stamp new nodes with a domain label
-    query_graph_rag        – retrieve graph context and generate an answer
-"""
-
-from __future__ import annotations
-
+import asyncio
+import concurrent.futures
 import json
 import os
-import re
-from dataclasses import dataclass, field
-from typing import Any
+import time
 
-from neo4j import GraphDatabase
-from rdflib import OWL, RDF, Graph as RDFGraph
+import certifi
+from loguru import logger
+from neo4j import GraphDatabase, Driver
+from openai import OpenAI
+from rdflib import Graph as RDFGraph
 
-from config import make_llm_client
+os.environ.setdefault("SSL_CERT_FILE", certifi.where())
+from rdflib.namespace import OWL, RDF, RDFS
+from neo4j_graphrag.experimental.components.schema import (
+    GraphSchema,
+    NodeType,
+    PropertyType,
+    RelationshipType,
+)
+from neo4j_graphrag.experimental.components.text_splitters.fixed_size_splitter import (
+    FixedSizeSplitter,
+)
+from neo4j_graphrag.experimental.pipeline.kg_builder import SimpleKGPipeline
+from neo4j_graphrag.llm import OpenAILLM
+from neo4j_graphrag.embeddings import OpenAIEmbeddings
 
+from neo4j_graphrag.indexes import create_vector_index
+from neo4j_graphrag.retrievers import VectorCypherRetriever
+from neo4j_graphrag.generation import GraphRAG
 
-# ---------------------------------------------------------------------------
-# Result types consumed by run_graphrag_predictions._context_rows
-# ---------------------------------------------------------------------------
+from config import NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD, OPENAI_API_KEY
 
-@dataclass
-class GraphRAGContextItem:
-    content: str
-    metadata: dict[str, Any] = field(default_factory=dict)
+VECTOR_INDEX_NAME = "chunk_embedding_index"
+EMBEDDING_MODEL = "text-embedding-3-large"
+EMBEDDING_DIMENSIONS = 3072
 
+_INFRA_RELS = [
+    'FROM_CHUNK', 'FROM_DOCUMENT', 'NEXT_CHUNK', 'SIMILAR_TO',
+    'EVIDENCE_SOURCE', 'EVIDENCE_TARGET',
+]
+_INFRA_LABELS = [
+    'Document', 'Chunk', 'WebDocument', 'WebChunk', 'Evidence',
+]
 
-@dataclass
-class GraphRAGContext:
-    items: list[GraphRAGContextItem] = field(default_factory=list)
+def _run_async(coro):
+    try:
+        asyncio.get_running_loop()
+        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+            return pool.submit(asyncio.run, coro).result()
+    except RuntimeError:
+        return asyncio.run(coro)
 
 
 # ---------------------------------------------------------------------------
 # Neo4j client
 # ---------------------------------------------------------------------------
-
 class Neo4jClient:
-    """Thin wrapper around the Neo4j driver with lazy initialisation."""
+    def __init__(self, uri: str = "", user: str = "", password: str = ""):
+        self.uri = uri or NEO4J_URI
+        self.user = user or NEO4J_USERNAME
+        self.password = password or NEO4J_PASSWORD
+        if not self.uri or not self.user or not self.password:
+            raise AttributeError("Neo4j URI, username, or password is missing.")
+        self.driver = GraphDatabase.driver(self.uri, auth=(self.user, self.password))
+        logger.info(f"Connected to Neo4j at: {self.uri}")
 
-    def __init__(self) -> None:
-        self._uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
-        self._user = os.getenv("NEO4J_USER") or os.getenv("NEO4J_USERNAME", "neo4j")
-        self._password = os.getenv("NEO4J_PASSWORD", "")
-        self._driver = None
+    def close(self):
+        self.driver.close()
+        logger.info("Neo4j connection closed.")
 
-    def __call__(self):
-        """Return (and lazily create) the Neo4j driver.
-
-        When NEO4J_PASSWORD is blank the driver is created without credentials,
-        which works for instances started with NEO4J_AUTH=none.
-        """
-        if self._driver is not None:
-            return self._driver
-        auth = (self._user, self._password) if self._password else None
-        try:
-            self._driver = GraphDatabase.driver(self._uri, auth=auth)
-            # Eagerly verify connectivity so auth errors surface here with a
-            # clear message rather than on the first Cypher call.
-            self._driver.verify_connectivity()
-        except Exception as exc:
-            self._driver = None
-            raise RuntimeError(
-                f"Cannot connect to Neo4j at {self._uri}.\n"
-                "Set NEO4J_URI / NEO4J_USER or NEO4J_USERNAME / NEO4J_PASSWORD in "
-                "the project root .env (leave NEO4J_PASSWORD blank for "
-                "instances started with NEO4J_AUTH=none).\n"
-                f"Original error: {exc}"
-            ) from exc
-        return self._driver
-
-    def close(self) -> None:
-        if self._driver is not None:
-            self._driver.close()
-            self._driver = None
+    def __call__(self) -> Driver:
+        return self.driver
 
 
 # ---------------------------------------------------------------------------
-# Ontology → schema
+# Ontology → GraphSchema conversion
 # ---------------------------------------------------------------------------
+def _get_local_part(uri: str) -> str:
+    for sep in ("#", "/", ":"):
+        pos = str(uri).rfind(sep)
+        if pos >= 0:
+            return str(uri)[pos + 1:]
+    return str(uri)
 
-_FALLBACK_NODE_TYPES = ["Product", "Specification", "Feature", "Application", "Component"]
-_FALLBACK_REL_TYPES = ["HAS_SPEC", "HAS_FEATURE", "COMPATIBLE_WITH", "MOUNTS_WITH", "CONNECTS_TO"]
+
+def _get_properties_for_class(g: RDFGraph, class_uri) -> list[PropertyType]:
+    props = []
+    for dtp in g.subjects(RDFS.domain, class_uri):
+        if (dtp, RDF.type, OWL.DatatypeProperty) in g:
+            prop_name = _get_local_part(dtp)
+            if prop_name == "hasName":
+                prop_name = "name"
+            desc = str(next(g.objects(dtp, RDFS.comment), ""))
+            props.append(PropertyType(name=prop_name, type="STRING", description=desc))
+    return props
 
 
-def ontology_to_schema(ttl: str) -> dict[str, list[str]]:
-    """Extract node types and relationship types from a Turtle ontology string."""
+def ontology_to_schema(ttl_string: str) -> GraphSchema:
     g = RDFGraph()
-    g.parse(data=ttl, format="turtle")
+    g.parse(data=ttl_string, format="turtle")
 
-    node_types = [
-        _local_name(str(cls))
-        for cls in g.subjects(RDF.type, OWL.Class)
-        if not str(cls).startswith("_")
-    ]
-    node_types = [n for n in node_types if n]
+    known_classes: dict = {}
+    entities: list[NodeType] = []
+    relations: list[RelationshipType] = []
+    patterns: list[tuple[str, str, str]] = []
 
-    rel_types = [
-        _camel_to_upper_snake(_local_name(str(prop)))
-        for prop in g.subjects(RDF.type, OWL.ObjectProperty)
-        if not str(prop).startswith("_")
-    ]
-    rel_types = [r for r in rel_types if r]
+    default_prop = PropertyType(name="name", type="STRING", description="Entity name")
 
+    for cls in g.subjects(RDF.type, OWL.Class):
+        if cls not in known_classes:
+            known_classes[cls] = None
+            label = _get_local_part(cls)
+            desc = str(next(g.objects(cls, RDFS.comment), ""))
+            props = _get_properties_for_class(g, cls)
+            if not any(p.name == "name" for p in props):
+                props.insert(0, default_prop)
+            entities.append(NodeType(label=label, description=desc, properties=props))
+
+    for predicate in (RDFS.domain, RDFS.range):
+        for cls in g.objects(None, predicate):
+            if cls not in known_classes and not str(cls).startswith("http://www.w3.org/2001/XMLSchema#"):
+                known_classes[cls] = None
+                label = _get_local_part(cls)
+                desc = str(next(g.objects(cls, RDFS.comment), ""))
+                props = _get_properties_for_class(g, cls)
+                if not any(p.name == "name" for p in props):
+                    props.insert(0, default_prop)
+                entities.append(NodeType(label=label, description=desc, properties=props))
+
+    for op in g.subjects(RDF.type, OWL.ObjectProperty):
+        rel_label = _get_local_part(op)
+        desc = str(next(g.objects(op, RDFS.comment), ""))
+        relations.append(RelationshipType(label=rel_label, description=desc, properties=[]))
+
+    for op in g.subjects(RDF.type, OWL.ObjectProperty):
+        rel_label = _get_local_part(op)
+        domains = [_get_local_part(d) for d in g.objects(op, RDFS.domain) if d in known_classes]
+        ranges = [_get_local_part(r) for r in g.objects(op, RDFS.range) if r in known_classes]
+        for d in domains:
+            for r in ranges:
+                patterns.append((d, rel_label, r))
+
+    return GraphSchema(
+        node_types=entities,
+        relationship_types=relations,
+        patterns=patterns,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Graph stats & duplicate detection
+# ---------------------------------------------------------------------------
+def get_graph_stats(driver: Driver) -> dict:
+    with driver.session() as session:
+        entities = session.run(
+            "MATCH (n) WHERE n.name IS NOT NULL "
+            "AND NONE(lbl IN labels(n) WHERE lbl IN $labels) "
+            "RETURN count(n) AS cnt",
+            labels=_INFRA_LABELS,
+        ).single()["cnt"]
+
+        rels = session.run(
+            "MATCH ()-[r]->() "
+            "WHERE NOT type(r) IN $rels "
+            "RETURN count(r) AS cnt",
+            rels=_INFRA_RELS,
+        ).single()["cnt"]
+
+    return {"entities": entities, "relationships": rels}
+
+
+def find_duplicate_entities(driver: Driver) -> list[dict]:
+    query = """
+    MATCH (a), (b)
+    WHERE a.name IS NOT NULL AND b.name IS NOT NULL
+      AND NONE(lbl IN labels(a) WHERE lbl IN $labels)
+      AND NONE(lbl IN labels(b) WHERE lbl IN $labels)
+      AND toLower(trim(a.name)) = toLower(trim(b.name))
+      AND elementId(a) < elementId(b)
+    WITH a, b,
+         [lbl IN labels(a) WHERE NOT lbl IN ['__Entity__', '__KGBuilder__']][0] AS label_a,
+         [lbl IN labels(b) WHERE NOT lbl IN ['__Entity__', '__KGBuilder__']][0] AS label_b
+    RETURN a.name AS name,
+           label_a,
+           label_b,
+           CASE WHEN label_a = label_b THEN 'same_label' ELSE 'cross_label' END AS match_type,
+           elementId(a) AS id_a,
+           elementId(b) AS id_b
+    """
+    with driver.session() as session:
+        return session.run(query, labels=_INFRA_LABELS).data()
+
+
+def has_any_entities(driver: Driver) -> bool:
+    with driver.session() as session:
+        result = session.run(
+            "MATCH (n) WHERE n.name IS NOT NULL "
+            "AND NONE(lbl IN labels(n) WHERE lbl IN $labels) "
+            "RETURN count(n) > 0 AS has",
+            labels=_INFRA_LABELS,
+        ).single()
+        return result["has"]
+
+
+# ---------------------------------------------------------------------------
+# Knowledge Graph construction
+# ---------------------------------------------------------------------------
+def build_knowledge_graph(
+    driver: Driver,
+    schema: GraphSchema,
+    documents: list[dict],
+    model: str,
+    on_complete=None,
+    chunk_size: int = 1000,
+    chunk_overlap: int = 250,
+):
+    llm = OpenAILLM(
+        api_key=OPENAI_API_KEY,
+        model_name=model,
+        model_params={
+            "max_tokens": 5000,
+            "response_format": {"type": "json_object"},
+            "temperature": 0,
+        },
+    )
+    splitter = FixedSizeSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
+    embedder = OpenAIEmbeddings(model="text-embedding-3-large", api_key=OPENAI_API_KEY)
+
+    kg_builder = SimpleKGPipeline(
+        llm=llm,
+        driver=driver,
+        text_splitter=splitter,
+        embedder=embedder,
+        schema=schema,
+        on_error="IGNORE",
+        from_pdf=False,
+    )
+    for component in kg_builder.runner.pipeline.show_as_dict().get("components", []):
+        if component.get("name") == "extractor":
+            component["component"].max_concurrency = int(
+                os.getenv("GRAPH_EXTRACTOR_MAX_CONCURRENCY", "1")
+            )
+
+    for i, doc in enumerate(documents):
+        logger.info(f"Processing document {i + 1}/{len(documents)}: {doc['name']}")
+        max_attempts = int(os.getenv("GRAPH_DOC_BUILD_ATTEMPTS", "3"))
+        for attempt in range(1, max_attempts + 1):
+            try:
+                _run_async(kg_builder.run_async(text=doc["text"]))
+                break
+            except Exception as exc:
+                is_last = attempt == max_attempts
+                if "rate limit" not in str(exc).lower() and "retryerror" not in type(exc).__name__.lower():
+                    raise
+                if is_last:
+                    raise
+                sleep_seconds = int(os.getenv("GRAPH_DOC_RETRY_SLEEP_SEC", "90"))
+                logger.warning(
+                    f"Rate limit while processing {doc['name']} "
+                    f"(attempt {attempt}/{max_attempts}); sleeping {sleep_seconds}s"
+                )
+                time.sleep(sleep_seconds)
+        doc_sleep = int(os.getenv("GRAPH_DOC_SLEEP_SEC", "10"))
+        if doc_sleep and i + 1 < len(documents):
+            time.sleep(doc_sleep)
+        if on_complete:
+            on_complete(i + 1, len(documents), doc["name"])
+
+    logger.info("Knowledge Graph construction complete.")
+
+
+# ---------------------------------------------------------------------------
+# Post-build relationship enrichment
+# ---------------------------------------------------------------------------
+_ENRICHMENT_PROMPT = """You are a relationship extraction expert for knowledge graphs.
+
+Given the following text and the entities already extracted from it, identify ALL relationships between these entities.
+
+TEXT:
+{chunk_text}
+
+ENTITIES FOUND IN THIS TEXT:
+{entities_list}
+
+ALLOWED RELATIONSHIP PATTERNS (source_type → relationship → target_type):
+{patterns_list}
+
+For each relationship you find, output a JSON object. Return a JSON array.
+Each object must have: "source" (entity name), "relationship" (from allowed list), "target" (entity name).
+
+Only use relationships from the ALLOWED list. Only connect entities from the ENTITIES list.
+Extract ALL relationships, not just the most obvious ones. Be thorough.
+
+Return ONLY the JSON array. No explanation."""
+
+
+def enrich_relationships(
+    driver: Driver,
+    schema: "GraphSchema",
+    model: str = "gpt-4o-mini",
+    on_progress=None,
+) -> dict:
+    chunk_query = """
+    MATCH (c:Chunk)
+    OPTIONAL MATCH (entity)-[:FROM_CHUNK]->(c)
+    WHERE entity.name IS NOT NULL
+      AND NONE(lbl IN labels(entity) WHERE lbl IN $labels)
+    WITH c, collect(DISTINCT {
+        name: entity.name,
+        label: [lbl IN labels(entity) WHERE NOT lbl IN ['__Entity__', '__KGBuilder__']][0],
+        id: elementId(entity)
+    }) AS entities
+    WHERE size(entities) >= 2
+    RETURN elementId(c) AS chunk_id, c.text AS chunk_text, entities
+    ORDER BY c.index
+    """
+
+    with driver.session() as session:
+        chunks = session.run(chunk_query, labels=_INFRA_LABELS).data()
+
+    if not chunks:
+        return {"created": 0, "chunks_processed": 0}
+
+    patterns_str = "\n".join(
+        f"  ({src})-[{rel}]->({tgt})" for src, rel, tgt in schema.patterns
+    )
+
+    client = OpenAI(api_key=OPENAI_API_KEY)
+    total_created = 0
+
+    for i, chunk in enumerate(chunks):
+        entities = chunk["entities"]
+        entities_str = "\n".join(
+            f"  - {e['name']} (type: {e['label']})" for e in entities
+        )
+
+        entity_map = {e["name"]: e for e in entities}
+
+        prompt = _ENRICHMENT_PROMPT.format(
+            chunk_text=chunk["chunk_text"][:2000],
+            entities_list=entities_str,
+            patterns_list=patterns_str,
+        )
+
+        try:
+            resp = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0,
+                response_format={"type": "json_object"},
+                max_tokens=2000,
+            )
+            raw = resp.choices[0].message.content.strip()
+            parsed = json.loads(raw)
+            rels = parsed if isinstance(parsed, list) else parsed.get("relationships", parsed.get("results", []))
+
+            valid_patterns = {(src, rel, tgt) for src, rel, tgt in schema.patterns}
+
+            with driver.session() as session:
+                for rel in rels:
+                    src_name = rel.get("source", "")
+                    tgt_name = rel.get("target", "")
+                    rel_type = rel.get("relationship", "")
+
+                    src_entity = entity_map.get(src_name)
+                    tgt_entity = entity_map.get(tgt_name)
+
+                    if not src_entity or not tgt_entity or not rel_type:
+                        continue
+
+                    if (src_entity["label"], rel_type, tgt_entity["label"]) not in valid_patterns:
+                        continue
+
+                    result = session.run(
+                        f"MATCH (a), (b) "
+                        f"WHERE elementId(a) = $src_id AND elementId(b) = $tgt_id "
+                        f"MERGE (a)-[r:`{rel_type}`]->(b) "
+                        f"RETURN CASE WHEN r IS NOT NULL THEN 1 ELSE 0 END AS created",
+                        src_id=src_entity["id"], tgt_id=tgt_entity["id"],
+                    ).single()
+                    if result:
+                        total_created += 1
+
+        except Exception as e:
+            logger.warning(f"Enrichment failed for chunk {i}: {e}")
+
+        if on_progress:
+            on_progress(i + 1, len(chunks))
+
+    logger.info(f"Relationship enrichment: {total_created} relationships across {len(chunks)} chunks")
+    return {"created": total_created, "chunks_processed": len(chunks)}
+
+
+# ---------------------------------------------------------------------------
+# Post-build property normalization
+# ---------------------------------------------------------------------------
+def normalize_entity_names(driver: Driver) -> dict:
+    with driver.session() as session:
+        result = session.run(
+            "MATCH (n) WHERE n.hasName IS NOT NULL AND n.name IS NULL "
+            "SET n.name = n.hasName "
+            "RETURN count(n) AS fixed"
+        ).single()
+        fixed = result["fixed"] if result else 0
+    if fixed:
+        logger.info(f"Normalized {fixed} entities: copied hasName → name")
+    return {"fixed": fixed}
+
+
+# ---------------------------------------------------------------------------
+# Edge weight computation (shared-chunk frequency, normalized)
+# ---------------------------------------------------------------------------
+def compute_edge_weights(driver: Driver, alpha: float = 0.1) -> dict:
+    count_query = """
+    MATCH (a)-[r]->(b)
+    WHERE NOT type(r) IN $rels
+      AND a.name IS NOT NULL AND b.name IS NOT NULL
+      AND NONE(lbl IN labels(a) WHERE lbl IN $labels)
+      AND NONE(lbl IN labels(b) WHERE lbl IN $labels)
+    OPTIONAL MATCH (a)-[:FROM_CHUNK]->(c:Chunk)<-[:FROM_CHUNK]-(b)
+    WITH r, elementId(a) AS aid, elementId(b) AS bid, type(r) AS rel_type,
+         count(DISTINCT c) AS shared_chunks
+    RETURN elementId(r) AS rel_id, aid, bid, rel_type, shared_chunks
+    """
+
+    with driver.session() as session:
+        rows = session.run(count_query, rels=_INFRA_RELS, labels=_INFRA_LABELS).data()
+
+    if not rows:
+        return {"updated": 0, "max_shared": 0}
+
+    max_shared = max(r["shared_chunks"] for r in rows)
+    if max_shared == 0:
+        max_shared = 1
+
+    updated = 0
+    with driver.session() as session:
+        for row in rows:
+            normalized = row["shared_chunks"] / max_shared
+            weight = round(alpha + (1 - alpha) * normalized, 4)
+            session.run(
+                "MATCH ()-[r]->() WHERE elementId(r) = $rid SET r.weight = $w",
+                rid=row["rel_id"], w=weight,
+            )
+            updated += 1
+
+    logger.info(f"Edge weights computed: {updated} relationships, max shared chunks: {max_shared}, alpha: {alpha}")
+    return {"updated": updated, "max_shared": max_shared}
+
+
+# ---------------------------------------------------------------------------
+# Contextual Evidence Layer
+# ---------------------------------------------------------------------------
+def clear_evidence_layer(driver: Driver) -> dict:
+    with driver.session() as session:
+        deleted = session.run(
+            "MATCH (e:Evidence) DETACH DELETE e RETURN count(*) AS cnt"
+        ).single()["cnt"]
+    logger.info(f"Evidence layer cleared: {deleted} nodes removed")
+    return {"deleted": deleted}
+
+
+def create_evidence_layer(driver: Driver) -> dict:
+    clear_evidence_layer(driver)
+
+    query = """
+    MATCH (a)-[r]->(b)
+    WHERE NOT type(r) IN $rels
+      AND a.name IS NOT NULL AND b.name IS NOT NULL
+      AND NONE(lbl IN labels(a) WHERE lbl IN $labels)
+      AND NONE(lbl IN labels(b) WHERE lbl IN $labels)
+    OPTIONAL MATCH (a)-[:FROM_CHUNK]->(c:Chunk)<-[:FROM_CHUNK]-(b)
+    WITH a, b, type(r) AS rel_type, collect(DISTINCT c) AS chunks
+    UNWIND CASE WHEN size(chunks) = 0 THEN [null] ELSE chunks END AS chunk
+    CREATE (e:Evidence {
+        rel_type: rel_type,
+        source_type: CASE WHEN chunk IS NULL THEN 'inference' ELSE 'document' END,
+        source_text: CASE WHEN chunk IS NOT NULL
+                     THEN left(coalesce(chunk.text, ''), 500)
+                     ELSE 'Cross-chunk inference' END,
+        confidence: CASE WHEN chunk IS NOT NULL THEN 0.8 ELSE 0.5 END,
+        extracted_at: toString(datetime())
+    })
+    CREATE (e)-[:EVIDENCE_SOURCE]->(a)
+    CREATE (e)-[:EVIDENCE_TARGET]->(b)
+    RETURN count(e) AS created
+    """
+    with driver.session() as session:
+        result = session.run(query, rels=_INFRA_RELS, labels=_INFRA_LABELS).single()
+        created = result["created"] if result else 0
+    logger.info(f"Evidence layer: {created} evidence nodes created")
+    return {"created": created}
+
+
+def create_web_evidence(driver: Driver) -> dict:
+    query = """
+    MATCH (a)-[r]->(b)
+    WHERE NOT type(r) IN $rels
+      AND a.name IS NOT NULL AND b.name IS NOT NULL
+      AND NONE(lbl IN labels(a) WHERE lbl IN $labels)
+      AND NONE(lbl IN labels(b) WHERE lbl IN $labels)
+    MATCH (a)-[:FROM_CHUNK]->(c:Chunk)-[sim:SIMILAR_TO]->(wc:WebChunk)
+    WHERE (b)-[:FROM_CHUNK]->(c)
+    WITH a, b, type(r) AS rel_type,
+         collect(DISTINCT {text: left(coalesce(wc.text, ''), 500), sim: sim.weight}) AS web_chunks
+    UNWIND web_chunks AS wchunk
+    WHERE wchunk.text IS NOT NULL
+    CREATE (e:Evidence {
+        rel_type: rel_type,
+        source_type: 'web',
+        source_text: wchunk.text,
+        confidence: round(0.6 * coalesce(wchunk.sim, 0.5) * 1000) / 1000,
+        extracted_at: toString(datetime())
+    })
+    CREATE (e)-[:EVIDENCE_SOURCE]->(a)
+    CREATE (e)-[:EVIDENCE_TARGET]->(b)
+    RETURN count(e) AS created
+    """
+    with driver.session() as session:
+        result = session.run(query, rels=_INFRA_RELS, labels=_INFRA_LABELS).single()
+        created = result["created"] if result else 0
+    logger.info(f"Web evidence: {created} evidence nodes created")
+    return {"created": created}
+
+
+def aggregate_evidence(driver: Driver) -> dict:
+    query = """
+    MATCH (a)-[r]->(b)
+    WHERE NOT type(r) IN $rels
+      AND a.name IS NOT NULL AND b.name IS NOT NULL
+      AND NONE(lbl IN labels(a) WHERE lbl IN $labels)
+      AND NONE(lbl IN labels(b) WHERE lbl IN $labels)
+    OPTIONAL MATCH (e:Evidence)-[:EVIDENCE_SOURCE]->(a)
+    WHERE (e)-[:EVIDENCE_TARGET]->(b) AND e.rel_type = type(r)
+    WITH r,
+         collect(e.confidence) AS confidences,
+         count(e) AS evidence_count,
+         collect(DISTINCT e.source_type) AS source_types,
+         [x IN collect(e.valid_from) WHERE x IS NOT NULL AND x <> 'unknown'][0] AS vf,
+         [x IN collect(e.valid_to) WHERE x IS NOT NULL AND x <> 'unknown'][0] AS vt
+    WITH r, evidence_count, source_types, vf, vt,
+         reduce(acc = 1.0, c IN confidences | acc * (1.0 - c)) AS neg_product
+    SET r.agg_confidence = CASE
+            WHEN evidence_count = 0 THEN 0.5
+            ELSE round((1.0 - neg_product) * 1000) / 1000
+        END,
+        r.evidence_count = evidence_count,
+        r.source_types = source_types,
+        r.valid_from = vf,
+        r.valid_to = vt
+    RETURN count(r) AS updated
+    """
+    with driver.session() as session:
+        result = session.run(query, rels=_INFRA_RELS, labels=_INFRA_LABELS).single()
+        updated = result["updated"] if result else 0
+    logger.info(f"Evidence aggregated onto {updated} relationships")
+    return {"updated": updated}
+
+
+_TEMPORAL_PROMPT = (
+    "You are a temporal reasoning expert. For each relationship below, "
+    "determine when it was valid based on the source text.\n\n"
+    "{relationships}\n\n"
+    "For each, respond with valid_from (year/date/\"unknown\") and valid_to "
+    "(year/date/\"present\" if ongoing/\"unknown\").\n\n"
+    "Return a JSON object: "
+    '{{\"results\": [{{\"index\": 1, \"valid_from\": \"1991\", \"valid_to\": \"present\"}}, ...]}}\n'
+    "No explanation. Only the JSON object."
+)
+
+
+def enrich_temporal(driver: Driver, model: str = "gpt-4o-mini",
+                    batch_size: int = 15, on_progress=None) -> dict:
+    query = """
+    MATCH (e:Evidence)-[:EVIDENCE_SOURCE]->(a)
+    MATCH (e)-[:EVIDENCE_TARGET]->(b)
+    WHERE e.valid_from IS NULL AND e.source_type <> 'inference'
+    RETURN elementId(e) AS eid, e.rel_type AS rel_type,
+           a.name AS src_name, b.name AS tgt_name,
+           [lbl IN labels(a) WHERE lbl <> '__Entity__'][0] AS src_type,
+           [lbl IN labels(b) WHERE lbl <> '__Entity__'][0] AS tgt_type,
+           left(coalesce(e.source_text, ''), 400) AS context
+    """
+    with driver.session() as session:
+        rows = session.run(query).data()
+
+    if not rows:
+        return {"updated": 0, "batches": 0}
+
+    client = OpenAI(api_key=OPENAI_API_KEY)
+    updated = 0
+    total_batches = (len(rows) + batch_size - 1) // batch_size
+
+    for batch_idx in range(0, len(rows), batch_size):
+        batch = rows[batch_idx:batch_idx + batch_size]
+        batch_num = batch_idx // batch_size + 1
+
+        items = []
+        for j, row in enumerate(batch, 1):
+            items.append(
+                f"{j}. ({row['src_type']}) {row['src_name']} "
+                f"-[{row['rel_type']}]-> ({row['tgt_type']}) {row['tgt_name']}\n"
+                f"   Context: {row['context'] or 'No context'}"
+            )
+
+        try:
+            resp = client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": "You are a temporal reasoning expert."},
+                    {"role": "user", "content": _TEMPORAL_PROMPT.format(
+                        relationships="\n".join(items)
+                    )},
+                ],
+                temperature=0,
+                response_format={"type": "json_object"},
+            )
+            raw = resp.choices[0].message.content
+            parsed = json.loads(raw)
+            results = parsed.get("results", []) if isinstance(parsed, dict) else parsed
+
+            with driver.session() as session:
+                for item in results:
+                    idx = item.get("index", 0) - 1
+                    if 0 <= idx < len(batch):
+                        session.run(
+                            "MATCH (e:Evidence) WHERE elementId(e) = $eid "
+                            "SET e.valid_from = $vf, e.valid_to = $vt",
+                            eid=batch[idx]["eid"],
+                            vf=str(item.get("valid_from", "unknown")),
+                            vt=str(item.get("valid_to", "unknown")),
+                        )
+                        updated += 1
+        except Exception as ex:
+            logger.warning(f"Temporal batch {batch_num}/{total_batches} failed: {ex}")
+
+        if on_progress:
+            on_progress(batch_num, total_batches)
+
+    logger.info(f"Temporal enrichment: {updated}/{len(rows)} evidence nodes")
+    return {"updated": updated, "batches": total_batches}
+
+
+def get_evidence_stats(driver: Driver) -> dict:
+    with driver.session() as session:
+        total = session.run(
+            "MATCH (e:Evidence) RETURN count(e) AS cnt"
+        ).single()["cnt"]
+        by_type = session.run(
+            "MATCH (e:Evidence) RETURN e.source_type AS type, count(e) AS cnt"
+        ).data()
+        temporal = session.run(
+            "MATCH (e:Evidence) "
+            "WHERE e.valid_from IS NOT NULL AND e.valid_from <> 'unknown' "
+            "RETURN count(e) AS cnt"
+        ).single()["cnt"]
+        agg = session.run(
+            "MATCH ()-[r]->() WHERE r.agg_confidence IS NOT NULL "
+            "RETURN round(avg(r.agg_confidence) * 1000) / 1000 AS avg_conf, "
+            "count(r) AS cnt"
+        ).single()
     return {
-        "node_types": node_types or _FALLBACK_NODE_TYPES,
-        "rel_types": rel_types or _FALLBACK_REL_TYPES,
+        "total_evidence": total,
+        "by_source_type": {r["type"]: r["cnt"] for r in by_type},
+        "temporal_enriched": temporal,
+        "avg_confidence": agg["avg_conf"] if agg["avg_conf"] else 0,
+        "relationships_scored": agg["cnt"] if agg else 0,
     }
 
 
-def _local_name(uri: str) -> str:
-    for sep in ("#", "/"):
-        if sep in uri:
-            return uri.rsplit(sep, 1)[-1]
-    return uri
-
-
-def _camel_to_upper_snake(name: str) -> str:
-    snaked = re.sub(r"([A-Z])", r"_\1", name).upper().lstrip("_")
-    return snaked or name.upper()
-
-
 # ---------------------------------------------------------------------------
-# Graph build
+# Vector index & GraphRAG retrieval
 # ---------------------------------------------------------------------------
-
-def build_knowledge_graph(
-    driver,
-    schema: dict[str, list[str]],
-    documents: list[dict[str, str]],
-    model_name: str,
-) -> None:
-    """Extract entities and relationships from every document and write to Neo4j.
-
-    Each document dict must have ``name`` (str) and ``text`` (str) keys.
-    Nodes are written WITHOUT a domain tag so that a subsequent call to
-    ``tag_new_nodes_with_domain`` can stamp them atomically.
-    """
-    client = make_llm_client()
-    _ensure_constraints(driver, schema.get("node_types", []))
-
-    for doc_idx, doc in enumerate(documents, 1):
-        chunks = _chunk_text(doc["text"], max_chars=3000, overlap=200)
-        print(
-            f"  doc {doc_idx}/{len(documents)}  {doc['name']}  ({len(chunks)} chunks)",
-            flush=True,
-        )
-        for chunk_idx, chunk in enumerate(chunks, 1):
-            print(f"    chunk {chunk_idx}/{len(chunks)} ...", end=" ", flush=True)
-            extractions = _extract_entities(client, model_name, chunk, schema, doc["name"])
-            entities = len(extractions.get("entities") or [])
-            rels = len(extractions.get("relationships") or [])
-            _write_extractions(driver, extractions, doc["name"])
-            print(f"{entities} entities, {rels} rels", flush=True)
-
-
-def _ensure_constraints(driver, node_types: list[str]) -> None:
-    with driver.session() as session:
-        for label in node_types:
-            safe = _safe_label(label)
-            try:
-                session.run(
-                    f"CREATE CONSTRAINT IF NOT EXISTS FOR (n:`{safe}`) REQUIRE n.name IS UNIQUE"
-                )
-            except Exception:
-                pass  # constraint may already exist or Neo4j edition may not support it
-
-
-def _chunk_text(text: str, max_chars: int = 3000, overlap: int = 200) -> list[str]:
-    chunks: list[str] = []
-    start = 0
-    while start < len(text):
-        end = min(start + max_chars, len(text))
-        chunks.append(text[start:end])
-        if end == len(text):
-            break
-        start = end - overlap
-    return chunks
-
-
-_EXTRACTION_SYSTEM = """\
-You are an information-extraction engine for industrial product documentation.
-Extract named entities and relationships from the provided text.
-
-Return a JSON object with exactly two keys:
-  "entities"      – list of {{"label": str, "name": str, "properties": dict}}
-  "relationships" – list of {{"from": str, "rel": str, "to": str}}
-
-Guidelines:
-- label must be one of the allowed node types listed below.
-- name should be the canonical identifier (e.g. model number or concise term).
-- properties may include description, value, unit, source_doc, etc.
-- Only emit a relationship when BOTH nodes appear in the entities list.
-- Use UPPER_SNAKE_CASE for relationship types.
-- Keep names short and consistent across chunks."""
-
-
-def _extract_entities(
-    client,
-    model_name: str,
-    text: str,
-    schema: dict[str, list[str]],
-    doc_name: str,
-) -> dict:
-    node_types = schema.get("node_types", _FALLBACK_NODE_TYPES)
-    rel_types = schema.get("rel_types", _FALLBACK_REL_TYPES)
-    system = (
-        _EXTRACTION_SYSTEM
-        + f"\n\nAllowed node types: {', '.join(node_types)}"
-        + f"\nSuggested relationship types: {', '.join(rel_types)}"
-    )
-    prompt = f"Document: {doc_name}\n\nText:\n{text}\n\nExtract entities and relationships. Output only valid JSON."
-
+def ensure_vector_index(driver: Driver):
     try:
-        response = client.chat.completions.create(
-            model=model_name,
-            messages=[
-                {"role": "system", "content": system},
-                {"role": "user", "content": prompt},
-            ],
-            temperature=0,
-            max_tokens=2048,
-            response_format={"type": "json_object"},
+        create_vector_index(
+            driver,
+            name=VECTOR_INDEX_NAME,
+            label="Chunk",
+            embedding_property="embedding",
+            dimensions=EMBEDDING_DIMENSIONS,
+            similarity_fn="cosine",
         )
-        return json.loads(response.choices[0].message.content)
-    except Exception:
-        # Fallback: try without json_object enforcement
-        try:
-            response = client.chat.completions.create(
-                model=model_name,
-                messages=[
-                    {"role": "system", "content": system},
-                    {"role": "user", "content": prompt},
-                ],
-                temperature=0,
-                max_tokens=2048,
-            )
-            raw = response.choices[0].message.content
-            match = re.search(r"\{.*\}", raw, re.DOTALL)
-            if match:
-                return json.loads(match.group(0))
-        except Exception:
-            pass
-        return {"entities": [], "relationships": []}
-
-
-def _write_extractions(driver, extractions: dict, doc_name: str) -> None:
-    entities = extractions.get("entities") or []
-    relationships = extractions.get("relationships") or []
-
-    with driver.session() as session:
-        for entity in entities:
-            label = _safe_label(str(entity.get("label", "Entity")))
-            name = str(entity.get("name", "")).strip()
-            if not name:
-                continue
-            props: dict[str, Any] = dict(entity.get("properties") or {})
-            props["name"] = name
-            props["source_doc"] = doc_name
-            try:
-                session.run(
-                    f"MERGE (n:`{label}` {{name: $name}}) SET n += $props",
-                    name=name,
-                    props=props,
-                )
-            except Exception:
-                pass
-
-        for rel in relationships:
-            from_name = str(rel.get("from", "")).strip()
-            to_name = str(rel.get("to", "")).strip()
-            rel_type = _safe_rel_type(str(rel.get("rel", "RELATED_TO")))
-            if not from_name or not to_name:
-                continue
-            try:
-                session.run(
-                    f"MATCH (a {{name: $from_name}}), (b {{name: $to_name}})"
-                    f" MERGE (a)-[:`{rel_type}`]->(b)",
-                    from_name=from_name,
-                    to_name=to_name,
-                )
-            except Exception:
-                pass
-
-
-def _safe_label(label: str) -> str:
-    return re.sub(r"[^A-Za-z0-9_]", "_", label)
-
-
-def _safe_rel_type(rel: str) -> str:
-    return re.sub(r"[^A-Z0-9_]", "_", rel.upper().replace(" ", "_"))
-
-
-# ---------------------------------------------------------------------------
-# Domain tagging
-# ---------------------------------------------------------------------------
-
-def tag_new_nodes_with_domain(driver, domain_name: str) -> int:
-    """Stamp every node that has no domain with ``domain_name``.
-
-    Returns the number of nodes tagged.
-    """
-    with driver.session() as session:
-        record = session.run(
-            "MATCH (n) WHERE n.domain IS NULL SET n.domain = $domain RETURN count(n) AS c",
-            domain=domain_name,
-        ).single()
-    return int(record["c"]) if record else 0
-
-
-# ---------------------------------------------------------------------------
-# Query / answer
-# ---------------------------------------------------------------------------
-
-_ANSWER_SYSTEM = """\
-You are a Honeywell product assistant.
-Answer the question using ONLY the graph context provided.
-If the answer is not present, respond with: "Not found in provided context."
-Be concise and factual. Quote exact numeric values and units when available."""
+        logger.info(f"Vector index '{VECTOR_INDEX_NAME}' created or already exists.")
+    except Exception as e:
+        logger.warning(f"Vector index creation note: {e}")
 
 
 def query_graph_rag(
-    driver,
+    driver: Driver,
     question: str,
-    model_name: str,
-    domain_name: str,
-) -> dict[str, Any]:
-    """Retrieve graph context for *question* and generate an answer.
+    model: str,
+    hops: int = 2,
+    weight_threshold: float = 0.2,
+    confidence_threshold: float = 0.0,
+    include_web_sources: bool = False,
+    web_similarity_threshold: float = 0.5,
+) -> dict:
+    ensure_vector_index(driver)
 
-    Returns::
+    wt = weight_threshold
+    ct = confidence_threshold
+    ws = web_similarity_threshold
 
-        {
-            "answer":  str,
-            "context": GraphRAGContext,   # .items is a list[GraphRAGContextItem]
-        }
-    """
-    client = make_llm_client()
-    context_items = _retrieve_graph_context(driver, question, domain_name)
-    context_text = _format_context(context_items)
-    answer = _generate_answer(client, model_name, question, context_text)
-    return {"answer": answer, "context": GraphRAGContext(items=context_items)}
-
-
-# ---------------------------------------------------------------------------
-# Graph retrieval helpers
-# ---------------------------------------------------------------------------
-
-_STOPWORDS = {
-    "what", "is", "the", "are", "a", "an", "of", "for", "in", "on",
-    "and", "or", "to", "how", "many", "does", "do", "can", "with",
-    "from", "its", "it", "be", "that", "this", "which", "where", "does",
-}
-
-
-def _extract_keywords(question: str) -> list[str]:
-    tokens = re.findall(r"[A-Za-z0-9]+(?:[.\-][A-Za-z0-9]+)*", question)
-    return [t for t in tokens if t.lower() not in _STOPWORDS and len(t) > 2]
-
-
-def _retrieve_graph_context(
-    driver,
-    question: str,
-    domain_name: str,
-    max_items: int = 8,
-) -> list[GraphRAGContextItem]:
-    keywords = _extract_keywords(question)
-    if not keywords:
-        return []
-
-    items: list[GraphRAGContextItem] = []
-    with driver.session() as session:
-        for keyword in keywords[:6]:
-            records = session.run(
-                """MATCH (n)
-                   WHERE n.domain = $domain
-                     AND (
-                       toLower(n.name) CONTAINS toLower($kw)
-                       OR toLower(coalesce(n.description, '')) CONTAINS toLower($kw)
-                       OR toLower(coalesce(n.value, '')) CONTAINS toLower($kw)
-                     )
-                   RETURN n, labels(n) AS lbls
-                   LIMIT 3""",
-                domain=domain_name,
-                kw=keyword,
-            ).data()
-
-            for record in records:
-                node = record["n"]
-                labels = record["lbls"]
-                content = _node_to_text(node, labels)
-                neighbors = _get_neighbors(session, node["name"], domain_name)
-                if neighbors:
-                    content += "\n  Related: " + "; ".join(neighbors)
-                score = _keyword_overlap(question, content)
-                items.append(
-                    GraphRAGContextItem(
-                        content=content,
-                        metadata={"score": score, "labels": labels},
-                    )
-                )
-
-    # Deduplicate by content then rank by keyword overlap score
-    seen: set[str] = set()
-    deduped: list[GraphRAGContextItem] = []
-    for item in items:
-        if item.content not in seen:
-            seen.add(item.content)
-            deduped.append(item)
-
-    deduped.sort(key=lambda i: i.metadata.get("score", 0.0), reverse=True)
-    return deduped[:max_items]
-
-
-def _get_neighbors(session, node_name: str, domain_name: str) -> list[str]:
-    records = session.run(
-        """MATCH (n {name: $name})-[r]-(m)
-           WHERE m.domain = $domain
-           RETURN type(r) AS rel, m.name AS neighbor
-           LIMIT 6""",
-        name=node_name,
-        domain=domain_name,
-    ).data()
-    return [f"{rec['rel']} {rec['neighbor']}" for rec in records]
-
-
-def _node_to_text(node: dict, labels: list[str]) -> str:
-    label_str = "/".join(labels) if labels else "Entity"
-    parts = [f"[{label_str}] {node.get('name', '')}"]
-    for key, value in node.items():
-        if key not in ("name", "domain", "source_doc") and value is not None:
-            parts.append(f"  {key}: {value}")
-    return "\n".join(parts)
-
-
-def _format_context(items: list[GraphRAGContextItem]) -> str:
-    if not items:
-        return "(no graph context found)"
-    return "\n\n".join(item.content for item in items)
-
-
-def _keyword_overlap(question: str, text: str) -> float:
-    keywords = _extract_keywords(question)
-    if not keywords:
-        return 0.0
-    text_lower = text.lower()
-    matched = sum(1 for kw in keywords if kw.lower() in text_lower)
-    return matched / len(keywords)
-
-
-def _generate_answer(client, model_name: str, question: str, context: str) -> str:
-    try:
-        response = client.chat.completions.create(
-            model=model_name,
-            messages=[
-                {"role": "system", "content": _ANSWER_SYSTEM},
-                {"role": "user", "content": f"Graph context:\n{context}\n\nQuestion: {question}\n\nAnswer in 3-6 lines."},
-            ],
-            temperature=0,
-            max_tokens=512,
+    web_clause = ""
+    web_with = ""
+    web_return = ""
+    if include_web_sources:
+        web_clause = (
+            "OPTIONAL MATCH (node)-[sim:SIMILAR_TO]->(wc:WebChunk) "
+            f"WHERE sim.weight >= {ws} "
         )
-        return response.choices[0].message.content.strip()
-    except Exception as exc:
-        return f"Not found in provided context. (Error: {exc})"
+        web_with = (
+            ", collect(DISTINCT CASE WHEN wc IS NOT NULL "
+            "THEN '[[WEB sim:' + toString(sim.weight) + ']] ' + coalesce(wc.text, '') "
+            "ELSE NULL END) AS web_context"
+        )
+        web_return = ", web_context"
+
+    ctx_fields = (
+        "+ ' conf:' + toString(coalesce({r}.agg_confidence, 0.5))"
+        "+ ' ev:' + toString(coalesce({r}.evidence_count, 0))"
+        "+ CASE WHEN {r}.valid_from IS NOT NULL THEN ' from:' + {r}.valid_from ELSE '' END"
+        "+ CASE WHEN {r}.valid_to IS NOT NULL THEN ' to:' + {r}.valid_to ELSE '' END"
+    )
+
+    if hops >= 2:
+        retrieval_query = (
+            "WITH node, score "
+            "OPTIONAL MATCH (entity)-[:FROM_CHUNK]->(node) "
+
+            "OPTIONAL MATCH (entity)-[r1]->(hop1) "
+            "WHERE NOT type(r1) IN ['FROM_CHUNK', 'FROM_DOCUMENT', 'NEXT_CHUNK', 'SIMILAR_TO', 'EVIDENCE_SOURCE', 'EVIDENCE_TARGET'] "
+            f"AND coalesce(r1.weight, 1.0) >= {wt} "
+            f"AND coalesce(r1.agg_confidence, 1.0) >= {ct} "
+
+            "OPTIONAL MATCH (hop1)-[r2]->(hop2) "
+            "WHERE NOT type(r2) IN ['FROM_CHUNK', 'FROM_DOCUMENT', 'NEXT_CHUNK', 'SIMILAR_TO', 'EVIDENCE_SOURCE', 'EVIDENCE_TARGET'] "
+            f"AND coalesce(r2.weight, 1.0) >= {wt} "
+            f"AND coalesce(r2.agg_confidence, 1.0) >= {ct} "
+            "AND hop2 <> entity "
+
+            + web_clause +
+
+            "WITH node, score, entity, "
+            "collect(DISTINCT coalesce(entity.name, '') + ' -[' + type(r1) "
+            "+ ' w:' + toString(coalesce(r1.weight, 1.0))"
+            + ctx_fields.format(r="r1") +
+            "+ ']-> ' "
+            "+ coalesce(hop1.name, '')) AS hop1_rels, "
+
+            "collect(DISTINCT coalesce(hop1.name, '') + ' -[' + type(r2) "
+            "+ ' w:' + toString(round(coalesce(r1.weight, 1.0) * coalesce(r2.weight, 1.0) * 1000) / 1000)"
+            "+ ' conf:' + toString(round(coalesce(r1.agg_confidence, 0.5) * coalesce(r2.agg_confidence, 0.5) * 1000) / 1000)"
+            "+ ' ev:' + toString(coalesce(r2.evidence_count, 0))"
+            "+ CASE WHEN r2.valid_from IS NOT NULL THEN ' from:' + r2.valid_from ELSE '' END"
+            "+ CASE WHEN r2.valid_to IS NOT NULL THEN ' to:' + r2.valid_to ELSE '' END"
+            "+ ']-> ' + coalesce(hop2.name, '')) AS hop2_rels"
+
+            + web_with + " "
+
+            "RETURN node.text AS text, score, "
+            "hop1_rels + hop2_rels AS relationships"
+            + web_return
+        )
+    else:
+        retrieval_query = (
+            "WITH node, score "
+            "OPTIONAL MATCH (entity)-[:FROM_CHUNK]->(node) "
+            "OPTIONAL MATCH (entity)-[r]->(neighbor) "
+            "WHERE NOT type(r) IN ['FROM_CHUNK', 'FROM_DOCUMENT', 'NEXT_CHUNK', 'SIMILAR_TO', 'EVIDENCE_SOURCE', 'EVIDENCE_TARGET'] "
+            f"AND coalesce(r.weight, 1.0) >= {wt} "
+            f"AND coalesce(r.agg_confidence, 1.0) >= {ct} "
+
+            + web_clause +
+
+            "WITH node, score, "
+            "collect(DISTINCT coalesce(entity.name, '') + ' -[' + type(r) "
+            "+ ' w:' + toString(coalesce(r.weight, 1.0))"
+            + ctx_fields.format(r="r") +
+            "+ ']-> ' "
+            "+ coalesce(neighbor.name, '')) AS relationships"
+
+            + web_with + " "
+
+            "RETURN node.text AS text, score, relationships"
+            + web_return
+        )
+
+    embedder = OpenAIEmbeddings(model=EMBEDDING_MODEL, api_key=OPENAI_API_KEY)
+
+    retriever = VectorCypherRetriever(
+        driver=driver,
+        index_name=VECTOR_INDEX_NAME,
+        retrieval_query=retrieval_query,
+        embedder=embedder,
+    )
+
+    llm = OpenAILLM(
+        api_key=OPENAI_API_KEY,
+        model_name=model,
+        model_params={"temperature": 0.3, "max_tokens": 2000},
+    )
+
+    rag = GraphRAG(retriever=retriever, llm=llm)
+
+    result = rag.search(
+        query_text=question,
+        retriever_config={"top_k": 5},
+        return_context=True,
+    )
+
+    return {
+        "answer": result.answer,
+        "context": result.retriever_result,
+        "retriever": "hybrid",
+    }

@@ -9,10 +9,9 @@ from uuid import uuid4
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_groq import ChatGroq
 from sentence_transformers import CrossEncoder
 
-from src.config import get_settings, require_groq_api_key
+from src.config import get_settings, make_chat_llm, selected_chat_model
 from src.product_records import ProductRecord, load_product_records
 from src.text_normalization import is_meaningful_line, normalize_pdf_text
 
@@ -1278,12 +1277,8 @@ def answer_question(
             Pass an empty dict {} to explicitly disable filtering.
     """
     settings = get_settings()
-    api_key = require_groq_api_key(settings)
-    llm = ChatGroq(
-        model=settings.groq_model,
-        api_key=api_key,
-        temperature=settings.temperature,
-    )
+    llm = make_chat_llm(settings)
+    model_name = selected_chat_model(settings)
 
     started_at = time.perf_counter()
 
@@ -1322,7 +1317,7 @@ def answer_question(
             "retrieval_mode": "record",
             "matched_field_name": matched_field_name,
             "latency_ms": latency_ms,
-            "model_name": settings.groq_model,
+            "model_name": model_name,
             "timestamp_utc": datetime.now(UTC).replace(microsecond=0).isoformat().replace(
                 "+00:00", "Z"
             ),
@@ -1391,7 +1386,7 @@ def answer_question(
         "retrieval_mode": "chunk",
         "matched_field_name": None,
         "latency_ms": latency_ms,
-        "model_name": settings.groq_model,
+        "model_name": model_name,
         "timestamp_utc": datetime.now(UTC).replace(microsecond=0).isoformat().replace(
             "+00:00", "Z"
         ),

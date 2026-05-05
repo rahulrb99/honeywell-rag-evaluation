@@ -23,9 +23,8 @@ from ragas.metrics._context_precision import context_precision
 from ragas.metrics._context_recall import context_recall
 from ragas.metrics._faithfulness import faithfulness
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_groq import ChatGroq
 
-from src.config import get_settings, require_groq_api_key
+from src.config import get_settings, make_chat_llm
 from src.week1_vector_rag.run_eval_week1 import load_rag_outputs_df
 
 
@@ -40,7 +39,6 @@ def run_ragas_week2(pred_df: pd.DataFrame) -> tuple[dict, pd.DataFrame]:
     Returns (mean_scores_dict, per_row_dataframe).
     """
     settings = get_settings()
-    api_key = require_groq_api_key(settings)
 
     dataset = EvaluationDataset.from_list(
         [
@@ -57,14 +55,8 @@ def run_ragas_week2(pred_df: pd.DataFrame) -> tuple[dict, pd.DataFrame]:
         ]
     )
 
-    groq_retries = int(os.getenv("GROQ_MAX_RETRIES", "8"))
     ragas_llm = LangchainLLMWrapper(
-        ChatGroq(
-            model=settings.groq_model,
-            api_key=api_key,
-            temperature=settings.temperature,
-            max_retries=groq_retries,
-        )
+        make_chat_llm(settings)
     )
     ragas_embeddings = LangchainEmbeddingsWrapper(
         HuggingFaceEmbeddings(model_name=settings.embedding_model)

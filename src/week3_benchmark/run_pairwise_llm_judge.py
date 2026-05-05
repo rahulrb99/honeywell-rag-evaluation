@@ -8,10 +8,9 @@ from typing import Any
 
 import pandas as pd
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_groq import ChatGroq
 from tqdm import tqdm
 
-from src.config import get_settings, require_groq_api_key
+from src.config import get_settings, make_chat_llm, selected_chat_model
 from src.week3_benchmark.run_week3_eval import _context_texts
 
 
@@ -92,7 +91,7 @@ def _normalize_winner(value: object) -> str:
     return "neither"
 
 
-def _invoke_with_retry(llm: ChatGroq, messages: list[Any], attempts: int = 6) -> str:
+def _invoke_with_retry(llm: Any, messages: list[Any], attempts: int = 6) -> str:
     for attempt in range(1, attempts + 1):
         try:
             return str(llm.invoke(messages).content)
@@ -111,7 +110,7 @@ def _format_contexts(value: object) -> str:
     return "\n\n".join(f"[{idx}] {text}" for idx, text in enumerate(contexts, start=1))
 
 
-def _judge_row(llm: ChatGroq, row: pd.Series) -> dict[str, Any]:
+def _judge_row(llm: Any, row: pd.Series) -> dict[str, Any]:
     prompt_value = PROMPT.format_prompt(
         question=str(row.get("question", "")),
         ground_truth=str(row.get("ground_truth", "")),
@@ -145,14 +144,13 @@ def main() -> None:
     out_json = Path(args.output_json)
     if not results_path.exists():
         raise FileNotFoundError(f"Missing Week 3 results CSV: {results_path}")
+    if out_csv.exists() and out_json.exists():
+        print(f"Reusing existing pairwise LLM judge artifacts -> {out_csv}, {out_json}")
+        return
 
     settings = get_settings()
-    api_key = require_groq_api_key(settings)
-    llm = ChatGroq(
-        model=settings.judge_model,
-        api_key=api_key,
-        temperature=settings.judge_temperature,
-    )
+    llm = make_chat_llm(settings, judge=True)
+    judge_model = selected_chat_model(settings, judge=True)
 
     results = pd.read_csv(results_path)
     rows = [_judge_row(llm, row) for _, row in tqdm(results.iterrows(), total=len(results))]
@@ -164,7 +162,7 @@ def main() -> None:
     counts = judged["winner"].value_counts().to_dict()
     summary = {
         "rows": int(len(judged)),
-        "judge_model": settings.judge_model,
+        "judge_model": judge_model,
         "winner_counts": counts,
         "judge_metric_agreement_rate": round(float(judged["judge_metric_agree"].mean()), 4),
         "mean_confidence": round(float(judged["confidence"].mean()), 4),

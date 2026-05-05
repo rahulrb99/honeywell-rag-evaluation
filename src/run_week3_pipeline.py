@@ -13,6 +13,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import os
 import runpy
@@ -35,6 +36,20 @@ DASHBOARD_INPUTS = [
 ]
 
 DASHBOARD = OUT_DIR / "dashboard.html"
+DATASET_CONFIGS = {
+    "manual": {
+        "name": "manual_28",
+        "dataset": ROOT / "data" / "eval" / "honeywell_hard_labels_28.csv",
+        "graph_output": PREDICTIONS_DIR / "honeywell_hard_labels_28_graphrag.csv",
+        "vector_output": PREDICTIONS_DIR / "vector_rag_hard_labels_28_predictions.csv",
+    },
+    "autoq": {
+        "name": "autoq_35",
+        "dataset": ROOT / "data" / "eval" / "honeywell_autoq_35.csv",
+        "graph_output": PREDICTIONS_DIR / "autoq_35_graphrag.csv",
+        "vector_output": PREDICTIONS_DIR / "autoq_35_vector_predictions.csv",
+    },
+}
 
 
 def _parse_args() -> argparse.Namespace:
@@ -45,6 +60,28 @@ def _parse_args() -> argparse.Namespace:
         "--dataset",
         default=str(ROOT / "data" / "eval" / "honeywell_hard_labels_28.csv"),
         help="Benchmark/gold dataset CSV.",
+    )
+    parser.add_argument(
+        "--dataset-mode",
+        choices=["single", "manual", "autoq", "both"],
+        default="single",
+        help=(
+            "Dataset orchestration mode. 'single' preserves --dataset/--out-dir paths; "
+            "'manual', 'autoq', and 'both' write dataset-named eval subfolders."
+        ),
+    )
+    parser.add_argument(
+        "--leaderboard",
+        action="store_true",
+        help=(
+            "Evaluate supplied dataset/GraphRAG/vector CSVs only. This skips GraphRAG "
+            "build, prediction generation, vector generation, ingest, and graph audit."
+        ),
+    )
+    parser.add_argument(
+        "--leaderboard-allow-graph-audit",
+        action="store_true",
+        help="When used with --leaderboard, still run the Neo4j graph audit snapshot.",
     )
     parser.add_argument(
         "--graph-output",
@@ -76,6 +113,16 @@ def _parse_args() -> argparse.Namespace:
         help="Do not build/update the Neo4j GraphRAG domain before generating GraphRAG predictions.",
     )
     parser.add_argument(
+        "--skip-graph-audit",
+        action="store_true",
+        help="Skip Neo4j graph-domain audit artifact generation.",
+    )
+    parser.add_argument(
+        "--strict-graph-audit",
+        action="store_true",
+        help="Fail the pipeline if graph-domain audit cannot connect to Neo4j.",
+    )
+    parser.add_argument(
         "--skip-graph-output-generation",
         action="store_true",
         help="Require --graph-output to already exist instead of generating it.",
@@ -89,6 +136,16 @@ def _parse_args() -> argparse.Namespace:
         "--force-regenerate-outputs",
         action="store_true",
         help="Regenerate GraphRAG and vector RAG prediction CSVs even when they already exist.",
+    )
+    parser.add_argument(
+        "--skip-output-audit",
+        action="store_true",
+        help="Skip prediction output quality audit before scoring.",
+    )
+    parser.add_argument(
+        "--strict-output-audit",
+        action="store_true",
+        help="Fail when output audit finds catastrophic prediction issues.",
     )
     parser.add_argument(
         "--manual-review",
@@ -133,7 +190,16 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--skip-live-ragas",
         action="store_true",
-        help="Skip the live 5-row RAGAS smoke score generation.",
+        help=(
+            "Backward-compatible alias for --ragas-mode skip when --ragas-mode is left "
+            "at its default smoke setting."
+        ),
+    )
+    parser.add_argument(
+        "--ragas-mode",
+        choices=["smoke", "full", "skip"],
+        default="smoke",
+        help="Run two-system RAGAS on a 5-row smoke subset, the full set, or skip it.",
     )
     return parser.parse_args()
 
@@ -241,6 +307,75 @@ def generate_week3_metrics(args: argparse.Namespace) -> None:
     _run_module("src.week3_benchmark.run_week3_eval", module_args)
 
 
+def generate_output_quality_audit(args: argparse.Namespace, out_dir: Path) -> None:
+    if args.skip_output_audit:
+        print("\nSkipping output quality audit.")
+        return
+    module_args = [
+        "--benchmark",
+        args.dataset,
+        "--graph-predictions",
+        args.graph_output,
+        "--vector-predictions",
+        args.vector_output,
+        "--out-dir",
+        str(out_dir),
+    ]
+    if args.strict_output_audit:
+        module_args.append("--strict")
+    _run_module("src.week3_benchmark.run_output_quality_audit", module_args)
+
+
+def generate_metric_win_rates(out_dir: Path) -> None:
+    _run_module(
+        "src.week3_benchmark.compare_metric_win_rates",
+        [
+            "--results",
+            str(out_dir / "eval_results.csv"),
+            "--out-dir",
+            str(out_dir),
+        ],
+    )
+
+
+def generate_review_queue(out_dir: Path) -> None:
+    _run_module(
+        "src.week3_benchmark.build_review_queue",
+        [
+            "--results",
+            str(out_dir / "eval_results.csv"),
+            "--audit",
+            str(out_dir / "output_quality_audit.csv"),
+            "--output",
+            str(out_dir / "review_queue.csv"),
+        ],
+    )
+
+
+def render_week3_report(args: argparse.Namespace, out_dir: Path) -> None:
+    _run_module(
+        "src.week3_benchmark.render_week3_report",
+        [
+            "--out-dir",
+            str(out_dir),
+            "--report",
+            args.report,
+            "--dataset",
+            args.dataset,
+        ],
+    )
+
+
+def generate_graph_audit(args: argparse.Namespace, out_dir: Path) -> None:
+    if args.skip_graph_audit:
+        print("\nSkipping graph-domain audit.")
+        return
+    module_args = ["--out-dir", str(out_dir)]
+    if args.strict_graph_audit:
+        module_args.append("--strict")
+    _run_module("src.week2_graph_rag.audit_graph_domain", module_args)
+
+
 def generate_live_ragas_smoke(out_dir: Path) -> None:
     """Generate the 5-row live RAGAS score files used by the dashboard."""
     old_env = {
@@ -322,6 +457,169 @@ def generate_pairwise_llm_judge(out_dir: Path) -> Path:
     return output_json
 
 
+def generate_ragas_comparison(args: argparse.Namespace, out_dir: Path) -> None:
+    if args.ragas_mode == "skip":
+        print("\nSkipping two-system RAGAS comparison.")
+        return
+    _run_module(
+        "src.week3_benchmark.run_full_ragas_comparison",
+        [
+            "--graph-predictions",
+            args.graph_output,
+            "--vector-predictions",
+            args.vector_output,
+            "--out-dir",
+            str(out_dir),
+            "--mode",
+            args.ragas_mode,
+        ],
+    )
+
+
+def generate_query_difficulty(out_dir: Path) -> None:
+    _run_module(
+        "src.week3_benchmark.score_query_difficulty",
+        [
+            "--results",
+            str(out_dir / "eval_results.csv"),
+            "--out-dir",
+            str(out_dir),
+        ],
+    )
+
+
+def generate_graph_coverage(out_dir: Path) -> None:
+    _run_module(
+        "src.week3_benchmark.graph_coverage_metrics",
+        [
+            "--results",
+            str(out_dir / "eval_results.csv"),
+            "--out-dir",
+            str(out_dir),
+        ],
+    )
+
+
+def generate_bootstrap_cis(out_dir: Path) -> None:
+    _run_module(
+        "src.week3_benchmark.bootstrap_confidence_intervals",
+        [
+            "--results",
+            str(out_dir / "eval_results.csv"),
+            "--out-dir",
+            str(out_dir),
+        ],
+    )
+
+
+def generate_metric_disagreement(args: argparse.Namespace, out_dir: Path) -> None:
+    ragas_path = (
+        out_dir / "ragas_system_comparison.csv"
+        if args.ragas_mode != "skip" and not args.ragas_scores
+        else out_dir / "_missing_ragas_system_comparison.csv"
+    )
+    judge_path = (
+        out_dir / "pairwise_llm_judge.csv"
+        if not args.skip_llm_judge
+        else out_dir / "_missing_pairwise_llm_judge.csv"
+    )
+    _run_module(
+        "src.week3_benchmark.analyze_metric_disagreement",
+        [
+            "--results",
+            str(out_dir / "eval_results.csv"),
+            "--ragas",
+            str(ragas_path),
+            "--judge",
+            str(judge_path),
+            "--out-dir",
+            str(out_dir),
+        ],
+    )
+
+
+def generate_cost_latency(args: argparse.Namespace, out_dir: Path) -> None:
+    judge_path = (
+        out_dir / "pairwise_llm_judge.csv"
+        if not args.skip_llm_judge
+        else out_dir / "_missing_pairwise_llm_judge.csv"
+    )
+    ragas_path = (
+        out_dir / "ragas_system_comparison.csv"
+        if args.ragas_mode != "skip" and not args.ragas_scores
+        else out_dir / "_missing_ragas_system_comparison.csv"
+    )
+    _run_module(
+        "src.week3_benchmark.audit_cost_latency",
+        [
+            "--results",
+            str(out_dir / "eval_results.csv"),
+            "--graph-predictions",
+            args.graph_output,
+            "--vector-predictions",
+            args.vector_output,
+            "--judge",
+            str(judge_path),
+            "--ragas-comparison",
+            str(ragas_path),
+            "--out-dir",
+            str(out_dir),
+        ],
+    )
+
+
+def combine_dataset_outputs(base_dir: Path, dataset_names: list[str]) -> None:
+    _run_module(
+        "src.week3_benchmark.combine_dataset_outputs",
+        [
+            "--base-dir",
+            str(base_dir),
+            "--datasets",
+            *dataset_names,
+            "--output-name",
+            "combined",
+        ],
+    )
+
+
+def render_combined_outputs(args: argparse.Namespace, combined_dir: Path) -> None:
+    combined_report = combined_dir / "benchmarking_comparative_analysis.md"
+    render_args = copy.copy(args)
+    render_args.report = str(combined_report)
+    render_args.dataset = ""
+    render_week3_report(render_args, combined_dir)
+    build_dashboard(render_args, combined_dir, False, None)
+
+
+def write_run_manifest(
+    args: argparse.Namespace,
+    out_dir: Path,
+    combined_from: list[str] | None = None,
+    input_sets: list[dict[str, str]] | None = None,
+) -> None:
+    module_args = [
+        "--out-dir",
+        str(out_dir),
+        "--dataset",
+        args.dataset,
+        "--graph-output",
+        args.graph_output,
+        "--vector-output",
+        args.vector_output,
+        "--ragas-mode",
+        args.ragas_mode,
+        "--argv-json",
+        json.dumps(sys.argv[1:]),
+    ]
+    if args.skip_llm_judge:
+        module_args.append("--skip-llm-judge")
+    if input_sets:
+        module_args.extend(["--input-set-json", json.dumps(input_sets)])
+    if combined_from:
+        module_args.extend(["--combined-from", *combined_from])
+    _run_module("src.week3_benchmark.run_manifest", module_args)
+
+
 def create_ragas_smoke_subset(graph_output: str, out_dir: Path) -> Path:
     """Create a 5-row GraphRAG subset for live RAGAS smoke validation."""
     graph_df = pd.read_csv(graph_output)
@@ -364,14 +662,26 @@ def build_dashboard(
         module_args.extend(["--kappa", str(out_dir / "_missing_kappa_summary.json")])
     if args.ragas_scores:
         module_args.extend(["--ragas", args.ragas_scores])
-    elif not args.skip_live_ragas:
-        module_args.extend(["--ragas", str(out_dir / "ragas_smoke_graphrag_5_scores.json")])
+    elif args.ragas_mode != "skip":
+        module_args.extend(["--ragas", str(out_dir / "ragas_graphrag_scores.json")])
     else:
         module_args.extend(["--ragas", str(out_dir / "_missing_ragas_scores.json")])
     if llm_judge_summary:
         module_args.extend(["--llm-judge-summary", str(llm_judge_summary)])
     else:
         module_args.extend(["--llm-judge-summary", str(out_dir / "_missing_llm_judge_summary.json")])
+    module_args.extend(["--output-audit", str(out_dir / "output_quality_audit.json")])
+    module_args.extend(["--metric-win-rates", str(out_dir / "metric_win_rates_overall.csv")])
+    module_args.extend(["--review-queue", str(out_dir / "review_queue.csv")])
+    module_args.extend(["--graph-audit", str(out_dir / "graph_extraction_summary.json")])
+    module_args.extend(["--ragas-comparison", str(out_dir / "ragas_system_comparison.csv")])
+    module_args.extend(["--disagreement", str(out_dir / "metric_disagreement_analysis.csv")])
+    module_args.extend(["--difficulty", str(out_dir / "difficulty_vs_win_rate.csv")])
+    module_args.extend(["--cost-latency", str(out_dir / "cost_latency_summary.json")])
+    module_args.extend(["--graph-coverage", str(out_dir / "graph_coverage_summary_by_class.csv")])
+    module_args.extend(["--bootstrap", str(out_dir / "bootstrap_confidence_intervals.csv")])
+    module_args.extend(["--disagreement-summary", str(out_dir / "metric_disagreement_summary.json")])
+    module_args.extend(["--graph-coverage-interpretation", str(out_dir / "graph_coverage_interpretation.json")])
     _run_module("src.week3_benchmark.build_week3_dashboard", module_args)
 
 
@@ -388,8 +698,7 @@ def _print_metric_snapshot(out_dir: Path) -> None:
     print(f"  Hard-query GraphRAG win rate: {metrics.get('hard_query_graph_win_rate')}")
 
 
-def main() -> None:
-    args = _parse_args()
+def _run_one_dataset(args: argparse.Namespace) -> None:
     out_dir = Path(args.out_dir)
     dashboard = out_dir / "dashboard.html"
     print("GraphEval-Ragas Week 3 pipeline")
@@ -410,18 +719,25 @@ def main() -> None:
     vector_output_needed = args.force_regenerate_outputs or not vector_output.exists()
     if not args.skip_vector_output_generation and vector_output_needed:
         ensure_vectorstore()
+    generate_graph_audit(args, out_dir)
     generate_week3_metrics(args)
+    generate_output_quality_audit(args, out_dir)
+    generate_metric_win_rates(out_dir)
+    generate_review_queue(out_dir)
+    generate_query_difficulty(out_dir)
+    generate_graph_coverage(out_dir)
     if args.ragas_scores:
         print(f"\nUsing supplied RAGAS scores: {_relative(Path(args.ragas_scores))}")
-    elif not args.skip_live_ragas:
-        create_ragas_smoke_subset(args.graph_output, out_dir)
-        generate_live_ragas_smoke(out_dir)
     else:
-        print("\nSkipping live RAGAS smoke regeneration.")
-        print("Use --ragas-scores to include existing smoke scores.")
+        generate_ragas_comparison(args, out_dir)
 
     kappa_generated = generate_kappa_analysis(args, out_dir)
     llm_judge_summary = None if args.skip_llm_judge else generate_pairwise_llm_judge(out_dir)
+    generate_metric_disagreement(args, out_dir)
+    generate_cost_latency(args, out_dir)
+    generate_bootstrap_cis(out_dir)
+    write_run_manifest(args, out_dir)
+    render_week3_report(args, out_dir)
     _check_files([out_dir / path.name for path in DASHBOARD_INPUTS], "dashboard inputs")
     build_dashboard(args, out_dir, kappa_generated, llm_judge_summary)
     _print_metric_snapshot(out_dir)
@@ -430,6 +746,68 @@ def main() -> None:
     print(f"  Dashboard: {_relative(dashboard)}")
     print(f"  Report:    {_relative(Path(args.report))}")
     print("\nWeek 3 pipeline complete.")
+
+
+def _dataset_names_for_mode(mode: str) -> list[str]:
+    if mode == "manual":
+        return ["manual"]
+    if mode == "autoq":
+        return ["autoq"]
+    if mode == "both":
+        return ["manual", "autoq"]
+    return []
+
+
+def _args_for_dataset(args: argparse.Namespace, key: str) -> argparse.Namespace:
+    config = DATASET_CONFIGS[key]
+    dataset_args = copy.copy(args)
+    dataset_args.dataset = str(config["dataset"])
+    dataset_args.graph_output = str(config["graph_output"])
+    dataset_args.vector_output = str(config["vector_output"])
+    dataset_args.out_dir = str(Path(args.out_dir) / str(config["name"]))
+    dataset_args.report = str(Path(dataset_args.out_dir) / "benchmarking_comparative_analysis.md")
+    return dataset_args
+
+
+def _run_dataset_mode(args: argparse.Namespace) -> None:
+    keys = _dataset_names_for_mode(args.dataset_mode)
+    completed_names: list[str] = []
+    for key in keys:
+        dataset_args = _args_for_dataset(args, key)
+        print(f"\n=== Running dataset: {DATASET_CONFIGS[key]['name']} ===")
+        _run_one_dataset(dataset_args)
+        completed_names.append(str(DATASET_CONFIGS[key]["name"]))
+    if len(completed_names) > 1:
+        base_dir = Path(args.out_dir)
+        combined_dir = base_dir / "combined"
+        combine_dataset_outputs(base_dir, completed_names)
+        input_sets = [
+            {
+                "name": str(DATASET_CONFIGS[key]["name"]),
+                "dataset": str(DATASET_CONFIGS[key]["dataset"]),
+                "graph_output": str(DATASET_CONFIGS[key]["graph_output"]),
+                "vector_output": str(DATASET_CONFIGS[key]["vector_output"]),
+            }
+            for key in keys
+        ]
+        write_run_manifest(args, combined_dir, completed_names, input_sets)
+        render_combined_outputs(args, combined_dir)
+        print(f"\nCombined outputs: {_relative(combined_dir)}")
+
+
+def main() -> None:
+    args = _parse_args()
+    if args.skip_live_ragas and args.ragas_mode == "smoke":
+        args.ragas_mode = "skip"
+    if args.leaderboard:
+        args.skip_graph_domain_build = True
+        args.skip_graph_output_generation = True
+        args.skip_vector_output_generation = True
+        args.skip_graph_audit = not args.leaderboard_allow_graph_audit
+    if args.dataset_mode != "single":
+        _run_dataset_mode(args)
+        return
+    _run_one_dataset(args)
 
 
 if __name__ == "__main__":

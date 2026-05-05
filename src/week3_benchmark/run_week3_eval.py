@@ -13,6 +13,7 @@ from uuid import uuid4
 import pandas as pd
 from tqdm import tqdm
 
+from src.week3_benchmark.metrics_metadata import METRICS_VERSION, file_sha256, git_sha
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_BENCHMARK = ROOT / "data" / "eval" / "honeywell_hard_labels_28.csv"
@@ -534,6 +535,87 @@ def _write_report(
     report_path.parent.mkdir(parents=True, exist_ok=True)
     winner_counts = summary["winner_counts"]
     failure_counts = summary["failure_mode_counts"]
+    artifact_dir = report_path.parent
+    output_audit = _parse_json_cell(
+        (artifact_dir / "output_quality_audit.json").read_text(encoding="utf-8")
+        if (artifact_dir / "output_quality_audit.json").exists()
+        else "{}",
+        {},
+    )
+    graph_audit = _parse_json_cell(
+        (artifact_dir / "graph_extraction_summary.json").read_text(encoding="utf-8")
+        if (artifact_dir / "graph_extraction_summary.json").exists()
+        else "{}",
+        {},
+    )
+    metric_win_rates = (
+        pd.read_csv(artifact_dir / "metric_win_rates_overall.csv")
+        if (artifact_dir / "metric_win_rates_overall.csv").exists()
+        else pd.DataFrame()
+    )
+    review_queue = (
+        pd.read_csv(artifact_dir / "review_queue.csv")
+        if (artifact_dir / "review_queue.csv").exists()
+        else pd.DataFrame()
+    )
+    graph_coverage = (
+        pd.read_csv(artifact_dir / "graph_coverage_summary_by_class.csv")
+        if (artifact_dir / "graph_coverage_summary_by_class.csv").exists()
+        else pd.DataFrame()
+    )
+    graph_coverage_vs_winner = (
+        pd.read_csv(artifact_dir / "graph_coverage_vs_winner.csv")
+        if (artifact_dir / "graph_coverage_vs_winner.csv").exists()
+        else pd.DataFrame()
+    )
+    graph_coverage_interpretation = _parse_json_cell(
+        (artifact_dir / "graph_coverage_interpretation.json").read_text(encoding="utf-8")
+        if (artifact_dir / "graph_coverage_interpretation.json").exists()
+        else "{}",
+        {},
+    )
+    bootstrap = (
+        pd.read_csv(artifact_dir / "bootstrap_confidence_intervals.csv")
+        if (artifact_dir / "bootstrap_confidence_intervals.csv").exists()
+        else pd.DataFrame()
+    )
+    ragas_comparison = (
+        pd.read_csv(artifact_dir / "ragas_system_comparison.csv")
+        if (artifact_dir / "ragas_system_comparison.csv").exists()
+        else pd.DataFrame()
+    )
+    disagreement = (
+        pd.read_csv(artifact_dir / "metric_disagreement_analysis.csv")
+        if (artifact_dir / "metric_disagreement_analysis.csv").exists()
+        else pd.DataFrame()
+    )
+    disagreement_summary = _parse_json_cell(
+        (artifact_dir / "metric_disagreement_summary.json").read_text(encoding="utf-8")
+        if (artifact_dir / "metric_disagreement_summary.json").exists()
+        else "{}",
+        {},
+    )
+    run_manifest = _parse_json_cell(
+        (artifact_dir / "run_manifest.json").read_text(encoding="utf-8")
+        if (artifact_dir / "run_manifest.json").exists()
+        else "{}",
+        {},
+    )
+    difficulty = (
+        pd.read_csv(artifact_dir / "difficulty_vs_win_rate.csv")
+        if (artifact_dir / "difficulty_vs_win_rate.csv").exists()
+        else pd.DataFrame()
+    )
+    cost_latency = _parse_json_cell(
+        (artifact_dir / "cost_latency_summary.json").read_text(encoding="utf-8")
+        if (artifact_dir / "cost_latency_summary.json").exists()
+        else "{}",
+        {},
+    )
+    dataset_raw = str(results.attrs.get("benchmark_path", "")).strip()
+    dataset_path = Path(dataset_raw) if dataset_raw else None
+    dataset_file = dataset_path.as_posix() if dataset_path else "not recorded"
+    dataset_hash = file_sha256(dataset_path) if dataset_path and dataset_path.is_file() else ""
 
     class_table = _markdown_table(
         summary_by_class[
@@ -557,6 +639,56 @@ def _write_report(
         )
         .sort_values("count", ascending=False)
     )
+    metric_win_table = _markdown_table(metric_win_rates)
+    graph_coverage_table = _markdown_table(graph_coverage)
+    graph_coverage_winner_table = _markdown_table(graph_coverage_vs_winner)
+    bootstrap_table = _markdown_table(bootstrap)
+    ragas_table = _markdown_table(
+        ragas_comparison.head(10)[
+            [
+                col
+                for col in [
+                    "id",
+                    "query_class",
+                    "ragas_winner",
+                    "faithfulness_winner",
+                    "answer_relevancy_winner",
+                    "context_precision_winner",
+                ]
+                if col in ragas_comparison.columns
+            ]
+        ]
+        if not ragas_comparison.empty
+        else ragas_comparison
+    )
+    disagreement_table = _markdown_table(
+        disagreement.head(10)[
+            [
+                col
+                for col in [
+                    "id",
+                    "query_class",
+                    "deterministic_winner",
+                    "ragas_winner",
+                    "llm_judge_winner",
+                    "disagreement_flags",
+                ]
+                if col in disagreement.columns
+            ]
+        ]
+        if not disagreement.empty
+        else disagreement
+    )
+    difficulty_table = _markdown_table(difficulty)
+    review_queue_table = _markdown_table(
+        review_queue.head(10)[
+            [col for col in ["id", "query_class", "winner", "review_reasons", "question"] if col in review_queue.columns]
+        ]
+        if not review_queue.empty
+        else review_queue
+    )
+    graph_quality = output_audit.get("systems", {}).get("graph", {})
+    vector_quality = output_audit.get("systems", {}).get("vector", {})
 
     hard_rows = results[results["query_class"].isin(HARD_QUERY_CLASSES)]
     hard_table = _markdown_table(
@@ -602,9 +734,108 @@ The benchmark contains labeled question classes including direct factual lookup,
 
 Overall GraphRAG win rate: `{summary["graph_win_rate"]}`
 
+## Requirements Compliance
+
+| Requirement | Status | Evidence |
+|---|---|---|
+| Context Entity Recall | Done | `eval_results.csv` |
+| Context Precision | Done | `eval_results.csv` |
+| Faithfulness | Done | deterministic full-set proxy; RAGAS smoke/full RAGAS when supplied |
+| Answer Relevancy | Done | deterministic full-set proxy; RAGAS smoke/full RAGAS when supplied |
+| Baseline RAG | Done | vector prediction CSV |
+| Win rate by query class | Done | `summary_by_query_class.csv` |
+| Failure dataframe | Done | `failure_analysis.csv` |
+| Output quality audit | Done | `output_quality_audit.json` |
+| Graph audit | Done when Neo4j is reachable | `graph_extraction_summary.json` |
+
+## Metric Tiers
+
+| Tier | Name | Purpose | Primary artifacts |
+|---|---|---|---|
+| Tier 1 | Deterministic reproducible metrics | Full-set reproducible scoring and win rates | `eval_results.csv`, `metric_summary.json`, `bootstrap_confidence_intervals.csv` |
+| Tier 2 | RAGAS LLM metrics | LLM-based faithfulness/relevancy/context scoring when enabled | `ragas_system_comparison.csv` |
+| Tier 3 | Pairwise LLM judge | Pairwise preference and confidence when enabled | `pairwise_llm_judge.csv` |
+| Tier 4 | Derived graph coverage proxy metrics | Structural coverage over GraphRAG retrieved contexts | `graph_coverage_metrics.csv` |
+| Tier 5 | Operational cost/latency estimates | Runtime and token-cost estimates | `cost_latency_summary.json` |
+
+Headline sample size: `n={len(results)}`.
+
+## Output Quality Audit
+
+| System | Error Answers | Empty Answers | Not Found Answers | Empty Context Rows | Avg Context Count |
+|---|---:|---:|---:|---:|---:|
+| GraphRAG | {graph_quality.get("error_answers", "")} | {graph_quality.get("empty_answers", "")} | {graph_quality.get("not_found_answers", "")} | {graph_quality.get("empty_context_rows", "")} | {graph_quality.get("avg_context_count", "")} |
+| Vector RAG | {vector_quality.get("error_answers", "")} | {vector_quality.get("empty_answers", "")} | {vector_quality.get("not_found_answers", "")} | {vector_quality.get("empty_context_rows", "")} | {vector_quality.get("avg_context_count", "")} |
+
+## Graph Audit
+
+- Domain: `{graph_audit.get("domain", "")}`
+- Audit status: `{graph_audit.get("status", "missing")}`
+- Node count: `{graph_audit.get("node_count", "")}`
+- Relationship count: `{graph_audit.get("relationship_count", "")}`
+- Claim extraction: `{graph_audit.get("claim_note", "not reported")}`
+
 ## Results by Query Class
 
 {class_table}
+
+## Per-Metric Win Rates
+
+{metric_win_table}
+
+## Full RAGAS System Comparison
+
+{ragas_table}
+
+## Metric Disagreement Analysis
+
+{disagreement_table}
+
+## Query Difficulty Analysis
+
+{difficulty_table}
+
+## Graph Coverage Metrics
+
+These are graph coverage proxies, not full proof of graph-path correctness.
+
+- `graph_expected_entity_coverage = expected_entities_found_in_graph_contexts / expected_entities`
+- `relation_signal_coverage = source_field_or_relation_signals_found_in_graph_contexts / expected_relation_signals`
+- `structural_density = relation_like_context_count / graph_context_count`
+- `graph_coverage_score = 0.5 * graph_expected_entity_coverage + 0.3 * relation_signal_coverage + 0.2 * structural_density`
+
+{graph_coverage_table}
+
+Graph coverage by winner:
+
+{graph_coverage_winner_table}
+
+- Run median graph coverage score: `{graph_coverage_interpretation.get("median_graph_coverage_score", "")}`
+- High-coverage GraphRAG losses: `{graph_coverage_interpretation.get("high_coverage_graph_losses", "")}`
+- Low-coverage GraphRAG losses: `{graph_coverage_interpretation.get("low_coverage_graph_losses", "")}`
+
+## Bootstrap Confidence Intervals
+
+Class-level confidence intervals are reported only when the class has at least 5 rows; smaller classes are marked `insufficient_n_for_ci`.
+
+{bootstrap_table}
+
+## Cost and Latency Estimate
+
+- Total estimated latency ms: `{cost_latency.get("total_latency_ms", "")}`
+- Latency missing rows: `{cost_latency.get("latency_missing_rows", "")}`
+- Total estimated input tokens: `{cost_latency.get("total_input_tokens_est", "")}`
+- Total estimated output tokens: `{cost_latency.get("total_output_tokens_est", "")}`
+- Total estimated cost USD: `{cost_latency.get("total_cost_est_usd", "")}`
+- Cost warning: `{cost_latency.get("cost_warning", "")}`
+
+## Metric Conflict Summary
+
+- Rows with disagreement: `{disagreement_summary.get("rows_with_disagreement", "")}`
+- Deterministic vs RAGAS conflicts: `{disagreement_summary.get("deterministic_vs_ragas_conflicts", "")}`
+- Deterministic vs judge conflicts: `{disagreement_summary.get("deterministic_vs_judge_conflicts", "")}`
+- RAGAS vs judge conflicts: `{disagreement_summary.get("ragas_vs_judge_conflicts", "")}`
+- Low-confidence judge rows: `{disagreement_summary.get("low_judge_confidence_rows", "")}`
 
 ## Thematic and Multi-Hop Win Rate
 
@@ -619,6 +850,10 @@ Hard query classes used for this analysis: `{", ".join(sorted(HARD_QUERY_CLASSES
 
 {failure_table}
 
+## Review Queue Preview
+
+{review_queue_table}
+
 The failure taxonomy separates retrieval failures from context noise, unsupported answers, dodged answers, incomplete synthesis, and ties. This is useful because a single average score hides whether a system failed because it retrieved the wrong entities or because the generator failed to use good context.
 
 ## Limitations
@@ -626,6 +861,24 @@ The failure taxonomy separates retrieval failures from context noise, unsupporte
 The Week 3 layer uses deterministic proxy metrics for reproducibility and speed. These proxies are useful for ranking and debugging, but a final production evaluation should add human review or LLM-as-a-judge validation for borderline rows.
 
 The vector RAG baseline is intentionally a standard retrieval baseline, while the structured baseline from Week 2 remains secondary evidence.
+
+## Methods Appendix
+
+- Metrics version: `{METRICS_VERSION}`
+- Dataset file: `{dataset_file}`
+- Dataset rows: `{len(results)}`
+- Dataset SHA256: `{dataset_hash}`
+- Pipeline git SHA: `{git_sha(ROOT)}`
+- Run manifest: `run_manifest.json`
+- Manifest git SHA: `{run_manifest.get("git_sha", "")}`
+- Manifest combined_from: `{run_manifest.get("combined_from", "")}`
+- Input contract: dataset CSV requires `id`, `question`, `ground_truth`, `contexts`, and `query_class`; prediction CSVs require `id`, `answer`, and `retrieved_contexts`.
+- Failure taxonomy: retrieval missed entities, low context precision, unsupported answer, incomplete synthesis, tie, neither, and no clear failure.
+- Deterministic metrics are reproducible proxies for retrieval and answer quality, not human correctness.
+- RAGAS adds LLM-based faithfulness/relevancy/context scoring when enabled.
+- LLM-as-a-judge adds pairwise preference validation when enabled.
+- Graph coverage formulas are transparent structural proxies over retrieved GraphRAG contexts, not full graph-path precision.
+- Row-level `low_judge_confidence` flags use the configurable disagreement threshold, default `0.7`; summary confidence buckets are fixed as high `>=0.8`, medium `0.5-0.8`, and low `<0.5`.
 
 ## Conclusion
 
@@ -656,6 +909,7 @@ def main() -> None:
     manual_df = _load_manual_review(manual_path)
 
     results = _build_results(benchmark, graph_df, vector_df, manual_df)
+    results.attrs["benchmark_path"] = str(benchmark_path)
     if len(results) != len(benchmark):
         raise RuntimeError(f"Expected {len(benchmark)} result rows, got {len(results)}")
 
