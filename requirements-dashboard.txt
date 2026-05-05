@@ -1,3 +1,5 @@
 pandas
 tqdm
 pytest
+streamlit
+plotly

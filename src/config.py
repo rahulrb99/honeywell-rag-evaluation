@@ -2,18 +2,21 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass
-from typing import Optional
+from typing import Any, Optional
 
 from dotenv import load_dotenv
 
 
-load_dotenv()
+load_dotenv(override=True)
 
 
 @dataclass(frozen=True)
 class Settings:
     groq_api_key: Optional[str]
+    openai_api_key: Optional[str]
+    llm_provider: str
     groq_model: str
+    openai_chat_model: str
     judge_model: str
     temperature: float
     judge_temperature: float
@@ -47,10 +50,18 @@ class Settings:
 
 
 def get_settings() -> Settings:
-    api_key = os.getenv("GROQ_API_KEY", "").strip() or None
+    groq_api_key = os.getenv("GROQ_API_KEY", "").strip() or None
+    openai_api_key = os.getenv("OPENAI_API_KEY", "").strip() or None
     return Settings(
-        groq_api_key=api_key,
+        groq_api_key=groq_api_key,
+        openai_api_key=openai_api_key,
+        llm_provider=os.getenv(
+            "PIPELINE_LLM_PROVIDER", os.getenv("LLM_PROVIDER", "groq")
+        ).strip().lower(),
         groq_model=os.getenv("GROQ_MODEL", "llama-3.1-8b-instant"),
+        openai_chat_model=os.getenv(
+            "PIPELINE_OPENAI_CHAT_MODEL", os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini")
+        ),
         judge_model=os.getenv("JUDGE_MODEL", "llama-3.3-70b-versatile"),
         temperature=float(os.getenv("TEMPERATURE", "0")),
         judge_temperature=float(os.getenv("JUDGE_TEMPERATURE", "0")),
@@ -104,4 +115,39 @@ def require_groq_api_key(settings: Settings) -> str:
         return settings.groq_api_key
     raise ValueError(
         "GROQ_API_KEY is missing. Copy .env.example to .env and set your key."
+    )
+
+
+def require_openai_api_key(settings: Settings) -> str:
+    if settings.openai_api_key:
+        return settings.openai_api_key
+    raise ValueError(
+        "OPENAI_API_KEY is missing. Set it in .env or use LLM_PROVIDER=groq."
+    )
+
+
+def selected_chat_model(settings: Settings, *, judge: bool = False) -> str:
+    if settings.llm_provider == "openai":
+        return settings.openai_chat_model
+    return settings.judge_model if judge else settings.groq_model
+
+
+def make_chat_llm(settings: Settings, *, judge: bool = False) -> Any:
+    """Create the configured chat model without leaking provider details to callers."""
+    if settings.llm_provider == "openai":
+        from langchain_openai import ChatOpenAI
+
+        return ChatOpenAI(
+            model=settings.openai_chat_model,
+            api_key=require_openai_api_key(settings),
+            temperature=settings.judge_temperature if judge else settings.temperature,
+        )
+
+    from langchain_groq import ChatGroq
+
+    return ChatGroq(
+        model=settings.judge_model if judge else settings.groq_model,
+        api_key=require_groq_api_key(settings),
+        temperature=settings.judge_temperature if judge else settings.temperature,
+        max_retries=int(os.getenv("GROQ_MAX_RETRIES", "8")),
     )

@@ -21,7 +21,7 @@ sys.path.insert(0, str(GRAPH_DIR))
 
 load_dotenv(ROOT_DIR / ".env")
 
-from graph import Neo4jClient, query_graph_rag  # noqa: E402
+from graph import Neo4jClient, has_any_entities, query_graph_rag  # noqa: E402
 
 
 def _ensure_parent(path: Path) -> None:
@@ -57,11 +57,8 @@ def _context_rows(result) -> list[dict[str, object]]:
     return rows
 
 
-def _domain_exists(driver, domain_name: str) -> bool:
-    query = "MATCH (n) WHERE n.domain = $domain RETURN count(n) AS c"
-    with driver.session() as session:
-        record = session.run(query, domain=domain_name).single()
-    return bool(record and record["c"] > 0)
+def _graph_exists(driver) -> bool:
+    return bool(has_any_entities(driver))
 
 
 def main() -> None:
@@ -70,8 +67,15 @@ def main() -> None:
     output_csv = Path(
         os.getenv("GRAPH_PREDICTIONS_CSV", "outputs/predictions/week2_graphrag_predictions.csv")
     )
-    domain_name = os.getenv("GRAPH_DOMAIN_NAME", "honeywell_fire_comms_subset_20260425")
-    model_name = os.getenv("GRAPH_MODEL_NAME", "llama-3.3-70b-versatile")
+    domain_name = os.getenv("GRAPH_DOMAIN_NAME", "latest_graph_rag")
+    model_name = os.getenv("PIPELINE_GRAPH_MODEL_NAME") or os.getenv(
+        "GRAPH_MODEL_NAME", "gpt-4o-mini"
+    )
+    if model_name.startswith("llama-"):
+        model_name = "gpt-4o-mini"
+    hops = int(os.getenv("GRAPH_RAG_HOPS", "2"))
+    weight_threshold = float(os.getenv("GRAPH_RAG_WEIGHT_THRESHOLD", "0.2"))
+    confidence_threshold = float(os.getenv("GRAPH_RAG_CONFIDENCE_THRESHOLD", "0.0"))
 
     if not eval_csv.exists():
         raise FileNotFoundError(f"Missing eval CSV: {eval_csv}")
@@ -87,16 +91,23 @@ def main() -> None:
     client = Neo4jClient()
     driver = client()
     try:
-        if not _domain_exists(driver, domain_name):
+        if not _graph_exists(driver):
             raise ValueError(
-                f"GraphRAG domain '{domain_name}' does not exist in Neo4j. Build the domain first."
+                "Latest Graph_RAG graph does not exist in Neo4j. Build the graph first."
             )
 
         run_id = str(uuid4())
         rows = []
         for _, row in tqdm(eval_df.iterrows(), total=len(eval_df), desc="Running GraphRAG"):
             started_at = time.perf_counter()
-            result = query_graph_rag(driver, str(row["question"]), model_name, domain_name)
+            result = query_graph_rag(
+                driver,
+                str(row["question"]),
+                model_name,
+                hops=hops,
+                weight_threshold=weight_threshold,
+                confidence_threshold=confidence_threshold,
+            )
             latency_ms = int((time.perf_counter() - started_at) * 1000)
             record = {
                 "id": row["id"],
@@ -128,7 +139,7 @@ def main() -> None:
     _ensure_parent(output_csv)
     export_df.to_csv(output_csv, index=False)
     print(f"Loaded eval CSV -> {eval_csv}")
-    print(f"Queried GraphRAG domain -> {domain_name}")
+    print(f"Queried latest Graph_RAG graph -> {domain_name}")
     print(f"Saved GraphRAG predictions -> {output_csv}")
 
 
