@@ -6,8 +6,6 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.week1_vector_rag.run_eval_week1 import load_rag_outputs_df
-from src.week2_graph_rag.run_eval_week2 import run_ragas_week2
 from src.week3_benchmark.compare_metric_win_rates import classify_delta
 
 
@@ -29,6 +27,9 @@ def _parse_args() -> argparse.Namespace:
 
 
 def _run_system(predictions_path: Path, rows_csv: Path, scores_json: Path, limit: int | None) -> None:
+    from src.week1_vector_rag.run_eval_week1 import load_rag_outputs_df
+    from src.week2_graph_rag.run_eval_week2 import run_ragas_week2
+
     if rows_csv.exists() and scores_json.exists():
         print(f"Reusing existing RAGAS artifacts -> {rows_csv}, {scores_json}")
         return
