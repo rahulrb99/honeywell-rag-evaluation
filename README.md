@@ -12,7 +12,7 @@ This project builds two retrieval systems from the same PDF corpus, runs them ag
 
 ## Key Results
 
-Evaluated on **28 expert-labelled Honeywell technical questions** across 5 query classes:
+Evaluated on **28 expert-labelled Honeywell technical questions** across 7 query classes:
 
 | Outcome | Count | Share of 28 questions |
 |---------|------:|----------------------:|
@@ -47,7 +47,7 @@ All rates are computed over all 28 rows. The 1 "neither" row (3.6%) is a case wh
 ## Evaluation Methodology
 
 ### Benchmark datasets
-- **28 expert-labelled questions** (`data/eval/honeywell_hard_labels_28.csv`) — manually curated across 5 query classes (`single_hop_fact`, `numeric_spec`, `list_settings`, `comparison`, `multi_hop`, `theme_summary`, `relationship_reasoning`) with ground-truth answers, gold contexts, source product labels, and source field annotations.
+- **28 expert-labelled questions** (`data/eval/honeywell_hard_labels_28.csv`) — manually curated across 7 query classes (`single_hop_fact`, `numeric_spec`, `list_settings`, `comparison`, `multi_hop`, `theme_summary`, `relationship_reasoning`) with ground-truth answers, gold contexts, source product labels, and source field annotations.
 - **35 auto-generated questions** (`data/eval/honeywell_autoq_35.csv`) — machine-generated from the same PDFs via the pipeline's `autoq` mode. These expand benchmark coverage but lack expert-verified ground truth; results are presented separately and not mixed with the 28-question headline numbers.
 
 ### Metric tiers
@@ -69,76 +69,9 @@ All rates are computed over all 28 rows. The 1 "neither" row (3.6%) is a case wh
 
 ## System Architecture
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    SOURCE DATA                          │
-│  data/raw/ (Honeywell PDFs)                             │
-│  data/eval/honeywell_hard_labels_28.csv  (28 labelled)  │
-│  data/eval/honeywell_autoq_35.csv        (35 auto-gen)  │
-└────────────────────┬────────────────────────────────────┘
-                     │
-        ┌────────────┴────────────┐
-        │                         │
-        ▼                         ▼
-┌───────────────┐         ┌────────────────────────────┐
-│  src/ingest.py│         │  graphrag_engine/           │
-│  PDFPlumber   │         │  app.py + graph.py          │
-│  HuggingFace  │         │  OpenAI (text-embedding-    │
-│  all-MiniLM   │         │  3-large + GPT-4 for        │
-│  doc-type     │         │  ontology/KG extraction)    │
-│  aware split  │         │  Entity resolution          │
-│  noise filter │         │  (score_exact, score_embed, │
-│  + FAISS save │         │  score_llm_batch)           │
-└───────┬───────┘         └────────────┬───────────────┘
-        │                              │
-        ▼                              ▼
-  data/vectorstore/              Neo4j (AuraDB or local)
-  (FAISS index)                  Knowledge graph domain
-        │                              │
-        ▼                              ▼
-┌────────────────────┐   ┌────────────────────────────────┐
-│ week1_vector_rag/  │   │ week2_graph_rag/                │
-│ rag_pipeline.py    │   │ run_graphrag_predictions.py     │
-│ Groq (Llama 3.1    │   │ Groq (Llama 3.3 70B)           │
-│ 8B) answer gen     │   │ + VectorCypherRetriever         │
-│ FAISS sim+MMR+     │   │ answer generation               │
-│ cross-encoder      │   │                                 │
-│ rerank             │   │                                 │
-└────────┬───────────┘   └──────────────┬─────────────────┘
-         │                              │
-         │  outputs/predictions/        │
-         │  vector_rag_hard_labels_28   │  honeywell_hard_labels_28
-         │  _predictions.csv ◄──────────┘  _graphrag.csv
-         │
-         └───────────────────┬──────────────────────────────
-                             ▼
-               ┌─────────────────────────────────────┐
-               │   src/week3_benchmark/              │
-               │   run_week3_eval.py  (Tier 1)       │
-               │   run_full_ragas_comparison.py (T2) │ ← OpenAI / Groq
-               │   run_pairwise_llm_judge.py    (T3) │ ← Groq (judge)
-               │   bootstrap_confidence_intervals.py │
-               │   graph_coverage_metrics.py         │
-               │   build_week3_dashboard.py          │
-               └───────────────────┬─────────────────┘
-                                   │
-                                   ▼
-               ┌─────────────────────────────────────┐
-               │   outputs/eval_outputs/             │
-               │   ├── dashboard.html         ← open │
-               │   ├── eval_results.csv              │
-               │   ├── metric_summary.json           │
-               │   ├── bootstrap_*.csv               │
-               │   ├── run_manifest.json             │
-               │   └── benchmarking_comparative_     │
-               │       analysis.md                   │
-               └─────────────────────────────────────┘
+![GraphEval-Ragas Architecture](docs/architecture.svg)
 
-Side: GitHub Actions CI
-  → installs requirements-dashboard.txt
-  → python -m pytest -p no:cacheprovider (38 tests)
-  → py_compile check on 4 core modules
-```
+GraphEval-Ragas builds two independent retrieval systems from the same technical-document corpus, generates predictions against a shared benchmark, and evaluates them through three tiers: deterministic proxy metrics for reproducible ranking, RAGAS for LLM-based quality scoring (5-row smoke subset by default; full set via `--ragas-mode full`), and pairwise LLM judging for preference validation. The run manifest records SHA256 hashes, git SHA, and argv for reproducibility.
 
 **Where LLMs are called:**
 - `graphrag_engine/graph.py`: OpenAI `text-embedding-3-large` (embeddings) + `OpenAILLM` (KG extraction / ontology generation during graph build)
@@ -160,7 +93,7 @@ Side: GitHub Actions CI
 | Knowledge graph construction | `graphrag_engine/` — Neo4j domain build, OWL/RDF ontology generation, OpenAI embedding + LLM extraction, entity resolution (exact/embedding/LLM scoring), transitive cluster merging |
 | Multi-tier LLM evaluation | Deterministic proxies (Tier 1) → RAGAS (Tier 2) → pairwise LLM judge (Tier 3); metric disagreement analysis across all three |
 | Reproducible benchmarking | SHA256-verified run manifests; frozen prediction CSVs; bootstrap CIs with fixed seed; deterministic proxy metrics requiring no API calls |
-| Data engineering | Two benchmark datasets (28 expert-labelled + 35 auto-generated); 5 query classes; failure taxonomy; output quality audit; review queue generation |
+| Data engineering | Two benchmark datasets (28 expert-labelled + 35 auto-generated); 7 query classes; failure taxonomy; output quality audit; review queue generation |
 | Software engineering | Modular orchestration (`run_week3_pipeline.py`); pytest suite (38 tests covering metric helpers, schema validation, bootstrap, manifest, dashboard rendering); GitHub Actions CI |
 
 ---
