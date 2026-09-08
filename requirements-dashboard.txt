@@ -3,3 +3,5 @@ tqdm
 pytest
 streamlit
 plotly
+networkx
+openai
