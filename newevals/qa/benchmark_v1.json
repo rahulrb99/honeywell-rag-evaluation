@@ -1,0 +1,717 @@
+[
+  {
+    "answer": "The FirstCommand NFC-FFT is a fire fighter telephone system that provides secure and reliable communications for firefighters.",
+    "answer_entity": "NFC-FFT",
+    "category": "single_hop_fact",
+    "contexts": [
+      "Notifier's FirstCommand NFC-FFT is a Fire Fighter telephone system that provides secure and reliable communications for firefighters."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q001",
+    "query_class": "single_hop_fact",
+    "question": "What is the main purpose of the FirstCommand NFC-FFT system?",
+    "question_entities": [
+      "nfc-fft",
+      "primary function"
+    ],
+    "reasoning_type": "single_hop",
+    "source_eval_id": "1",
+    "source_fields": [
+      "primary_function"
+    ],
+    "source_product": "NFC-FFT",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The NFC-RM lets an operator broadcast all call paging over the speaker zones.",
+    "answer_entity": "NFC-RM",
+    "category": "single_hop_fact",
+    "contexts": [
+      "External remote console that provides all call paging broadcasts over the speaker zones.",
+      "Built-in microphone with push-to-talk feature that can be used for ALL CALL paging."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q002",
+    "query_class": "single_hop_fact",
+    "question": "What does the NFC-RM remote microphone let an operator broadcast?",
+    "question_entities": [
+      "nfc-rm",
+      "paging function",
+      "push to talk paging"
+    ],
+    "reasoning_type": "single_hop",
+    "source_eval_id": "2",
+    "source_fields": [
+      "paging_function",
+      "push_to_talk_paging"
+    ],
+    "source_product": "NFC-RM",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The NFC-FFT supports up to 24 N-FPJ phone jacks.",
+    "answer_entity": "NFC-FFT",
+    "category": "numeric_spec",
+    "contexts": [
+      "Supports up to 24 N-FPJ phone jacks."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q003",
+    "query_class": "numeric_spec",
+    "question": "How many N-FPJ phone jacks does the NFC-FFT support?",
+    "question_entities": [
+      "nfc-fft",
+      "phone jack capacity"
+    ],
+    "reasoning_type": "single_hop",
+    "source_eval_id": "3",
+    "source_fields": [
+      "phone_jack_capacity"
+    ],
+    "source_product": "NFC-FFT",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "A maximum of eight NFC-RMs can be connected to one NFC-50/100(E) primary operating console.",
+    "answer_entity": "NFC-RM",
+    "category": "numeric_spec",
+    "contexts": [
+      "A maximum of eight NFC-RMs can be connected to an NFC-50/100(E) primary operating console."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q004",
+    "query_class": "numeric_spec",
+    "question": "How many NFC-RM units can be connected to one NFC-50/100(E) primary operating console?",
+    "question_entities": [
+      "nfc-rm",
+      "remote microphone capacity"
+    ],
+    "reasoning_type": "single_hop",
+    "source_eval_id": "4",
+    "source_fields": [
+      "remote_microphone_capacity"
+    ],
+    "source_product": "NFC-RM",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The NFC-FFT onboard SLC circuit can be wired for Class A (Style 6 or Style 7) or Class B (Style 4).",
+    "answer_entity": "NFC-FFT",
+    "category": "list_settings",
+    "contexts": [
+      "Onboard SLC circuit can be wired for class A (Style 6 or Style 7) or class B (Style 4) configuration."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q005",
+    "query_class": "list_settings",
+    "question": "What wiring configurations are documented for the NFC-FFT onboard SLC circuit?",
+    "question_entities": [
+      "nfc-fft",
+      "wiring configuration"
+    ],
+    "reasoning_type": "list_retrieval",
+    "source_eval_id": "5",
+    "source_fields": [
+      "wiring_configuration"
+    ],
+    "source_product": "NFC-FFT",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The NFC-RM supports Class A (Style Z) and Class B (Style Y) wiring.",
+    "answer_entity": "NFC-RM",
+    "category": "list_settings",
+    "contexts": [
+      "Supports both Class A (Style Z) and Class B (Style Y) wiring."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q006",
+    "query_class": "list_settings",
+    "question": "What wiring configurations are documented for the NFC-RM remote microphone?",
+    "question_entities": [
+      "nfc-rm",
+      "wiring configuration"
+    ],
+    "reasoning_type": "list_retrieval",
+    "source_eval_id": "6",
+    "source_fields": [
+      "wiring_configuration"
+    ],
+    "source_product": "NFC-RM",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The NFC-FFT supports up to 24 phone jacks and up to 10 simultaneous remote handsets, while the NFC-RM allows up to 8 remote microphones per NFC-50/100(E) primary console.",
+    "answer_entity": "NFC-FFT|NFC-RM",
+    "category": "comparison",
+    "contexts": [
+      "Supports up to 24 N-FPJ phone jacks.",
+      "Allows simultaneous operation of up to 10 Fire Fighter remote handsets.",
+      "A maximum of eight NFC-RMs can be connected to an NFC-50/100(E) primary operating console."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q007",
+    "query_class": "comparison",
+    "question": "How does the scale of an NFC-FFT system compare with a single NFC-RM deployment limit?",
+    "question_entities": [
+      "nfc-fft nfc-rm",
+      "phone jack capacity",
+      "remote handset capacity",
+      "remote microphone capacity"
+    ],
+    "reasoning_type": "synthesis",
+    "source_eval_id": "7",
+    "source_fields": [
+      "phone_jack_capacity",
+      "remote_handset_capacity",
+      "remote_microphone_capacity"
+    ],
+    "source_product": "NFC-FFT|NFC-RM",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "NFC-FFT uses Class A Style 6 or Style 7 and Class B Style 4, while NFC-RM uses Class A Style Z and Class B Style Y.",
+    "answer_entity": "NFC-FFT|NFC-RM",
+    "category": "comparison",
+    "contexts": [
+      "Onboard SLC circuit can be wired for class A (Style 6 or Style 7) or class B (Style 4) configuration.",
+      "Supports both Class A (Style Z) and Class B (Style Y) wiring."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q008",
+    "query_class": "comparison",
+    "question": "How do the documented wiring style names differ between NFC-FFT and NFC-RM?",
+    "question_entities": [
+      "nfc-fft nfc-rm",
+      "wiring configuration"
+    ],
+    "reasoning_type": "synthesis",
+    "source_eval_id": "8",
+    "source_fields": [
+      "wiring_configuration"
+    ],
+    "source_product": "NFC-FFT|NFC-RM",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The LSECS guide says ONYX Series panels are expandable with NOTI-FIRE-NET, and ONYX DVC adds multi-channel audio evacuation and paging with 8 audio channels and 5 firefighter telephone channels that can broadcast distinct messages throughout an entire facility or across a campus.",
+    "answer_entity": "ONYX|NOTI-FIRE-NET|DVC",
+    "category": "multi_hop",
+    "contexts": [
+      "ONYX Series panels are easily expanded with NOTI-FIRE-NET, NOTIFIER's intelligent fire alarm network.",
+      "ONYX DVC features 8 channels of industry leading quality audio, 5 firefighter telephone channels, wire, fiber or mixed media networking options, and can broadcast multiple, distinct messages throughout an entire facility or across a campus simultaneously."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q009",
+    "query_class": "multi_hop",
+    "question": "According to the LSECS guide, how do ONYX Series panels, NOTI-FIRE-NET, and DVC work together for large facilities or campuses?",
+    "question_entities": [
+      "onyx noti-fire-net dvc",
+      "network expansion",
+      "dvc facility broadcast"
+    ],
+    "reasoning_type": "synthesis",
+    "source_eval_id": "9",
+    "source_fields": [
+      "network_expansion",
+      "dvc_facility_broadcast"
+    ],
+    "source_product": "ONYX|NOTI-FIRE-NET|DVC",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The NFC-RM extends the operator interface to remote locations and provides all call paging over the speaker zones, and a maximum of eight NFC-RMs can be connected to an NFC-50/100(E) primary operating console.",
+    "answer_entity": "NFC-RM",
+    "category": "multi_hop",
+    "contexts": [
+      "It is part of a family of external remote consoles that allows for extending the operator interface to remote locations within a building.",
+      "External remote console that provides all call paging broadcasts over the speaker zones.",
+      "A maximum of eight NFC-RMs can be connected to an NFC-50/100(E) primary operating console."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q010",
+    "query_class": "multi_hop",
+    "question": "How does the NFC-RM extend a FirstCommand system for paging and what system limit applies?",
+    "question_entities": [
+      "nfc-rm",
+      "remote console role",
+      "paging function",
+      "remote microphone capacity"
+    ],
+    "reasoning_type": "synthesis",
+    "source_eval_id": "10",
+    "source_fields": [
+      "remote_console_role",
+      "paging_function",
+      "remote_microphone_capacity"
+    ],
+    "source_product": "NFC-RM",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The LSECS guide positions ONYX Series as a flexible, expandable, backward compatible intelligent fire alarm platform that can be networked with NOTI-FIRE-NET and integrated with Digital Voice Command.",
+    "answer_entity": "ONYX",
+    "category": "theme_summary",
+    "contexts": [
+      "NOTIFIER's ONYX Series of intelligent fire alarm control panels have the flexibility to meet the needs of any size application.",
+      "ONYX Series panels are easily expanded with NOTI-FIRE-NET.",
+      "ONYX Series panels and NOTI-FIRE-NET are completely backward compatible with existing NOTIFIER intelligent systems.",
+      "Optional Integrated Digital Voice Command (DVC)."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q011",
+    "query_class": "theme_summary",
+    "question": "Summarize how the LSECS guide positions the ONYX Series platform.",
+    "question_entities": [
+      "onyx",
+      "platform positioning",
+      "network expansion",
+      "backward compatibility",
+      "dvc integration"
+    ],
+    "reasoning_type": "summary",
+    "source_eval_id": "11",
+    "source_fields": [
+      "platform_positioning",
+      "network_expansion",
+      "backward_compatibility",
+      "dvc_integration"
+    ],
+    "source_product": "ONYX",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "Within the DVC system, the DAA2 amplifier amplifies one channel of digital audio, can support a second channel with a BDA card, distributes audio on up to four outputs, and communicates with the DVC through Digital Audio Ports for control, audio, trouble, address, firefighter telephone data, and live voice paging.",
+    "answer_entity": "DAA2|DVC",
+    "category": "theme_summary",
+    "contexts": [
+      "Amplifies one channel of digital audio (two channels using the BDA card as a second channel) and distributes it on up to four outputs.",
+      "When used with a DAA2 series amplifier, a BDA can be added to support a second audio channel.",
+      "Digital Audio Ports A and B allow digital communication with the DVC over the Digital Audio Loop; control, audio, trouble, address and firefighter telephone data; and live voice paging can be communicated through these ports."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q012",
+    "query_class": "theme_summary",
+    "question": "Summarize the role of the DAA2 amplifier within the DVC system.",
+    "question_entities": [
+      "daa2 dvc",
+      "audio amplification",
+      "second audio channel",
+      "digital audio ports"
+    ],
+    "reasoning_type": "summary",
+    "source_eval_id": "12",
+    "source_fields": [
+      "audio_amplification",
+      "second_audio_channel",
+      "digital_audio_ports"
+    ],
+    "source_product": "DAA2|DVC",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The DAA2 digital audio ports connect the amplifier to the DVC over the Digital Audio Loop and carry control, audio, trouble, address, firefighter telephone data, and live voice paging.",
+    "answer_entity": "DAA2|DVC",
+    "category": "relationship_reasoning",
+    "contexts": [
+      "Digital Audio Ports A and B allow digital communication with the DVC over the Digital Audio Loop; control, audio, trouble, address and firefighter telephone data; and live voice paging can be communicated through these ports."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q013",
+    "query_class": "relationship_reasoning",
+    "question": "How are the DAA2 digital audio ports related to DVC control and firefighter telephone or live paging traffic?",
+    "question_entities": [
+      "daa2 dvc",
+      "digital audio ports"
+    ],
+    "reasoning_type": "relationship",
+    "source_eval_id": "13",
+    "source_fields": [
+      "digital_audio_ports"
+    ],
+    "source_product": "DAA2|DVC",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The NFC-FFT provides annunciation and control for local and remote telephone handsets, and its built-in display and keypad indicate phone activation and corresponding trouble conditions.",
+    "answer_entity": "NFC-FFT",
+    "category": "relationship_reasoning",
+    "contexts": [
+      "This standalone system is capable of providing annunciation and control for local and remote telephone handsets.",
+      "It includes a built in display and keypad that provide an indication of phone activation as well as corresponding trouble conditions."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q014",
+    "query_class": "relationship_reasoning",
+    "question": "How is the NFC-FFT related to local and remote handsets and to system status indication?",
+    "question_entities": [
+      "nfc-fft",
+      "handset control",
+      "status indication"
+    ],
+    "reasoning_type": "relationship",
+    "source_eval_id": "14",
+    "source_fields": [
+      "handset_control",
+      "status_indication"
+    ],
+    "source_product": "NFC-FFT",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "RK-ZONE8 is used primarily when dual channel audio is required for an application.",
+    "answer_entity": "RK-ZONE8",
+    "category": "single_hop_fact",
+    "contexts": [
+      "The RK-ZONE8 is used primarily when dual channel audio is required for an application."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q015",
+    "query_class": "single_hop_fact",
+    "question": "What is RK-ZONE8 primarily used for?",
+    "question_entities": [
+      "rk-zone8",
+      "primary usage"
+    ],
+    "reasoning_type": "single_hop",
+    "source_eval_id": "15",
+    "source_fields": [
+      "primary_usage"
+    ],
+    "source_product": "RK-ZONE8",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The NFC-RM is part of a family of external remote consoles that extends the operator interface to remote locations within a building.",
+    "answer_entity": "NFC-RM",
+    "category": "single_hop_fact",
+    "contexts": [
+      "It is part of a family of external remote consoles that allows for extending the operator interface to remote locations within a building."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q016",
+    "query_class": "single_hop_fact",
+    "question": "What operator-interface role is documented for the NFC-RM?",
+    "question_entities": [
+      "nfc-rm",
+      "remote console role"
+    ],
+    "reasoning_type": "single_hop",
+    "source_eval_id": "16",
+    "source_fields": [
+      "remote_console_role"
+    ],
+    "source_product": "NFC-RM",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The RK-ZONE8 backup power supply voltage range is 21.5 VDC to 28.5 VDC.",
+    "answer_entity": "RK-ZONE8",
+    "category": "numeric_spec",
+    "contexts": [
+      "BACKUP POWER SUPPLY VOLTAGE 21.5 VDC-28.5 VDC"
+    ],
+    "gold_reasoning_path": [],
+    "id": "q017",
+    "query_class": "numeric_spec",
+    "question": "What backup power supply voltage range is specified for RK-ZONE8?",
+    "question_entities": [
+      "rk-zone8",
+      "backup power supply voltage"
+    ],
+    "reasoning_type": "single_hop",
+    "source_eval_id": "17",
+    "source_fields": [
+      "backup_power_supply_voltage"
+    ],
+    "source_product": "RK-ZONE8",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The maximum supervisory voltage listed for L-Series speakers is 50 VDC.",
+    "answer_entity": "L-Series",
+    "category": "numeric_spec",
+    "contexts": [
+      "Maximum Supervisory Voltage (speakers) 50 VDC"
+    ],
+    "gold_reasoning_path": [],
+    "id": "q018",
+    "query_class": "numeric_spec",
+    "question": "What maximum supervisory voltage is listed for L-Series speakers?",
+    "question_entities": [
+      "l-series",
+      "maximum supervisory voltage"
+    ],
+    "reasoning_type": "single_hop",
+    "source_eval_id": "18",
+    "source_fields": [
+      "maximum_supervisory_voltage"
+    ],
+    "source_product": "L-Series",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The field-selectable candela settings on wall L-Series speaker strobes are 15, 30, 75, 95, 110, 135, and 185.",
+    "answer_entity": "L-Series",
+    "category": "list_settings",
+    "contexts": [
+      "Field-selectable candela settings on wall units: 15, 30, 75, 95, 110, 135, 185."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q019",
+    "query_class": "list_settings",
+    "question": "Which candela settings can be selected on wall L-Series speaker strobes?",
+    "question_entities": [
+      "l-series",
+      "candela settings"
+    ],
+    "reasoning_type": "list_retrieval",
+    "source_eval_id": "19",
+    "source_fields": [
+      "candela_settings"
+    ],
+    "source_product": "L-Series",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The L-PCM06B power tapping settings are 1.5 W, 3 W, and 6 W.",
+    "answer_entity": "L-PCM06B",
+    "category": "list_settings",
+    "contexts": [
+      "Power tapping 1.5 W/3 W/6 W"
+    ],
+    "gold_reasoning_path": [],
+    "id": "q020",
+    "query_class": "list_settings",
+    "question": "What power tapping settings are listed for the L-PCM06B?",
+    "question_entities": [
+      "l-pcm06b",
+      "power tapping"
+    ],
+    "reasoning_type": "list_retrieval",
+    "source_eval_id": "20",
+    "source_fields": [
+      "power_tapping"
+    ],
+    "source_product": "L-PCM06B",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "RK-ZONE8 is higher at 35 W, while the L-PCM06B maximum power is 9 W.",
+    "answer_entity": "RK-ZONE8|L-PCM06B",
+    "category": "comparison",
+    "contexts": [
+      "RATED POWER 35 W",
+      "Max power 9 W"
+    ],
+    "gold_reasoning_path": [],
+    "id": "q021",
+    "query_class": "comparison",
+    "question": "Between RK-ZONE8 rated power and L-PCM06B maximum power, which is higher and what are the values?",
+    "question_entities": [
+      "rk-zone8 l-pcm06b",
+      "rated power",
+      "max power"
+    ],
+    "reasoning_type": "synthesis",
+    "source_eval_id": "21",
+    "source_fields": [
+      "rated_power",
+      "max_power"
+    ],
+    "source_product": "RK-ZONE8|L-PCM06B",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "ONYX DVC provides 8 channels of audio and 5 firefighter telephone channels, while the DAA2 amplifies one channel of digital audio, or two channels when a BDA card is added, and distributes it on up to four outputs.",
+    "answer_entity": "ONYX DVC|DAA2",
+    "category": "comparison",
+    "contexts": [
+      "ONYX DVC features 8 channels of industry leading quality audio, 5 firefighter telephone channels.",
+      "Amplifies one channel of digital audio (two channels using the BDA card as a second channel) and distributes it on up to four outputs."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q022",
+    "query_class": "comparison",
+    "question": "How does ONYX DVC's channel capacity compare with DAA2's amplification role?",
+    "question_entities": [
+      "onyx dvc daa2",
+      "dvc facility broadcast",
+      "audio amplification"
+    ],
+    "reasoning_type": "synthesis",
+    "source_eval_id": "22",
+    "source_fields": [
+      "dvc_facility_broadcast",
+      "audio_amplification"
+    ],
+    "source_product": "ONYX DVC|DAA2",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "RK-ZONE8 monitored contact inputs can be linked with the fire alarm system to trigger alert and evacuation messages, and its 8 contact outputs can be used to activate external devices.",
+    "answer_entity": "RK-ZONE8",
+    "category": "multi_hop",
+    "contexts": [
+      "The RK-ZONE8 has 8 monitored contact inputs that can be linked with the fire alarm system to trigger alert and evacuation messages.",
+      "It has 8 contact outputs that can be used to activate external devices."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q023",
+    "query_class": "multi_hop",
+    "question": "How do RK-ZONE8 monitored inputs and contact outputs support alerting and external device activation?",
+    "question_entities": [
+      "rk-zone8",
+      "monitored contact input link",
+      "contact outputs"
+    ],
+    "reasoning_type": "synthesis",
+    "source_eval_id": "23",
+    "source_fields": [
+      "monitored_contact_input_link",
+      "contact_outputs"
+    ],
+    "source_product": "RK-ZONE8",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "A second audio channel can be added to a DAA2 series amplifier with a BDA, and an isolated alarm bus input can be used for backup activation of alarm messages when normal digital communication is lost.",
+    "answer_entity": "DAA2|BDA",
+    "category": "multi_hop",
+    "contexts": [
+      "Alternately, when used with a DAA2 series amplifier, a BDA can be added to support a second audio channel.",
+      "? Isolated alarm bus input, to be used for backup activation of alarm messages when normal digital communication is lost."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q024",
+    "query_class": "multi_hop",
+    "question": "According to the DAA2 manual, how can a second audio channel be added and how can alarm messages still be activated if normal digital communication is lost?",
+    "question_entities": [
+      "daa2 bda",
+      "second audio channel",
+      "isolated alarm bus input"
+    ],
+    "reasoning_type": "synthesis",
+    "source_eval_id": "24",
+    "source_fields": [
+      "second_audio_channel",
+      "isolated_alarm_bus_input"
+    ],
+    "source_product": "DAA2|BDA",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "RK-ZONE8 is used primarily when dual channel audio is required, expands the INTEVIO system with 8 speaker zones, 8 monitored contact inputs, and 8 contact outputs, and includes automatic fault diagnosis for items such as main power, backup power, CPU, power amplifier, speaker circuits, dry contact inputs, and the communication line.",
+    "answer_entity": "RK-ZONE8",
+    "category": "theme_summary",
+    "contexts": [
+      "The RK-ZONE8 is used primarily when dual channel audio is required for an application.",
+      "The RK-ZONE8 is a zone expansion device controlled by the RK-MCU, which adds 8 speaker zones, 8 monitored contact inputs, and 8 contact outputs to the INTEVIO system.",
+      "The zone expander has an automatic fault diagnosis function to supervise various types of faults, such as main power, backup power, CPU, power amplifier, speaker circuits, dry contact inputs, communication line, etc."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q025",
+    "query_class": "theme_summary",
+    "question": "Summarize RK-ZONE8's role in the INTEVIO system using its expansion, primary usage, and fault-supervision capabilities.",
+    "question_entities": [
+      "rk-zone8",
+      "primary usage",
+      "system additions",
+      "automatic fault diagnosis"
+    ],
+    "reasoning_type": "summary",
+    "source_eval_id": "25",
+    "source_fields": [
+      "primary_usage",
+      "system_additions",
+      "automatic_fault_diagnosis"
+    ],
+    "source_product": "RK-ZONE8",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "According to the LSECS guide, the NFS2-3030/ONYX platform is suited to large or growing facilities because it supports over 3,000 intelligent devices on ten Signaling Line Circuits, is appropriate for multiple campus buildings with a single panel, and can be expanded with NOTI-FIRE-NET while remaining backward compatible with existing NOTIFIER intelligent systems.",
+    "answer_entity": "NFS2-3030|ONYX|NOTI-FIRE-NET",
+    "category": "theme_summary",
+    "contexts": [
+      "The NFS2-3030 supports over 3,000 intelligent devices on ten Signaling Line Circuits (SLCs) - perfect for protecting high-rises, large manufacturing plants, or multiple campus buildings with a single panel.",
+      "When additional protection is required, the NFS2-3030 can be expanded using NOTI-FIRE-NET.",
+      "ONYX Series panels and NOTI-FIRE-NET are completely backward compatible with existing NOTIFIER intelligent systems."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q026",
+    "query_class": "theme_summary",
+    "question": "Summarize why the NFS2-3030/ONYX platform is suited to large or growing facilities according to the LSECS guide.",
+    "question_entities": [
+      "nfs2-3030 onyx noti-fire-net",
+      "nfs2 3030 scale",
+      "network expansion",
+      "backward compatibility"
+    ],
+    "reasoning_type": "summary",
+    "source_eval_id": "26",
+    "source_fields": [
+      "nfs2_3030_scale",
+      "network_expansion",
+      "backward_compatibility"
+    ],
+    "source_product": "NFS2-3030|ONYX|NOTI-FIRE-NET",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "In the SLC wiring manual, Style Z corresponds to Class A wiring and Style Y corresponds to Class B wiring.",
+    "answer_entity": "SLC manual",
+    "category": "relationship_reasoning",
+    "contexts": [
+      "(Class) | Style Z (Class A) Style 6 (Class A) Class A | Style 7 (Class A) Class X",
+      "(Class B) | Style Y (Class B) Style 4 (Class B) Class B | Style D and E"
+    ],
+    "gold_reasoning_path": [],
+    "id": "q027",
+    "query_class": "relationship_reasoning",
+    "question": "How are the SLC manual's Style Z and Style Y names related to Class A and Class B wiring?",
+    "question_entities": [
+      "slc manual",
+      "style z class a",
+      "style y class b"
+    ],
+    "reasoning_type": "relationship",
+    "source_eval_id": "27",
+    "source_fields": [
+      "style_z_class_a",
+      "style_y_class_b"
+    ],
+    "source_product": "SLC manual",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "NFC-RM remote microphones extend the operator interface to remote locations, provide all call paging over the speaker zones, and are housed in a keyed cabinet that limits access to qualified personnel and helps prevent unauthorized access.",
+    "answer_entity": "NFC-RM",
+    "category": "relationship_reasoning",
+    "contexts": [
+      "It is part of a family of external remote consoles that allows for extending the operator interface to remote locations within a building.",
+      "External remote console that provides all call paging broadcasts over the speaker zones.",
+      "It is housed in a cabinet with a keyed lock to limit access to qualified personnel.",
+      "Sturdy cabinet design with a keyed lock to prevent unauthorized access."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q028",
+    "query_class": "relationship_reasoning",
+    "question": "How are NFC-RM remote microphones related to operator access control and paging functions?",
+    "question_entities": [
+      "nfc-rm",
+      "remote console role",
+      "paging function",
+      "keyed lock"
+    ],
+    "reasoning_type": "relationship",
+    "source_eval_id": "28",
+    "source_fields": [
+      "remote_console_role",
+      "paging_function",
+      "keyed_lock"
+    ],
+    "source_product": "NFC-RM",
+    "source_split": "hard_label_benchmark_28"
+  }
+]

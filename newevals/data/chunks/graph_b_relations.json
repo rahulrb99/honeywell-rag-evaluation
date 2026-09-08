@@ -1,0 +1,4004 @@
+{
+  "daa2_amplifier_manual#chunk_0012": [
+    {
+      "evidence": "DS-SFM Single-mode fiber option module",
+      "object": "ds-sfm single-mode fiber option module",
+      "relation": "compatible_with",
+      "subject": "dvc digital voice command"
+    },
+    {
+      "evidence": "DS-RFM Multi-mode fiber option module",
+      "object": "ds-rfm multi-mode fiber option module",
+      "relation": "compatible_with",
+      "subject": "dvc digital voice command"
+    },
+    {
+      "evidence": "Speakers For a complete list of speakers that can be used with the products in this manual",
+      "object": "speakers",
+      "relation": "compatible_with",
+      "subject": "dvc digital voice command"
+    },
+    {
+      "evidence": "VeriFire Tools CD help file and CD pamphlet",
+      "object": "verifire tools",
+      "relation": "configured_by",
+      "subject": "dvc digital voice command"
+    },
+    {
+      "evidence": "DVC-AO Audio Option Board Installation Document",
+      "object": "dvc-ao audio option board",
+      "relation": "has_component",
+      "subject": "dvc digital voice command"
+    },
+    {
+      "evidence": "CAB-5 Series Cabinets Installation Instructions",
+      "object": "dvc digital voice command",
+      "relation": "installed_with",
+      "subject": "cab-5 series cabinets"
+    },
+    {
+      "evidence": "CAB-4 Series Cabinets Installation Instructions",
+      "object": "dvc digital voice command",
+      "relation": "installed_with",
+      "subject": "cab-4 series cabinets"
+    },
+    {
+      "evidence": "EQ-CAB Series Installation Instructions",
+      "object": "dvc digital voice command",
+      "relation": "installed_with",
+      "subject": "eq-cab series"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0014": [
+    {
+      "evidence": "They are designed to work with the DVC Digital Voice Command",
+      "object": "dvc digital voice command",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "DAA2-5025 120 25",
+      "object": "120",
+      "relation": "requires_voltage",
+      "subject": "daa2-5025"
+    },
+    {
+      "evidence": "DAA2-5025-CLA 120* 25",
+      "object": "120",
+      "relation": "requires_voltage",
+      "subject": "daa2-5025-cla"
+    },
+    {
+      "evidence": "DAA2-5025E 220 - 240 25",
+      "object": "220 - 240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa2-5025e"
+    },
+    {
+      "evidence": "DAA2-5025E-CLA 220 - 240* 25",
+      "object": "220 - 240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa2-5025e-cla"
+    },
+    {
+      "evidence": "DAA2-5070 120 70",
+      "object": "120",
+      "relation": "requires_voltage",
+      "subject": "daa2-5070"
+    },
+    {
+      "evidence": "DAA2-5070-CLA 120* 70",
+      "object": "120",
+      "relation": "requires_voltage",
+      "subject": "daa2-5070-cla"
+    },
+    {
+      "evidence": "DAA2-5070E 220 - 240 70",
+      "object": "220 - 240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa2-5070e"
+    },
+    {
+      "evidence": "DAA2-5070E-CLA 220 - 240* 70",
+      "object": "220 - 240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa2-5070e-cla"
+    },
+    {
+      "evidence": "DAA2-7525 120 25",
+      "object": "120",
+      "relation": "requires_voltage",
+      "subject": "daa2-7525"
+    },
+    {
+      "evidence": "DAA2-7525-CLA 120* 25",
+      "object": "120",
+      "relation": "requires_voltage",
+      "subject": "daa2-7525-cla"
+    },
+    {
+      "evidence": "DAA2-7525E 220 - 240 25",
+      "object": "220 - 240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa2-7525e"
+    },
+    {
+      "evidence": "DAA2-7525E-CLA 220 - 240* 25",
+      "object": "220 - 240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa2-7525e-cla"
+    },
+    {
+      "evidence": "Four Class A connections for high-level audio output when used with DAA2 Class A Daughter Card (DCADC)",
+      "object": "daa2 class a daughter card",
+      "relation": "has_component",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "Isolated alarm bus input, to be used for backup activation of alarm messages",
+      "object": "isolated alarm bus input",
+      "relation": "monitors",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "Amplifies one channel of digital audio (two channels using the BDA card as a second channel)",
+      "object": "bda card",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0015": [
+    {
+      "evidence": "Programmable through VeriFire Tools.",
+      "object": "verifire tools",
+      "relation": "supports_protocol",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "24V AUX: Power-limited (Class 2): 24V @ 0.5A",
+      "object": "24v",
+      "relation": "requires_voltage",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "5V: Future Use",
+      "object": "5v",
+      "relation": "requires_voltage",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "220-240 V AC 50/60 Hz input",
+      "object": "220-240 v ac",
+      "relation": "requires_voltage",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "Battery Charger Current-limited sealed lead acid battery charger which charges two 12 volt batteries in series",
+      "object": "12v",
+      "relation": "requires_voltage",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "Charger voltage: 27.6 VDC.",
+      "object": "27.6v",
+      "relation": "requires_voltage",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "Fuse: 8 amps, 250V , 5 x 20 mm, Fast-Acting, ceramic.",
+      "object": "fuse",
+      "relation": "has_component",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "Battery Charger Current-limited sealed lead acid battery charger which charges two 12 volt batteries in series",
+      "object": "battery charger",
+      "relation": "has_component",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "Supplied cable connections to batteries for CAB-4 and CHS-BH1",
+      "object": "cab-4",
+      "relation": "installed_with",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "Supplied cable connections to batteries for CAB-4 and CHS-BH1",
+      "object": "chs-bh1",
+      "relation": "installed_with",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "DAA2-5025 w/ BDA in Group 2 of VeriFire Tools programming",
+      "object": "bda",
+      "relation": "installed_with",
+      "subject": "daa2-5025"
+    },
+    {
+      "evidence": "DAA2-5070 w/ BDA in Group 2 of VeriFire Tools programming",
+      "object": "bda",
+      "relation": "installed_with",
+      "subject": "daa2-5070"
+    },
+    {
+      "evidence": "Disconnect of deeply-discharged battery (low battery disconnect).",
+      "object": "battery",
+      "relation": "monitors",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "Backup amplifier options.",
+      "object": "backup amplifier",
+      "relation": "controls",
+      "subject": "daa2 digital audio amplifiers"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0017": [
+    {
+      "evidence": "DAA2 Digital Audio Amplifiers EIA-485 format.",
+      "object": "eia-485",
+      "relation": "supports_protocol",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "When a fiber option module is mounted on a DAA2",
+      "object": "daa2 digital audio amplifiers",
+      "relation": "installed_with",
+      "subject": "fiber option module"
+    },
+    {
+      "evidence": "When a fiber option module is mounted on a DAA2, it disables the corresponding wire terminals.",
+      "object": "daa2 digital audio amplifiers",
+      "relation": "compatible_with",
+      "subject": "fiber option module"
+    },
+    {
+      "evidence": "TB2 (Digital Audio Port A) is disabled when a fiber option board is connected at J9.",
+      "object": "fiber option module",
+      "relation": "installed_with",
+      "subject": "tb2"
+    },
+    {
+      "evidence": "TB3 (Digital Audio Port B) is disabled when a fiber option board is connected at J10.",
+      "object": "fiber option module",
+      "relation": "installed_with",
+      "subject": "tb3"
+    },
+    {
+      "evidence": "Requires 16VDC minimum @ 20mA across the terminals to activate.",
+      "object": "16v",
+      "relation": "requires_voltage",
+      "subject": "tb4"
+    },
+    {
+      "evidence": "Nominal 24 VDC.",
+      "object": "24v",
+      "relation": "requires_voltage",
+      "subject": "tb4"
+    },
+    {
+      "evidence": "Remote Microphone Interface - TB5 RMI Power - +24VDC, power-limited @ 100mA.",
+      "object": "24v",
+      "relation": "requires_voltage",
+      "subject": "tb5"
+    },
+    {
+      "evidence": "Remote Microphone Interface - TB5 RMI Power - +24VDC, power-limited @ 100mA.",
+      "object": "dvc digital voice command",
+      "relation": "monitors",
+      "subject": "tb5"
+    },
+    {
+      "evidence": "Nominal AC signal strength 2.5VRMS, 3VRMS Max.",
+      "object": "2.5vrms",
+      "relation": "requires_voltage",
+      "subject": "tb5"
+    },
+    {
+      "evidence": "Nominal AC signal strength 2.5VRMS, 3VRMS Max.",
+      "object": "3vrms",
+      "relation": "requires_voltage",
+      "subject": "tb5"
+    },
+    {
+      "evidence": "Power-limited (Class 2) output. Supervised.",
+      "object": "16v",
+      "relation": "requires_voltage",
+      "subject": "tb7"
+    },
+    {
+      "evidence": "Class B 2-wire connections require a 3.9k ohm 1/2 watt resistor (P/N R-3.9K).",
+      "object": "r-3.9k resistor",
+      "relation": "requires_voltage",
+      "subject": "tb7"
+    },
+    {
+      "evidence": "Signal strength from low-level analog audio input ... 1.6Vp-p max ... 3.2Vp-p max.",
+      "object": "3vrms",
+      "relation": "requires_voltage",
+      "subject": "tb9"
+    },
+    {
+      "evidence": "25V RMS - DAA2-5025/DAA2-7525 speaker circuits",
+      "object": "25v rms",
+      "relation": "requires_voltage",
+      "subject": "tb10"
+    },
+    {
+      "evidence": "25V RMS - DAA2-5025/DAA2-7525 speaker circuits",
+      "object": "25v rms",
+      "relation": "requires_voltage",
+      "subject": "tb11"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0020": [
+    {
+      "evidence": "AMP FAIL: LED 4",
+      "object": "amp fail",
+      "relation": "indicates_fault",
+      "subject": "led indicator"
+    },
+    {
+      "evidence": "BACKUP FAIL: LED 26",
+      "object": "backup fail",
+      "relation": "indicates_fault",
+      "subject": "led indicator"
+    },
+    {
+      "evidence": "TRBL: LED 9",
+      "object": "trouble",
+      "relation": "indicates_fault",
+      "subject": "led indicator"
+    },
+    {
+      "evidence": "EARTH FAULT: LED 3",
+      "object": "earth fault",
+      "relation": "indicates_fault",
+      "subject": "led indicator"
+    },
+    {
+      "evidence": "GND FAULT: SW1",
+      "object": "gnd fault",
+      "relation": "indicates_fault",
+      "subject": "led indicator"
+    },
+    {
+      "evidence": "TRBL1: LED 14",
+      "object": "trbl1",
+      "relation": "indicates_fault",
+      "subject": "led indicator"
+    },
+    {
+      "evidence": "TRBL2: LED 15",
+      "object": "trbl2",
+      "relation": "indicates_fault",
+      "subject": "led indicator"
+    },
+    {
+      "evidence": "TRBL3: LED 16",
+      "object": "trbl3",
+      "relation": "indicates_fault",
+      "subject": "led indicator"
+    },
+    {
+      "evidence": "TRBL4: LED17",
+      "object": "trbl4",
+      "relation": "indicates_fault",
+      "subject": "led indicator"
+    },
+    {
+      "evidence": "Dotted line indicates position of the DAA2\u2019s CPS-24 Power Supply Board",
+      "object": "daa2 digital audio amplifiers",
+      "relation": "installed_with",
+      "subject": "16 dvc digital voice command"
+    },
+    {
+      "evidence": "DAA2\u2019s CPS-24 Power Supply Board",
+      "object": "cps-24 power supply board",
+      "relation": "has_component",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "Switches and LED indicator locations are illustrated",
+      "object": "led indicator",
+      "relation": "has_component",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "Switches and LED indicator locations are illustrated",
+      "object": "switch",
+      "relation": "has_component",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "Switches and LED indicator locations are illustrated",
+      "object": "jumper",
+      "relation": "has_component",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "USB RM-15",
+      "object": "rm-15",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "2WIRE",
+      "object": "2wire",
+      "relation": "compatible_with",
+      "subject": "daa2 digital audio amplifiers"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0023": [
+    {
+      "evidence": "DAA2 Board Name Switch # Description",
+      "object": "daa2 board",
+      "relation": "has_component",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "A CHS-BH1 Battery Chassis may be mounted to the left of the DAA2.",
+      "object": "chs-bh1 battery chassis",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "One chassis is for use with the DCADC.",
+      "object": "dcadc",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "When the DCADC chassis is not employed, a BDA-25/70V , NCM, or HS-NCM, can be mounted on it.",
+      "object": "bda-25/70v",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "When the DCADC chassis is not employed, a BDA-25/70V , NCM, or HS-NCM, can be mounted on it.",
+      "object": "ncm",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "When the DCADC chassis is not employed, a BDA-25/70V , NCM, or HS-NCM, can be mounted on it.",
+      "object": "hs-ncm",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "The DAA2 chassis mounts in a CAB-4 Series cabinet",
+      "object": "cab-4 series cabinet",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "The DAA2 chassis mounts in a CAB-4 Series cabinet, as well as in the EQCAB Series backboxes.",
+      "object": "eqcab series backboxes",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "A CHS-ADP adapter plate is needed for mounting the chassis in a CAB-5 Series cabinet.",
+      "object": "chs-adp adapter plate",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "A CHS-ADP adapter plate is needed for mounting the chassis in a CAB-5 Series cabinet.",
+      "object": "cab-5 series cabinet",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "Green +5V logic power is OK.",
+      "object": "5v logic power",
+      "relation": "requires_voltage",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "1 blink - AC FAIL.",
+      "object": "ac fail",
+      "relation": "indicates_fault",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "2 blinks - HIGH BATTERY.",
+      "object": "high battery",
+      "relation": "indicates_fault",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "3 blinks - LOW BATTERY.",
+      "object": "low battery",
+      "relation": "indicates_fault",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "4 blinks - CHARGER TROUBLE.",
+      "object": "charger trouble",
+      "relation": "indicates_fault",
+      "subject": "cps-24 power supply board"
+    },
+    {
+      "evidence": "When earth fault switch SW1 is enabled: Illuminates while earth fault is detected anywhere on the DAA2 except DAPA.",
+      "object": "earth fault",
+      "relation": "indicates_fault",
+      "subject": "earth fault switch sw1"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0038": [
+    {
+      "evidence": "the amplified signal from the DAA2 may be connected to an audio coupling transformer (ACT-25 for 25V amplifiers)",
+      "object": "act-25",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "the amplified signal from the DAA2 may be connected to an audio coupling transformer (ACT-70 for 70V amplifiers)",
+      "object": "act-70",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "to drive additional AA-Series amplifiers",
+      "object": "aa-series amplifiers",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "When a DAA2\u2019s Riser Mode is programmed RISER MODE TO ADDITIONAL AMPLIFIERS",
+      "object": "riser mode to additional amplifiers",
+      "relation": "configured_by",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "When a DAA2\u2019s Riser Mode is programmed RISER MODE TO CONTROL MODULES",
+      "object": "riser mode to control modules",
+      "relation": "configured_by",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "the amplified signal from the DAA2 may be routed to multiple speaker circuits using SLC control modules",
+      "object": "slc control modules",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "For V-type control modules, this requires a resistor cut under the label",
+      "object": "resistor",
+      "relation": "requires_voltage",
+      "subject": "v-type control modules"
+    },
+    {
+      "evidence": "For H-type modules, a jumper must be removed under the label",
+      "object": "jumper",
+      "relation": "requires_voltage",
+      "subject": "h-type modules"
+    },
+    {
+      "evidence": "For XP6-C modules, a jumper must be removed for each address",
+      "object": "jumper",
+      "relation": "requires_voltage",
+      "subject": "xp6-c modules"
+    },
+    {
+      "evidence": "four Class A risers when the DAA2 is used with the DCADC",
+      "object": "dcadc",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "When R ISER MODE TO ADDITIONAL AMPLIFIERS is selected in programming",
+      "object": "riser mode to additional amplifiers",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    },
+    {
+      "evidence": "When RISER MODE TO CONTROL MODULES is selected in programming",
+      "object": "riser mode to control modules",
+      "relation": "installed_with",
+      "subject": "daa2 digital audio amplifiers"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0049": [
+    {
+      "evidence": "220-240 V AC, 50/60 Hz input",
+      "object": "220-240 v ac",
+      "relation": "requires_voltage",
+      "subject": "dax digital audio amplifiers"
+    },
+    {
+      "evidence": "Charger voltage: 27.6 VDC",
+      "object": "27.6v",
+      "relation": "requires_voltage",
+      "subject": "battery charger"
+    },
+    {
+      "evidence": "Battery Charger (DAX-35 Boards Only)",
+      "object": "dax-35 boards",
+      "relation": "installed_with",
+      "subject": "battery charger"
+    },
+    {
+      "evidence": "EIA-485 format",
+      "object": "eia-485",
+      "relation": "communicates_with",
+      "subject": "digital audio ports a and b"
+    },
+    {
+      "evidence": "When a fiber option module is mounted on a DAX",
+      "object": "dax digital audio amplifiers",
+      "relation": "installed_with",
+      "subject": "fiber option modules"
+    },
+    {
+      "evidence": "TB1 (Digital Audio Port A) is disabled when a fiber option board is connected at J2. TB2 (Digital Audio Port B) is disabled when a fiber option board is connected at J3.",
+      "object": "digital audio ports a and b",
+      "relation": "compatible_with",
+      "subject": "fiber option modules"
+    },
+    {
+      "evidence": "Requires 16 VDC @ 20mA across the terminals to activate",
+      "object": "16v",
+      "relation": "requires_voltage",
+      "subject": "alarm bus"
+    },
+    {
+      "evidence": "Nominal 24 VDC",
+      "object": "24v",
+      "relation": "requires_voltage",
+      "subject": "alarm bus"
+    },
+    {
+      "evidence": "A DAX-3570 and DAX-5070 speaker circuit used with any Canadian Room Isolator modules is non-power-limited.",
+      "object": "dax-3570",
+      "relation": "compatible_with",
+      "subject": "speaker circuits"
+    },
+    {
+      "evidence": "A DAX-3570 and DAX-5070 speaker circuit used with any Canadian Room Isolator modules is non-power-limited.",
+      "object": "dax-5070",
+      "relation": "compatible_with",
+      "subject": "speaker circuits"
+    },
+    {
+      "evidence": "25VRMS - DAX-5025/DAX-3525 speaker circuits",
+      "object": "25v rms",
+      "relation": "requires_voltage",
+      "subject": "speaker circuits"
+    },
+    {
+      "evidence": "70VRMS - DAX-5070/DAX-3570 speaker circuits",
+      "object": "70v rms",
+      "relation": "requires_voltage",
+      "subject": "speaker circuits"
+    },
+    {
+      "evidence": "DAX-5025/70 - Each circuit rated up to 50 watts.",
+      "object": "speaker circuits",
+      "relation": "controls",
+      "subject": "dax-5025/70"
+    },
+    {
+      "evidence": "DAX-3525/70 - Each circuit rated up to 35 watts.",
+      "object": "speaker circuits",
+      "relation": "controls",
+      "subject": "dax-3525/70"
+    },
+    {
+      "evidence": "Refer to \u201cBDA Backup Digital Amplifiers\u201d on page 63 for configurations.",
+      "object": "dax digital audio amplifiers",
+      "relation": "installed_with",
+      "subject": "backup digital amplifiers"
+    },
+    {
+      "evidence": "25V RMS (DAX-5025 and DAX-3525)",
+      "object": "25v rms",
+      "relation": "requires_voltage",
+      "subject": "backup from alternate amplifier"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0076": [
+    {
+      "evidence": "The DVC-PCC and all other DAL devices except fiber DAA amplifiers support wire media as shipped.",
+      "object": "wire terminals",
+      "relation": "supports_protocol",
+      "subject": "dvc-pcc"
+    },
+    {
+      "evidence": "The use of fiber optic media requires the use of fiber option modules.",
+      "object": "fiber option modules",
+      "relation": "compatible_with",
+      "subject": "fiber optic cable"
+    },
+    {
+      "evidence": "When a fiber option module is mounted on a DAA2 or DAX, it disables the corresponding wire terminals.",
+      "object": "fiber option board",
+      "relation": "has_component",
+      "subject": "fiber option modules"
+    },
+    {
+      "evidence": "One or two fiber option modules may be connected to a DAX or DAA2 board to convert it from a board with two wire DAP ports to ...",
+      "object": "dax board",
+      "relation": "installed_with",
+      "subject": "fiber option modules"
+    },
+    {
+      "evidence": "One or two fiber option modules may be connected to a DAX or DAA2 board to convert it from a board with two wire DAP ports to ...",
+      "object": "daa2 board",
+      "relation": "installed_with",
+      "subject": "fiber option modules"
+    },
+    {
+      "evidence": "DAA2: TB2 (Digital Audio Port A) is disabled when a fiber option board is connected at J9.",
+      "object": "daa2 board",
+      "relation": "installed_with",
+      "subject": "fiber option board"
+    },
+    {
+      "evidence": "DAX: TB1 (Digital Audio Port A) is disabled when a fiber option board is connected at J2.",
+      "object": "dax board",
+      "relation": "installed_with",
+      "subject": "fiber option board"
+    },
+    {
+      "evidence": "When a fiber option module is mounted on a DAA2 or DAX, it disables the corresponding wire terminals.",
+      "object": "wire terminals",
+      "relation": "indicates_fault",
+      "subject": "fiber option board"
+    },
+    {
+      "evidence": "Fiber optic cable, multi-mode: 50/125 or 62.5/125 micrometers.",
+      "object": "fiber optic cable",
+      "relation": "requires_voltage",
+      "subject": "ds-fm"
+    },
+    {
+      "evidence": "Fiber optic cable, single-mode: 9/125 micrometers.",
+      "object": "fiber optic cable",
+      "relation": "requires_voltage",
+      "subject": "ds-sfm"
+    },
+    {
+      "evidence": "The maximum attenuation: 6.5dB for multi-mode with 50/125 micrometer cable @ 1310 nm.",
+      "object": "multi-mode fiber",
+      "relation": "compatible_with",
+      "subject": "ds-fm"
+    },
+    {
+      "evidence": "10dB for multi-mode with 62.5/125 micrometer cable @ 1310 nm.",
+      "object": "multi-mode fiber",
+      "relation": "compatible_with",
+      "subject": "ds-fm"
+    },
+    {
+      "evidence": "30dB for single-mode with 9/125 micrometer cable @ 1310 nm.",
+      "object": "single-mode fiber",
+      "relation": "compatible_with",
+      "subject": "ds-sfm"
+    },
+    {
+      "evidence": "The maximum attenuation: 17dB for single-mode with 9/125 micrometer cable at 1310 nm going from the DS-SFM to the fiber DVC or fiber DAA.",
+      "object": "single-mode fiber",
+      "relation": "compatible_with",
+      "subject": "ds-sfm"
+    },
+    {
+      "evidence": "4dB for single-mode with 9/125 micrometer cable going from the fiber DVC or fiber DAA to the DS-SFM.",
+      "object": "single-mode fiber",
+      "relation": "compatible_with",
+      "subject": "ds-sfm"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0089": [
+    {
+      "evidence": "DAA models are compatible with other types of DAL devices (e.g. DAA2, DAX)",
+      "object": "daa2",
+      "relation": "compatible_with",
+      "subject": "daa digital audio amplifiers"
+    },
+    {
+      "evidence": "DAA models are compatible with other types of DAL devices (e.g. DAA2, DAX)",
+      "object": "dax",
+      "relation": "compatible_with",
+      "subject": "daa digital audio amplifiers"
+    },
+    {
+      "evidence": "DAA models are compatible with other types of DAL devices ... on a wire, fiber, or mixed wire/fiber digital audio loop",
+      "object": "wire",
+      "relation": "installed_with",
+      "subject": "daa digital audio amplifiers"
+    },
+    {
+      "evidence": "DAA models are compatible with other types of DAL devices ... on a wire, fiber, or mixed wire/fiber digital audio loop",
+      "object": "fiber",
+      "relation": "installed_with",
+      "subject": "daa digital audio amplifiers"
+    },
+    {
+      "evidence": "DAA models are compatible with other types of DAL devices ... on a wire, fiber, or mixed wire/fiber digital audio loop",
+      "object": "mixed wire/fiber",
+      "relation": "installed_with",
+      "subject": "daa digital audio amplifiers"
+    },
+    {
+      "evidence": "A DS-RFM (for multi-mode DAAs) ... is required for a fiber DAA used on a DAL",
+      "object": "daa digital audio amplifiers",
+      "relation": "installed_with",
+      "subject": "ds-rfm"
+    },
+    {
+      "evidence": "A DS-SFM (for single-mode DAAs) is required for a fiber DAA used on a DAL",
+      "object": "daa digital audio amplifiers",
+      "relation": "installed_with",
+      "subject": "ds-sfm"
+    },
+    {
+      "evidence": "DAA-5025E (220-240 VAC)",
+      "object": "220-240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa-5025e"
+    },
+    {
+      "evidence": "DAA-5070E (220-240 VAC)",
+      "object": "220-240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa-5070e"
+    },
+    {
+      "evidence": "DAA-5025EF (220-240 VAC)",
+      "object": "220-240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa-5025ef"
+    },
+    {
+      "evidence": "DAA-5070EF (220-240 VAC)",
+      "object": "220-240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa-5070ef"
+    },
+    {
+      "evidence": "DAA-5025ESF (220-240 VAC)",
+      "object": "220-240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa-5025esf"
+    },
+    {
+      "evidence": "DAA-5070ESF (220-240 VAC)",
+      "object": "220-240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa-5070esf"
+    },
+    {
+      "evidence": "DAA-7525E (220-240 VAC)",
+      "object": "220-240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa-7525e"
+    },
+    {
+      "evidence": "DAA-7525EF (220-240 VAC)",
+      "object": "220-240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa-7525ef"
+    },
+    {
+      "evidence": "DAA-7525ESF (220-240 VAC)",
+      "object": "220-240 vac",
+      "relation": "requires_voltage",
+      "subject": "daa-7525esf"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0090": [
+    {
+      "evidence": "50W total output power at 25V RMS (all DAA-5025 model versions)",
+      "object": "25v rms",
+      "relation": "requires_voltage",
+      "subject": "daa-5025"
+    },
+    {
+      "evidence": "50W total output power at 70 VRMS (all DAA-5070 model versions)",
+      "object": "70 vrms",
+      "relation": "requires_voltage",
+      "subject": "daa-5070"
+    },
+    {
+      "evidence": "75W total output power at 25V RMS (all DAA-7525 model versions)",
+      "object": "25v rms",
+      "relation": "requires_voltage",
+      "subject": "daa-7525"
+    },
+    {
+      "evidence": "Two Class A connections for high-level audio output",
+      "object": "class a connections",
+      "relation": "has_component",
+      "subject": "daa-5025"
+    },
+    {
+      "evidence": "or alternately, four Class B connections",
+      "object": "class b connections",
+      "relation": "has_component",
+      "subject": "daa-5025"
+    },
+    {
+      "evidence": "or four Class A outputs when used with the DCADC DAA2 Class A Daughter Card",
+      "object": "class a connections",
+      "relation": "has_component",
+      "subject": "daa-5025"
+    },
+    {
+      "evidence": "four Class A outputs when used with the DCADC DAA2 Class A Daughter Card",
+      "object": "daa-5025",
+      "relation": "installed_with",
+      "subject": "dcadc daa2 class a daughter card"
+    },
+    {
+      "evidence": "DAAs and their positions in the Digital Audio Loop (DAL) of a DVC",
+      "object": "digital audio loop",
+      "relation": "controls",
+      "subject": "daa-5025"
+    },
+    {
+      "evidence": "Audio output activation via netw ork control-by-event equations resident within the DVC",
+      "object": "netw ork control-by-event equations",
+      "relation": "configured_by",
+      "subject": "daa-5025"
+    },
+    {
+      "evidence": "Isolated alarm bus input, to be used for backup activation of alarm messages",
+      "object": "alarm bus input",
+      "relation": "monitors",
+      "subject": "daa-5025"
+    },
+    {
+      "evidence": "Auxiliary input for 12V P-P analog low-level AMG-1 type audio sources",
+      "object": "12v p-p",
+      "relation": "requires_voltage",
+      "subject": "daa-5025"
+    },
+    {
+      "evidence": "Auxiliary input for 1.6V p-p max. for each circuit when both AUXA L and AUXA R are used",
+      "object": "1.6v p-p",
+      "relation": "requires_voltage",
+      "subject": "daa-5025"
+    },
+    {
+      "evidence": "3.2Vp-p max. for one when only one circuit (AUXA L or AUXR) is used",
+      "object": "3.2vp-p",
+      "relation": "requires_voltage",
+      "subject": "daa-5025"
+    },
+    {
+      "evidence": "Programmable through VeriFire Tools",
+      "object": "verifire tools",
+      "relation": "configured_by",
+      "subject": "daa-5025"
+    },
+    {
+      "evidence": "AC Power - TB1 115-120 V AC 60 Hz input",
+      "object": "115-120 v ac",
+      "relation": "requires_voltage",
+      "subject": "daa-ps power supply board"
+    },
+    {
+      "evidence": "220-240 V AC 50/60 Hz input",
+      "object": "220-240 v ac",
+      "relation": "requires_voltage",
+      "subject": "daa-ps power supply board"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0094": [
+    {
+      "evidence": "DAAs are each comprised of two boards; a larger rear board, and a smaller front power supply board.",
+      "object": "daa-ps power supply board",
+      "relation": "has_component",
+      "subject": "daa board"
+    },
+    {
+      "evidence": "USB Connector J2 Future Use",
+      "object": "usb connector j2",
+      "relation": "installed_with",
+      "subject": "daa board"
+    },
+    {
+      "evidence": "TB2 - Digital Audio Port A Refer to page 99",
+      "object": "digital audio port a",
+      "relation": "installed_with",
+      "subject": "daa board"
+    },
+    {
+      "evidence": "TB3 - Digital Audio Port B Refer to page 99",
+      "object": "digital audio port b",
+      "relation": "installed_with",
+      "subject": "daa board"
+    },
+    {
+      "evidence": "TB1 AC INPUT Refer to page 94",
+      "object": "ac input",
+      "relation": "requires_voltage",
+      "subject": "daa-ps power supply board"
+    },
+    {
+      "evidence": "TB3 BATT CONN Refer to page 95",
+      "object": "batt",
+      "relation": "requires_voltage",
+      "subject": "daa-ps power supply board"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0103": [
+    {
+      "evidence": "A DP-1B dress panel, ordered separately, can be used to cover the row.",
+      "object": "daa digital audio amplifiers",
+      "relation": "installed_with",
+      "subject": "dp-1b dress panel"
+    },
+    {
+      "evidence": "EQCAB-D4 - Accommodates four DAAs. Consists of P/Ns EQBB-D4 (black backbox) and EQDR-D4 (black door with ventilated panels).",
+      "object": "eqbb-d4",
+      "relation": "has_component",
+      "subject": "eqcab-d4"
+    },
+    {
+      "evidence": "EQCAB-D4 - Accommodates four DAAs. Consists of P/Ns EQBB-D4 (black backbox) and EQDR-D4 (black door with ventilated panels).",
+      "object": "eqdr-d4",
+      "relation": "has_component",
+      "subject": "eqcab-d4"
+    },
+    {
+      "evidence": "Remove the TB12 connector from the DAA to allow access to the chassis standoffs.",
+      "object": "daa digital audio amplifiers",
+      "relation": "installed_with",
+      "subject": "tb12 connector"
+    },
+    {
+      "evidence": "An NCM module may be installed on the DAA.",
+      "object": "daa digital audio amplifiers",
+      "relation": "installed_with",
+      "subject": "ncm-w/f"
+    },
+    {
+      "evidence": "Fiber versions of the DAA must be installed in the top row of a CAB-4 Series cabinet, or below an empty row, to allow installation of the fiber cable.",
+      "object": "daa digital audio amplifiers",
+      "relation": "installed_with",
+      "subject": "fiber cable"
+    },
+    {
+      "evidence": "Use CHS-ADP to mount an EQ or CAB-4 chassis in the CAB-5.",
+      "object": "cab-4 series cabinet",
+      "relation": "installed_with",
+      "subject": "chs-adp"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0112": [
+    {
+      "evidence": "An FHS firefighter handset may be used with the phone jacks",
+      "object": "firefighter phone jack",
+      "relation": "installed_with",
+      "subject": "fhs firefighter handset"
+    },
+    {
+      "evidence": "Digital audio software Version 2.0 and above does not support FFT risers on DVC or DAA PCA boards",
+      "object": "daa pca board",
+      "relation": "has_component",
+      "subject": "daa digital audio amplifiers"
+    },
+    {
+      "evidence": "Refer to the DVC Digital Voice Command manual for how to distinguish PCA from PCB board types",
+      "object": "daa pcb board",
+      "relation": "has_component",
+      "subject": "daa digital audio amplifiers"
+    },
+    {
+      "evidence": "XPIQ- PS Control Cable XPIQ-PS Power",
+      "object": "xpiq-ps power",
+      "relation": "installed_with",
+      "subject": "xpiq-ps control cable"
+    },
+    {
+      "evidence": "XPIQ-MBPCA REV. FIREFIGHTER\u2019S PHONE JACK FIREFIGHTER\u2019S PHONE JACK",
+      "object": "firefighter phone jack",
+      "relation": "compatible_with",
+      "subject": "xpiq-mbpca"
+    },
+    {
+      "evidence": "Telephone Control Module FPJ or RPJ-1 Firefighter Phone Jack",
+      "object": "telephone control module",
+      "relation": "installed_with",
+      "subject": "firefighter phone jack"
+    },
+    {
+      "evidence": "An FHS firefighter handset may be used with the phone jacks in Figure C.20 FFT Riser",
+      "object": "firefighter phone jack",
+      "relation": "installed_with",
+      "subject": "fft riser"
+    },
+    {
+      "evidence": "Digital audio software Version 2.0 and above does not support FFT risers on DVC or DAA PCA boards",
+      "object": "daa pca board",
+      "relation": "compatible_with",
+      "subject": "digital audio software version 2.0"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0125": [
+    {
+      "evidence": "Backup Amplifier 102 Compatibility 8 DAA2",
+      "object": "daa2",
+      "relation": "compatible_with",
+      "subject": "backup amplifier"
+    },
+    {
+      "evidence": "Backup Amplifier 102 Compatibility 8 DAA2 36 DAX 54",
+      "object": "dax",
+      "relation": "compatible_with",
+      "subject": "backup amplifier"
+    },
+    {
+      "evidence": "DAA2 AC draw calculations 73 Battery Charging Capabilities 12",
+      "object": "24v",
+      "relation": "requires_voltage",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "DAX AC draw calculations 75 Battery Charger 43",
+      "object": "24v",
+      "relation": "requires_voltage",
+      "subject": "dax"
+    },
+    {
+      "evidence": "DAA-PS power supply board Connection Illustration 85 Specifications 82",
+      "object": "cps-24 power supply board",
+      "relation": "has_component",
+      "subject": "daa-ps power supply board"
+    },
+    {
+      "evidence": "Configuring 40 with BDA 66",
+      "object": "bda-25/70v",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Earth fault DAA2 18",
+      "object": "earth fault switch",
+      "relation": "monitors",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Earth fault switch DAX-35 62",
+      "object": "earth fault switch",
+      "relation": "monitors",
+      "subject": "dax-35"
+    },
+    {
+      "evidence": "VeriFire Tools Programming 102",
+      "object": "verifire tools programming",
+      "relation": "configured_by",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "DAAPCA boards 92",
+      "object": "daapca boards",
+      "relation": "has_component",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "DAAPCB boards 92",
+      "object": "daapcb boards",
+      "relation": "has_component",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Battery Charging Capabilities 12",
+      "object": "battery",
+      "relation": "monitors",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "CAB-4 Series Cabinets 18, 20, 46, 90",
+      "object": "cab-4 series cabinets",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "CHS-BH1 battery chassis 21, 93",
+      "object": "chs-bh1 battery chassis",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "DAA-PS power supply board Connection Illustration 85 Specifications 82",
+      "object": "daa-ps power supply board",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "DAA2 Charger Specifications 12 Charging Capabilities 12 Installation 21",
+      "object": "battery charger",
+      "relation": "installed_with",
+      "subject": "daa2"
+    }
+  ],
+  "daa2_amplifier_manual#chunk_0127": [
+    {
+      "evidence": "Power supply board on DAA2 12",
+      "object": "daa-ps power supply board",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "DAA2-Canada room isolator module 39",
+      "object": "daa2-canada room isolator module",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "DAA2 Backup Wiring 35",
+      "object": "backup wiring",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "DAX Backup Wiring 59",
+      "object": "backup wiring",
+      "relation": "installed_with",
+      "subject": "dax"
+    },
+    {
+      "evidence": "Ground fault DAA2 40",
+      "object": "ground fault",
+      "relation": "monitors",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Earth Fault 62",
+      "object": "earth fault",
+      "relation": "monitors",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "LED Indicator Descriptions 89 DAA2 17",
+      "object": "led indicator",
+      "relation": "has_component",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Switches DAA2 Description 18",
+      "object": "switches",
+      "relation": "has_component",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Volume Control 110",
+      "object": "volume control",
+      "relation": "controls",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Speaker Circuits Backup Wiring 102, 107 DAA2 Backup Wiring 35",
+      "object": "speaker circuits",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Wiring Alarm Bus 51, 97",
+      "object": "alarm bus",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Auxiliary Input A 29",
+      "object": "auxiliary input a",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Auxiliary Inputs A and B 101",
+      "object": "auxiliary inputs a and b",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Digital Audio Ports A and B 26, 52, 99",
+      "object": "digital audio ports a and b",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Trouble Bus Specifications 83 Wiring 97",
+      "object": "trouble bus",
+      "relation": "installed_with",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "Trouble messages 41",
+      "object": "trouble messages",
+      "relation": "indicates_fault",
+      "subject": "daa2"
+    }
+  ],
+  "slc_wiring_manual#chunk_0009": [
+    {
+      "evidence": "5.4: NFPA Class B SLC Using Isolator Modules",
+      "object": "isolator modules",
+      "relation": "has_component",
+      "subject": "isolator base"
+    },
+    {
+      "evidence": "5.6: NFPA Class X SLC Using an Isolating Device",
+      "object": "nfpa class x slc",
+      "relation": "compatible_with",
+      "subject": "isolating device"
+    },
+    {
+      "evidence": "6.3: NFPA Class B IDC Using Monitor Modules",
+      "object": "nfpa class b idc",
+      "relation": "monitors",
+      "subject": "addressable monitor module"
+    },
+    {
+      "evidence": "6.4: NFPA Class A IDC Using Monitor Modules",
+      "object": "nfpa class a idc",
+      "relation": "monitors",
+      "subject": "addressable monitor module"
+    },
+    {
+      "evidence": "6.5: NFPA Class B IDC Using Zone Interface Modules",
+      "object": "nfpa class b idc",
+      "relation": "monitors",
+      "subject": "zone interface module"
+    },
+    {
+      "evidence": "6.6: NFPA Class A IDC Using Zone Interface Modules",
+      "object": "nfpa class a idc",
+      "relation": "monitors",
+      "subject": "zone interface module"
+    },
+    {
+      "evidence": "7.2: Wiring a NAC with Addressable Control Modules",
+      "object": "nac",
+      "relation": "controls",
+      "subject": "addressable control modules"
+    },
+    {
+      "evidence": "7.2.1: Wiring a Solenoid with the FCM-1-REL",
+      "object": "solenoid",
+      "relation": "controls",
+      "subject": "fcm-1-rel"
+    },
+    {
+      "evidence": "7.5: Connecting a Releasing Device to the Addressable Control Module",
+      "object": "releasing device",
+      "relation": "controls",
+      "subject": "addressable control modules"
+    }
+  ],
+  "slc_wiring_manual#chunk_0011": [
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 AFP-100",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "afp-100"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 AFP-200",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "afp-200"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 AFP-300/AFP-400",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "afp-300"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 AFP-300/AFP-400",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "afp-400"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 AM2020/AFP1010",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "am2020"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 AM2020/AFP1010",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "afp1010"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 NOTIFIER INSPIRE\u2122 N16 Series",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "notifier inspire n16 series"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 NFS-3030/NFS2-3030",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "nfs-3030"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 NFS-3030/NFS2-3030",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "nfs2-3030"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 NFS-640/NFS2-640",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "nfs-640"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 NFS-640/NFS2-640",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "nfs2-640"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 NFS-320/NFS-320SYS",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "nfs-320"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 NFS-320/NFS-320SYS",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "nfs-320sys"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 System 5000 with AIM-200",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "system 5000"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 System 5000 with AIM-200",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "aim-200"
+    },
+    {
+      "evidence": "used with the following Fire Alarm Control Panels1 (FACPs): \u2022 NCA and NCA-2/C",
+      "object": "signaling line circuit",
+      "relation": "installed_with",
+      "subject": "nca"
+    }
+  ],
+  "slc_wiring_manual#chunk_0012": [
+    {
+      "evidence": "Only N16 supports self-test devices.",
+      "object": "self-test devices",
+      "relation": "supports_protocol",
+      "subject": "N16"
+    },
+    {
+      "evidence": "NFS-3030 with CPU-3030",
+      "object": "CPU-3030",
+      "relation": "installed_with",
+      "subject": "NFS-3030"
+    },
+    {
+      "evidence": "NFS-640 with CPU-640",
+      "object": "CPU-640",
+      "relation": "installed_with",
+      "subject": "NFS-640"
+    },
+    {
+      "evidence": "System 5000 with AIM-200",
+      "object": "AIM-200",
+      "relation": "installed_with",
+      "subject": "System 5000"
+    }
+  ],
+  "slc_wiring_manual#chunk_0013": [
+    {
+      "evidence": "System 5000 with AIM-200",
+      "object": "aim-200",
+      "relation": "installed_with",
+      "subject": "system 5000"
+    },
+    {
+      "evidence": "FireWarden SLC Wiring Manual",
+      "object": "slc",
+      "relation": "installed_with",
+      "subject": "firewarden"
+    },
+    {
+      "evidence": "FireVoice-25/50 & FireVoice-25/50ZS Manual",
+      "object": "firevoice-50",
+      "relation": "installed_with",
+      "subject": "firevoice-25"
+    },
+    {
+      "evidence": "FireVoice-25/50 & FireVoice-25/50ZS Manual",
+      "object": "firevoice-50zs",
+      "relation": "installed_with",
+      "subject": "firevoice-25zs"
+    }
+  ],
+  "slc_wiring_manual#chunk_0014": [
+    {
+      "evidence": "DVC Digital Voice Command Manual",
+      "object": "notifier slc",
+      "relation": "configured_by",
+      "subject": "dvc digital voice command"
+    },
+    {
+      "evidence": "DAA2/DAX manual",
+      "object": "notifier slc",
+      "relation": "configured_by",
+      "subject": "daa2"
+    },
+    {
+      "evidence": "DAA2/DAX manual",
+      "object": "notifier slc",
+      "relation": "configured_by",
+      "subject": "dax"
+    },
+    {
+      "evidence": "AA-series Audio Amplifier Manual",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "aa-series audio amplifier"
+    },
+    {
+      "evidence": "Power Supplies, Auxiliary Power Supplies & Battery Chargers ACPS-2406 Installation Manual",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "acps-2406"
+    },
+    {
+      "evidence": "AMPS-24/E Power Supply Manual",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "amps-24/e"
+    },
+    {
+      "evidence": "FCPS-24 Field Charger/Power Supply Manual",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "fcps-24"
+    },
+    {
+      "evidence": "ACPS-610/E Installation Manual",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "acps-610/e"
+    },
+    {
+      "evidence": "FCPS-24S6/FCPS-24S8 Field Charger/Power Supply",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "fcps-24s6"
+    },
+    {
+      "evidence": "FCPS-24S6/FCPS-24S8 Field Charger/Power Supply",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "fcps-24s8"
+    },
+    {
+      "evidence": "PMB-AUX Installation Manual",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "pmb-aux"
+    },
+    {
+      "evidence": "XP Transponder Manual",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "xp transponder"
+    },
+    {
+      "evidence": "XP5 Series Manual",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "xp5 series"
+    },
+    {
+      "evidence": "XP6-C Installation Document",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "xp6-c"
+    },
+    {
+      "evidence": "XP6-CA Canadian",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "xp6-ca"
+    },
+    {
+      "evidence": "XP6-MA Installation Document",
+      "object": "notifier slc",
+      "relation": "installed_with",
+      "subject": "xp6-ma"
+    }
+  ],
+  "slc_wiring_manual#chunk_0015": [
+    {
+      "evidence": "B200SR-WH, B200SR-IV Sounder Base Installation document",
+      "object": "sounder base",
+      "relation": "installed_with",
+      "subject": "b200sr-wh"
+    },
+    {
+      "evidence": "B200SR-WH, B200SR-IV Sounder Base Installation document",
+      "object": "sounder base",
+      "relation": "installed_with",
+      "subject": "b200sr-iv"
+    },
+    {
+      "evidence": "B200SRA-WH, B200SRA-IV Canadian I56-3387-010 & higher",
+      "object": "sounder base",
+      "relation": "installed_with",
+      "subject": "b200sra-wh"
+    },
+    {
+      "evidence": "B200SRA-WH, B200SRA-IV Canadian I56-3387-010 & higher",
+      "object": "sounder base",
+      "relation": "installed_with",
+      "subject": "b200sra-iv"
+    },
+    {
+      "evidence": "B200S-LF-WH, B200S-LF-IV Intelligent Addressable Low-Frequency Sounder Base Installation document",
+      "object": "sounder base",
+      "relation": "installed_with",
+      "subject": "b200s-lf-wh"
+    },
+    {
+      "evidence": "B200S-LF-WH, B200S-LF-IV Intelligent Addressable Low-Frequency Sounder Base Installation document",
+      "object": "sounder base",
+      "relation": "installed_with",
+      "subject": "b200s-lf-iv"
+    },
+    {
+      "evidence": "B200SR-LF-WH, B200S-LF-IV Intelligent Addressable Low-Frequency Sounder Base Installation document",
+      "object": "sounder base",
+      "relation": "installed_with",
+      "subject": "b200sr-lf-wh"
+    },
+    {
+      "evidence": "B710HD HARSH\u2122 Base Installation Document",
+      "object": "harsh base",
+      "relation": "installed_with",
+      "subject": "b710hd"
+    },
+    {
+      "evidence": "B210LP Flanged Base Installation Document",
+      "object": "flanged base",
+      "relation": "installed_with",
+      "subject": "b210lp"
+    },
+    {
+      "evidence": "B210LPA Canadian I56-0595 / I56-3739",
+      "object": "flanged base",
+      "relation": "installed_with",
+      "subject": "b210lpa"
+    },
+    {
+      "evidence": "DNR/W Innovairflex intelligent, non-relay, low-flow photoelectric duct detector housing",
+      "object": "innovairflex intelligent, non-relay, low-flow photoelectric duct detector housing",
+      "relation": "installed_with",
+      "subject": "dnr/w"
+    },
+    {
+      "evidence": "DNRA Canadian I56-3051 I56-3104",
+      "object": "innovairflex intelligent, non-relay, low-flow photoelectric duct detector housing",
+      "relation": "installed_with",
+      "subject": "dnra"
+    },
+    {
+      "evidence": "FAPT-851: See document for FSP-851, FSP-851T and FAPT-851",
+      "object": "fsp-851",
+      "relation": "installed_with",
+      "subject": "fapt-851"
+    },
+    {
+      "evidence": "FAPT-851: See document for FSP-851, FSP-851T and FAPT-851",
+      "object": "fsp-851t",
+      "relation": "installed_with",
+      "subject": "fapt-851"
+    },
+    {
+      "evidence": "FAPT-851A: See document for FSP-851A, FSP-851TA and FAPT-851A",
+      "object": "fsp-851a",
+      "relation": "installed_with",
+      "subject": "fapt-851a"
+    },
+    {
+      "evidence": "FAPT-851A: See document for FSP-851A, FSP-851TA and FAPT-851A",
+      "object": "fsp-851ta",
+      "relation": "installed_with",
+      "subject": "fapt-851a"
+    }
+  ],
+  "slc_wiring_manual#chunk_0016": [
+    {
+      "evidence": "SLC, which can be wired to meet the requirements of NFPA Class B",
+      "object": "nfpa class b",
+      "relation": "compatible_with",
+      "subject": "signaling line circuit"
+    },
+    {
+      "evidence": "SLC, which can be wired to meet the requirements of NFPA Class A",
+      "object": "nfpa class a",
+      "relation": "compatible_with",
+      "subject": "signaling line circuit"
+    },
+    {
+      "evidence": "SLC, which can be wired to meet the requirements of NFPA Class X",
+      "object": "nfpa class x",
+      "relation": "compatible_with",
+      "subject": "signaling line circuit"
+    },
+    {
+      "evidence": "At least one secondary surge protector must be used with each SLC wiring pair",
+      "object": "secondary surge protector",
+      "relation": "installed_with",
+      "subject": "signaling line circuit"
+    }
+  ],
+  "slc_wiring_manual#chunk_0017": [
+    {
+      "evidence": "SLM-318 loops on N16 ... can run in FlashScan mode or CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "slm-318"
+    },
+    {
+      "evidence": "LCM-320/LEM-320 loops on NFS2-640, NFS2-3030, NFS-3030 and NFS-640 ... can run in FlashScan mode or CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "lcm-320"
+    },
+    {
+      "evidence": "LCM-320/LEM-320 loops on NFS2-640, NFS2-3030, NFS-3030 and NFS-640 ... can run in FlashScan mode or CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "lem-320"
+    },
+    {
+      "evidence": "LCM-320/LEM-320 loops on NFS2-640 ... can run in FlashScan mode or CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "nfs2-640"
+    },
+    {
+      "evidence": "LCM-320/LEM-320 loops on ... NFS2-3030 ... can run in FlashScan mode or CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "nfs2-3030"
+    },
+    {
+      "evidence": "LCM-320/LEM-320 loops on ... NFS-3030 ... can run in FlashScan mode or CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "nfs-3030"
+    },
+    {
+      "evidence": "LCM-320/LEM-320 loops on ... NFS-640 ... can run in FlashScan mode or CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "nfs-640"
+    },
+    {
+      "evidence": "SLC loops on NFS-320 can run in FlashScan mode or CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "nfs-320"
+    },
+    {
+      "evidence": "AFP-100 ... run in CLIP mode only.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "afp-100"
+    },
+    {
+      "evidence": "AFP-1010 ... run in CLIP mode only.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "afp-1010"
+    },
+    {
+      "evidence": "AFP-200 ... run in CLIP mode only.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "afp-200"
+    },
+    {
+      "evidence": "AFP-300/AFP-400 ... run in CLIP mode only.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "afp-300"
+    },
+    {
+      "evidence": "AFP-300/AFP-400 ... run in CLIP mode only.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "afp-400"
+    },
+    {
+      "evidence": "AM2020 ... run in CLIP mode only.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "am2020"
+    },
+    {
+      "evidence": "System 5000 with AIM-200 run in CLIP mode only.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "system 5000"
+    },
+    {
+      "evidence": "System 5000 with AIM-200 run in CLIP mode only.",
+      "object": "system 5000",
+      "relation": "installed_with",
+      "subject": "aim-200"
+    }
+  ],
+  "slc_wiring_manual#chunk_0019": [
+    {
+      "evidence": "For use with NFS2-3030",
+      "object": "nfs2-3030",
+      "relation": "installed_with",
+      "subject": "fcm-1-rel"
+    },
+    {
+      "evidence": "For use with NFS2-640",
+      "object": "nfs2-640",
+      "relation": "installed_with",
+      "subject": "fcm-1-rel"
+    },
+    {
+      "evidence": "For use with NFS-320(C)",
+      "object": "nfs-320 c",
+      "relation": "installed_with",
+      "subject": "fcm-1-rel"
+    },
+    {
+      "evidence": "For use with NFS-320SYS",
+      "object": "nfs-320sys",
+      "relation": "installed_with",
+      "subject": "fcm-1-rel"
+    },
+    {
+      "evidence": "Acts as a NAC or a speaker/telephone circuit",
+      "object": "nac",
+      "relation": "controls",
+      "subject": "xp5-c"
+    },
+    {
+      "evidence": "Acts as a NAC or a speaker/telephone circuit",
+      "object": "speaker/telephone circuit",
+      "relation": "controls",
+      "subject": "xp5-c"
+    },
+    {
+      "evidence": "Acts as a Form-C relay",
+      "object": "form-c relay",
+      "relation": "controls",
+      "subject": "xp5-c"
+    },
+    {
+      "evidence": "Controls six NAC or speaker/telephone circuits",
+      "object": "nac",
+      "relation": "controls",
+      "subject": "xp6-c"
+    },
+    {
+      "evidence": "Controls six NAC or speaker/telephone circuits",
+      "object": "speaker/telephone circuit",
+      "relation": "controls",
+      "subject": "xp6-c"
+    },
+    {
+      "evidence": "Firephone Control Module; FlashScan-only device for use with Fire Fighters Telephone on NFS-320",
+      "object": "nfs-320",
+      "relation": "installed_with",
+      "subject": "ftm-1"
+    },
+    {
+      "evidence": "Firephone Control Module; FlashScan-only device for use with Fire Fighters Telephone on NFS2-640",
+      "object": "nfs2-640",
+      "relation": "installed_with",
+      "subject": "ftm-1"
+    },
+    {
+      "evidence": "Firephone Control Module; FlashScan-only device for use with Fire Fighters Telephone on NFS-640",
+      "object": "nfs-640",
+      "relation": "installed_with",
+      "subject": "ftm-1"
+    },
+    {
+      "evidence": "Firephone Control Module; FlashScan-only device for use with Fire Fighters Telephone on NFS-3030",
+      "object": "nfs-3030",
+      "relation": "installed_with",
+      "subject": "ftm-1"
+    },
+    {
+      "evidence": "Firephone Control Module; FlashScan-only device for use with Fire Fighters Telephone on NFS2-3030",
+      "object": "nfs2-3030",
+      "relation": "installed_with",
+      "subject": "ftm-1"
+    },
+    {
+      "evidence": "Loop Fault Isolator Module; FlashScan or CLIP mode",
+      "object": "scl loop",
+      "relation": "monitors",
+      "subject": "iso-x"
+    },
+    {
+      "evidence": "Six Fault isolator module provides six equivalent circuits that allow a portion of the communications loop to continue operating",
+      "object": "scl loop",
+      "relation": "monitors",
+      "subject": "iso-6"
+    }
+  ],
+  "slc_wiring_manual#chunk_0020": [
+    {
+      "evidence": "For white order B501- WHITE.",
+      "object": "b501 series",
+      "relation": "compatible_with",
+      "subject": "b501-white"
+    },
+    {
+      "evidence": "For ivory, order B501-IV.",
+      "object": "b501 series",
+      "relation": "compatible_with",
+      "subject": "b501-iv"
+    },
+    {
+      "evidence": "For black, order B501-BL.",
+      "object": "b501 series",
+      "relation": "compatible_with",
+      "subject": "b501-bl"
+    },
+    {
+      "evidence": "For ivory, order B300-6-IV.",
+      "object": "b300-6",
+      "relation": "compatible_with",
+      "subject": "b300-6-iv"
+    },
+    {
+      "evidence": "B501BH-2 UL 864 9th edition compliant standard sounder base.",
+      "object": "ul 864 9th edition",
+      "relation": "compatible_with",
+      "subject": "b501bh-2"
+    },
+    {
+      "evidence": "B501BHT-2 UL 864 9th edition compliant temporal sounder base.",
+      "object": "ul 864 9th edition",
+      "relation": "compatible_with",
+      "subject": "b501bht-2"
+    },
+    {
+      "evidence": "Replaces legacy ivory B200S.",
+      "object": "b200s",
+      "relation": "compatible_with",
+      "subject": "b200s-wh"
+    },
+    {
+      "evidence": "Replaces legacy ivory B200S.",
+      "object": "b200s",
+      "relation": "compatible_with",
+      "subject": "b200s-iv"
+    },
+    {
+      "evidence": "Replaces legacy ivory B200SR.",
+      "object": "b200sr",
+      "relation": "compatible_with",
+      "subject": "b200sr-wh"
+    },
+    {
+      "evidence": "Replaces legacy ivory B200SR.",
+      "object": "b200sr",
+      "relation": "compatible_with",
+      "subject": "b200sr-iv"
+    },
+    {
+      "evidence": "Replaces legacy ivory B200S-LF.",
+      "object": "b200s-lf-wh",
+      "relation": "compatible_with",
+      "subject": "b200s-lf-wh"
+    },
+    {
+      "evidence": "Replaces legacy ivory B200S-LF.",
+      "object": "b200s-lf",
+      "relation": "compatible_with",
+      "subject": "b200s-lf-iv"
+    },
+    {
+      "evidence": "Replaces legacy ivory B200SR-LF.",
+      "object": "b200sr-lf-wh",
+      "relation": "compatible_with",
+      "subject": "b200sr-lf-wh"
+    },
+    {
+      "evidence": "Replaces legacy ivory B224RB.",
+      "object": "b224rb",
+      "relation": "compatible_with",
+      "subject": "b224rb-wh"
+    },
+    {
+      "evidence": "Replaces legacy ivory B224RB.",
+      "object": "b224rb",
+      "relation": "compatible_with",
+      "subject": "b224rb-iv"
+    }
+  ],
+  "slc_wiring_manual#chunk_0021": [
+    {
+      "evidence": "FSP-951-SELFT Self-test photo detector; FlashScan",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-951-selft"
+    },
+    {
+      "evidence": "FSP-951T-SELFT Self-test photo/heat detector; FlashScan",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-951t-selft"
+    },
+    {
+      "evidence": "FST-951-SELFT Self-test heat detector; FlashScan",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fst-951-selft"
+    },
+    {
+      "evidence": "Addressable intelligent multi-criteria smoke sensors: photo",
+      "object": "photoelectric sensor",
+      "relation": "has_component",
+      "subject": "fco-951"
+    },
+    {
+      "evidence": "Addressable intelligent multi-criteria smoke sensors: carbon monoxide (CO)",
+      "object": "carbon monoxide sensor",
+      "relation": "has_component",
+      "subject": "fco-951"
+    },
+    {
+      "evidence": "135\u00b0F (57.2\u00b0C) fixed-temperature heat detector",
+      "object": "heat detector",
+      "relation": "has_component",
+      "subject": "fco-951"
+    },
+    {
+      "evidence": "infra-red (IR)",
+      "object": "infra-red sensor",
+      "relation": "has_component",
+      "subject": "fco-951"
+    },
+    {
+      "evidence": "FCO-951-IV Addressable intelligent multi-criteria smoke sensors: photo",
+      "object": "photoelectric sensor",
+      "relation": "has_component",
+      "subject": "fco-951-iv"
+    },
+    {
+      "evidence": "FCO-951-IV Addressable intelligent multi-criteria smoke sensors: carbon monoxide (CO)",
+      "object": "carbon monoxide sensor",
+      "relation": "has_component",
+      "subject": "fco-951-iv"
+    },
+    {
+      "evidence": "135\u00b0F (57.2\u00b0C) fixed-temperature heat detector",
+      "object": "heat detector",
+      "relation": "has_component",
+      "subject": "fco-951-iv"
+    },
+    {
+      "evidence": "infra-red (IR)",
+      "object": "infra-red sensor",
+      "relation": "has_component",
+      "subject": "fco-951-iv"
+    },
+    {
+      "evidence": "Multi-Criteria Photoelectric and CO Sensor",
+      "object": "photoelectric sensor",
+      "relation": "has_component",
+      "subject": "fpc-951"
+    },
+    {
+      "evidence": "Multi-Criteria Photoelectric and CO Sensor",
+      "object": "carbon monoxide sensor",
+      "relation": "has_component",
+      "subject": "fpc-951"
+    },
+    {
+      "evidence": "Multi-Criteria Photoelectric, Thermal and Infra-Red Sensor",
+      "object": "photoelectric sensor",
+      "relation": "has_component",
+      "subject": "fpti-951"
+    },
+    {
+      "evidence": "Multi-Criteria Photoelectric, Thermal and Infra-Red Sensor",
+      "object": "thermal sensor",
+      "relation": "has_component",
+      "subject": "fpti-951"
+    },
+    {
+      "evidence": "Multi-Criteria Photoelectric, Thermal and Infra-Red Sensor",
+      "object": "infra-red sensor",
+      "relation": "has_component",
+      "subject": "fpti-951"
+    }
+  ],
+  "slc_wiring_manual#chunk_0023": [
+    {
+      "evidence": "Analog, addressable intelligent smoke detector that uses a photoelectric sensing chamber.",
+      "object": "photoelectric sensing chamber",
+      "relation": "has_component",
+      "subject": "fsp-951"
+    },
+    {
+      "evidence": "The FSP-951T/FSP-951T-IV adds thermal sensors that will alarm at a fixed temperature of 135\u00b0 F",
+      "object": "thermal sensors",
+      "relation": "has_component",
+      "subject": "fsp-951t"
+    },
+    {
+      "evidence": "The FSP-951R/FSP-951R-IV ... for use with DNR(W).",
+      "object": "dnr/w",
+      "relation": "installed_with",
+      "subject": "fsp-951r"
+    },
+    {
+      "evidence": "Basic models support FlashScan mode only",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-951"
+    },
+    {
+      "evidence": "models ending in -IV support FlashScan and CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-951-iv"
+    },
+    {
+      "evidence": "models ending in -IV support FlashScan and CLIP mode.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "fsp-951-iv"
+    },
+    {
+      "evidence": "FSP-851 ... supported FlashScan or CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-851"
+    },
+    {
+      "evidence": "FSP-851 ... supported FlashScan or CLIP mode.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "fsp-851"
+    },
+    {
+      "evidence": "FSP-851T ... supported FlashScan or CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-851t"
+    },
+    {
+      "evidence": "FSP-851T ... supported FlashScan or CLIP mode.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "fsp-851t"
+    },
+    {
+      "evidence": "FSP-851R ... supported FlashScan or CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-851r"
+    },
+    {
+      "evidence": "FSP-851R ... supported FlashScan or CLIP mode.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "fsp-851r"
+    },
+    {
+      "evidence": "FST-951/FST-951-IV Intelligent thermistor sensing circuit for fast response.",
+      "object": "thermistor sensing circuit",
+      "relation": "has_component",
+      "subject": "fst-951"
+    },
+    {
+      "evidence": "Basic models support FlashScan mode only",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fst-951"
+    },
+    {
+      "evidence": "models ending in -IV support FlashScan and CLIP mode.",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fst-951-iv"
+    },
+    {
+      "evidence": "models ending in -IV support FlashScan and CLIP mode.",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "fst-951-iv"
+    }
+  ],
+  "slc_wiring_manual#chunk_0024": [
+    {
+      "evidence": "Supports FlashScan and CLIP mode; compatible with AFP-300/AFP-400",
+      "object": "flashscan",
+      "relation": "compatible_with",
+      "subject": "afp-300"
+    },
+    {
+      "evidence": "Supports FlashScan and CLIP mode; compatible with AFP-300/AFP-400",
+      "object": "flashscan",
+      "relation": "compatible_with",
+      "subject": "afp-400"
+    },
+    {
+      "evidence": "compatible with AFP-300/AFP-400, NFS-640, NFS2-640",
+      "object": "flashscan",
+      "relation": "compatible_with",
+      "subject": "nfs-640"
+    },
+    {
+      "evidence": "compatible with AFP-300/AFP-400, NFS-640, NFS2-640",
+      "object": "flashscan",
+      "relation": "compatible_with",
+      "subject": "nfs2-640"
+    },
+    {
+      "evidence": "Compatible with NFS-320, NFS-320SYS, NFS2-640, and NFS2-3030 only",
+      "object": "fsa-5000",
+      "relation": "compatible_with",
+      "subject": "nfs-320"
+    },
+    {
+      "evidence": "Compatible with NFS-320, NFS-320SYS, NFS2-640, and NFS2-3030 only",
+      "object": "fsa-5000",
+      "relation": "compatible_with",
+      "subject": "nfs2-3030"
+    },
+    {
+      "evidence": "LPX-751L is compatible with AFP-200 and AM2020/AFP1010",
+      "object": "afp-200",
+      "relation": "compatible_with",
+      "subject": "lpx-751l"
+    },
+    {
+      "evidence": "LPX-751L is compatible with AFP-200 and AM2020/AFP1010",
+      "object": "lpx-751l",
+      "relation": "compatible_with",
+      "subject": "afp-200"
+    },
+    {
+      "evidence": "LPX-751L is compatible with AFP-200 and AM2020/AFP1010",
+      "object": "lpx-751l",
+      "relation": "compatible_with",
+      "subject": "am2020"
+    },
+    {
+      "evidence": "LPX-751L is compatible with AFP-200 and AM2020/AFP1010",
+      "object": "lpx-751l",
+      "relation": "compatible_with",
+      "subject": "afp1010"
+    },
+    {
+      "evidence": "Supports FlashScan mode",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsa-5000"
+    },
+    {
+      "evidence": "Compatible with NFS-320, NFS-320SYS, NFS2-640, and NFS2-3030 only",
+      "object": "nfs-320",
+      "relation": "compatible_with",
+      "subject": "fsa-5000"
+    },
+    {
+      "evidence": "Supports FlashScan and CLIP mode",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsa-8000"
+    },
+    {
+      "evidence": "Compatible with NFS-320, NFS-320SYS, NFS2-640, and NFS2-3030 only",
+      "object": "nfs-320",
+      "relation": "compatible_with",
+      "subject": "fsa-8000"
+    },
+    {
+      "evidence": "Supports FlashScan and CLIP mode",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsa-20000"
+    },
+    {
+      "evidence": "Compatible with NFS-320, NFS-320SYS, NFS2-640, and NFS2-3030 only",
+      "object": "nfs-320",
+      "relation": "compatible_with",
+      "subject": "fsa-20000"
+    }
+  ],
+  "slc_wiring_manual#chunk_0028": [
+    {
+      "evidence": "Twisted, unshielded pair: N16, NFS-3 20, NFS2-640, NFS-640, NFS2-3030, NFS-3030, LCM-320, LEM-320, LIB-200A, LIB-400.",
+      "object": "twisted unshielded pair",
+      "relation": "supports_protocol",
+      "subject": "n16"
+    },
+    {
+      "evidence": "Twisted, unshielded pair: N16, NFS-3 20, NFS2-640, NFS-640, NFS2-3030, NFS-3030, LCM-320, LEM-320, LIB-200A, LIB-400.",
+      "object": "twisted unshielded pair",
+      "relation": "supports_protocol",
+      "subject": "nfs-3 20"
+    },
+    {
+      "evidence": "Twisted, unshielded pair: N16, NFS-3 20, NFS2-640, NFS-640, NFS2-3030, NFS-3030, LCM-320, LEM-320, LIB-200A, LIB-400.",
+      "object": "twisted unshielded pair",
+      "relation": "supports_protocol",
+      "subject": "nfs2-640"
+    },
+    {
+      "evidence": "Twisted, unshielded pair: N16, NFS-3 20, NFS2-640, NFS-640, NFS2-3030, NFS-3030, LCM-320, LEM-320, LIB-200A, LIB-400.",
+      "object": "twisted unshielded pair",
+      "relation": "supports_protocol",
+      "subject": "nfs-640"
+    },
+    {
+      "evidence": "Twisted, unshielded pair: N16, NFS-3 20, NFS2-640, NFS-640, NFS2-3030, NFS-3030, LCM-320, LEM-320, LIB-200A, LIB-400.",
+      "object": "twisted unshielded pair",
+      "relation": "supports_protocol",
+      "subject": "nfs2-3030"
+    },
+    {
+      "evidence": "Twisted, unshielded pair: N16, NFS-3 20, NFS2-640, NFS-640, NFS2-3030, NFS-3030, LCM-320, LEM-320, LIB-200A, LIB-400.",
+      "object": "twisted unshielded pair",
+      "relation": "supports_protocol",
+      "subject": "nfs-3030"
+    },
+    {
+      "evidence": "Twisted, unshielded pair: N16, NFS-3 20, NFS2-640, NFS-640, NFS2-3030, NFS-3030, LCM-320, LEM-320, LIB-200A, LIB-400.",
+      "object": "twisted unshielded pair",
+      "relation": "supports_protocol",
+      "subject": "lcm-320"
+    },
+    {
+      "evidence": "Twisted, unshielded pair: N16, NFS-3 20, NFS2-640, NFS-640, NFS2-3030, NFS-3030, LCM-320, LEM-320, LIB-200A, LIB-400.",
+      "object": "twisted unshielded pair",
+      "relation": "supports_protocol",
+      "subject": "lem-320"
+    },
+    {
+      "evidence": "Twisted, unshielded pair: N16, NFS-3 20, NFS2-640, NFS-640, NFS2-3030, NFS-3030, LCM-320, LEM-320, LIB-200A, LIB-400.",
+      "object": "twisted unshielded pair",
+      "relation": "supports_protocol",
+      "subject": "lib-200a"
+    },
+    {
+      "evidence": "Twisted, unshielded pair: N16, NFS-3 20, NFS2-640, NFS-640, NFS2-3030, NFS-3030, LCM-320, LEM-320, LIB-200A, LIB-400.",
+      "object": "twisted unshielded pair",
+      "relation": "supports_protocol",
+      "subject": "lib-400"
+    },
+    {
+      "evidence": "Twisted-shielded pair: AFP-100, AF P-200, AFP-300/400, LIB-200, AIM-200.",
+      "object": "twisted-shielded pair",
+      "relation": "supports_protocol",
+      "subject": "afp-100"
+    },
+    {
+      "evidence": "Twisted-shielded pair: AFP-100, AF P-200, AFP-300/400, LIB-200, AIM-200.",
+      "object": "twisted-shielded pair",
+      "relation": "supports_protocol",
+      "subject": "afp-200"
+    },
+    {
+      "evidence": "Twisted-shielded pair: AFP-100, AF P-200, AFP-300/400, LIB-200, AIM-200.",
+      "object": "twisted-shielded pair",
+      "relation": "supports_protocol",
+      "subject": "afp-300/400"
+    },
+    {
+      "evidence": "Twisted-shielded pair: AFP-100, AF P-200, AFP-300/400, LIB-200, AIM-200.",
+      "object": "twisted-shielded pair",
+      "relation": "supports_protocol",
+      "subject": "lib-200"
+    },
+    {
+      "evidence": "Twisted-shielded pair: AFP-100, AF P-200, AFP-300/400, LIB-200, AIM-200.",
+      "object": "twisted-shielded pair",
+      "relation": "supports_protocol",
+      "subject": "aim-200"
+    },
+    {
+      "evidence": "RECOMMENDED: Twisted unshielded pair, 12 to 18 AWG (3.31 mm\u00b2 to 0.82 mm\u00b2\u2020).",
+      "object": "twisted unshielded pair 12 to 18 AWG",
+      "relation": "requires_voltage",
+      "subject": "lib-200a"
+    }
+  ],
+  "slc_wiring_manual#chunk_0031": [
+    {
+      "evidence": "35 ohms for SLM-318 (CLP-2PCB) with self-test detectors installed",
+      "object": "self-test detectors",
+      "relation": "requires_voltage",
+      "subject": "slm-318 clp-2pcb"
+    },
+    {
+      "evidence": "current SLM-318 (CLP-2PCB) with self-test detectors installed",
+      "object": "self-test detectors",
+      "relation": "requires_voltage",
+      "subject": "slm-318 clp-2pcb"
+    },
+    {
+      "evidence": "23 ohms for initial release SLM-318 (CLP- PCB) with self-test detectors installed",
+      "object": "self-test detectors",
+      "relation": "requires_voltage",
+      "subject": "slm-318 clp- pcb"
+    },
+    {
+      "evidence": "50 ohms for SLM-318/N16",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "slm-318/n16"
+    },
+    {
+      "evidence": "50 ohms for NFS-320",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "nfs-320"
+    },
+    {
+      "evidence": "50 ohms for NFS2-640",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "nfs2-640"
+    },
+    {
+      "evidence": "50 ohms for NFS-640",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "nfs-640"
+    },
+    {
+      "evidence": "50 ohms for LCM-320",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "lcm-320"
+    },
+    {
+      "evidence": "50 ohms for LEM-320",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "lem-320"
+    },
+    {
+      "evidence": "50 ohms for LIB-200A",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "lib-200a"
+    },
+    {
+      "evidence": "50 ohms for LIB-400",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "lib-400"
+    },
+    {
+      "evidence": "40 ohms for AFP-100",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "afp-100"
+    },
+    {
+      "evidence": "40 ohms for AFP-200",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "afp-200"
+    },
+    {
+      "evidence": "40 ohms for AFP-300/400",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "afp-300/400"
+    },
+    {
+      "evidence": "40 ohms for LIB-200",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "lib-200"
+    },
+    {
+      "evidence": "40 ohms for AIM-200",
+      "object": "twisted-shielded pair",
+      "relation": "requires_voltage",
+      "subject": "aim-200"
+    }
+  ],
+  "slc_wiring_manual#chunk_0037": [
+    {
+      "evidence": "Shielding of the SLC is recommended for use with the AFP-100",
+      "object": "afp-100",
+      "relation": "compatible_with",
+      "subject": "shielding of the SLC"
+    },
+    {
+      "evidence": "Shielding of the SLC is recommended for use with the AFP-200",
+      "object": "afp-200",
+      "relation": "compatible_with",
+      "subject": "shielding of the SLC"
+    },
+    {
+      "evidence": "Shielding of the SLC is recommended for use with the AFP-300/400",
+      "object": "afp-300/400",
+      "relation": "compatible_with",
+      "subject": "shielding of the SLC"
+    },
+    {
+      "evidence": "Shielding of the SLC is recommended for use with the LIB-200",
+      "object": "lib-200",
+      "relation": "compatible_with",
+      "subject": "shielding of the SLC"
+    },
+    {
+      "evidence": "Shielding of the SLC is recommended for use with the AIM-200",
+      "object": "aim-200",
+      "relation": "compatible_with",
+      "subject": "shielding of the SLC"
+    },
+    {
+      "evidence": "The drain wire should be connected to the connector screw",
+      "object": "connector screw",
+      "relation": "installed_with",
+      "subject": "shield drain wire"
+    },
+    {
+      "evidence": "The shield drain wire must be connected to the \u201creference\u201d or \u201cshield\u201d terminal on the SLC terminal block",
+      "object": "slc terminal block",
+      "relation": "installed_with",
+      "subject": "shield drain wire"
+    },
+    {
+      "evidence": "Connect the metal conduit to the cabinet by using the proper connector",
+      "object": "cabinet",
+      "relation": "installed_with",
+      "subject": "metal conduit"
+    },
+    {
+      "evidence": "Do not let the shield drain wire or the shield foil touch the system cabinet",
+      "object": "cabinet",
+      "relation": "installed_with",
+      "subject": "shield drain wire"
+    },
+    {
+      "evidence": "Feed the shielded wire through the conduit, into the control box",
+      "object": "control box",
+      "relation": "installed_with",
+      "subject": "shield drain wire"
+    },
+    {
+      "evidence": "connected to the negative side of the loop if there is no \u201creference\u201d or \u201cshield\u201d terminal on the SLC terminal block",
+      "object": "slc terminal block",
+      "relation": "installed_with",
+      "subject": "shield drain wire"
+    }
+  ],
+  "slc_wiring_manual#chunk_0038": [
+    {
+      "evidence": "If using a metal box, you must use a metal conduit.",
+      "object": "metal conduit",
+      "relation": "installed_with",
+      "subject": "partial conduit"
+    },
+    {
+      "evidence": "Connect the shielded wire to the junction box by using a proper connector.",
+      "object": "junction box",
+      "relation": "installed_with",
+      "subject": "shielded wire"
+    },
+    {
+      "evidence": "Connect the metal conduit between the junction box and the cabinet by using the proper connectors.",
+      "object": "junction box",
+      "relation": "installed_with",
+      "subject": "metal conduit"
+    },
+    {
+      "evidence": "Feed the twisted-pair wire into the junction box, through the conduit, into the cabinet box.",
+      "object": "junction box",
+      "relation": "installed_with",
+      "subject": "twisted-pair wire"
+    },
+    {
+      "evidence": "Within the junction box, connect the appropriate wires together using wire nuts.",
+      "object": "junction box",
+      "relation": "installed_with",
+      "subject": "wire nuts"
+    },
+    {
+      "evidence": "Connect the shield drain wire to the junction box, at the end of the conduit run.",
+      "object": "junction box",
+      "relation": "installed_with",
+      "subject": "shield drain wire"
+    },
+    {
+      "evidence": "Partial Conduit For use with the AFP-100, AFP-200, AFP-300/400, LIB-200, and AIM-200 only",
+      "object": "partial conduit",
+      "relation": "installed_with",
+      "subject": "afp-100"
+    },
+    {
+      "evidence": "Partial Conduit For use with the AFP-100, AFP-200, AFP-300/400, LIB-200, and AIM-200 only",
+      "object": "partial conduit",
+      "relation": "installed_with",
+      "subject": "afp-200"
+    },
+    {
+      "evidence": "Partial Conduit For use with the AFP-100, AFP-200, AFP-300/400, LIB-200, and AIM-200 only",
+      "object": "partial conduit",
+      "relation": "installed_with",
+      "subject": "afp-300/400"
+    },
+    {
+      "evidence": "Partial Conduit For use with the AFP-100, AFP-200, AFP-300/400, LIB-200, and AIM-200 only",
+      "object": "partial conduit",
+      "relation": "installed_with",
+      "subject": "lib-200"
+    },
+    {
+      "evidence": "Partial Conduit For use with the AFP-100, AFP-200, AFP-300/400, LIB-200, and AIM-200 only",
+      "object": "partial conduit",
+      "relation": "installed_with",
+      "subject": "aim-200"
+    },
+    {
+      "evidence": "If twisted-shielded pair wire is used in these installations, use a floating shield to terminate the wire.",
+      "object": "twisted-pair wire",
+      "relation": "installed_with",
+      "subject": "floating shield"
+    },
+    {
+      "evidence": "Twisted-unshielded wire is recommended for the N16... If twisted-shielded pair wire is used... use a floating shield.",
+      "object": "n16",
+      "relation": "compatible_with",
+      "subject": "floating shield"
+    },
+    {
+      "evidence": "Twisted-unshielded wire is recommended for the NFS-320... If twisted-shielded pair wire is used... use a floating shield.",
+      "object": "nfs-320",
+      "relation": "compatible_with",
+      "subject": "floating shield"
+    },
+    {
+      "evidence": "Twisted-unshielded wire is recommended for the NFS-320SYS... If twisted-shielded pair wire is used... use a floating shield.",
+      "object": "nfs-320sys",
+      "relation": "compatible_with",
+      "subject": "floating shield"
+    },
+    {
+      "evidence": "Twisted-unshielded wire is recommended for the NFS2-640... If twisted-shielded pair wire is used... use a floating shield.",
+      "object": "nfs2-640",
+      "relation": "compatible_with",
+      "subject": "floating shield"
+    }
+  ],
+  "slc_wiring_manual#chunk_0041": [
+    {
+      "evidence": "The ISO-X module continuously monitors the circuit connected to terminals 3(\u2013) and 4(+).",
+      "object": "slc branch",
+      "relation": "monitors",
+      "subject": "fault isolator module iso-x"
+    },
+    {
+      "evidence": "Upon powerup, an integral relay is latched on. The module periodically pulses the coil of this relay.",
+      "object": "integral relay",
+      "relation": "controls",
+      "subject": "fault isolator module iso-x"
+    },
+    {
+      "evidence": "During a fault condition, the control panel registers a trouble condition for each addressable device which is isolated on the SLC segment or branch.",
+      "object": "slc branch",
+      "relation": "indicates_fault",
+      "subject": "fault isolator module iso-x"
+    },
+    {
+      "evidence": "The module periodically pulses the coil of this relay.",
+      "object": "relay coil",
+      "relation": "controls",
+      "subject": "fault isolator module iso-x"
+    },
+    {
+      "evidence": "one isolator base and one isolator module, two fault-isolator modules, or two circuits on a six-fault isolator module, for example.",
+      "object": "isolator detector base b224bi",
+      "relation": "installed_with",
+      "subject": "fault isolator module iso-x"
+    },
+    {
+      "evidence": "ISO-6 has the same functionality; see Figure 5.2.",
+      "object": "slc branch",
+      "relation": "monitors",
+      "subject": "six fault isolator module iso-6"
+    },
+    {
+      "evidence": "one isolator base and one isolator module, two fault-isolator modules, or two circuits on a six-fault isolator module, for example.",
+      "object": "isolator detector base b224bi",
+      "relation": "installed_with",
+      "subject": "six fault isolator module iso-6"
+    }
+  ],
+  "slc_wiring_manual#chunk_0048": [
+    {
+      "evidence": "Class X operation requires using a combination of isolator detector bases and isolator modules",
+      "object": "supply voltage to isolator modules and bases",
+      "relation": "requires_voltage",
+      "subject": "class x operation"
+    },
+    {
+      "evidence": "When an isolator base is used in conjunction with an isolator module",
+      "object": "isolator base",
+      "relation": "has_component",
+      "subject": "isolator detector bases"
+    },
+    {
+      "evidence": "Class X operation requires using a combination of isolator detector bases and isolator modules",
+      "object": "isolator detector bases",
+      "relation": "installed_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "When a non-isolator base or pull station is used, install isolator modules on both sides of devices",
+      "object": "addressable pull station",
+      "relation": "installed_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "When a non-isolator base or pull station is used, install isolator modules on both sides of devices",
+      "object": "non-isolator base",
+      "relation": "installed_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "Flanking each device with an isolator provides fault protection to all other devices on the loop",
+      "object": "addressable detector",
+      "relation": "installed_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "Control Panel AFP-100, AFP-200, AM2020/AFP1010, System 5000 with AIM-200",
+      "object": "control panel afp-100",
+      "relation": "compatible_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "Control Panel AFP-100, AFP-200, AM2020/AFP1010, System 5000 with AIM-200",
+      "object": "afp-200",
+      "relation": "compatible_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "Control Panel AFP-100, AFP-200, AM2020/AFP1010, System 5000 with AIM-200",
+      "object": "am2020",
+      "relation": "compatible_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "Control Panel AFP-100, AFP-200, AM2020/AFP1010, System 5000 with AIM-200",
+      "object": "afp1010",
+      "relation": "compatible_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "Control Panel AFP-100, AFP-200, AM2020/AFP1010, System 5000 with AIM-200",
+      "object": "system 5000",
+      "relation": "compatible_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "Control Panel AFP-100, AFP-200, AM2020/AFP1010, System 5000 with AIM-200",
+      "object": "aim-200",
+      "relation": "compatible_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "The first isolator module on SLC Out and SLC Return is optional for N16, NFS-320, NFS2-640, NFS2-3030, NFS-640, and NFS-3030",
+      "object": "n16",
+      "relation": "compatible_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "The first isolator module on SLC Out and SLC Return is optional for N16, NFS-320, NFS2-640, NFS2-3030, NFS-640, and NFS-3030",
+      "object": "nfs-320",
+      "relation": "compatible_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "The first isolator module on SLC Out and SLC Return is optional for N16, NFS-320, NFS2-640, NFS2-3030, NFS-640, and NFS-3030",
+      "object": "nfs2-640",
+      "relation": "compatible_with",
+      "subject": "isolator modules"
+    },
+    {
+      "evidence": "The first isolator module on SLC Out and SLC Return is optional for N16, NFS-320, NFS2-640, NFS2-3030, NFS-640, and NFS-3030",
+      "object": "nfs2-3030",
+      "relation": "compatible_with",
+      "subject": "isolator modules"
+    }
+  ],
+  "slc_wiring_manual#chunk_0065": [
+    {
+      "evidence": "B501 Series: 4-inch flangeless plug-in detector base. (FlashScan/CLIP)",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "b501 series"
+    },
+    {
+      "evidence": "For white order B501-WHITE.",
+      "object": "b501 series",
+      "relation": "has_component",
+      "subject": "b501-white"
+    },
+    {
+      "evidence": "For ivory, order B501-IV.",
+      "object": "b501 series",
+      "relation": "has_component",
+      "subject": "b501-iv"
+    },
+    {
+      "evidence": "For black, order B501-BL.",
+      "object": "b501 series",
+      "relation": "has_component",
+      "subject": "b501-bl"
+    },
+    {
+      "evidence": "B300-6: 6-inch plug-in detector base. (FlashScan/CLIP)",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "b300-6"
+    },
+    {
+      "evidence": "For ivory, order B300-6-IV.",
+      "object": "b300-6",
+      "relation": "has_component",
+      "subject": "b300-6-iv"
+    },
+    {
+      "evidence": "B210LP: 6-inch flanged plug-in detector base. (FlashScan/CLIP)",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "b210lp"
+    },
+    {
+      "evidence": "B224BI-WH, B224BI-IV Isolator base",
+      "object": "isolator base",
+      "relation": "has_component",
+      "subject": "b224bi-wh"
+    },
+    {
+      "evidence": "B224BI-WH, B224BI-IV Isolator base",
+      "object": "isolator base",
+      "relation": "has_component",
+      "subject": "b224bi-iv"
+    },
+    {
+      "evidence": "B224RB-WH, B224RB-IV (FlashScan/CLIP, plug-in relay detector base)",
+      "object": "relay detector base",
+      "relation": "has_component",
+      "subject": "b224rb-wh"
+    },
+    {
+      "evidence": "B224RB-WH, B224RB-IV (FlashScan/CLIP, plug-in relay detector base)",
+      "object": "relay detector base",
+      "relation": "has_component",
+      "subject": "b224rb-iv"
+    },
+    {
+      "evidence": "B200S-WH, B200S-IV: Intelligent sounder base",
+      "object": "sounder base",
+      "relation": "has_component",
+      "subject": "b200s-wh"
+    },
+    {
+      "evidence": "B200S-WH, B200S-IV: Intelligent sounder base",
+      "object": "sounder base",
+      "relation": "has_component",
+      "subject": "b200s-iv"
+    },
+    {
+      "evidence": "B200S-LF-WH, B200S-LF-IV: Intelligent low-frequency sounder base",
+      "object": "low-frequency sounder base",
+      "relation": "has_component",
+      "subject": "b200s-lf-wh"
+    },
+    {
+      "evidence": "B200S-LF-WH, B200S-LF-IV: Intelligent low-frequency sounder base",
+      "object": "low-frequency sounder base",
+      "relation": "has_component",
+      "subject": "b200s-lf-iv"
+    },
+    {
+      "evidence": "B200SR-WH, B200SR-IV: Intelligent programmable sounder base",
+      "object": "programmable sounder base",
+      "relation": "has_component",
+      "subject": "b200sr-wh"
+    }
+  ],
+  "slc_wiring_manual#chunk_0075": [
+    {
+      "evidence": "The Wireless Gateway acts as a bridge between a group of wireless fire devices and a FlashScan SLC loop",
+      "object": "flashscan slc loop",
+      "relation": "communicates_with",
+      "subject": "wireless gateway"
+    },
+    {
+      "evidence": "The Wireless Gateway acts as a bridge ... on N16",
+      "object": "n16",
+      "relation": "installed_with",
+      "subject": "wireless gateway"
+    },
+    {
+      "evidence": "The Wireless Gateway acts as a bridge ... on NFS-320",
+      "object": "nfs-320",
+      "relation": "installed_with",
+      "subject": "wireless gateway"
+    },
+    {
+      "evidence": "The Wireless Gateway acts as a bridge ... on NFS-320SYS",
+      "object": "nfs-320sys",
+      "relation": "installed_with",
+      "subject": "wireless gateway"
+    },
+    {
+      "evidence": "The Wireless Gateway acts as a bridge ... on NFS2-640",
+      "object": "nfs2-640",
+      "relation": "installed_with",
+      "subject": "wireless gateway"
+    },
+    {
+      "evidence": "The Wireless Gateway acts as a bridge ... on NFS2-3030",
+      "object": "nfs2-3030",
+      "relation": "installed_with",
+      "subject": "wireless gateway"
+    },
+    {
+      "evidence": "It is powered by the SLC loop or by an external 24 VDC UL-listed power supply",
+      "object": "24v",
+      "relation": "requires_voltage",
+      "subject": "wireless gateway"
+    },
+    {
+      "evidence": "To program the addressable pipes on the Intelligent FAAST XT PRO, use VeriFire Tools",
+      "object": "verifire tools",
+      "relation": "configured_by",
+      "subject": "fsa-20000p intelligent faast xt pro"
+    },
+    {
+      "evidence": "The SLC loop address for this product is set using PipeIQ",
+      "object": "pipeiq",
+      "relation": "configured_by",
+      "subject": "fsa-20000p intelligent faast xt pro"
+    },
+    {
+      "evidence": "The SLC loop address for this product is set using PipeIQ",
+      "object": "pipeiq",
+      "relation": "configured_by",
+      "subject": "fsa-20000 intelligent faast xt"
+    },
+    {
+      "evidence": "FSA-20000/FSA-20000P Connection to the FACP ... SLC Connection",
+      "object": "flashscan slc loop",
+      "relation": "installed_with",
+      "subject": "fsa-20000p intelligent faast xt pro"
+    },
+    {
+      "evidence": "FSA-20000/FSA-20000P Connection to the FACP ... SLC Connection",
+      "object": "flashscan slc loop",
+      "relation": "installed_with",
+      "subject": "fsa-20000 intelligent faast xt"
+    },
+    {
+      "evidence": "Available wireless devices include a photo detector",
+      "object": "photo detector",
+      "relation": "has_component",
+      "subject": "faast detectors"
+    },
+    {
+      "evidence": "Available wireless devices include a photo/heat detector",
+      "object": "photo/heat detector",
+      "relation": "has_component",
+      "subject": "faast detectors"
+    },
+    {
+      "evidence": "Available wireless devices include a fixed-temperature heat detector",
+      "object": "fixed-temperature heat detector",
+      "relation": "has_component",
+      "subject": "faast detectors"
+    },
+    {
+      "evidence": "Available wireless devices include a rate-of-rise heat detector",
+      "object": "rate-of-rise heat detector",
+      "relation": "has_component",
+      "subject": "faast detectors"
+    }
+  ],
+  "slc_wiring_manual#chunk_0079": [
+    {
+      "evidence": "AFP-100 18.1",
+      "object": "18.1v",
+      "relation": "requires_voltage",
+      "subject": "afp-100"
+    },
+    {
+      "evidence": "MPS-24B 20.1",
+      "object": "20.1v",
+      "relation": "requires_voltage",
+      "subject": "mps-24b"
+    },
+    {
+      "evidence": "AFP-200 19.4",
+      "object": "19.4v",
+      "relation": "requires_voltage",
+      "subject": "afp-200"
+    },
+    {
+      "evidence": "FCPS-24 19.1",
+      "object": "19.1v",
+      "relation": "requires_voltage",
+      "subject": "fcps-24"
+    },
+    {
+      "evidence": "NFS-640 19.15",
+      "object": "19.15v",
+      "relation": "requires_voltage",
+      "subject": "nfs-640"
+    },
+    {
+      "evidence": "MPS-24A 19.6",
+      "object": "19.6v",
+      "relation": "requires_voltage",
+      "subject": "mps-24a"
+    },
+    {
+      "evidence": "CPS-24 on NFS2-640, NFS-320, or NFS-320SYS 19.48",
+      "object": "19.48v",
+      "relation": "requires_voltage",
+      "subject": "cps-24"
+    },
+    {
+      "evidence": "FCPS-24S6/FCPS-24S8 19.1",
+      "object": "19.1v",
+      "relation": "requires_voltage",
+      "subject": "fcps-24s6"
+    },
+    {
+      "evidence": "FCPS-24S6/FCPS-24S8 19.1",
+      "object": "19.1v",
+      "relation": "requires_voltage",
+      "subject": "fcps-24s8"
+    },
+    {
+      "evidence": "MPS-400 19.23",
+      "object": "19.23v",
+      "relation": "requires_voltage",
+      "subject": "mps-400"
+    },
+    {
+      "evidence": "ACPS-2406 19.8",
+      "object": "19.8v",
+      "relation": "requires_voltage",
+      "subject": "acps-2406"
+    },
+    {
+      "evidence": "AMPS-24 20.14",
+      "object": "20.14v",
+      "relation": "requires_voltage",
+      "subject": "amps-24"
+    },
+    {
+      "evidence": "ACPS-610 19.57",
+      "object": "19.57v",
+      "relation": "requires_voltage",
+      "subject": "acps-610"
+    },
+    {
+      "evidence": "APS2-6R 20.0",
+      "object": "20.0v",
+      "relation": "requires_voltage",
+      "subject": "aps2-6r"
+    },
+    {
+      "evidence": "PMB-AUX 20.03",
+      "object": "20.03v",
+      "relation": "requires_voltage",
+      "subject": "pmb-aux"
+    },
+    {
+      "evidence": "Power Supervision Relay ... can be supervised with a power supervision relay ... using the FCM-1",
+      "object": "fcm-1",
+      "relation": "installed_with",
+      "subject": "power supervision relay"
+    }
+  ],
+  "slc_wiring_manual#chunk_0091": [
+    {
+      "evidence": "Only N16 supports self-test devices",
+      "object": "self-test devices",
+      "relation": "supports_protocol",
+      "subject": "n16"
+    },
+    {
+      "evidence": "Self Test Smoke Detectors are installed on a SLM-318 loop card (CLP-2PCB)",
+      "object": "clp-2pcb",
+      "relation": "installed_with",
+      "subject": "slm-318"
+    },
+    {
+      "evidence": "initial release of SLM-318 drops to 23 ohms (CLP-PCB)",
+      "object": "clp-pcb",
+      "relation": "installed_with",
+      "subject": "slm-318"
+    },
+    {
+      "evidence": "FSP-951-SELFT ... N16 only",
+      "object": "n16",
+      "relation": "compatible_with",
+      "subject": "fsp-951-selft"
+    },
+    {
+      "evidence": "FSP-951T-SELFT ... N16 only",
+      "object": "n16",
+      "relation": "compatible_with",
+      "subject": "fsp-951t-selft"
+    },
+    {
+      "evidence": "FST-951-SELFT ... N16 only",
+      "object": "n16",
+      "relation": "compatible_with",
+      "subject": "fst-951-selft"
+    },
+    {
+      "evidence": "FSP-951 ... uses a photoelectric sensing chamber",
+      "object": "photoelectric sensing chamber",
+      "relation": "has_component",
+      "subject": "fsp-951"
+    },
+    {
+      "evidence": "FSP-951A ... uses a photoelectric sensing chamber",
+      "object": "photoelectric sensing chamber",
+      "relation": "has_component",
+      "subject": "fsp-951a"
+    },
+    {
+      "evidence": "FlashScan mode only",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-951"
+    },
+    {
+      "evidence": "FlashScan and CLIP mode",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-951-iv"
+    },
+    {
+      "evidence": "FlashScan and CLIP mode",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "fsp-951-iv"
+    },
+    {
+      "evidence": "FSP-951R ... photoelectric sensor",
+      "object": "photoelectric sensor",
+      "relation": "has_component",
+      "subject": "fsp-951r"
+    },
+    {
+      "evidence": "FSP-951RA ... photoelectric sensor",
+      "object": "photoelectric sensor",
+      "relation": "has_component",
+      "subject": "fsp-951ra"
+    },
+    {
+      "evidence": "FlashScan mode only",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-951r"
+    },
+    {
+      "evidence": "FlashScan and CLIP mode",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-951r-iv"
+    },
+    {
+      "evidence": "FlashScan and CLIP mode",
+      "object": "clip",
+      "relation": "supports_protocol",
+      "subject": "fsp-951r-iv"
+    }
+  ],
+  "slc_wiring_manual#chunk_0093": [
+    {
+      "evidence": "FlashScan and CLIP mode",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsb-200"
+    },
+    {
+      "evidence": "FlashScan and CLIP mode",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsb-200s"
+    },
+    {
+      "evidence": "FlashScan and CLIP mode",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsb-200a"
+    },
+    {
+      "evidence": "FlashScan and CLIP mode",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsb-200sa"
+    },
+    {
+      "evidence": "combines a photoelectric sensing chamber and fixed temperature heat detection",
+      "object": "photoelectric sensing chamber",
+      "relation": "has_component",
+      "subject": "fapt-851"
+    },
+    {
+      "evidence": "fixed temperature heat detection (135\u00b0F/57.2\u00b0C)",
+      "object": "135\u00b0F/57.2\u00b0C",
+      "relation": "requires_voltage",
+      "subject": "fapt-851"
+    },
+    {
+      "evidence": "FlashScan capable",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fapt-851"
+    },
+    {
+      "evidence": "incorporates an ionization sensing chamber",
+      "object": "ionization sensing chamber",
+      "relation": "has_component",
+      "subject": "fsi-851"
+    },
+    {
+      "evidence": "FlashScan capable",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsi-851"
+    },
+    {
+      "evidence": "incorporates an ionization sensing chamber",
+      "object": "ionization sensing chamber",
+      "relation": "has_component",
+      "subject": "fsi-851a"
+    },
+    {
+      "evidence": "FlashScan capable",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsi-851a"
+    },
+    {
+      "evidence": "uses a photoelectric sensing chamber",
+      "object": "photoelectric sensing chamber",
+      "relation": "has_component",
+      "subject": "fsp-851"
+    },
+    {
+      "evidence": "FlashScan capable",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-851"
+    },
+    {
+      "evidence": "uses a photoelectric sensing chamber",
+      "object": "photoelectric sensing chamber",
+      "relation": "has_component",
+      "subject": "fsp-851a"
+    },
+    {
+      "evidence": "FlashScan capable",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "fsp-851a"
+    },
+    {
+      "evidence": "Adds thermal sensors that will alarm at a fixed temperature of 135\u00b0F (57\u00b0C)",
+      "object": "thermal sensors",
+      "relation": "has_component",
+      "subject": "fsp-851t"
+    }
+  ],
+  "slc_wiring_manual#chunk_0094": [
+    {
+      "evidence": "VEP 1 Pipe with LEDs",
+      "object": "leds",
+      "relation": "has_component",
+      "subject": "vep-a00-1p-ntf"
+    },
+    {
+      "evidence": "VEU with LEDs",
+      "object": "leds",
+      "relation": "has_component",
+      "subject": "veu-a00-ntf"
+    },
+    {
+      "evidence": "VEU with 3.5\" Display",
+      "object": "3.5 display",
+      "relation": "has_component",
+      "subject": "veu-a10-ntf"
+    },
+    {
+      "evidence": "VEA-40 point with LEDs",
+      "object": "leds",
+      "relation": "has_component",
+      "subject": "vea-040-a00-ntf"
+    },
+    {
+      "evidence": "VEA-40 point with 3.5\" Display",
+      "object": "3.5 display",
+      "relation": "has_component",
+      "subject": "vea-040-a10-ntf"
+    },
+    {
+      "evidence": "VEP with LEDs",
+      "object": "leds",
+      "relation": "has_component",
+      "subject": "vep-a00-p-ntf-ul"
+    },
+    {
+      "evidence": "VEP with 3.5\" Display",
+      "object": "3.5 display",
+      "relation": "has_component",
+      "subject": "vep-a10-p-ntf-ul"
+    },
+    {
+      "evidence": "VEP 1 Pipe with LEDs",
+      "object": "leds",
+      "relation": "has_component",
+      "subject": "vep-a00-1p-ntf-ul"
+    },
+    {
+      "evidence": "VEU with LEDs",
+      "object": "leds",
+      "relation": "has_component",
+      "subject": "veu-a00-ntf-ul"
+    },
+    {
+      "evidence": "VEU with 3.5\" Display",
+      "object": "3.5 display",
+      "relation": "has_component",
+      "subject": "veu-a10-ntf-ul"
+    },
+    {
+      "evidence": "VEA-40 point with LEDs",
+      "object": "leds",
+      "relation": "has_component",
+      "subject": "vea-040-a00-ntf-ul"
+    },
+    {
+      "evidence": "VEA-40 point with 3.5\" Display",
+      "object": "3.5 display",
+      "relation": "has_component",
+      "subject": "vea-040-a10-ntf-ul"
+    },
+    {
+      "evidence": "UL 268 6th edition/ULC VEP-A00-1P-NTF",
+      "object": "ul 268 6th edition",
+      "relation": "compatible_with",
+      "subject": "vep-a00-1p-ntf"
+    },
+    {
+      "evidence": "UL 268 6th edition/ULC VEU-A00-NTF",
+      "object": "ul 268 6th edition",
+      "relation": "compatible_with",
+      "subject": "veu-a00-ntf"
+    },
+    {
+      "evidence": "UL 268 6th edition/ULC VEU-A10-NTF",
+      "object": "ul 268 6th edition",
+      "relation": "compatible_with",
+      "subject": "veu-a10-ntf"
+    },
+    {
+      "evidence": "UL 268 6th edition/ULC VEA-040-A00-NTF",
+      "object": "ul 268 6th edition",
+      "relation": "compatible_with",
+      "subject": "vea-040-a00-ntf"
+    }
+  ],
+  "slc_wiring_manual#chunk_0095": [
+    {
+      "evidence": "VES-A00-P-NTF-UL \u2014 Addressable VESDA-E VES scanning detector with LEDs, FlashScan",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "ves-a00-p-ntf-ul"
+    },
+    {
+      "evidence": "VES-A10-P-NTF-UL \u2014 Addressable VESDA-E VES scanning detector with 3.5\" Display, FlashScan",
+      "object": "flashscan",
+      "relation": "supports_protocol",
+      "subject": "ves-a10-p-ntf-ul"
+    },
+    {
+      "evidence": "VES-A00-P-NTF-UL \u2014 Addressable VESDA-E VES scanning detector with LEDs, FlashScan, UL 268 7th edition",
+      "object": "ul 268",
+      "relation": "compatible_with",
+      "subject": "ves-a00-p-ntf-ul"
+    },
+    {
+      "evidence": "VES-A10-P-NTF-UL \u2014 Addressable VESDA-E VES scanning detector with 3.5\" Display, FlashScan, UL 268 7th edition",
+      "object": "ul 268",
+      "relation": "compatible_with",
+      "subject": "ves-a10-p-ntf-ul"
+    },
+    {
+      "evidence": "VESDA-E VES scanning detector with LEDs",
+      "object": "leds",
+      "relation": "has_component",
+      "subject": "b300-6"
+    },
+    {
+      "evidence": "VESDA-E VES scanning detector with LEDs",
+      "object": "leds",
+      "relation": "has_component",
+      "subject": "b3006a"
+    },
+    {
+      "evidence": "B210LP ... Legacy ivory; replaced by B300-6/-IV.",
+      "object": "b300-6",
+      "relation": "installed_with",
+      "subject": "b210lp"
+    },
+    {
+      "evidence": "B210LPA ... Legacy ivory; replaced by B300-6/-IV.",
+      "object": "b3006a",
+      "relation": "installed_with",
+      "subject": "b210lpa"
+    },
+    {
+      "evidence": "B501A (before March 2018) ... replaced by B501-WHITE/-IV/-BL.",
+      "object": "b501-white",
+      "relation": "installed_with",
+      "subject": "b501a"
+    },
+    {
+      "evidence": "Standard European flangeless base (4\", 10.16 cm). White.",
+      "object": "ul 268",
+      "relation": "compatible_with",
+      "subject": "b501-white"
+    },
+    {
+      "evidence": "B501-IV Ivory version of B501-WHITE.",
+      "object": "b501-white",
+      "relation": "installed_with",
+      "subject": "b501-iv"
+    },
+    {
+      "evidence": "B501-BL Black version of B501-WHITE.",
+      "object": "b501-white",
+      "relation": "installed_with",
+      "subject": "b501-bl"
+    },
+    {
+      "evidence": "Sounder base with temporal sounder (UL 8th Edition)",
+      "object": "temporal sounder",
+      "relation": "has_component",
+      "subject": "b501bh"
+    },
+    {
+      "evidence": "Sounder base with temporal sounder (UL 8th Edition)",
+      "object": "temporal sounder",
+      "relation": "has_component",
+      "subject": "b501bht"
+    },
+    {
+      "evidence": "Sounder base with temporal sounder (UL 9th Edition)",
+      "object": "temporal sounder",
+      "relation": "has_component",
+      "subject": "b501bh-2"
+    },
+    {
+      "evidence": "Sounder base with temporal sounder (UL 9th Edition)",
+      "object": "temporal sounder",
+      "relation": "has_component",
+      "subject": "b501bht-2"
+    }
+  ],
+  "slc_wiring_manual#chunk_0096": [
+    {
+      "evidence": "N-MPS Series Addressable Addressable manual pull stations with hex-key reset feature.",
+      "object": "hex-key reset",
+      "relation": "has_component",
+      "subject": "n-mps series"
+    },
+    {
+      "evidence": "All models include screw terminal connectors and a hex key reset.",
+      "object": "screw terminal connectors",
+      "relation": "has_component",
+      "subject": "n-mps series"
+    },
+    {
+      "evidence": "Two-stage manual stations include a keyswitch and one key.",
+      "object": "keyswitch",
+      "relation": "has_component",
+      "subject": "n-mps-2a"
+    },
+    {
+      "evidence": "N-MPS-SAC and N-MPS-2AC include N/C ancillary contact.",
+      "object": "n/c ancillary contact",
+      "relation": "has_component",
+      "subject": "n-mps-2ac"
+    },
+    {
+      "evidence": "Control Module used as Notification Appliance Circuits (NACs) to power and supervise compatible, UL-listed notification appliances.",
+      "object": "notification appliance circuits",
+      "relation": "controls",
+      "subject": "fcm-1"
+    },
+    {
+      "evidence": "Control Module used as Notification Appliance Circuits (NACs) to power and supervise compatible, UL-listed notification appliances.",
+      "object": "notification appliance circuits",
+      "relation": "controls",
+      "subject": "fcm-1a"
+    },
+    {
+      "evidence": "to power and supervise compatible, UL-listed notification appliances.",
+      "object": "ul-listed",
+      "relation": "compatible_with",
+      "subject": "fcm-1"
+    },
+    {
+      "evidence": "to power and supervise compatible, UL-listed notification appliances.",
+      "object": "ul-listed",
+      "relation": "compatible_with",
+      "subject": "fcm-1a"
+    },
+    {
+      "evidence": "The modules come with a thermoplastic cover for mounting to a 4-inch (10.16 cm) square mounting box.",
+      "object": "thermoplastic cover",
+      "relation": "installed_with",
+      "subject": "fcm-1"
+    },
+    {
+      "evidence": "The modules come with a thermoplastic cover for mounting to a 4-inch (10.16 cm) square mounting box.",
+      "object": "thermoplastic cover",
+      "relation": "installed_with",
+      "subject": "fcm-1a"
+    },
+    {
+      "evidence": "mounting to a 4-inch (10.16 cm) square mounting box.",
+      "object": "4-inch square mounting box",
+      "relation": "installed_with",
+      "subject": "fcm-1"
+    },
+    {
+      "evidence": "mounting to a 4-inch (10.16 cm) square mounting box.",
+      "object": "4-inch square mounting box",
+      "relation": "installed_with",
+      "subject": "fcm-1a"
+    },
+    {
+      "evidence": "FlashScan only.",
+      "object": "flashscan",
+      "relation": "compatible_with",
+      "subject": "fcm-1-rel"
+    },
+    {
+      "evidence": "For use with NFS2-3030, NFS2-640, NFS-320(C), and NFS-320SYS.",
+      "object": "nfs2-3030",
+      "relation": "compatible_with",
+      "subject": "fcm-1-rel"
+    },
+    {
+      "evidence": "For use with NFS2-3030, NFS2-640, NFS-320(C), and NFS-320SYS.",
+      "object": "nfs2-640",
+      "relation": "compatible_with",
+      "subject": "fcm-1-rel"
+    },
+    {
+      "evidence": "For use with NFS2-3030, NFS2-640, NFS-320(C), and NFS-320SYS.",
+      "object": "nfs-320 c",
+      "relation": "compatible_with",
+      "subject": "fcm-1-rel"
+    }
+  ],
+  "slc_wiring_manual#chunk_0097": [
+    {
+      "evidence": "FRM-1A Relay Control Module is similar to the FCM-1 except used as a Form-C control relay module",
+      "object": "form-c relays",
+      "relation": "has_component",
+      "subject": "frm-1a"
+    },
+    {
+      "evidence": "FTM-1A Firefighter\u2019s Telephone Module; FlashScan-only device",
+      "object": "flashscan",
+      "relation": "compatible_with",
+      "subject": "ftm-1a"
+    },
+    {
+      "evidence": "It should be placed between groups of sensors in a Class A or Class X SLC",
+      "object": "class-b addressable initiating device circuits",
+      "relation": "installed_with",
+      "subject": "iso-x"
+    },
+    {
+      "evidence": "It should be placed between groups of sensors in a Class A or Class X SLC",
+      "object": "class-b addressable initiating device circuits",
+      "relation": "installed_with",
+      "subject": "iso-xa"
+    },
+    {
+      "evidence": "The Six Fault Isolator Module protects the system against wire-to-wire short circuits on six isolated SLC circuits",
+      "object": "class-b addressable initiating device circuits",
+      "relation": "installed_with",
+      "subject": "iso-6"
+    },
+    {
+      "evidence": "The Six Fault Isolator Module protects the system against wire-to-wire short circuits on six isolated SLC circuits",
+      "object": "class-b addressable initiating device circuits",
+      "relation": "installed_with",
+      "subject": "iso-6a"
+    },
+    {
+      "evidence": "FDRM-1A Dual Class B monitor / Form-C relay module",
+      "object": "dual class b monitor",
+      "relation": "has_component",
+      "subject": "fdrm-1a"
+    },
+    {
+      "evidence": "FDRM-1A Dual Class B monitor / Form-C relay module",
+      "object": "form-c relays",
+      "relation": "has_component",
+      "subject": "fdrm-1a"
+    },
+    {
+      "evidence": "XP6-C Controls six NAC or speaker/telephone circuits",
+      "object": "nac circuits",
+      "relation": "controls",
+      "subject": "xp6-c"
+    },
+    {
+      "evidence": "XP6-C Controls six NAC or speaker/telephone circuits",
+      "object": "speaker circuits",
+      "relation": "controls",
+      "subject": "xp6-c"
+    },
+    {
+      "evidence": "XP6-CA Controls six NAC or speaker/telephone circuits",
+      "object": "nac circuits",
+      "relation": "controls",
+      "subject": "xp6-ca"
+    },
+    {
+      "evidence": "XP6-CA Controls six NAC or speaker/telephone circuits",
+      "object": "speaker circuits",
+      "relation": "controls",
+      "subject": "xp6-ca"
+    },
+    {
+      "evidence": "XP6-R Controls six Form-C relays",
+      "object": "form-c relays",
+      "relation": "controls",
+      "subject": "xp6-r"
+    },
+    {
+      "evidence": "XP6-RA Controls six Form-C relays",
+      "object": "form-c relays",
+      "relation": "controls",
+      "subject": "xp6-ra"
+    },
+    {
+      "evidence": "XP10-M Supervises ten Class-B addressable Initiating Device Circuits",
+      "object": "class-b addressable initiating device circuits",
+      "relation": "monitors",
+      "subject": "xp10-m"
+    },
+    {
+      "evidence": "XP10-MA Supervises ten Class-B addressable Initiating Device Circuits",
+      "object": "class-b addressable initiating device circuits",
+      "relation": "monitors",
+      "subject": "xp10-ma"
+    }
+  ],
+  "slc_wiring_manual#chunk_0101": [
+    {
+      "evidence": "B200S-LF-WH, see sounder bases",
+      "object": "sounder bases",
+      "relation": "has_component",
+      "subject": "b200s-lf-wh"
+    },
+    {
+      "evidence": "B200S-LF-IV, see sounder bases",
+      "object": "sounder bases",
+      "relation": "has_component",
+      "subject": "b200s-lf-iv"
+    },
+    {
+      "evidence": "B200SR-LF-WH, see sounder bases",
+      "object": "sounder bases",
+      "relation": "has_component",
+      "subject": "b200sr-lf-wh"
+    },
+    {
+      "evidence": "B200SR-LF-IV, see sounder bases",
+      "object": "sounder bases",
+      "relation": "has_component",
+      "subject": "b200sr-lf-iv"
+    },
+    {
+      "evidence": "B200SR-WH, see sounder bases",
+      "object": "sounder bases",
+      "relation": "has_component",
+      "subject": "b200sr-wh"
+    },
+    {
+      "evidence": "B200SR-IV, see sounder bases",
+      "object": "sounder bases",
+      "relation": "has_component",
+      "subject": "b200sr-iv"
+    },
+    {
+      "evidence": "B200S-WH, see sounder bases",
+      "object": "sounder bases",
+      "relation": "has_component",
+      "subject": "b200s-wh"
+    },
+    {
+      "evidence": "B200S-IV, see sounder bases",
+      "object": "sounder bases",
+      "relation": "has_component",
+      "subject": "b200s-iv"
+    },
+    {
+      "evidence": "B210LP, see detector bases",
+      "object": "detector bases",
+      "relation": "has_component",
+      "subject": "b210lp"
+    },
+    {
+      "evidence": "B224BI, see isolator bases",
+      "object": "isolator bases",
+      "relation": "has_component",
+      "subject": "b224bi"
+    },
+    {
+      "evidence": "B224BI-WH, see isolator bases",
+      "object": "isolator bases",
+      "relation": "has_component",
+      "subject": "b224bi-wh"
+    },
+    {
+      "evidence": "B224BI-IV, see isolator bases",
+      "object": "isolator bases",
+      "relation": "has_component",
+      "subject": "b224bi-iv"
+    },
+    {
+      "evidence": "B224RB-WH, see relay bases",
+      "object": "relay bases",
+      "relation": "has_component",
+      "subject": "b224rb-wh"
+    },
+    {
+      "evidence": "B224RB-IV, see relay bases",
+      "object": "relay bases",
+      "relation": "has_component",
+      "subject": "b224rb-iv"
+    },
+    {
+      "evidence": "B300-6/-IV, see detector bases",
+      "object": "detector bases",
+      "relation": "has_component",
+      "subject": "b300-6/-iv"
+    },
+    {
+      "evidence": "B501 Series, see detector bases",
+      "object": "detector bases",
+      "relation": "has_component",
+      "subject": "b501 series"
+    }
+  ],
+  "slc_wiring_manual#chunk_0102": [
+    {
+      "evidence": "FDM-1, see dual monitor modules",
+      "object": "dual monitor modules",
+      "relation": "has_component",
+      "subject": "fdm-1"
+    },
+    {
+      "evidence": "FMM-1, see monitor modules",
+      "object": "monitor modules",
+      "relation": "has_component",
+      "subject": "fmm-1"
+    },
+    {
+      "evidence": "FMM-101, see miniature monitor modules",
+      "object": "miniature monitor modules",
+      "relation": "has_component",
+      "subject": "fmm-101"
+    },
+    {
+      "evidence": "FRM-1, see relay modules",
+      "object": "relay modules",
+      "relation": "has_component",
+      "subject": "frm-1"
+    },
+    {
+      "evidence": "FSA-5000, FSA-8000, FSA-20000, FSA-20000P, see aspiration detectors",
+      "object": "aspiration detectors",
+      "relation": "has_component",
+      "subject": "fsa-5000"
+    },
+    {
+      "evidence": "FWSG(A) see wireless gateway",
+      "object": "wireless gateway",
+      "relation": "installed_with",
+      "subject": "fwsga"
+    },
+    {
+      "evidence": "FZM-1, see zone interface modules",
+      "object": "zone interface modules",
+      "relation": "installed_with",
+      "subject": "fzm-1"
+    },
+    {
+      "evidence": "IDC, see Initiating Device Circuits",
+      "object": "initiating device circuits",
+      "relation": "monitors",
+      "subject": "idc"
+    }
+  ],
+  "slc_wiring_manual#chunk_0103": [
+    {
+      "evidence": "LEM-320 on NFS-3030",
+      "object": "nfs-3030",
+      "relation": "installed_with",
+      "subject": "lem-320"
+    },
+    {
+      "evidence": "LEM-320 on NFS-640",
+      "object": "nfs-640",
+      "relation": "installed_with",
+      "subject": "lem-320"
+    },
+    {
+      "evidence": "MPS-24A 66",
+      "object": "vdc power",
+      "relation": "requires_voltage",
+      "subject": "mps-24a"
+    },
+    {
+      "evidence": "MPS-24B 66",
+      "object": "vdc power",
+      "relation": "requires_voltage",
+      "subject": "mps-24b"
+    },
+    {
+      "evidence": "MPS-400 66",
+      "object": "vdc power",
+      "relation": "requires_voltage",
+      "subject": "mps-400"
+    },
+    {
+      "evidence": "power supervision relay 46, 66 power supplies 16, 66",
+      "object": "power supplies",
+      "relation": "installed_with",
+      "subject": "power supervision relay"
+    },
+    {
+      "evidence": "NAC terminal block 68",
+      "object": "nac terminal block",
+      "relation": "installed_with",
+      "subject": "nac"
+    },
+    {
+      "evidence": "NAC 14 ... notification appliances 66",
+      "object": "notification appliances",
+      "relation": "controls",
+      "subject": "nac"
+    },
+    {
+      "evidence": "PipeIQ\u00ae 62 ... RFX Wireless Interface Discontinued ... 16",
+      "object": "rfx wireless interface",
+      "relation": "communicates_with",
+      "subject": "pipeiq"
+    },
+    {
+      "evidence": "Polling Protocols 13 ... System 5000 with AIM-200 21, 25",
+      "object": "system 5000",
+      "relation": "configured_by",
+      "subject": "polling protocols"
+    },
+    {
+      "evidence": "SLC capacity of devices 17 ... supervised devices 66",
+      "object": "supervised devices",
+      "relation": "monitors",
+      "subject": "slc"
+    },
+    {
+      "evidence": "SLC terminal block 26",
+      "object": "slc terminal block",
+      "relation": "installed_with",
+      "subject": "slc"
+    },
+    {
+      "evidence": "rotary switches 8, 39, 51",
+      "object": "rotary switches",
+      "relation": "configured_by",
+      "subject": "slc"
+    },
+    {
+      "evidence": "short circuit 30, 31",
+      "object": "short circuit",
+      "relation": "monitors",
+      "subject": "slc"
+    },
+    {
+      "evidence": "trouble conditions 17",
+      "object": "trouble conditions",
+      "relation": "indicates_fault",
+      "subject": "slc"
+    },
+    {
+      "evidence": "manual releasing disconnect switch, see releasing device",
+      "object": "releasing device",
+      "relation": "installed_with",
+      "subject": "manual releasing disconnect switch"
+    }
+  ],
+  "slc_wiring_manual#chunk_0104": [
+    {
+      "evidence": "System 5000 with AIM-200",
+      "object": "aim-200",
+      "relation": "installed_with",
+      "subject": "system 5000"
+    },
+    {
+      "evidence": "SWIFT see wireless gateway",
+      "object": "wireless gateway",
+      "relation": "compatible_with",
+      "subject": "swift"
+    },
+    {
+      "evidence": "XP10-M(A) see multiple input/output modules",
+      "object": "multiple input/output modules",
+      "relation": "has_component",
+      "subject": "xp10-m a"
+    },
+    {
+      "evidence": "XP6-C(A) see multiple input/output modules",
+      "object": "multiple input/output modules",
+      "relation": "has_component",
+      "subject": "xp6-c a"
+    },
+    {
+      "evidence": "XP6-MA(A) see multiple input/output modules",
+      "object": "multiple input/output modules",
+      "relation": "has_component",
+      "subject": "xp6-ma a"
+    },
+    {
+      "evidence": "XP6-R(A), see relay modules",
+      "object": "relay modules",
+      "relation": "has_component",
+      "subject": "xp6-r a"
+    },
+    {
+      "evidence": "XP6-R(A), see multiple input/output modules",
+      "object": "multiple input/output modules",
+      "relation": "has_component",
+      "subject": "xp6-r a"
+    }
+  ]
+}

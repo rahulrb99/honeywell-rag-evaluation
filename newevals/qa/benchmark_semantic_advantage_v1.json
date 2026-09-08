@@ -1,0 +1,434 @@
+[
+  {
+    "id": "semantic_adv_001",
+    "question": "What voltage does the DAA2-5025 require?",
+    "answer": "120",
+    "answer_entity": "120",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "daa2-5025",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 11 Section 2: DAA2 Digital Audio Amplifiers 2.1 Description The DAA2 Digital Audio Amplifiers are multi-featured amplifiers with digital audio functionality. They are designed to work with the DVC Digital V oice Command. Refer to Figure 1.1 on page 8 for a simplified illustration of DAL devices on a digital audio loop. 2.1.1 Features The DAA2 audio amplifiers have the following features: \u2022 50W total output power at 25V RMS (all DAA2-5025 "
+    ],
+    "question_entities": [
+      "daa2-5025"
+    ],
+    "gold_reasoning_path": [
+      [
+        "daa2-5025",
+        "requires_voltage",
+        "120"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_002",
+    "question": "What voltage does the DAA2-5070 require?",
+    "answer": "120",
+    "answer_entity": "120",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "daa2-5070",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 11 Section 2: DAA2 Digital Audio Amplifiers 2.1 Description The DAA2 Digital Audio Amplifiers are multi-featured amplifiers with digital audio functionality. They are designed to work with the DVC Digital V oice Command. Refer to Figure 1.1 on page 8 for a simplified illustration of DAL devices on a digital audio loop. 2.1.1 Features The DAA2 audio amplifiers have the following features: \u2022 50W total output power at 25V RMS (all DAA2-5025 "
+    ],
+    "question_entities": [
+      "daa2-5070"
+    ],
+    "gold_reasoning_path": [
+      [
+        "daa2-5070",
+        "requires_voltage",
+        "120"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_003",
+    "question": "What voltage does the DAA2-5025E require?",
+    "answer": "220 - 240v",
+    "answer_entity": "220 - 240v",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "daa2-5025e",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 11 Section 2: DAA2 Digital Audio Amplifiers 2.1 Description The DAA2 Digital Audio Amplifiers are multi-featured amplifiers with digital audio functionality. They are designed to work with the DVC Digital V oice Command. Refer to Figure 1.1 on page 8 for a simplified illustration of DAL devices on a digital audio loop. 2.1.1 Features The DAA2 audio amplifiers have the following features: \u2022 50W total output power at 25V RMS (all DAA2-5025 "
+    ],
+    "question_entities": [
+      "daa2-5025e"
+    ],
+    "gold_reasoning_path": [
+      [
+        "daa2-5025e",
+        "requires_voltage",
+        "220 - 240v"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_004",
+    "question": "What voltage does the DAA2-5070E require?",
+    "answer": "220 - 240v",
+    "answer_entity": "220 - 240v",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "daa2-5070e",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 11 Section 2: DAA2 Digital Audio Amplifiers 2.1 Description The DAA2 Digital Audio Amplifiers are multi-featured amplifiers with digital audio functionality. They are designed to work with the DVC Digital V oice Command. Refer to Figure 1.1 on page 8 for a simplified illustration of DAL devices on a digital audio loop. 2.1.1 Features The DAA2 audio amplifiers have the following features: \u2022 50W total output power at 25V RMS (all DAA2-5025 "
+    ],
+    "question_entities": [
+      "daa2-5070e"
+    ],
+    "gold_reasoning_path": [
+      [
+        "daa2-5070e",
+        "requires_voltage",
+        "220 - 240v"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_005",
+    "question": "What voltage does the DAA2-7525 require?",
+    "answer": "120",
+    "answer_entity": "120",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "daa2-7525",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 11 Section 2: DAA2 Digital Audio Amplifiers 2.1 Description The DAA2 Digital Audio Amplifiers are multi-featured amplifiers with digital audio functionality. They are designed to work with the DVC Digital V oice Command. Refer to Figure 1.1 on page 8 for a simplified illustration of DAL devices on a digital audio loop. 2.1.1 Features The DAA2 audio amplifiers have the following features: \u2022 50W total output power at 25V RMS (all DAA2-5025 "
+    ],
+    "question_entities": [
+      "daa2-7525"
+    ],
+    "gold_reasoning_path": [
+      [
+        "daa2-7525",
+        "requires_voltage",
+        "120"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_006",
+    "question": "What voltage does the DAA2-7525E require?",
+    "answer": "220 - 240v",
+    "answer_entity": "220 - 240v",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "daa2-7525e",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 11 Section 2: DAA2 Digital Audio Amplifiers 2.1 Description The DAA2 Digital Audio Amplifiers are multi-featured amplifiers with digital audio functionality. They are designed to work with the DVC Digital V oice Command. Refer to Figure 1.1 on page 8 for a simplified illustration of DAL devices on a digital audio loop. 2.1.1 Features The DAA2 audio amplifiers have the following features: \u2022 50W total output power at 25V RMS (all DAA2-5025 "
+    ],
+    "question_entities": [
+      "daa2-7525e"
+    ],
+    "gold_reasoning_path": [
+      [
+        "daa2-7525e",
+        "requires_voltage",
+        "220 - 240v"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_007",
+    "question": "What voltage does the DAA-5025E require?",
+    "answer": "220- 240v",
+    "answer_entity": "220- 240v",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "daa-5025e",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "81 DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 Appendix C: DAA Digital Audio Amplifiers C.1 Overview C.1.1 Description The DAA Digital Audio Amplifiers are multi-featured amplifiers with digital audio functionality. They are designed for a networked or non-networked environment with the DVC Digital V oice Command. DAA models are compatible with other types of DAL devices (e.g. DAA2, DAX) on a wire, fiber, or mixed wire/fiber digital audio loop. A DS-RFM (for multi-mode DAAs) or DS-"
+    ],
+    "question_entities": [
+      "daa-5025e"
+    ],
+    "gold_reasoning_path": [
+      [
+        "daa-5025e",
+        "requires_voltage",
+        "220- 240v"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_008",
+    "question": "What voltage does the DAA-5070E require?",
+    "answer": "220- 240v",
+    "answer_entity": "220- 240v",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "daa-5070e",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "81 DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 Appendix C: DAA Digital Audio Amplifiers C.1 Overview C.1.1 Description The DAA Digital Audio Amplifiers are multi-featured amplifiers with digital audio functionality. They are designed for a networked or non-networked environment with the DVC Digital V oice Command. DAA models are compatible with other types of DAL devices (e.g. DAA2, DAX) on a wire, fiber, or mixed wire/fiber digital audio loop. A DS-RFM (for multi-mode DAAs) or DS-"
+    ],
+    "question_entities": [
+      "daa-5070e"
+    ],
+    "gold_reasoning_path": [
+      [
+        "daa-5070e",
+        "requires_voltage",
+        "220- 240v"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_009",
+    "question": "What voltage does the DAA-7525E require?",
+    "answer": "220- 240v",
+    "answer_entity": "220- 240v",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "daa-7525e",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "81 DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 Appendix C: DAA Digital Audio Amplifiers C.1 Overview C.1.1 Description The DAA Digital Audio Amplifiers are multi-featured amplifiers with digital audio functionality. They are designed for a networked or non-networked environment with the DVC Digital V oice Command. DAA models are compatible with other types of DAL devices (e.g. DAA2, DAX) on a wire, fiber, or mixed wire/fiber digital audio loop. A DS-RFM (for multi-mode DAAs) or DS-"
+    ],
+    "question_entities": [
+      "daa-7525e"
+    ],
+    "gold_reasoning_path": [
+      [
+        "daa-7525e",
+        "requires_voltage",
+        "220- 240v"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_010",
+    "question": "What voltage does the CPS-24 power supply board require?",
+    "answer": "220- 240v",
+    "answer_entity": "220- 240v",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "cps-24 power supply board",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "12 DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 DAA2 Digital Audio Amplifiers Description \u2022 Auxiliary input for 1.6V p-p max. for each circuit when both AUXA L and AUXA R are used, or 3.2Vp-p max. for one when only one circuit (AUXA L or AUXR) is used, to be used for background music input, an interface with a telephone paging source, or other compatible audio sources. Includes user audio level adjustment feature. \u2022 Uploads and downloads via the DVC. Programmable through VeriFire To"
+    ],
+    "question_entities": [
+      "cps-24 power supply board"
+    ],
+    "gold_reasoning_path": [
+      [
+        "cps-24 power supply board",
+        "requires_voltage",
+        "220- 240v"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_011",
+    "question": "What lower voltage range does the DAA-PS power supply board support?",
+    "answer": "115- 120v",
+    "answer_entity": "115- 120v",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "daa-ps power supply board",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "82 DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 DAA Digital Audio Amplifiers Overview Figure C.1 gives a simplified illustration of DAAs and their positions in the Digital Audio Loop (DAL) of a DVC. Figure C.1 DAL Block Diagram C.1.2 Features The DAA audio amplifiers have the following features: \u2022 50W total output power at 25V RMS (all DAA-5025 model versions) or 70 VRMS (all DAA-5070 model versions). \u2022 75W total output power at 25V RMS (all DAA-7525 model versions). \u2022 Two Class A c"
+    ],
+    "question_entities": [
+      "daa-ps power supply board"
+    ],
+    "gold_reasoning_path": [
+      [
+        "daa-ps power supply board",
+        "requires_voltage",
+        "115- 120v"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_012",
+    "question": "What programming tool configures the DAA2?",
+    "answer": "verifire tools programming",
+    "answer_entity": "verifire tools programming",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "daa2",
+    "source_fields": [
+      "configured_by"
+    ],
+    "contexts": [
+      "113 DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 Index A AC Power 12, 43, 82 AC Current Draw Calculations 73 ACT-25 32, 56, 104 ACT-70 32, 56, 104 AFAWS 27, 100 Alarm Bus Specifications 13, 43, 83 Wiring 24, 51, 97 Audio high quality 12, 82 standard quality 12, 82 Audio storage DAA 82 DAA2 12 DAX 42 Auxiliary Input A (AUX A) Specifications 84 Wiring 102 Auxiliary Input B (AUX B) Signal Supervision option 102 Specifications 84 VeriFire Tools Programming 102 Wiring 102 Auxiliary Input"
+    ],
+    "question_entities": [
+      "daa2"
+    ],
+    "gold_reasoning_path": [
+      [
+        "daa2",
+        "configured_by",
+        "verifire tools programming"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_013",
+    "question": "What audio option board is a component of the DVC Digital Voice Command?",
+    "answer": "dvc-ao audio option board",
+    "answer_entity": "dvc-ao audio option board",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "dvc digital voice command",
+    "source_fields": [
+      "has_component"
+    ],
+    "contexts": [
+      "DVC Digital Voice Command Manual \u2014 P/N 52411:M9 2/28/2024 9 Supplemental Documentation General Information 1.3 Supplemental Documentation The table below provides a list of documents referenced in this manual, as well as documents for other compatible devices. Table 1.1 Related Documentation Table 1.4 Cautions and Warnings This manual contains cautions and warnings to alert the reader as follows: DS-SFM Single-mode fiber option module DS-RFM Multi-mode fiber option module Speakers For a complete"
+    ],
+    "question_entities": [
+      "dvc digital voice command"
+    ],
+    "gold_reasoning_path": [
+      [
+        "dvc digital voice command",
+        "has_component",
+        "dvc-ao audio option board"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_014",
+    "question": "What base is the B210LP installed with?",
+    "answer": "flanged base",
+    "answer_entity": "flanged base",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "b210lp",
+    "source_fields": [
+      "installed_with"
+    ],
+    "contexts": [
+      "Notifier SLC Wiring Manual \u2014 P/N 51253:U9 12/3/2021 11 Reference Documentation Introduction B200SR-WH, B200SR-IV Sounder Base Installation document B200SRA-WH, B200SRA-IV Canadian I56-3387-010 & higher I56-3470-001 & higher Retrofit installations: B200SR B200SRA I56-3387-009R I56-3470-000 B200S-LF-WH, B200S-LF-IV Intelligent Addressable Low-Frequency Sounder Base Installation document I56-4151-004 & higher Retrofit installations: B200S-LF I56-4151-003R B200SR-LF-WH, B200S-LF-IV Intelligent Addre"
+    ],
+    "question_entities": [
+      "b210lp"
+    ],
+    "gold_reasoning_path": [
+      [
+        "b210lp",
+        "installed_with",
+        "flanged base"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_015",
+    "question": "What base is the B210LPA installed with?",
+    "answer": "flanged base",
+    "answer_entity": "flanged base",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "b210lpa",
+    "source_fields": [
+      "installed_with"
+    ],
+    "contexts": [
+      "Notifier SLC Wiring Manual \u2014 P/N 51253:U9 12/3/2021 11 Reference Documentation Introduction B200SR-WH, B200SR-IV Sounder Base Installation document B200SRA-WH, B200SRA-IV Canadian I56-3387-010 & higher I56-3470-001 & higher Retrofit installations: B200SR B200SRA I56-3387-009R I56-3470-000 B200S-LF-WH, B200S-LF-IV Intelligent Addressable Low-Frequency Sounder Base Installation document I56-4151-004 & higher Retrofit installations: B200S-LF I56-4151-003R B200SR-LF-WH, B200S-LF-IV Intelligent Addre"
+    ],
+    "question_entities": [
+      "b210lpa"
+    ],
+    "gold_reasoning_path": [
+      [
+        "b210lpa",
+        "installed_with",
+        "flanged base"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_adv_016",
+    "question": "What device type is the FWSGA installed with?",
+    "answer": "wireless gateway",
+    "answer_entity": "wireless gateway",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_advantage_v1",
+    "source_product": "fwsga",
+    "source_fields": [
+      "installed_with"
+    ],
+    "contexts": [
+      "47 FCO-851 15 FCO-951/-IV 15 FCPS-24 66 FDM-1, see dual monitor modules FDRM-1 14, 50, 51, 81 Fire Alarm Control Panels 8 Fire alarm service 39, 40, 41, 42, 51 FlashScan 8, 13, 17, 31 floating segments 27 FMM-1, see monitor modules FMM-101, see miniature monitor modules FMM-4-20 13, 38 Terminal Designations 38 Form-C contacts 49, 50 Form-C relays 81 four-wire configuration 46 FPC-951 15 FPTI-951/-IV 15 FRM-1, see relay modules FSA-5000, FSA-8000, FSA-20000, FSA-20000P, see aspiration detectors F"
+    ],
+    "question_entities": [
+      "fwsga"
+    ],
+    "gold_reasoning_path": [
+      [
+        "fwsga",
+        "installed_with",
+        "wireless gateway"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+@prefix : <http://example.org/honeywell#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:Product a owl:Class .
+:Protocol a owl:Class .
+:Voltage a owl:Class .
+:Component a owl:Class .
+:ErrorCode a owl:Class .
+
+:supports_protocol a owl:ObjectProperty ;
+  rdfs:domain :Product ;
+  rdfs:range :Protocol .
+
+:requires_voltage a owl:ObjectProperty ;
+  rdfs:domain :Product ;
+  rdfs:range :Voltage .
+
+:has_component a owl:ObjectProperty ;
+  rdfs:domain :Product ;
+  rdfs:range :Component .
+
+:reports_error a owl:ObjectProperty ;
+  rdfs:domain :Product ;
+  rdfs:range :ErrorCode .

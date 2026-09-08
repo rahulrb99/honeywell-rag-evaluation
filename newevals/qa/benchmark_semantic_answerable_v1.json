@@ -1,0 +1,56 @@
+[
+  {
+    "id": "semantic_answer_001",
+    "question": "What type of devices does the N16 support for self testing?",
+    "answer": "self-test devices",
+    "answer_entity": "self-test devices",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_answerable_v1",
+    "source_product": "n16",
+    "source_fields": [
+      "supports_protocol"
+    ],
+    "contexts": [
+      "N16 supports self-test devices."
+    ],
+    "question_entities": [
+      "n16"
+    ],
+    "gold_reasoning_path": [
+      [
+        "n16",
+        "supports_protocol",
+        "self-test devices"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_answer_002",
+    "question": "What component does Class X operation require for SLC isolation?",
+    "answer": "isolator modules",
+    "answer_entity": "isolator modules",
+    "category": "semantic_relation_advantage",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_answerable_v1",
+    "source_product": "class x operation",
+    "source_fields": [
+      "requires_voltage"
+    ],
+    "contexts": [
+      "Class X operation uses isolator modules."
+    ],
+    "question_entities": [
+      "class x operation"
+    ],
+    "gold_reasoning_path": [
+      [
+        "class x operation",
+        "requires_voltage",
+        "isolator modules"
+      ]
+    ]
+  }
+]

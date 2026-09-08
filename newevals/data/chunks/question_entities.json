@@ -1,0 +1,521 @@
+{
+  "q001": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "firstcommand nfc-fft"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q002": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "nfc-rm remote microphone"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q003": {
+    "components": [
+      "phone jacks"
+    ],
+    "error_codes": [],
+    "products": [
+      "n-fpj",
+      "nfc-fft"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q004": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "nfc-rm",
+      "nfc-50/100 e"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q005": {
+    "components": [
+      "onboard slc circuit"
+    ],
+    "error_codes": [],
+    "products": [
+      "nfc-fft"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "q006": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "nfc-rm remote microphone"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q007": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "nfc-fft",
+      "nfc-rm"
+    ],
+    "protocols": [
+      "nfc"
+    ],
+    "voltages": []
+  },
+  "q008": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "nfc-fft",
+      "nfc-rm"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q009": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "onyx series panels",
+      "noti-fire-net",
+      "dvc"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q010": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "nfc-rm",
+      "firstcommand"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q011": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "onyx series"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q012": {
+    "components": [
+      "amplifier"
+    ],
+    "error_codes": [],
+    "products": [
+      "daa2 amplifier",
+      "dvc system"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q013": {
+    "components": [
+      "digital audio ports",
+      "firefighter telephone",
+      "live paging"
+    ],
+    "error_codes": [],
+    "products": [
+      "daa2",
+      "dvc"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q014": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "nfc-fft"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q015": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "rk-zone8"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q016": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "nfc-rm"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q017": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "rk-zone8"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q018": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "l-series speakers"
+    ],
+    "protocols": [],
+    "voltages": [
+      "supervisory voltage"
+    ]
+  },
+  "q019": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "wall l-series speaker strobes"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q020": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "l-pcm06b"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q021": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "rk-zone8",
+      "l-pcm06b"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q022": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "onyx dvc",
+      "daa2"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q023": {
+    "components": [
+      "monitored inputs",
+      "contact outputs"
+    ],
+    "error_codes": [],
+    "products": [
+      "rk-zone8"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q024": {
+    "components": [
+      "audio channel",
+      "alarm messages"
+    ],
+    "error_codes": [],
+    "products": [
+      "daa2"
+    ],
+    "protocols": [
+      "digital communication"
+    ],
+    "voltages": []
+  },
+  "q025": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "rk-zone8",
+      "intevio"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q026": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "nfs2-3030",
+      "onyx"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q027": {
+    "components": [
+      "style z",
+      "style y",
+      "class a wiring",
+      "class b wiring"
+    ],
+    "error_codes": [],
+    "products": [
+      "slc manual"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "q028": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "nfc-rm remote microphones"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "semantic_adv_001": {
+    "products": [
+      "daa2-5025"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_002": {
+    "products": [
+      "daa2-5070"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_003": {
+    "products": [
+      "daa2-5025e"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_004": {
+    "products": [
+      "daa2-5070e"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_005": {
+    "products": [
+      "daa2-7525"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_006": {
+    "products": [
+      "daa2-7525e"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_007": {
+    "products": [
+      "daa-5025e"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_008": {
+    "products": [
+      "daa-5070e"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_009": {
+    "products": [
+      "daa-7525e"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_010": {
+    "products": [
+      "cps-24 power supply board"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_011": {
+    "products": [
+      "daa-ps power supply board"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_012": {
+    "products": [
+      "daa2"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_013": {
+    "products": [
+      "dvc digital voice command"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_014": {
+    "products": [
+      "b210lp"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_015": {
+    "products": [
+      "b210lpa"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_adv_016": {
+    "products": [
+      "fwsga"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_answer_001": {
+    "products": [
+      "n16"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_answer_002": {
+    "products": [
+      "class x operation"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_qa_001": {
+    "products": [
+      "heat detectors"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_qa_002": {
+    "products": [
+      "manual pull stations"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_qa_003": {
+    "products": [
+      "audible warning devices"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_qa_004": {
+    "products": [
+      "fire alarm control panel"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_qa_005": {
+    "products": [
+      "facp"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_qa_006": {
+    "products": [
+      "fcm-1"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  },
+  "semantic_qa_007": {
+    "products": [
+      "nfs2-3030"
+    ],
+    "protocols": [],
+    "voltages": [],
+    "components": [],
+    "error_codes": []
+  }
+}

@@ -13,6 +13,26 @@ outputs/predictions/*
 outputs/eval_outputs/*
 !outputs/eval_outputs/.gitkeep
 .DS_Store
+
+# Backup / scratch folders
 graph_rag_baseline_local_backup/
+graphrag_engine_backup_*/
+graph_rag_latest_upstream/
 reports/graphrag_first_deliverable_bundle/
 reports/week3_benchmarking_comparative_analysis.md
+
+# Zip archives
+*.zip
+
+# Slide preview images
+ppt_review_previews/
+ppt_review_previews_corrected/
+
+# newevals share / copy folder (external collaboration snapshot)
+newevals_share/
+
+# newevals generated results (reproducible from source)
+newevals/results/*.csv
+newevals/results/*.json
+newevals/results/*.html
+newevals/results/run_manifest*.json

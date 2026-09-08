@@ -1,0 +1,8038 @@
+{
+  "daa2_amplifier_manual#chunk_0000": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command system",
+      "daa2",
+      "dax amplifiers"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0001": {
+    "components": [
+      "smoke detectors",
+      "heat detectors",
+      "manual pull stations",
+      "audible warning devices",
+      "fire alarm control panel",
+      "autonomous control unit",
+      "local operating console",
+      "voice communication"
+    ],
+    "error_codes": [],
+    "products": [
+      "daa2 amplifier",
+      "dax amplifier",
+      "smoke detectors",
+      "heat detectors",
+      "manual pull stations",
+      "audible warning devices",
+      "fire alarm control panel",
+      "facp",
+      "autonomous control unit",
+      "acu",
+      "local operating console",
+      "loc",
+      "voice communication"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0002": {
+    "components": [
+      "photoelectronic sensing chambers",
+      "ionizing-type sensing chambers",
+      "alarm transmission wiring",
+      "communications",
+      "signaling",
+      "power"
+    ],
+    "error_codes": [],
+    "products": [
+      "smoke detectors",
+      "heat detectors",
+      "rate-of-rise heat detectors",
+      "control panel",
+      "bells",
+      "horns",
+      "strobes",
+      "speakers",
+      "displays",
+      "emergency communication system",
+      "voice messaging systems"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0003": {
+    "components": [
+      "voice messaging systems",
+      "local displays",
+      "strobes",
+      "audible devices",
+      "horns",
+      "bells",
+      "standby batteries",
+      "control panel",
+      "external antenna",
+      "telephone lines"
+    ],
+    "error_codes": [],
+    "products": [],
+    "protocols": [
+      "ip",
+      "cellular"
+    ],
+    "voltages": [
+      "ac"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0004": {
+    "components": [],
+    "error_codes": [
+      "limit-f-2020"
+    ],
+    "products": [],
+    "protocols": [
+      "ul",
+      "nfpa",
+      "nfpa 72"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0005": {
+    "components": [
+      "cards",
+      "modules",
+      "interconnecting cables",
+      "standby batteries",
+      "electronic components",
+      "circuit boards",
+      "electronic assemblies",
+      "battery",
+      "transformer",
+      "printed circuit board",
+      "screw terminals"
+    ],
+    "error_codes": [],
+    "products": [
+      "daa2 amplifier",
+      "dax amplifier",
+      "fire alarm control panel"
+    ],
+    "protocols": [
+      "nfpa 72"
+    ],
+    "voltages": [
+      "0-49 c",
+      "32-120 f",
+      "15-27 c",
+      "60-80 f"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0006": {
+    "components": [
+      "battery",
+      "transformer",
+      "printed circuit board",
+      "screw terminals",
+      "touchscreen display",
+      "static-sensitive components"
+    ],
+    "error_codes": [],
+    "products": [
+      "harsh",
+      "nis",
+      "noti fire net",
+      "acclimate plus",
+      "flashscan",
+      "faast fire alarm aspiration sensing technology",
+      "inspire",
+      "intelligent faast",
+      "notifier",
+      "onyx",
+      "onyxworks",
+      "swift",
+      "verifire",
+      "view"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0007": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "daa2 amplifier",
+      "dax amplifier",
+      "fire alarm",
+      "life safety technology"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0008": {
+    "components": [
+      "power supply board",
+      "battery chassis",
+      "cabinet",
+      "switches",
+      "indicators",
+      "fft riser"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "cps-24 power supply board",
+      "daa2-5025/70 board",
+      "daa2-7525 board",
+      "eq series cabinets",
+      "cab-4 series",
+      "chs-bh1 battery chassis"
+    ],
+    "protocols": [
+      "alarm bus",
+      "digital audio ports a and b"
+    ],
+    "voltages": [
+      "ac power"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0009": {
+    "components": [
+      "dax indicators",
+      "switches",
+      "jumper",
+      "batteries",
+      "alarm bus",
+      "digital audio ports a and b",
+      "speaker",
+      "backup circuits",
+      "address switches"
+    ],
+    "error_codes": [
+      "earth fault"
+    ],
+    "products": [
+      "6 dvc digital voice command",
+      "dax board",
+      "eq series cabinets",
+      "cab-4 series",
+      "dax enclosure",
+      "bda backup digital amplifiers"
+    ],
+    "protocols": [],
+    "voltages": [
+      "ac power",
+      "ul power-limited class 2"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0010": {
+    "components": [
+      "power supply board",
+      "battery",
+      "indicators",
+      "switches",
+      "jumper"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax",
+      "daa digital audio amplifiers",
+      "daa-ps power supply board",
+      "daa-5025/70 board",
+      "daa-7525 board",
+      "cab-3 cabinets",
+      "cab-4 series",
+      "eqcab series cabinets",
+      "chs-bh1 battery chassis"
+    ],
+    "protocols": [],
+    "voltages": [
+      "ac power"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0011": {
+    "components": [
+      "digital audio amplifiers",
+      "backup amplifiers",
+      "fiber option conversion modules",
+      "fiber option modules",
+      "boards"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc",
+      "daa2",
+      "dax",
+      "bda",
+      "daa",
+      "dvc-em",
+      "ds-fm",
+      "daa-pca",
+      "daa-pcb"
+    ],
+    "protocols": [
+      "dal",
+      "digital audio loop"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0012": {
+    "components": [
+      "speakers",
+      "audio coupling transformer",
+      "remote microphones",
+      "remote paging jack",
+      "firefighter phone jack",
+      "isolator and silencing modules",
+      "audible isolation module",
+      "residential silence module"
+    ],
+    "error_codes": [
+      "programming errors",
+      "runtime errors"
+    ],
+    "products": [
+      "dvc digital voice command",
+      "ds-sfm single-mode fiber option module",
+      "ds-rfm multi-mode fiber option module",
+      "verifire tools",
+      "dvc-ao audio option board",
+      "amps-24",
+      "acps-610 addressable power supply",
+      "nca-2 network control annunciator",
+      "onyxworks workstation",
+      "dal devices",
+      "aa series audio amplifier",
+      "acs annunciator",
+      "afaws automatic fire alarm warden station",
+      "cfft-1 chassis for firefighter telephone",
+      "ftm-1 firephone control module",
+      "act-4 audio coupling transformer",
+      "act-25 audio coupling transformer",
+      "act-70 audio coupling transformer",
+      "rm-1 series remote microphones",
+      "cab-5 series cabinets",
+      "cab-4 series cabinets",
+      "eq-cab series",
+      "rsm-1a residential silence module",
+      "aim-1a audible isolation module",
+      "cim-2a/csm-1a isolator and silencing modules",
+      "rpj-1 remote paging jack",
+      "fpj firefighter phone jack"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0013": {
+    "components": [
+      "control panel"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0014": {
+    "components": [
+      "class a connections",
+      "class b connections",
+      "isolated alarm bus input",
+      "fiber option module",
+      "speaker circuit output"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "daa2-5025",
+      "daa2-5025-cla",
+      "daa2-5025e",
+      "daa2-5025e-cla",
+      "daa2-5070",
+      "daa2-5070-cla",
+      "daa2-5070e",
+      "daa2-5070e-cla",
+      "daa2-7525",
+      "daa2-7525-cla",
+      "daa2-7525e",
+      "daa2-7525e-cla",
+      "daa2 class a daughter card",
+      "dcadc",
+      "bda card",
+      "rm-1",
+      "firefighter telephone",
+      "fft riser"
+    ],
+    "protocols": [
+      "digital audio loop",
+      "network control-by-event equations"
+    ],
+    "voltages": [
+      "12v",
+      "220 - 240 vac",
+      "25 vrms",
+      "70 vrms"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0015": {
+    "components": [
+      "auxiliary input",
+      "backup amplifier",
+      "fuse",
+      "battery charger",
+      "battery connections",
+      "wire digital audio ports",
+      "power supply",
+      "battery"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "cps-24 power supply board",
+      "cab-4",
+      "chs-bh1",
+      "dcadc",
+      "daa2-5025",
+      "daa2-5070",
+      "daa2-7525",
+      "bda"
+    ],
+    "protocols": [
+      "verifire tools"
+    ],
+    "voltages": [
+      "1.6v p-p",
+      "3.2vp-p",
+      "12v",
+      "220-240 v ac",
+      "24v",
+      "5v",
+      "27.6v",
+      "17v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0016": {
+    "components": [
+      "digital audio ports a",
+      "digital audio ports b",
+      "tb2",
+      "tb3",
+      "bda"
+    ],
+    "error_codes": [],
+    "products": [
+      "daa2-5025",
+      "daa2-5070",
+      "daa2-7525",
+      "daa2-5025/70",
+      "daa2 configurations with bda",
+      "verifire tools",
+      "dvc digital voice command"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0017": {
+    "components": [
+      "fiber option module",
+      "tb2",
+      "tb3",
+      "tb4",
+      "tb5",
+      "tb7",
+      "tb9",
+      "tb10",
+      "tb11",
+      "tb12",
+      "tb13",
+      "bkup1",
+      "bkup2",
+      "bkup3",
+      "bkup4",
+      "r-3.9k resistor",
+      "elr-20k resistor",
+      "r-10k resistor"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "daa2-5070",
+      "daa2-5025",
+      "daa2-7525",
+      "bda backup digital amplifiers",
+      "fiber option modules",
+      "canadian room isolator modules"
+    ],
+    "protocols": [
+      "eia-485"
+    ],
+    "voltages": [
+      "16v",
+      "24v",
+      "2.5vrms",
+      "3vrms",
+      "25v rms",
+      "70vrms",
+      "70v rms"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0018": {
+    "components": [
+      "rear board",
+      "front power supply board",
+      "bda power j6",
+      "bda control j5",
+      "tb12",
+      "tb16",
+      "tb13",
+      "tb17",
+      "tb10",
+      "tb14",
+      "tb11",
+      "tb2",
+      "tb3",
+      "tb7",
+      "tb9",
+      "tb5",
+      "tb4",
+      "usb connector j2",
+      "fiber option module",
+      "fft out riser",
+      "fft out shield",
+      "fft rtn",
+      "fft rtn shield",
+      "auxa r",
+      "auxa l",
+      "rm1 audio shld",
+      "rm1 audio",
+      "rm1 pwr shld",
+      "rm1 pwr",
+      "alm in",
+      "alm out",
+      "ref",
+      "shield",
+      "bkup1",
+      "bkup2",
+      "bkup3",
+      "bkup4"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "cps-24 power supply board",
+      "daa2 fiber option module"
+    ],
+    "protocols": [
+      "digital audio port a",
+      "digital audio port b"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0019": {
+    "components": [
+      "bat",
+      "tb3",
+      "aux com",
+      "com",
+      "hot",
+      "neu",
+      "earth ground",
+      "tb1",
+      "ac input",
+      "tb2",
+      "ac fuse f4"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "cps-24 power supply board",
+      "daa2pca"
+    ],
+    "protocols": [],
+    "voltages": [
+      "24v",
+      "5v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0020": {
+    "components": [
+      "led indicator",
+      "jumper",
+      "switch",
+      "led",
+      "tb terminal block",
+      "sw switch",
+      "j3",
+      "alm in",
+      "alm out",
+      "usb",
+      "fft",
+      "audio",
+      "amp",
+      "backup",
+      "trbl",
+      "sig sil",
+      "rst",
+      "shld",
+      "shield"
+    ],
+    "error_codes": [
+      "trbl1",
+      "trbl2",
+      "trbl3",
+      "trbl4",
+      "amp fail",
+      "backup fail",
+      "trouble",
+      "earth fault",
+      "gnd fault"
+    ],
+    "products": [
+      "16 dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "cps-24 power supply board",
+      "da2apca",
+      "cps24-bboard",
+      "rm-15",
+      "rm-1"
+    ],
+    "protocols": [
+      "2wire",
+      "4wire",
+      "5wire",
+      "usb",
+      "al bus"
+    ],
+    "voltages": [
+      "24v aux",
+      "5v aux"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0021": {
+    "components": [
+      "led",
+      "audio amplifier",
+      "speaker circuit",
+      "alarm bus input",
+      "aux in a",
+      "fft",
+      "digital audio port a",
+      "rx led",
+      "tx led"
+    ],
+    "error_codes": [
+      "amp fail",
+      "trbl",
+      "trbl 1",
+      "trbl 2",
+      "trbl 3",
+      "trbl 4",
+      "al bus"
+    ],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "daa2 board",
+      "digital audio port a",
+      "fiber option module"
+    ],
+    "protocols": [
+      "usb"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0022": {
+    "components": [
+      "speaker circuit",
+      "usb port",
+      "rx led",
+      "tx led",
+      "sig sil button",
+      "local speaker outputs"
+    ],
+    "error_codes": [
+      "circuit 4",
+      "rst",
+      "status",
+      "backup fail"
+    ],
+    "products": [
+      "daa2",
+      "bda amplifier",
+      "fiber option module"
+    ],
+    "protocols": [
+      "usb",
+      "digital audio port a",
+      "digital audio port b"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0023": {
+    "components": [
+      "switches",
+      "keyhole mounting bolts",
+      "batteries",
+      "earth fault switch sw1",
+      "bcd rotary address tens selection switch sw2",
+      "bcd rotary address ones selection switch sw3",
+      "primary amp switch sw4"
+    ],
+    "error_codes": [
+      "ac fail",
+      "high battery",
+      "low battery",
+      "charger trouble",
+      "earth fault"
+    ],
+    "products": [
+      "18 dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "dcadc",
+      "bda-25/70v",
+      "ncm",
+      "hs-ncm",
+      "chs-bh1 battery chassis",
+      "cab-4 series cabinet",
+      "eqcab series backboxes",
+      "chs-adp adapter plate",
+      "cab-5 series cabinet",
+      "cps-24 power supply board",
+      "daa2 board"
+    ],
+    "protocols": [],
+    "voltages": [
+      "5v logic power",
+      "24v auxiliary power",
+      "ac power"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0024": {
+    "components": [
+      "sw1",
+      "sw2",
+      "sw3",
+      "sw4",
+      "sw5",
+      "gnd fault sw 1",
+      "led"
+    ],
+    "error_codes": [
+      "amp fail"
+    ],
+    "products": [
+      "daa2 board",
+      "cps-24 power supply board",
+      "fft riser",
+      "digital audio port a",
+      "dvc"
+    ],
+    "protocols": [
+      "2-wire",
+      "4-wire",
+      "class b",
+      "class a"
+    ],
+    "voltages": [
+      "24v aux",
+      "5v aux",
+      "3 ac"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0025": {
+    "components": [
+      "backbox",
+      "door",
+      "keyholes",
+      "fasteners",
+      "wires",
+      "batteries",
+      "cabinet knock-outs",
+      "ventilated panels"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "eqcab-d4",
+      "eqcab-c4",
+      "eqcab-b4",
+      "eqbb-d4",
+      "eqdr-d4",
+      "eqbb-c4",
+      "eqdr-c4",
+      "eqbb-b4",
+      "eqdr-b4",
+      "chs-adp",
+      "cab-4 series cabinet",
+      "cab-5"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0026": {
+    "components": [
+      "chassis standoffs",
+      "10/32 nuts",
+      "4-40 male/female standoffs",
+      "4-40 screws",
+      "bda harness"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "dp-1b dress panel",
+      "bda-25/70v",
+      "network control module",
+      "ncm",
+      "hs-ncm"
+    ],
+    "protocols": [],
+    "voltages": [
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0027": {
+    "components": [
+      "batteries",
+      "battery chassis",
+      "battery holder",
+      "chassis standoffs",
+      "hex nuts",
+      "nuts",
+      "conduit"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "chs-bh1 battery chassis",
+      "cab-4 series cabinet",
+      "dcadc",
+      "dp-1b dress panel"
+    ],
+    "protocols": [],
+    "voltages": [
+      "12v",
+      "12ah"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0028": {
+    "components": [
+      "batteries",
+      "battery cables",
+      "circuit breaker",
+      "earth ground terminal",
+      "tb1 earth",
+      "neutral terminal",
+      "hot terminal",
+      "washers p/n 43123",
+      "8-32 keps hex nuts p/n 36047",
+      "battery holder",
+      "chassis standoffs"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "chs-bh1",
+      "cab-4 enclosure",
+      "cab-d4"
+    ],
+    "protocols": [],
+    "voltages": [
+      "6v",
+      "ac line"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0029": {
+    "components": [
+      "batteries",
+      "battery cables",
+      "battery interconnect cable",
+      "ground fault switch",
+      "power supply",
+      "charger",
+      "12 awg wire",
+      "conduit"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "chs-bh1",
+      "cab-4 series cabinet",
+      "cps-24",
+      "verifire tools"
+    ],
+    "protocols": [],
+    "voltages": [
+      "12v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0030": {
+    "components": [
+      "batteries",
+      "alarm bus",
+      "notification appliance circuit",
+      "tb3",
+      "tb4",
+      "elr-47k resistor",
+      "twisted-pair wiring"
+    ],
+    "error_codes": [],
+    "products": [
+      "24 dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "facp",
+      "fcm-1",
+      "cps-24"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "16v",
+      "24v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0031": {
+    "components": [
+      "nac circuit",
+      "alarm bus",
+      "twisted-pair",
+      "terminals"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "daa2",
+      "daabrdtb4.wmf",
+      "tb4",
+      "elr"
+    ],
+    "protocols": [
+      "alarm bus",
+      "nac circuit",
+      "slc"
+    ],
+    "voltages": [
+      "16v",
+      "24v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0032": {
+    "components": [
+      "digital audio ports a",
+      "digital audio ports b",
+      "fiber option modules",
+      "multi-mode fiber",
+      "wire/fiber cabling",
+      "class b configuration",
+      "class x configuration",
+      "tb2",
+      "tb3"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc",
+      "daa2",
+      "ds-fm",
+      "ds-sfm",
+      "ds-rfm",
+      "dapa",
+      "dapb"
+    ],
+    "protocols": [
+      "digital audio loop",
+      "dal"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0033": {
+    "components": [
+      "fiber/wire dal",
+      "fft riser connections",
+      "firefighter telephone riser connections",
+      "firefighter telephones",
+      "telephone control modules",
+      "telephone circuits",
+      "switch sw1",
+      "3.9k ohm 1/2 watt end-of-line resistor",
+      "internal elr",
+      "phone jacks",
+      "multi-mode port",
+      "single-mode port",
+      "wire port",
+      "fiber optic media"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "ftm-1 modules",
+      "afaws",
+      "fpjrpj-1",
+      "ft-301n",
+      "fhs firefighter handset",
+      "verifire tools",
+      "dvc ds-fm",
+      "ds-sfm"
+    ],
+    "protocols": [
+      "nfpa class a",
+      "nfpa class b",
+      "nfpa 72"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0034": {
+    "components": [
+      "tb5",
+      "r-47k ohm resistor",
+      "14-18 awg twisted-pair",
+      "earth"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "rm-1 remote microphone interface",
+      "rm-1 series microphone",
+      "telephone control module",
+      "dvc afaws fire alarm warden station",
+      "fpj/rpj-1 firefighter s phone jack",
+      "ft-301n telephone control module",
+      "verifire tools"
+    ],
+    "protocols": [
+      "noti-fire-net"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0035": {
+    "components": [
+      "auxiliary input a",
+      "speaker circuits",
+      "terminals 10 through 13",
+      "class a connections",
+      "class b connections",
+      "tb9",
+      "tb10",
+      "tb11",
+      "tb12",
+      "tb13",
+      "14-18 awg twisted-pair",
+      "12-18 awg twisted-pair"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "dcadc"
+    ],
+    "protocols": [],
+    "voltages": [
+      "6.9v",
+      "1.5v",
+      "1.6v p-p",
+      "3.2v p-p"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0036": {
+    "components": [
+      "20k ohm end-of-line resistor",
+      "r-10k",
+      "tb10",
+      "tb11",
+      "tb12",
+      "tb13",
+      "shield out 1",
+      "shield out 2",
+      "shield out 3",
+      "shield out 4"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "dcadc",
+      "elr-20k"
+    ],
+    "protocols": [
+      "nac"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0037": {
+    "components": [
+      "jumper wire",
+      "terminal block",
+      "class a speaker circuit",
+      "class b daa2 outputs"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "dcadc"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0038": {
+    "components": [
+      "audio coupling transformer",
+      "resistor",
+      "jumper",
+      "power supply",
+      "amplifier",
+      "speaker circuits",
+      "4-wire return",
+      "elr"
+    ],
+    "error_codes": [],
+    "products": [
+      "32 dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "aa-series amplifiers",
+      "dcadc",
+      "act-25",
+      "act-70",
+      "slc control modules",
+      "v-type control modules",
+      "h-type modules",
+      "xp6-c modules",
+      "aa-100",
+      "aa-100e",
+      "aa-120",
+      "aa-120e",
+      "aa-30",
+      "aa-30e"
+    ],
+    "protocols": [
+      "riser mode to additional amplifiers",
+      "riser mode to control modules"
+    ],
+    "voltages": [
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0039": {
+    "components": [
+      "speaker circuit",
+      "risers",
+      "tb10",
+      "tb12",
+      "circuits 1 and 3"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "bda",
+      "slc control module",
+      "xpc-6 slc control module"
+    ],
+    "protocols": [
+      "elr class b"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0040": {
+    "components": [
+      "relay module",
+      "jumper",
+      "eol resistor",
+      "power supply",
+      "speaker circuit",
+      "room isolator modules",
+      "facp"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "rsm-1a",
+      "aim-1a",
+      "daa2-5070",
+      "daa2-5025",
+      "daa2-7525",
+      "nfs2-3030"
+    ],
+    "protocols": [
+      "cbe"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0041": {
+    "components": [
+      "tb1",
+      "tb14",
+      "tb15",
+      "tb16",
+      "eol resistor",
+      "speaker circuit",
+      "backup terminal block",
+      "spiral wire wrap"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "cim-2a module",
+      "csm-1a module",
+      "dcadc",
+      "bda-25/70v backup amplifier",
+      "verifire tools"
+    ],
+    "protocols": [
+      "riser mode",
+      "class b risers",
+      "class a risers",
+      "dal digital audio loop"
+    ],
+    "voltages": [
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0042": {
+    "components": [
+      "standoffs",
+      "power harnesses",
+      "screws",
+      "j1",
+      "j2",
+      "j5",
+      "j6"
+    ],
+    "error_codes": [],
+    "products": [
+      "36 dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "bda-25/70v",
+      "daa2-dcadc"
+    ],
+    "protocols": [],
+    "voltages": [
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0043": {
+    "components": [
+      "bkup terminal blocks",
+      "bkup1",
+      "bkup2",
+      "bkup3",
+      "bkup4",
+      "dap a",
+      "ref a",
+      "tb2",
+      "tb3",
+      "dap b",
+      "ref b",
+      "tb10",
+      "tb11",
+      "tb12",
+      "tb13",
+      "tb14",
+      "tb15",
+      "tb16",
+      "tb17",
+      "dapa",
+      "dapb",
+      "speaker circuits",
+      "class a",
+      "class b",
+      "dcadc"
+    ],
+    "error_codes": [
+      "amplifier limit trouble"
+    ],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "daa2"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0044": {
+    "components": [
+      "in-cabinet batteries",
+      "battery backup"
+    ],
+    "error_codes": [],
+    "products": [
+      "38 dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "daa2-5070",
+      "dcadc"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0045": {
+    "components": [
+      "tb10",
+      "circuit 1"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "daa2-5070",
+      "dcadc",
+      "canadian room isolator module"
+    ],
+    "protocols": [],
+    "voltages": [
+      "class 2"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0046": {
+    "components": [
+      "gnd fault switch",
+      "sw1",
+      "sw2",
+      "sw3",
+      "sw4",
+      "fft riser",
+      "address switches",
+      "primary amp switch"
+    ],
+    "error_codes": [
+      "daa2 trouble",
+      "ground fault error"
+    ],
+    "products": [
+      "40 dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "dvc"
+    ],
+    "protocols": [
+      "dal",
+      "digital audio loop"
+    ],
+    "voltages": [
+      "cps-24"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0047": {
+    "components": [
+      "sig sil control",
+      "volume control",
+      "speaker circuits",
+      "pushbutton control",
+      "network workstation"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2 digital audio amplifiers",
+      "verifire tools",
+      "nca-2",
+      "nfs2-3030",
+      "n16",
+      "ncd",
+      "inspire series",
+      "onyx series",
+      "aio",
+      "acs"
+    ],
+    "protocols": [
+      "fft communication",
+      "dal digital audio loop"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0048": {
+    "components": [
+      "class a connection",
+      "class b connection",
+      "isolated alarm bus input",
+      "battery charger",
+      "backup amplifier",
+      "speaker"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax digital audio amplifiers",
+      "dax-5025",
+      "dax-5025e",
+      "dax-5070",
+      "dax-5070e",
+      "dax-3525",
+      "dax-3525e",
+      "dax-3570",
+      "dax-3570e",
+      "verifire tools",
+      "fiber option module"
+    ],
+    "protocols": [
+      "digital audio loop",
+      "network control-by-event equations"
+    ],
+    "voltages": [
+      "25v rms",
+      "70 vrms",
+      "12v",
+      "220-240 vac"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0049": {
+    "components": [
+      "battery charger",
+      "battery fuse",
+      "digital audio ports a and b",
+      "alarm bus",
+      "speaker circuits",
+      "battery connections",
+      "end-of-line resistors",
+      "power supply"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax digital audio amplifiers",
+      "dax-35 boards",
+      "dax-3570",
+      "dax-5070",
+      "dax-5025",
+      "dax-3525",
+      "dax-5025/70",
+      "dax-3525/70",
+      "dax-5070/dax-3570",
+      "cab-4",
+      "bda backup digital amplifiers",
+      "fiber option modules"
+    ],
+    "protocols": [
+      "eia-485"
+    ],
+    "voltages": [
+      "12v",
+      "220-240 v ac",
+      "6v",
+      "27.6v",
+      "16v",
+      "24v",
+      "25 vrms",
+      "70 vrms",
+      "25v rms",
+      "70v rms",
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0050": {
+    "components": [
+      "tb7",
+      "tb8",
+      "tb3",
+      "tb2",
+      "tb10",
+      "j7",
+      "j3",
+      "tb4",
+      "tb9",
+      "tb1",
+      "tb11",
+      "tb5",
+      "j2",
+      "j6"
+    ],
+    "error_codes": [],
+    "products": [
+      "44 dvc digital voice command",
+      "dax digital audio amplifiers",
+      "dax board"
+    ],
+    "protocols": [],
+    "voltages": [
+      "ac input"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0051": {
+    "components": [
+      "led indicators",
+      "switches",
+      "jumpers",
+      "led # reset",
+      "rxb led",
+      "txb led",
+      "rxa led",
+      "txa led",
+      "ampfail led",
+      "on2 led",
+      "on1 led",
+      "albus led",
+      "trbl led",
+      "chgr fail led",
+      "batt fail led",
+      "sigsil led",
+      "status led",
+      "audio led",
+      "backup led",
+      "trbl1 led",
+      "trbl2 led",
+      "ac power led",
+      "earth fault led",
+      "tens sw2",
+      "earth fault sw5",
+      "ones sw3",
+      "function sw4"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax digital audio amplifiers",
+      "dax board",
+      "fiber option module"
+    ],
+    "protocols": [
+      "digital audio port a",
+      "digital audio port b"
+    ],
+    "voltages": [
+      "35 watt"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0052": {
+    "components": [
+      "dax chassis",
+      "switches",
+      "jumper",
+      "bda amplifier",
+      "alarm bus",
+      "speaker circuit 1",
+      "speaker circuit 2",
+      "aux input",
+      "earth fault switch sw5",
+      "battery charger",
+      "bcd rotary address tens selection switch",
+      "bcd rotary address ones selection switch"
+    ],
+    "error_codes": [
+      "trbl2",
+      "trbl1",
+      "trbl",
+      "batt fail",
+      "chgr fail",
+      "earth fault",
+      "sigsil"
+    ],
+    "products": [
+      "46 dvc digital voice command",
+      "dax digital audio amplifiers",
+      "bda-25/70v",
+      "ncm",
+      "hs-ncm",
+      "eq series cabinet",
+      "cab-4 series cabinet",
+      "dax-35"
+    ],
+    "protocols": [],
+    "voltages": [
+      "25v",
+      "7v",
+      "ac power"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0053": {
+    "components": [
+      "batt fail",
+      "chgr fail",
+      "sigsil",
+      "tens sw2",
+      "ones sw3",
+      "function sw4",
+      "earth fault sw5",
+      "bcd rotary address tens selection switch",
+      "bcd rotary address ones selection switch",
+      "push-button switch",
+      "led"
+    ],
+    "error_codes": [
+      "batt fail",
+      "chgr fail",
+      "sigsil"
+    ],
+    "products": [
+      "dax-35",
+      "dax board"
+    ],
+    "protocols": [
+      "digital audio port a"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0054": {
+    "components": [
+      "cabinet backbox",
+      "keyhole mounting bolts",
+      "cabinet knock-outs",
+      "operational buttons",
+      "switches",
+      "displays",
+      "batteries",
+      "ventilated panels",
+      "door",
+      "fasteners"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax digital audio amplifiers",
+      "eqcab-d4",
+      "eqcab-c4",
+      "eqcab-b4",
+      "eqbb-d4",
+      "eqdr-d4",
+      "eqbb-c4",
+      "eqdr-c4",
+      "eqbb-b4",
+      "eqdr-b4",
+      "chs-adp",
+      "cab-4 series cabinet",
+      "cab-5"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0055": {
+    "components": [
+      "batteries",
+      "chassis standoffs",
+      "10/32 nuts",
+      "1 3/8 steel 4-40 male/female standoffs",
+      "4-40 screws"
+    ],
+    "error_codes": [],
+    "products": [
+      "48 dvc digital voice command",
+      "dax digital audio amplifiers",
+      "dp-1b dress panel",
+      "cab-4 series cabinet",
+      "bda-25/70v",
+      "ncm",
+      "hs-ncm"
+    ],
+    "protocols": [],
+    "voltages": [
+      "12v",
+      "25/70v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0056": {
+    "components": [
+      "batteries",
+      "battery cables",
+      "circuit breaker",
+      "earth ground terminal",
+      "primary power neutral line",
+      "primary power ac line",
+      "battery interconnect cable"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax digital audio amplifiers",
+      "cab-4 enclosure",
+      "chs-bh1"
+    ],
+    "protocols": [],
+    "voltages": [
+      "12v",
+      "6v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0057": {
+    "components": [
+      "batteries",
+      "battery cables",
+      "ground fault switch sw5",
+      "battery-charging device",
+      "power supply"
+    ],
+    "error_codes": [],
+    "products": [
+      "50 dvc digital voice command",
+      "dax digital audio amplifiers",
+      "dax-35",
+      "dax-50",
+      "battery interconnect cable"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0058": {
+    "components": [
+      "batteries",
+      "alarm bus",
+      "tb8",
+      "tb9",
+      "sw5 earth fault",
+      "elr-47k resistor",
+      "14-18 awg twisted-pair wiring",
+      "12 awg wiring",
+      "conduit"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax digital audio amplifiers",
+      "dax-35",
+      "fcm-1",
+      "daa2",
+      "verifire tools",
+      "facp"
+    ],
+    "protocols": [
+      "slc",
+      "notification appliance circuit"
+    ],
+    "voltages": [
+      "16v",
+      "24v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0059": {
+    "components": [
+      "digital audio ports a",
+      "digital audio ports b",
+      "dap a",
+      "dap b",
+      "nac circuit",
+      "alarm bus",
+      "nac circuits",
+      "14-18 awg twisted-pair"
+    ],
+    "error_codes": [],
+    "products": [
+      "52 dvc digital voice command",
+      "dax digital audio amplifiers",
+      "dax"
+    ],
+    "protocols": [
+      "digital audio loop",
+      "dal"
+    ],
+    "voltages": [
+      "16v",
+      "24v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0060": {
+    "components": [
+      "digital audio ports a and b",
+      "dap",
+      "tb1",
+      "tb2",
+      "tb3",
+      "class b configuration",
+      "class x configuration",
+      "fiber option module",
+      "wire/fiber cabling"
+    ],
+    "error_codes": [
+      "earth fault switch 5"
+    ],
+    "products": [
+      "dvc digital voice command",
+      "dax digital audio amplifiers",
+      "ds-fm fiber option module",
+      "ds-sfm fiber option module",
+      "ds-rfm fiber module",
+      "dvc",
+      "daa"
+    ],
+    "protocols": [
+      "digital audio loop dal"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0061": {
+    "components": [
+      "speaker circuits",
+      "terminals 4 and 5",
+      "tb10",
+      "tb11",
+      "backup in",
+      "backup thru",
+      "one wire port",
+      "multi-mode port",
+      "single-mode port",
+      "class x return"
+    ],
+    "error_codes": [],
+    "products": [
+      "54 dvc digital voice command",
+      "dax digital audio amplifiers",
+      "ds-fm",
+      "ds-sfm"
+    ],
+    "protocols": [
+      "nfpa class a",
+      "nfpa class b",
+      "nfpa 72"
+    ],
+    "voltages": [
+      "6.9v",
+      "1.5v",
+      "35w",
+      "50w"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0062": {
+    "components": [
+      "speaker riser mode",
+      "class a circuit",
+      "class b circuit",
+      "12-18 awg twisted-pair",
+      "20k ohm end-of-line resistor",
+      "r-10k"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax digital audio amplifiers",
+      "elr-20k"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0063": {
+    "components": [
+      "audio coupling transformer",
+      "resistor",
+      "jumper",
+      "power supply"
+    ],
+    "error_codes": [],
+    "products": [
+      "56 dvc digital voice command",
+      "dax digital audio amplifiers",
+      "act-25",
+      "act-70",
+      "aa-series amplifiers",
+      "aa-100",
+      "aa-100e",
+      "aa-120",
+      "aa-120e",
+      "aa-30",
+      "aa-30e",
+      "xp6-c",
+      "daa2"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "supervision voltage"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0064": {
+    "components": [
+      "speaker riser",
+      "room isolator modules",
+      "relay module",
+      "jumpers"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax digital audio amplifiers",
+      "rsm-1a",
+      "aim-1a",
+      "nfs2-3030",
+      "dax-3570",
+      "dax-5070",
+      "dax-3525",
+      "dax-5025",
+      "slc control module"
+    ],
+    "protocols": [
+      "cbe"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0065": {
+    "components": [
+      "room isolators",
+      "speaker circuit risers",
+      "eol resistor",
+      "class a return",
+      "class 2"
+    ],
+    "error_codes": [],
+    "products": [
+      "58 dvc digital voice command",
+      "dax digital audio amplifiers",
+      "cim-2a module",
+      "csm-1a module",
+      "rsm-1a",
+      "aim-1a",
+      "dax-3570",
+      "dax-5070",
+      "dax-3525",
+      "dax-5025"
+    ],
+    "protocols": [],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0066": {
+    "components": [
+      "tb10",
+      "tb11",
+      "bkup1",
+      "bkup2",
+      "j1",
+      "j2",
+      "j6",
+      "j7",
+      "standoffs",
+      "power harnesses",
+      "terminal block",
+      "speaker circuits"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc",
+      "dax",
+      "bda-25/70v",
+      "bda"
+    ],
+    "protocols": [
+      "verifire tools",
+      "dal"
+    ],
+    "voltages": [
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0067": {
+    "components": [
+      "dap a",
+      "ref a",
+      "dvc tb2",
+      "tb3",
+      "dap b",
+      "ref b",
+      "dax primary",
+      "dax backup",
+      "dapa",
+      "dapb",
+      "shld",
+      "tb4",
+      "tb10",
+      "tb5",
+      "tb11",
+      "bkup2",
+      "bkup1",
+      "speaker circuit out2",
+      "speaker circuit out1"
+    ],
+    "error_codes": [
+      "amplifier limit"
+    ],
+    "products": [
+      "60 dvc digital voice command",
+      "dax digital audio amplifiers",
+      "dax installation",
+      "bkup terminal blocks"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0068": {
+    "components": [
+      "backbox",
+      "knockouts",
+      "conduits"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax digital audio amplifiers",
+      "dax-3570",
+      "dax-5070",
+      "canadian room isolator modules"
+    ],
+    "protocols": [],
+    "voltages": [
+      "power-limited class 2"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0069": {
+    "components": [
+      "earth fault switch",
+      "address switches",
+      "configuration switches",
+      "speaker circuits"
+    ],
+    "error_codes": [
+      "dax trouble",
+      "general ground fault error"
+    ],
+    "products": [
+      "dvc digital voice command",
+      "dax digital audio amplifiers",
+      "dax-35",
+      "dal",
+      "verifire tools",
+      "nca-2",
+      "nfs2-3030",
+      "n16",
+      "ncd",
+      "inspire series",
+      "onyx series"
+    ],
+    "protocols": [
+      "dal",
+      "digital audio loop"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0070": {
+    "components": [
+      "bda",
+      "digital amplifier",
+      "backup digital amplifier",
+      "audio channel",
+      "bda-25/70 card"
+    ],
+    "error_codes": [],
+    "products": [
+      "bda-25v",
+      "bda-70v",
+      "daa2",
+      "daa2-7525",
+      "daa2-7525e",
+      "daa2-5025",
+      "daa2-5025e",
+      "daa2-5070",
+      "daa2-5070e",
+      "dax-50",
+      "dax-35"
+    ],
+    "protocols": [],
+    "voltages": [
+      "25 v rms",
+      "70 v rms"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0071": {
+    "components": [
+      "led",
+      "switch",
+      "amplifier",
+      "board"
+    ],
+    "error_codes": [
+      "fault"
+    ],
+    "products": [
+      "64 dvc digital voice command",
+      "bda backup digital amplifiers",
+      "bda-25v/70v"
+    ],
+    "protocols": [],
+    "voltages": [
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0072": {
+    "components": [
+      "standoffs",
+      "screws",
+      "power harnesses",
+      "j1",
+      "j2",
+      "j5",
+      "j6",
+      "j7"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "bda backup digital amplifiers",
+      "bda-25v/70v",
+      "daa2 amplifier",
+      "dax amplifier",
+      "power and control harness"
+    ],
+    "protocols": [],
+    "voltages": [
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0073": {
+    "components": [
+      "wattage switches",
+      "fail test switch",
+      "bda control cable",
+      "bda power cable",
+      "charger",
+      "amplifier",
+      "audio groups"
+    ],
+    "error_codes": [],
+    "products": [
+      "66 dvc digital voice command",
+      "bda backup digital amplifiers",
+      "bda-70",
+      "daa2",
+      "daa2-50",
+      "dcadc"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0074": {
+    "components": [
+      "class b outputs",
+      "class a outputs",
+      "charger",
+      "backup",
+      "amplifier",
+      "speaker circuits"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "bda backup digital amplifiers",
+      "charger 50w amplifier",
+      "dcadc",
+      "daa2 speaker circuits",
+      "external charger"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0075": {
+    "components": [
+      "charger",
+      "amplifier",
+      "bda",
+      "class b outputs",
+      "class a outputs"
+    ],
+    "error_codes": [],
+    "products": [
+      "68 dvc digital voice command",
+      "bda backup digital amplifiers",
+      "daa2-75",
+      "verifire tools",
+      "nca-2",
+      "ncd",
+      "n16",
+      "nfs2-3030",
+      "dcadc",
+      "daa2 speaker circuits"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0076": {
+    "components": [
+      "fiber option board",
+      "wire terminals",
+      "tb1",
+      "tb2",
+      "tb3",
+      "lc style connection",
+      "st style connector",
+      "fiber optic cable",
+      "multi-mode fiber",
+      "single-mode fiber",
+      "connector",
+      "splice"
+    ],
+    "error_codes": [],
+    "products": [
+      "69 dvc digital voice command",
+      "dvc-pcc",
+      "dal devices",
+      "fiber daa amplifiers",
+      "fiber option modules",
+      "dax board",
+      "daa2 board",
+      "dap ports",
+      "ds-fm",
+      "ds-sfm",
+      "dvc",
+      "daa",
+      "dvc-pca",
+      "dvc-pcb",
+      "ds-rfm"
+    ],
+    "protocols": [
+      "digital audio port a",
+      "digital audio port b"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0077": {
+    "components": [
+      "single-mode fiber",
+      "multi-mode fiber",
+      "st style connector",
+      "9/125 micrometer cable"
+    ],
+    "error_codes": [],
+    "products": [
+      "ds-sfm",
+      "dvc",
+      "daa",
+      "ds-fm",
+      "dvc-pca",
+      "dvc-pcb",
+      "ds-rfm",
+      "dal device",
+      "fiber option module"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0078": {
+    "components": [
+      "fiber option modules",
+      "attenuator",
+      "led",
+      "j1 pin connector"
+    ],
+    "error_codes": [],
+    "products": [
+      "70 dvc digital voice command",
+      "ds-sfm",
+      "fiber dvc",
+      "fiber daa",
+      "ds-rfm",
+      "ds-fm",
+      "fiber conversion module"
+    ],
+    "protocols": [],
+    "voltages": [
+      "class 2"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0079": {
+    "components": [
+      "power supply",
+      "option module standoffs",
+      "pin connectors",
+      "standoffs",
+      "screws"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2",
+      "dax",
+      "fiber option modules"
+    ],
+    "protocols": [
+      "dap a",
+      "dap b"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0080": {
+    "components": [
+      "single-mode fiber",
+      "multi-mode fiber",
+      "st style connections",
+      "lc style connections",
+      "rx",
+      "tx"
+    ],
+    "error_codes": [],
+    "products": [
+      "72 dvc digital voice command",
+      "dvc-pcb",
+      "daa",
+      "daa2",
+      "dax",
+      "ds-sfm",
+      "ds-rfm",
+      "dal cable"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0081": {
+    "components": [
+      "amplifier",
+      "charger",
+      "bda",
+      "aux power"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2-5025",
+      "cps-24"
+    ],
+    "protocols": [],
+    "voltages": [
+      "120v 50/60hz",
+      "220-240v 50/60hz"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0082": {
+    "components": [
+      "amplifier",
+      "charger",
+      "bda",
+      "aux power"
+    ],
+    "error_codes": [],
+    "products": [
+      "74 dvc digital voice command",
+      "daa2-5070",
+      "daa2-7525",
+      "cps-24"
+    ],
+    "protocols": [],
+    "voltages": [
+      "120v 50/60hz",
+      "220-240v 50/60hz"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0083": {
+    "components": [
+      "primary amplifier"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax-5025",
+      "dax-5070",
+      "bda"
+    ],
+    "protocols": [],
+    "voltages": [
+      "120v 50/60hz",
+      "220-240v 50/60hz"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0084": {
+    "components": [
+      "primary amplifier",
+      "charger",
+      "bda"
+    ],
+    "error_codes": [],
+    "products": [
+      "76 dvc digital voice command",
+      "dax-3525",
+      "dax-3570"
+    ],
+    "protocols": [],
+    "voltages": [
+      "120v 50/60hz",
+      "220-240v 50/60hz"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0085": {
+    "components": [
+      "speakers",
+      "microphone"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa2-50251",
+      "daa2-75251",
+      "daa2-50701",
+      "bda-25v",
+      "bda-70v",
+      "aux 24v",
+      "rm-1",
+      "ds-fm",
+      "act-252",
+      "act-702"
+    ],
+    "protocols": [],
+    "voltages": [
+      "24v",
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0086": {
+    "components": [
+      "battery",
+      "secondary power",
+      "standby load",
+      "alarm load"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "bat-1270",
+      "bat-12120",
+      "bat-12260",
+      "bat-12550"
+    ],
+    "protocols": [
+      "nfpa 72"
+    ],
+    "voltages": [
+      "12v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0087": {
+    "components": [
+      "speakers",
+      "riser",
+      "amplifiers",
+      "battery"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "dax-5025",
+      "dax-3525",
+      "dax-5070",
+      "dax-3570",
+      "bda-25v",
+      "bda-70v",
+      "ds-fm",
+      "act-251",
+      "act-701"
+    ],
+    "protocols": [],
+    "voltages": [
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0088": {
+    "components": [
+      "battery",
+      "secondary power",
+      "fire alarm load",
+      "standby load",
+      "alarm load"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "bat-1270",
+      "bat-12120",
+      "bat-12260",
+      "bat-12550"
+    ],
+    "protocols": [
+      "nfpa 72",
+      "local",
+      "proprietary",
+      "auxiliary",
+      "remote station",
+      "central station"
+    ],
+    "voltages": [
+      "12v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0089": {
+    "components": [
+      "speaker circuit output",
+      "digital audio amplifier",
+      "digital voice command"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "daa2",
+      "dax",
+      "ds-rfm",
+      "ds-sfm",
+      "daa-5025",
+      "daa-5025e",
+      "daa-5070",
+      "daa-5070e",
+      "daa-5025f",
+      "daa-5025ef",
+      "daa-5070f",
+      "daa-5070ef",
+      "daa-5025sf",
+      "daa-5025esf",
+      "daa-5070sf",
+      "daa-5070esf",
+      "daa-7525",
+      "daa-7525e",
+      "daa-7525f",
+      "daa-7525ef",
+      "daa-7525sf",
+      "daa-7525esf"
+    ],
+    "protocols": [
+      "wire",
+      "fiber",
+      "mixed wire/fiber",
+      "multi-mode fiber",
+      "single-mode fiber"
+    ],
+    "voltages": [
+      "12v",
+      "220-240 vac"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0090": {
+    "components": [
+      "audio amplifiers",
+      "class a connections",
+      "class b connections",
+      "alarm bus input",
+      "auxiliary input",
+      "battery charger",
+      "power supply",
+      "relay contacts",
+      "battery connections"
+    ],
+    "error_codes": [],
+    "products": [
+      "82 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "daa-5025",
+      "daa-5070",
+      "daa-7525",
+      "dcadc daa2 class a daughter card",
+      "daa-ps power supply board",
+      "cab-4",
+      "chs-bh1"
+    ],
+    "protocols": [
+      "digital audio loop",
+      "netw ork control-by-event equations",
+      "verifire tools"
+    ],
+    "voltages": [
+      "25v rms",
+      "70 vrms",
+      "12v p-p",
+      "1.6v p-p",
+      "3.2vp-p",
+      "115-120 v ac",
+      "220-240 v ac",
+      "27.6v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0091": {
+    "components": [
+      "batteries",
+      "battery charger",
+      "12 awg wire",
+      "12-18 awg wire",
+      "sealed lead acid battery",
+      "speaker"
+    ],
+    "error_codes": [],
+    "products": [
+      "cab-4",
+      "chs-bh1",
+      "battery charger",
+      "dvc",
+      "daa 1",
+      "daa 2",
+      "daa 32"
+    ],
+    "protocols": [
+      "digital audio loop",
+      "dal"
+    ],
+    "voltages": [
+      "12v",
+      "27.6v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0092": {
+    "components": [
+      "battery fuse f2",
+      "digital audio ports a and b",
+      "fiber-optic digital audio ports",
+      "alarm bus",
+      "trouble bus",
+      "fft riser",
+      "3.9k ohm 1/2 watt resistor",
+      "dry contact",
+      "twisted-pair wiring"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "daa-5025/70",
+      "daa-7525",
+      "daa-75",
+      "daa2",
+      "dax",
+      "fiber option modules",
+      "notifier p/n 12057",
+      "wiring guide p/n 52916add",
+      "r-3.9k resistor"
+    ],
+    "protocols": [
+      "eia-485",
+      "class 2"
+    ],
+    "voltages": [
+      "16v",
+      "3v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0093": {
+    "components": [
+      "auxiliary input a",
+      "auxiliary input b",
+      "speaker circuits",
+      "tb 9",
+      "tb 8",
+      "tb10",
+      "tb11",
+      "tb12",
+      "tb13",
+      "14-18 awg twisted-pair",
+      "12-18 awg twisted-pair",
+      "20k end-of-line resistors",
+      "10k end-of-line resistors"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "daa-5025/70",
+      "daa-7525",
+      "daa-5070",
+      "elr-20k",
+      "r-10k"
+    ],
+    "protocols": [],
+    "voltages": [
+      "1.6vp-p",
+      "3.2vp-p",
+      "12vp-p",
+      "15vp-p",
+      "25v rms",
+      "70vrms"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0094": {
+    "components": [
+      "riser + out",
+      "riser - out",
+      "riser shield out",
+      "auxa r",
+      "auxa l",
+      "alm in",
+      "ref in",
+      "alm out",
+      "ref out",
+      "riser + rtn",
+      "riser - rtn",
+      "riser shield rtn",
+      "out 1 shld",
+      "out 1",
+      "trouble out no",
+      "trouble out nc",
+      "trouble out com",
+      "bkin 1",
+      "bkin 1 shld",
+      "bkout 1",
+      "bkout 1 shld",
+      "tb10 backup ckt 1",
+      "bkout 2 shld",
+      "bkout 2",
+      "bkin 2 shld",
+      "bkin 2",
+      "tb9",
+      "tb4 - alarm",
+      "tb7 - fft riser",
+      "tb10 tb11 tb12 tb13 speaker circuits",
+      "tb10 spkr ckt 1",
+      "tb5",
+      "out 2 shld",
+      "out 2",
+      "backup ckt 2",
+      "spkr ckt 2",
+      "bkout 3 shld",
+      "bkout 3",
+      "bkin 3 shld",
+      "bkin 3",
+      "out 3 shld",
+      "out 3",
+      "backup ckt 3",
+      "spkr ckt 3",
+      "bkout 4 shld",
+      "bkout 4",
+      "bkin 4 shld",
+      "bkin 4",
+      "out 4 shld",
+      "out 4",
+      "backup ckt 4",
+      "spkr ckt 4",
+      "usb connector j2",
+      "dapa",
+      "dapa ref",
+      "dapb",
+      "dapb ref",
+      "auxb",
+      "auxb shld",
+      "tb2 - digital audio port a",
+      "tb3 - digital audio port b",
+      "batt conn"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "daa board",
+      "daa-ps power supply board"
+    ],
+    "protocols": [
+      "digital audio port a",
+      "digital audio port b"
+    ],
+    "voltages": [
+      "batt",
+      "ac input",
+      "earth",
+      "neutral",
+      "hot"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0095": {
+    "components": [
+      "indicator",
+      "jumper",
+      "switch",
+      "led indicator",
+      "pushbutton controls",
+      "jumper jp2"
+    ],
+    "error_codes": [
+      "trbl 1",
+      "trbl 2",
+      "trbl 3",
+      "trbl 4",
+      "trbl",
+      "e. fault",
+      "amp fail"
+    ],
+    "products": [
+      "86 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "daa board",
+      "daa power supply board"
+    ],
+    "protocols": [
+      "usb"
+    ],
+    "voltages": [
+      "5v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0096": {
+    "components": [
+      "rear board",
+      "front power supply board",
+      "tb10",
+      "tb11",
+      "tb12",
+      "tb13",
+      "tb4",
+      "tb5",
+      "tb7",
+      "tb8",
+      "tb9",
+      "j2",
+      "spkr ckt",
+      "backup ckt",
+      "riser",
+      "auxa",
+      "auxb",
+      "alm in",
+      "alm out",
+      "ref in",
+      "ref out",
+      "trouble out",
+      "bkin",
+      "bkout",
+      "shld",
+      "rtn",
+      "out"
+    ],
+    "error_codes": [
+      "trouble out no",
+      "trouble out nc",
+      "trouble out com"
+    ],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "daa-ps"
+    ],
+    "protocols": [
+      "usb"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0097": {
+    "components": [
+      "switches",
+      "led indicator",
+      "led indicators",
+      "pushbutton controls"
+    ],
+    "error_codes": [
+      "trbl 1",
+      "trbl 2",
+      "trbl 3",
+      "trbl 4",
+      "trbl",
+      "amp fail"
+    ],
+    "products": [
+      "88 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "daa-ps"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0098": {
+    "components": [
+      "led",
+      "audio amplifier",
+      "speaker circuit",
+      "alarm bus",
+      "aux in a",
+      "aux in b",
+      "digital phone channel",
+      "usb port"
+    ],
+    "error_codes": [
+      "efb",
+      "efa",
+      "amp fail",
+      "trbl",
+      "al bus",
+      "trbl 1",
+      "trbl 2",
+      "trbl 3",
+      "trbl 4"
+    ],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "daa board"
+    ],
+    "protocols": [
+      "usb",
+      "digital audio port a",
+      "digital audio port b"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0099": {
+    "components": [
+      "speaker circuit 4",
+      "rxa connector",
+      "rxb connector",
+      "local silence f1 button",
+      "aux in"
+    ],
+    "error_codes": [
+      "e fault"
+    ],
+    "products": [
+      "daa",
+      "daa-ps",
+      "digital audio port a",
+      "digital audio port b",
+      "usb port"
+    ],
+    "protocols": [
+      "usb"
+    ],
+    "voltages": [
+      "5v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0100": {
+    "components": [
+      "led indicators",
+      "switches",
+      "jumper",
+      "chassis",
+      "keyhole mounting bolts",
+      "backbox",
+      "bcd rotary address selection switch",
+      "pushbutton",
+      "speaker circuits",
+      "digital audio port a",
+      "digital audio port b"
+    ],
+    "error_codes": [
+      "trbl",
+      "brownout",
+      "high battery",
+      "low battery",
+      "charger trouble"
+    ],
+    "products": [
+      "90 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "ncm",
+      "hs-ncm",
+      "cab-4 series cabinet",
+      "eqcab series backboxes",
+      "cab-3 series cabinets",
+      "chs-adp adapter plate",
+      "cab-5 series cabinet",
+      "daa board"
+    ],
+    "protocols": [],
+    "voltages": [
+      "class 2"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0101": {
+    "components": [
+      "sw2",
+      "sw3",
+      "sw5",
+      "sw6",
+      "sw7",
+      "sw9",
+      "sw10",
+      "sw11",
+      "jp2",
+      "led"
+    ],
+    "error_codes": [
+      "f1",
+      "f2",
+      "efa",
+      "efb"
+    ],
+    "products": [
+      "dvc",
+      "daa",
+      "daa-ps",
+      "daa board"
+    ],
+    "protocols": [
+      "digital audio port a",
+      "digital audio port b"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0102": {
+    "components": [
+      "nut",
+      "stud",
+      "mounting stud",
+      "electronics",
+      "metal-cutting tool"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "cab-4 series cabinet",
+      "cab-3 series backboxes",
+      "cab-5",
+      "chs-adp",
+      "tb12 connector"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0103": {
+    "components": [
+      "daa boards",
+      "batteries",
+      "backbox",
+      "black backbox",
+      "black door with ventilated panels",
+      "chassis standoffs",
+      "10/32 nuts",
+      "4-40 male/female standoffs",
+      "4-40 screws",
+      "fiber cable"
+    ],
+    "error_codes": [],
+    "products": [
+      "92 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "dp-1b dress panel",
+      "eqcab series cabinets",
+      "eqcab-d4",
+      "eqbb-d4",
+      "eqdr-d4",
+      "daapcb",
+      "daapca",
+      "tb12 connector",
+      "dp-1b",
+      "ncm-w/f",
+      "ncm",
+      "chs-adp",
+      "cab-4 series cabinet",
+      "cab-5"
+    ],
+    "protocols": [],
+    "voltages": [
+      "12 ah"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0104": {
+    "components": [
+      "battery chassis",
+      "batteries",
+      "cabinet",
+      "backbox",
+      "door",
+      "ventilated panels",
+      "hex nuts",
+      "battery holder",
+      "trays"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "eqcab-c4",
+      "eq bb-c4",
+      "eqdr-c4",
+      "eqcab-b4",
+      "eqbb-b4",
+      "eqdr-b4",
+      "chs-bh1",
+      "cab-4",
+      "chs-adp",
+      "cab-5"
+    ],
+    "protocols": [],
+    "voltages": [
+      "7ah",
+      "12ah",
+      "55 ah"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0105": {
+    "components": [
+      "batteries",
+      "battery holder",
+      "daa chassis",
+      "washers",
+      "8-32 keps hex nuts",
+      "battery cables",
+      "branch circuit",
+      "ac branch circuit wire",
+      "power supply",
+      "tb1"
+    ],
+    "error_codes": [],
+    "products": [
+      "94 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "cab-4 enclosure",
+      "chs-bh1",
+      "cab-4d"
+    ],
+    "protocols": [],
+    "voltages": [
+      "6v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0106": {
+    "components": [
+      "earth ground terminal",
+      "circuit breaker",
+      "battery cables",
+      "battery interconnect cable",
+      "primary power neutral",
+      "primary power ac line",
+      "tb1 earth",
+      "tb3"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "daa power supply",
+      "chs-bh1",
+      "cab-4 series cabinet"
+    ],
+    "protocols": [],
+    "voltages": [
+      "7 ah",
+      "26 ah",
+      "55 ah",
+      "12 awg"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0107": {
+    "components": [
+      "batteries",
+      "battery cables",
+      "jp2 jumpers",
+      "charger",
+      "12 awg",
+      "tb3",
+      "75 watt boards",
+      "50 watt boards",
+      "battery interconnect cable",
+      "sw1"
+    ],
+    "error_codes": [],
+    "products": [
+      "96 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "daa",
+      "daa2",
+      "cps-24"
+    ],
+    "protocols": [],
+    "voltages": [
+      "24"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0108": {
+    "components": [
+      "alarm bus",
+      "trouble bus",
+      "trouble relay",
+      "common and normally open out connections",
+      "elr-47k resistor",
+      "tb4",
+      "14-18 awg twisted-pair"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "facp",
+      "fcm-1",
+      "slc device",
+      "notification appliance circuit",
+      "noti-fire-net"
+    ],
+    "protocols": [
+      "noti-fire-net",
+      "slc"
+    ],
+    "voltages": [
+      "16v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0109": {
+    "components": [
+      "elr-47k resistor",
+      "tb5"
+    ],
+    "error_codes": [],
+    "products": [
+      "98 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "fmm-1 monitor module",
+      "facp"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0110": {
+    "components": [
+      "digital audio ports a",
+      "digital audio ports b",
+      "dap a",
+      "dap b",
+      "rxa",
+      "rxb",
+      "txa",
+      "txb",
+      "fiber ports",
+      "class b",
+      "class x",
+      "switches 9 and 10"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc",
+      "daa",
+      "daa2",
+      "dax",
+      "ds-rfm",
+      "ds-sfm",
+      "fiber version board",
+      "wire version boards"
+    ],
+    "protocols": [
+      "digital audio loop",
+      "dal"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0111": {
+    "components": [
+      "fiber digital audio loop",
+      "fft riser",
+      "firefighter telephone riser tb7",
+      "firefighter telephones ffts",
+      "telephone control modules",
+      "telephone circuits",
+      "3.9k ohm 1/2 watt end-of-line resistor p/n r-3.9k",
+      "slc addresses",
+      "daa phone point",
+      "fiber optic media"
+    ],
+    "error_codes": [],
+    "products": [
+      "100 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "ftm-1 modules",
+      "afaws",
+      "fpj",
+      "rpj-1",
+      "verifire tools",
+      "xpiq"
+    ],
+    "protocols": [
+      "nfpa class a",
+      "nfpa class b",
+      "nfpa 72"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0112": {
+    "components": [
+      "auxiliary inputs a and b",
+      "tb1",
+      "tb2",
+      "tb3",
+      "tb4",
+      "tb5",
+      "tb6",
+      "tb7",
+      "tb8",
+      "tb9",
+      "tb10",
+      "j1",
+      "j2",
+      "j4",
+      "j5",
+      "j6",
+      "j7",
+      "j8",
+      "j9",
+      "j10",
+      "j11",
+      "j12",
+      "j13",
+      "sw1",
+      "sw2",
+      "sw3",
+      "sw4",
+      "jp1",
+      "jp2",
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "p5",
+      "p6",
+      "spkr1",
+      "spkr2",
+      "spkr3",
+      "spkr4",
+      "bckgnd",
+      "remote in",
+      "remote out",
+      "high level backup in",
+      "high level backup out",
+      "low level backup in",
+      "low level backup out",
+      "phone 1",
+      "phone 2",
+      "phone 3",
+      "phone 4",
+      "chgtrbl",
+      "trbl",
+      "earth fault detection",
+      "earth fault gen",
+      "riser out",
+      "riser rtn",
+      "control/comm audio in",
+      "amplifier #1",
+      "amplifier #2",
+      "amplifier #3",
+      "amplifier #4"
+    ],
+    "error_codes": [
+      "trbl",
+      "chgtrbl",
+      "bat trbl",
+      "a.c.fail",
+      "earth fault detection",
+      "earth fault gen",
+      "disabled",
+      "enabled"
+    ],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "fhs firefighter handset",
+      "fft riser",
+      "xpiq-ps control cable",
+      "xpiq-ps power",
+      "xpiq-ca option",
+      "xpiq-mbpca",
+      "firefighter phone jack",
+      "dvcfftriser",
+      "afaws fire alarm warden station",
+      "telephone control module",
+      "fpj firefighter phone jack",
+      "rpj-1 firefighter phone jack",
+      "daa pca board",
+      "daa pcb board"
+    ],
+    "protocols": [
+      "fft",
+      "digital audio software version 2.0"
+    ],
+    "voltages": [
+      "a.c.fail"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0113": {
+    "components": [
+      "auxiliary input a",
+      "auxiliary input b",
+      "speaker circuits",
+      "bkin terminal",
+      "bkout terminal",
+      "auxa r",
+      "auxa l",
+      "tb8",
+      "tb9",
+      "14-18 awg twisted-pair"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "amg-1/act audio coupling transformer"
+    ],
+    "protocols": [],
+    "voltages": [
+      "12vp-p nominal",
+      "15vp-p max",
+      "1.6v p-p max",
+      "3.2v p-p max",
+      "26ah"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0114": {
+    "components": [
+      "speaker",
+      "backup connections",
+      "riser mode",
+      "class a circuits",
+      "class b circuits",
+      "tb10",
+      "tb11",
+      "tb12",
+      "tb13",
+      "shld",
+      "ret 1",
+      "ret 3",
+      "12-18 awg twisted-pair",
+      "r-10k"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "verifiretools"
+    ],
+    "protocols": [
+      "nac"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0115": {
+    "components": [
+      "audio coupling transformer",
+      "act-25",
+      "act-70",
+      "20k ohm end-of-line resistor",
+      "elr-20k",
+      "10k elr",
+      "tb1",
+      "p1",
+      "tb10",
+      "tb11",
+      "4-wire return"
+    ],
+    "error_codes": [],
+    "products": [
+      "104 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "aa-series amplifiers",
+      "aa-100",
+      "aa-100e",
+      "aa-120",
+      "aa-120e",
+      "aa-30",
+      "aa-30e",
+      "act-25",
+      "act-70",
+      "slc control modules"
+    ],
+    "protocols": [
+      "riser mode"
+    ],
+    "voltages": [
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0116": {
+    "components": [
+      "room isolator modules",
+      "speaker circuit",
+      "silence button",
+      "relay module",
+      "jumpers"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "rsm-1a",
+      "aim-1a",
+      "nfs2-3030",
+      "daa2 amplifier",
+      "slc control module"
+    ],
+    "protocols": [
+      "class a",
+      "class b",
+      "special zone 14"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0117": {
+    "components": [
+      "speaker circuit",
+      "eol resistor",
+      "power supply",
+      "tb10",
+      "class a return",
+      "class b daa speaker circuit"
+    ],
+    "error_codes": [],
+    "products": [
+      "106 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "cim-2a module",
+      "csm-1a module",
+      "rsm-1a",
+      "aim-1a",
+      "verifiretools"
+    ],
+    "protocols": [],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0118": {
+    "components": [
+      "speaker backup circuits",
+      "backup amplifier",
+      "primary amplifier",
+      "speaker wiring",
+      "class a",
+      "class b",
+      "digital audio loop",
+      "digital audio signal",
+      "20k ohm end-of-line resistor",
+      "elr-20k"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "verifire tools",
+      "dap",
+      "dvc"
+    ],
+    "protocols": [
+      "dal"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0119": {
+    "components": [
+      "amplifier",
+      "backup amplifier",
+      "primary amplifier",
+      "speakers",
+      "cabinet",
+      "knockouts",
+      "conduits"
+    ],
+    "error_codes": [
+      "amplifier limit"
+    ],
+    "products": [
+      "108 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "backup amplifier",
+      "primary amplifier"
+    ],
+    "protocols": [],
+    "voltages": [
+      "ul power-limited class 2"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0120": {
+    "components": [
+      "efa switch",
+      "efb switch",
+      "switch 9",
+      "switch 10",
+      "switch 11",
+      "address switches sw2",
+      "address switches sw3",
+      "fft riser",
+      "digital audio ports a",
+      "digital audio ports b",
+      "twisted-pair wire"
+    ],
+    "error_codes": [
+      "daa trouble"
+    ],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "dax",
+      "verifire tools"
+    ],
+    "protocols": [
+      "dal",
+      "digital audio ports dap"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0121": {
+    "components": [
+      "sw11",
+      "sw2",
+      "sw3",
+      "tens switch",
+      "ones switch",
+      "digital audio ports a",
+      "digital audio ports b",
+      "twisted-pair wire"
+    ],
+    "error_codes": [],
+    "products": [
+      "efa",
+      "efb",
+      "dvc",
+      "endapa",
+      "dapb",
+      "daa",
+      "swgen",
+      "swgena"
+    ],
+    "protocols": [
+      "4wire"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0122": {
+    "components": [
+      "rotary switch",
+      "sw7",
+      "auxa input",
+      "auxiliary port a",
+      "auxiliary port b",
+      "speaker circuits",
+      "pushbutton",
+      "f1",
+      "f2"
+    ],
+    "error_codes": [],
+    "products": [
+      "110 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "nca-2",
+      "nfs2-3030",
+      "n16",
+      "ncd",
+      "inspire series",
+      "onyx series",
+      "verifire tools"
+    ],
+    "protocols": [
+      "fft communication"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0123": {
+    "components": [
+      "battery",
+      "speakers"
+    ],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command",
+      "daa digital audio amplifiers",
+      "fft riser"
+    ],
+    "protocols": [
+      "nfpa 72"
+    ],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0124": {
+    "components": [
+      "battery"
+    ],
+    "error_codes": [],
+    "products": [
+      "112 dvc digital voice command",
+      "daa digital audio amplifiers",
+      "bat-1270",
+      "bat-12120",
+      "bat-12260",
+      "bat-12550"
+    ],
+    "protocols": [],
+    "voltages": [
+      "12v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0125": {
+    "components": [
+      "auxiliary input a aux a",
+      "auxiliary input b aux b",
+      "battery",
+      "battery charger",
+      "battery interconnect cable",
+      "backup circuits",
+      "charger",
+      "earth fault switch",
+      "ground fault",
+      "indicator",
+      "switch",
+      "volume control",
+      "speaker circuits",
+      "speaker backup circuits",
+      "power supply board"
+    ],
+    "error_codes": [],
+    "products": [
+      "113 dvc digital voice command",
+      "act-25",
+      "act-70",
+      "afaws",
+      "daa",
+      "daa2",
+      "dax",
+      "backup amplifier",
+      "bda-25/70v",
+      "cab-3 series cabinets",
+      "cab-4 series cabinets",
+      "cab-5",
+      "chs-adp",
+      "chs-bh1 battery chassis",
+      "cps-24 power supply board",
+      "daapca boards",
+      "daapcb boards",
+      "daa-ps power supply board",
+      "daps",
+      "dax-35",
+      "ds-rfm",
+      "dp-1b dress panel",
+      "elr-20k",
+      "dcadc",
+      "bda"
+    ],
+    "protocols": [
+      "alarm bus",
+      "trouble bus",
+      "daps class b",
+      "daps class x",
+      "digital audio ports",
+      "slc"
+    ],
+    "voltages": [
+      "24v",
+      "25v",
+      "7v"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0126": {
+    "components": [
+      "alarm bus",
+      "batteries",
+      "speaker circuits",
+      "speaker backup circuits",
+      "fiber option modules",
+      "canada room isolator modules",
+      "earth fault switch"
+    ],
+    "error_codes": [
+      "earth fault"
+    ],
+    "products": [
+      "dp-1b dress panel",
+      "ds-rfm",
+      "daa2",
+      "dax-35",
+      "elr-20k",
+      "eq series backboxes and doors",
+      "eqcab backboxes and doors",
+      "eqcab-x4 cabinets",
+      "fcm-1",
+      "fft riser"
+    ],
+    "protocols": [
+      "daps",
+      "digital audio ports",
+      "dcl",
+      "slc"
+    ],
+    "voltages": [
+      "ac power",
+      "dcadc backup"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0127": {
+    "components": [
+      "power supply board",
+      "led indicator",
+      "low frequency sounders",
+      "switches",
+      "volume control",
+      "batteries",
+      "alarm bus",
+      "auxiliary input a",
+      "auxiliary inputs a and b",
+      "digital audio ports a and b",
+      "speaker circuits",
+      "backup wiring",
+      "trouble bus"
+    ],
+    "error_codes": [
+      "ground fault",
+      "earth fault",
+      "trouble messages"
+    ],
+    "products": [
+      "114 dvc digital voice command",
+      "daa2",
+      "dax",
+      "n16",
+      "nca-2",
+      "ncd",
+      "ncm-w/f",
+      "nfs2-3030",
+      "rm-1 series microphone",
+      "rmi remote microphone interface",
+      "room isolator modules",
+      "sig sil pushbutton switch",
+      "dcadc",
+      "daa",
+      "daa-ps power supply board",
+      "dax backup wiring",
+      "telephone control modules",
+      "daa2-canada room isolator module",
+      "fft riser"
+    ],
+    "protocols": [
+      "rmi remote microphone interface"
+    ],
+    "voltages": [
+      "high voltages present",
+      "power-limited"
+    ]
+  },
+  "daa2_amplifier_manual#chunk_0128": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "dvc digital voice command"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "daa2_amplifier_manual#chunk_0129": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "notifier"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "firstcommand_fire_fighter_telephone_honeywell_building_automation#chunk_0000": {
+    "components": [
+      "telephone handsets",
+      "display",
+      "keypad",
+      "auto-program telephone circuit",
+      "slc circuit",
+      "form-c system trouble relay",
+      "led display",
+      "audio circuit"
+    ],
+    "error_codes": [],
+    "products": [
+      "firstcommand nfc-fft",
+      "firstcommand fire fighter telephone",
+      "n-fpj phone jacks",
+      "fire fighter remote handsets"
+    ],
+    "protocols": [
+      "style 6",
+      "style 7",
+      "style 4"
+    ],
+    "voltages": []
+  },
+  "firstcommand_fire_fighter_telephone_honeywell_building_automation#chunk_0001": {
+    "components": [
+      "phone jacks",
+      "elr"
+    ],
+    "error_codes": [],
+    "products": [
+      "nfc-fft",
+      "n-fpj",
+      "firstcommand fire fighter telephone"
+    ],
+    "protocols": [],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "l_series_speakers_strobes_wall_datasheet_avds867#chunk_0000": {
+    "components": [
+      "plug-in design",
+      "protective cover",
+      "universal mounting plate",
+      "onboard shorting spring",
+      "rotary switch",
+      "speaker wiring terminals",
+      "product tabs",
+      "mounting plate grooves",
+      "captured mounting screw"
+    ],
+    "error_codes": [],
+    "products": [
+      "alert models",
+      "system sensor l-series",
+      "spectralert",
+      "spectralert advance",
+      "indoor selectable- output speaker strobes",
+      "dual voltage evacuation speakers"
+    ],
+    "protocols": [
+      "system sensor synchronization"
+    ],
+    "voltages": [
+      "12v",
+      "24v",
+      "25 vrms",
+      "70.7 vrms"
+    ]
+  },
+  "l_series_speakers_strobes_wall_datasheet_avds867#chunk_0001": {
+    "components": [
+      "universal mounting plate",
+      "notification appliance circuit",
+      "amplifier wiring",
+      "dual-voltage transformer speaker",
+      "rotary switches",
+      "xenon flash tube",
+      "lens/reflector system",
+      "back box"
+    ],
+    "error_codes": [],
+    "products": [
+      "l-series speaker",
+      "l-series speaker strobe",
+      "system sensor l-series speaker",
+      "system sensor l-series speaker strobe",
+      "system sensor sync circuit module",
+      "sync circuit model mdl3"
+    ],
+    "protocols": [
+      "style y class b",
+      "style z class a"
+    ],
+    "voltages": [
+      "12v",
+      "24v",
+      "8.5 to 17.5 volts",
+      "16.5 to 33 volts",
+      "25.0 nominal vrms",
+      "70.7 nominal vrms"
+    ]
+  },
+  "l_series_speakers_strobes_wall_datasheet_avds867#chunk_0002": {
+    "components": [
+      "synchronization modules",
+      "surface mount back box",
+      "12awg",
+      "14 awg",
+      "extension ring"
+    ],
+    "error_codes": [],
+    "products": [
+      "spl speaker",
+      "spsl speaker/strobe",
+      "mdl sync module",
+      "fire alarm panels"
+    ],
+    "protocols": [],
+    "voltages": [
+      "25v",
+      "70.7v",
+      "5v",
+      "12v",
+      "24v",
+      "8 to 17.5 v",
+      "16 to 33 v",
+      "8.5 to 17.5 v",
+      "16.5 to 33 v"
+    ]
+  },
+  "l_series_speakers_strobes_wall_datasheet_avds867#chunk_0003": {
+    "components": [
+      "speaker",
+      "strobe"
+    ],
+    "error_codes": [],
+    "products": [
+      "avds867-03",
+      "wall-mount speaker",
+      "wall-mount speaker strobe",
+      "a0555-01",
+      "a0556-01"
+    ],
+    "protocols": [],
+    "voltages": [
+      "0.5v",
+      "16v",
+      "17v",
+      "33v",
+      "dc",
+      "dc fwr"
+    ]
+  },
+  "l_series_speakers_strobes_wall_datasheet_avds867#chunk_0004": {
+    "components": [
+      "speaker",
+      "speaker strobe",
+      "retrofit plate",
+      "surface mount back box",
+      "wall mount trim ring"
+    ],
+    "error_codes": [],
+    "products": [
+      "spwl",
+      "sprl",
+      "spswl",
+      "spsrl",
+      "spswl-p",
+      "spsrl-p",
+      "spswl-alert",
+      "spswl-clr-alert",
+      "spsrl-sp",
+      "rfpw",
+      "rfp",
+      "sbbspwl",
+      "sbbsprl",
+      "tr-2w",
+      "tr-2"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "lsecs_info_guide#chunk_0000": {
+    "components": [],
+    "error_codes": [],
+    "products": [],
+    "protocols": [],
+    "voltages": []
+  },
+  "lsecs_info_guide#chunk_0001": {
+    "components": [
+      "fire alarm control panels",
+      "intelligent fire alarm network",
+      "specialty detectors",
+      "smoke detectors",
+      "digital audio evacuation and paging system",
+      "firefighter telephone channels",
+      "touchscreen",
+      "qwerty keypads",
+      "lcd displays"
+    ],
+    "error_codes": [],
+    "products": [
+      "onyx series",
+      "noti-fire-net",
+      "onyx digital voice command",
+      "dvc"
+    ],
+    "protocols": [
+      "noti-fire-net"
+    ],
+    "voltages": []
+  },
+  "lsecs_info_guide#chunk_0002": {
+    "components": [
+      "signaling line circuit",
+      "detectors",
+      "modules",
+      "notification appliance circuits",
+      "qwerty keypad"
+    ],
+    "error_codes": [],
+    "products": [
+      "nfs-320",
+      "onyx series",
+      "notifier firstcommand",
+      "noti-fire-net",
+      "verifire tools"
+    ],
+    "protocols": [
+      "flashscan"
+    ],
+    "voltages": []
+  },
+  "lsecs_info_guide#chunk_0003": {
+    "components": [
+      "signaling line circuits",
+      "detectors",
+      "modules",
+      "switch mode power supply",
+      "operator display",
+      "touchscreen display"
+    ],
+    "error_codes": [],
+    "products": [
+      "nfs2-640",
+      "notifier",
+      "onyx intelligent sensing",
+      "integrated digital voice command",
+      "onyx nfs2-640"
+    ],
+    "protocols": [
+      "noti-fire-net",
+      "pots",
+      "ip",
+      "cellular"
+    ],
+    "voltages": [
+      "6.0 amp"
+    ]
+  },
+  "lsecs_info_guide#chunk_0004": {
+    "components": [
+      "signaling line circuits",
+      "detectors",
+      "modules",
+      "touchscreen display",
+      "digital voice command",
+      "annunciators",
+      "communicator"
+    ],
+    "error_codes": [],
+    "products": [
+      "nfs2-3030",
+      "nfs2-640",
+      "noti-fire-net",
+      "fm6320"
+    ],
+    "protocols": [
+      "eia-485",
+      "pots",
+      "ip",
+      "cellular"
+    ],
+    "voltages": []
+  },
+  "lsecs_info_guide#chunk_0005": {
+    "components": [
+      "digital audio loop",
+      "amplifier"
+    ],
+    "error_codes": [],
+    "products": [
+      "emergency communications system",
+      "onyx digital voice command",
+      "nfs2-640",
+      "nfs2-3030",
+      "digital audio loop"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "lsecs_info_guide#chunk_0006": {
+    "components": [
+      "facp",
+      "led sign",
+      "programmable macro buttons",
+      "floor plan screens",
+      "devices",
+      "navigation buttons"
+    ],
+    "error_codes": [],
+    "products": [
+      "onyxworks",
+      "notify-ip",
+      "noti-fire-net",
+      "notifier fire panels",
+      "onyx firstvision",
+      "dacr fire and security panels with dact",
+      "dacr oax2-24v2 led sign",
+      "notifier s intelligent aspirating system detectors"
+    ],
+    "protocols": [
+      "ip network"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "lsecs_info_guide#chunk_0007": {
+    "components": [
+      "fire alarm control panels",
+      "touch screen display",
+      "network control annunciator",
+      "led sign"
+    ],
+    "error_codes": [],
+    "products": [
+      "noti-fire-net",
+      "notifier intelligent fire alarm control panels",
+      "onyx series panels",
+      "nfs-320",
+      "nfs2-640",
+      "nfs2-3030",
+      "nfs-3030",
+      "nfs-640",
+      "onyx firstvision",
+      "network control annunciator",
+      "led sign",
+      "noti-fire-net web server",
+      "nca-2",
+      "onyxworks workstation",
+      "nws"
+    ],
+    "protocols": [
+      "bacnet",
+      "modbus/ip",
+      "drmns"
+    ],
+    "voltages": []
+  },
+  "lsecs_info_guide#chunk_0008": {
+    "components": [
+      "amplifier",
+      "distributed amplifiers",
+      "speaker circuits",
+      "local operating consoles locs",
+      "remote paging units rpus",
+      "remote microphones rms"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier firstcommand",
+      "onyx",
+      "firewarden",
+      "firstcommand main unit",
+      "local operating consoles",
+      "remote paging units",
+      "remote microphones",
+      "digital voice command system",
+      "firefighter telephones"
+    ],
+    "protocols": [
+      "serial communications"
+    ],
+    "voltages": []
+  },
+  "lsecs_info_guide#chunk_0009": {
+    "components": [
+      "photoelectric",
+      "co",
+      "infrared",
+      "heat",
+      "electrochemical sensing cell",
+      "smoke-sensing chamber",
+      "optic block",
+      "led technology"
+    ],
+    "error_codes": [],
+    "products": [
+      "intelliquad plus",
+      "view high sensitivity detector",
+      "ptir photo/thermal/infra-red detector",
+      "photo/co detector",
+      "co only detector",
+      "notifier onyx series"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "lsecs_info_guide#chunk_0010": {
+    "components": [
+      "detectors",
+      "modules",
+      "horns",
+      "strobes",
+      "auxiliary devices",
+      "programmable function keys",
+      "circuits"
+    ],
+    "error_codes": [],
+    "products": [
+      "ipots-com",
+      "cell-mod",
+      "swift",
+      "nfc-50",
+      "nfc-100",
+      "firewarden 50x",
+      "nfw-50x",
+      "firewarden-100x",
+      "nfw2-100x"
+    ],
+    "protocols": [
+      "ethernet ip",
+      "pots",
+      "gsm",
+      "alarmnet"
+    ],
+    "voltages": []
+  },
+  "lsecs_info_guide#chunk_0011": {
+    "components": [
+      "ip communicator",
+      "form c alarm relay",
+      "form c trouble relay",
+      "form c supervisory relay",
+      "input channels",
+      "strobe synchronization"
+    ],
+    "error_codes": [],
+    "products": [
+      "sfp-5ud",
+      "sfp-10ud",
+      "sfp-2402",
+      "sfp-2404",
+      "rp series releasing controls",
+      "411 series communicators",
+      "411",
+      "411ud",
+      "411udac",
+      "ipgsm-4g",
+      "ipdact-2/ud"
+    ],
+    "protocols": [
+      "class b/style b",
+      "class a/style d",
+      "class b/style y",
+      "class a/style z",
+      "class b/style z"
+    ],
+    "voltages": [
+      "3.0 amps",
+      "6.0 amps"
+    ]
+  },
+  "notifier_first_command_remote_microphone_honeywell_building_automation#chunk_0000": {
+    "components": [
+      "microphone",
+      "push-to-talk switches",
+      "cabinet",
+      "keyed lock",
+      "thumb lock"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier first command remote microphone",
+      "nfc-rm",
+      "nfc-50/100 e"
+    ],
+    "protocols": [
+      "class a style z",
+      "class b style y"
+    ],
+    "voltages": []
+  },
+  "notifier_first_command_remote_microphone_honeywell_building_automation#chunk_0001": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "nfc-rm",
+      "remote microphone",
+      "notifier first command remote microphone"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "public_address_speakers_datasheet#chunk_0000": {
+    "components": [
+      "integrative-cone speaker",
+      "matching transformer",
+      "push-in terminal blocks",
+      "metal-back dome",
+      "press fit metal grille"
+    ],
+    "error_codes": [],
+    "products": [
+      "l-pcm06b ceiling loudspeaker"
+    ],
+    "protocols": [],
+    "voltages": [
+      "7v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0000": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "intelligent control panel slc"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0001": {
+    "components": [
+      "sensing chambers"
+    ],
+    "error_codes": [],
+    "products": [
+      "smoke detectors",
+      "heat detectors",
+      "manual pull stations",
+      "audible warning devices",
+      "fire alarm control panel",
+      "facp",
+      "autonomous control unit",
+      "acu",
+      "local operating console",
+      "loc",
+      "voice communication"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0002": {
+    "components": [
+      "photoelectronic sensing chambers",
+      "ionizing-type sensing chambers",
+      "alarm transmission wiring",
+      "communications",
+      "signaling",
+      "power"
+    ],
+    "error_codes": [],
+    "products": [
+      "smoke detectors",
+      "heat detectors",
+      "rate-of-rise heat detectors",
+      "control panel",
+      "bells",
+      "horns",
+      "strobes",
+      "speakers",
+      "displays",
+      "emergency communication system",
+      "voice messaging systems"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0003": {
+    "components": [
+      "voice messaging systems",
+      "local displays",
+      "strobes",
+      "audible devices",
+      "horns",
+      "bells",
+      "standby batteries",
+      "control panel",
+      "external antenna",
+      "telephone lines"
+    ],
+    "error_codes": [],
+    "products": [],
+    "protocols": [
+      "ip",
+      "cellular"
+    ],
+    "voltages": [
+      "ac"
+    ]
+  },
+  "slc_wiring_manual#chunk_0004": {
+    "components": [],
+    "error_codes": [
+      "limit-f-2020"
+    ],
+    "products": [],
+    "protocols": [
+      "ul",
+      "nfpa",
+      "nfpa 72"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0005": {
+    "components": [
+      "fire alarm control panel",
+      "cards",
+      "modules",
+      "interconnecting cables",
+      "initiating devices",
+      "indicating device loops",
+      "standby batteries",
+      "electronic components",
+      "circuit boards",
+      "electronic assemblies",
+      "battery",
+      "transformer",
+      "printed circuit board",
+      "screw terminals"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc"
+    ],
+    "protocols": [
+      "nfpa 72"
+    ],
+    "voltages": [
+      "0-49 c",
+      "32-120 f",
+      "15-27 c",
+      "60-80 f",
+      "32 c 2 c",
+      "90 f 3 f"
+    ]
+  },
+  "slc_wiring_manual#chunk_0006": {
+    "components": [
+      "battery",
+      "transformer",
+      "printed circuit board",
+      "screw terminals",
+      "static-sensitive components",
+      "touchscreen display"
+    ],
+    "error_codes": [],
+    "products": [
+      "harsh",
+      "nis",
+      "noti fire net",
+      "acclimate plus",
+      "flashscan",
+      "faast fire alarm aspiration sensing technology",
+      "honeywell",
+      "inspire",
+      "intelligent faast",
+      "notifier",
+      "onyx",
+      "onyxworks",
+      "swift",
+      "verifire",
+      "view"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0007": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "notifier slc"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0008": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "monitor/zone interface module",
+      "control modules",
+      "isolator modules",
+      "relay modules",
+      "multiple input/output modules",
+      "transponders",
+      "plug-in detector bases",
+      "intelligent detectors",
+      "addressable manual pull stations",
+      "wireless interface",
+      "acps-610 addressable charger/power supply",
+      "acps-2406 addressable charger/power supply",
+      "amps-24 addressable power supply",
+      "pmb-aux addressable charger/power supply"
+    ],
+    "protocols": [
+      "polling protocols"
+    ],
+    "voltages": [
+      "24"
+    ]
+  },
+  "slc_wiring_manual#chunk_0009": {
+    "components": [
+      "isolator base",
+      "isolator modules",
+      "isolating device",
+      "monitor modules",
+      "zone interface modules",
+      "control modules",
+      "nac",
+      "solenoid",
+      "releasing device",
+      "relay module",
+      "form-c relay",
+      "input/output modules"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "isolator base",
+      "isolator modules",
+      "isolating device",
+      "addressable monitor module",
+      "zone interface module",
+      "miniature monitor module",
+      "fmm-4-20 4-20ma monitor module",
+      "addressable control modules",
+      "fcm-1-rel",
+      "addressable relay module",
+      "form-c relay",
+      "fdm-1",
+      "fdrm-1"
+    ],
+    "protocols": [
+      "nfpa class b slc",
+      "nfpa class a slc",
+      "nfpa class x slc",
+      "nfpa class b idc",
+      "nfpa class a idc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0010": {
+    "components": [
+      "power supervision relay",
+      "addressable control module",
+      "detector base",
+      "isolator base",
+      "relay base",
+      "sounder base"
+    ],
+    "error_codes": [],
+    "products": [
+      "n16",
+      "nfs2-3030",
+      "nfs-3030",
+      "nfs2-640",
+      "nfs-320",
+      "nfs-320sys",
+      "frm-1",
+      "fcm-1",
+      "fzm-1",
+      "fmm-1",
+      "ftm-1",
+      "fdm-1"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0011": {
+    "components": [
+      "flashscan modules",
+      "terminal blocks",
+      "modules",
+      "detectors",
+      "rotary dials"
+    ],
+    "error_codes": [],
+    "products": [
+      "afp-100",
+      "afp-200",
+      "afp-300",
+      "afp-400",
+      "am2020",
+      "afp1010",
+      "notifier inspire n16 series",
+      "nfs-3030",
+      "nfs2-3030",
+      "nfs-640",
+      "nfs2-640",
+      "nfs-320",
+      "nfs-320sys",
+      "system 5000",
+      "aim-200",
+      "nca",
+      "nca-2",
+      "nca-2/c",
+      "faast xs",
+      "faast xm",
+      "faast xt",
+      "faast xt pro",
+      "fcm-1 legacy version module",
+      "fcm-1 newer version module",
+      "afc-600"
+    ],
+    "protocols": [
+      "signaling line circuit",
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0012": {
+    "components": [
+      "cpu-3030",
+      "cpu-640"
+    ],
+    "error_codes": [],
+    "products": [
+      "acps-2406",
+      "afp-100",
+      "afp-200",
+      "afp-300",
+      "afp-400",
+      "aim-200",
+      "am2020",
+      "afp1010",
+      "cmx-1",
+      "cmx-2",
+      "fcps-24/e",
+      "lib-400",
+      "mmx-1",
+      "mmx-101",
+      "mmx-2",
+      "mps-24a/e",
+      "mps-24b/e",
+      "mps-400",
+      "nca",
+      "nfs-3030",
+      "cpu-3030",
+      "nfs-640",
+      "cpu-640",
+      "system 5000",
+      "xp series",
+      "xpp-1",
+      "xpc-8",
+      "xpm-8",
+      "xpr-8",
+      "xp5-c",
+      "xp5-m",
+      "n16",
+      "slm-318",
+      "firewarden"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "24"
+    ]
+  },
+  "slc_wiring_manual#chunk_0013": {
+    "components": [
+      "slc"
+    ],
+    "error_codes": [],
+    "products": [
+      "afp-100",
+      "afp-200",
+      "afp-300",
+      "afp-400",
+      "system 5000",
+      "aim-200",
+      "am2020",
+      "afp1010",
+      "nfs-640",
+      "nfs-3030",
+      "nfs-320",
+      "nfs-320sys",
+      "nfs2-640",
+      "nfs2-3030",
+      "n16 inspire series",
+      "slm-318",
+      "firewarden",
+      "firevoice-25",
+      "firevoice-50",
+      "firevoice-25zs",
+      "firevoice-50zs"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0014": {
+    "components": [
+      "isolator base",
+      "relay base",
+      "plug-in detector base",
+      "sounder base",
+      "temporal sounder base",
+      "remote led annunciator"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "dvc digital voice command",
+      "daa2",
+      "dax",
+      "aa-series audio amplifier",
+      "acps-2406",
+      "amps-24/e",
+      "fcps-24",
+      "acps-610/e",
+      "fcps-24s6",
+      "fcps-24s8",
+      "pmb-aux",
+      "xp transponder",
+      "xp5 series",
+      "xp6-c",
+      "xp6-ca",
+      "xp6-ma",
+      "xp6-maa",
+      "xp6-r",
+      "xp6-ra",
+      "xp10-m",
+      "xp10-ma",
+      "ra100z",
+      "ra100za",
+      "fsp-951-selft",
+      "fsp-951t-selft",
+      "fst-951-selft",
+      "ncd network control display",
+      "vep/veu vesda-e",
+      "vea vesda-e",
+      "ves vesda-e",
+      "swift wireless gateway",
+      "b224bi-wh",
+      "b224bi-iv",
+      "b224bia-wh",
+      "b224bia-iv",
+      "b224rb-wh",
+      "b224rb-iv",
+      "b224rba-wh",
+      "b224rba-iv",
+      "b300-6",
+      "b300-6-iv",
+      "b300-6a",
+      "b300-6a-iv",
+      "b501-white",
+      "b501-iv",
+      "b501-bl",
+      "b501bh sounder base",
+      "b501bha",
+      "b501bht temporal sounder base",
+      "b501bhta",
+      "b501bh-2 ul 864 ninth compliant sounder base",
+      "b501bht-2 ul 864 ninth compliant temporal sounder base",
+      "b200s-wh",
+      "b200s-iv",
+      "b200sa-wh",
+      "b200sa-iv",
+      "b200scoa-wh",
+      "b200scoa-iv"
+    ],
+    "protocols": [
+      "slc",
+      "flashscan",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0015": {
+    "components": [
+      "sounder base",
+      "control module",
+      "dual monitor module",
+      "monitor module",
+      "mini monitor module",
+      "relay module",
+      "dual monitor/dual relay module",
+      "intelligent beam detectors",
+      "single-ended reflected type projected beam smoke detector",
+      "carbon monoxide sensors",
+      "multi-criteria photoelectric and co sensor",
+      "multi-criteria photoelectric thermal and infra-red sensor",
+      "intelligent carbon monoxide sensor",
+      "intelliquad intelligent photoelectric multi-criteria smoke sensor",
+      "intelliquad plus intelligent photoelectric multi-criteria smoke/co detector",
+      "low-flow duct detector",
+      "low-flow duct detector with relay",
+      "duct detector",
+      "harsh base",
+      "harsh",
+      "ion detector",
+      "intelligent high-sensitivity photoelectric smoke sensors"
+    ],
+    "error_codes": [],
+    "products": [
+      "b200sr-wh",
+      "b200sr-iv",
+      "b200sra-wh",
+      "b200sra-iv",
+      "b200s-lf-wh",
+      "b200s-lf-iv",
+      "b200sr-lf-wh",
+      "b710hd",
+      "b210lp",
+      "b210lpa",
+      "dnr/w",
+      "dnra",
+      "fapt-751",
+      "fapt-851",
+      "fapt-851a",
+      "fsp-851",
+      "fsp-851t",
+      "fsp-851a",
+      "fsp-851ta",
+      "fcm-1",
+      "fcm-1a",
+      "fcm-1-rel",
+      "fcm-1-rela",
+      "fdm-1",
+      "fdm-1a",
+      "fmm-1",
+      "fmm-1a",
+      "fmm-4-20",
+      "fmm-101",
+      "fmm-101a",
+      "frm-1",
+      "frm-1a",
+      "fdrm-1",
+      "fdrm-1a",
+      "fs-osi-ri",
+      "fs-osi-ria",
+      "fsb-200",
+      "fsb-200s",
+      "fsb-200a",
+      "fsb-200sa",
+      "fco-951",
+      "fco-951-iv",
+      "fco-951a",
+      "fco-951a-iv",
+      "fpc-951",
+      "fpc-951a",
+      "fpti-951",
+      "fpti-951-iv",
+      "fpti-951a",
+      "fpti-951a-iv",
+      "fsco-951",
+      "fsco-951a",
+      "fsc-851",
+      "fsc-851a",
+      "fco-851",
+      "fco-851a",
+      "fsd-751pl",
+      "fsd-751pla",
+      "fsd-751rpl",
+      "fsd-751rpla",
+      "fsd-751p",
+      "fsd-751pa",
+      "fsd-751rp",
+      "fsd-751rpa",
+      "fsh-751",
+      "fsh-751a",
+      "fsi-751",
+      "fsi-851",
+      "fsi-851a",
+      "fsv-951",
+      "fsv-951-iv",
+      "fsv-951a",
+      "fsv-951a-iv"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0016": {
+    "components": [
+      "secondary surge protector",
+      "signaling line circuit",
+      "zone interface module",
+      "isolator module",
+      "six fault isolator module",
+      "firephone control module"
+    ],
+    "error_codes": [],
+    "products": [
+      "fsv-951r",
+      "fsv-951r-iv",
+      "fsv-951ra",
+      "fsv-951ra-iv",
+      "fsl-751",
+      "fsl-751a",
+      "fsp-751",
+      "fsp-751t",
+      "fsp-851",
+      "fsp-851t",
+      "fapt-851",
+      "fsp-851a",
+      "fsp-851ta",
+      "fapt-851a",
+      "fsp-851r",
+      "fsp-851ra",
+      "fst-751",
+      "fsp-951",
+      "fsp-951-iv",
+      "fsp-951a",
+      "fsp-951a-iv",
+      "fsp-951r",
+      "fsp-951r-iv",
+      "fsp-951ra",
+      "fsp-951ra-iv",
+      "fsp-951t",
+      "fsp-951t-iv",
+      "fsp-951ta",
+      "fsp-951ta-iv",
+      "fst-951",
+      "fst-951-iv",
+      "fst-951r",
+      "fst-951r-iv",
+      "fst-951h",
+      "fst-951h-iv",
+      "fst-951a",
+      "fst-951a-iv",
+      "fst-951ra",
+      "fst-951ra-iv",
+      "fst-951ha",
+      "fst-951ha-iv",
+      "fst-751r",
+      "fst-851",
+      "fst-851r",
+      "fst-851h",
+      "fst-851a",
+      "fst-851ra",
+      "fst-851ha",
+      "ftm-1",
+      "ftm-1a",
+      "fzm-1",
+      "fzm-1a",
+      "hpx-751",
+      "iso-x",
+      "iso-xa",
+      "iso-6",
+      "iso-6a",
+      "lpx-751",
+      "lpx-751l",
+      "nbg-12lx",
+      "nbg-12lxsp",
+      "nbg-12lxp",
+      "n-mps",
+      "nfw-mps",
+      "fsa-5000 a",
+      "fsa-8000 a",
+      "fsa-20000 a",
+      "fsa-20000p",
+      "manual releasing disconnect switch"
+    ],
+    "protocols": [
+      "slc",
+      "nfpa class b",
+      "nfpa class a",
+      "nfpa class x"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0017": {
+    "components": [
+      "monitor module",
+      "mini-monitor module",
+      "four-to-twenty milli-amp monitor module",
+      "zone interface module",
+      "slc integration module",
+      "initiating device circuits",
+      "addressable modules",
+      "detectors",
+      "modules"
+    ],
+    "error_codes": [
+      "trouble message"
+    ],
+    "products": [
+      "notifier slc",
+      "slm-318",
+      "lcm-320",
+      "lem-320",
+      "nfs2-640",
+      "nfs2-3030",
+      "nfs-3030",
+      "nfs-640",
+      "nfs-320",
+      "afp-100",
+      "afp-1010",
+      "afp-200",
+      "afp-300",
+      "afp-400",
+      "am2020",
+      "system 5000",
+      "aim-200",
+      "fmm-1",
+      "mmx-1",
+      "fmm-101",
+      "mmx-101",
+      "fmm-4-20",
+      "fzm-1",
+      "mmx-2",
+      "slc-im",
+      "vhs-1420-hfs",
+      "xp5-m",
+      "xp6-ma",
+      "xp10-m"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip",
+      "modbus",
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0018": {
+    "components": [
+      "initiating device circuits",
+      "notification appliance circuits",
+      "self test smoke detectors",
+      "slc loop"
+    ],
+    "error_codes": [],
+    "products": [
+      "xp5-m",
+      "xp6-ma",
+      "xp10-m",
+      "fcm-1",
+      "cmx-1",
+      "cmx-2",
+      "n16",
+      "slm-318",
+      "clp-2pcb",
+      "clp-pcb"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0019": {
+    "components": [
+      "control module",
+      "nac",
+      "speaker/telephone circuit",
+      "form-c relay",
+      "firephone control module",
+      "isolator modules",
+      "isolator bases",
+      "relay modules",
+      "multiple input/output modules",
+      "transponders",
+      "plug-in detector bases",
+      "standard base",
+      "sounder base",
+      "relay base"
+    ],
+    "error_codes": [],
+    "products": [
+      "fcm-1-rel",
+      "nfs2-3030",
+      "nfs2-640",
+      "nfs-320 c",
+      "nfs-320sys",
+      "xp5-c",
+      "xp6-c",
+      "ftm-1",
+      "nfs-320",
+      "nfs-640",
+      "nfs-3030",
+      "iso-x",
+      "iso-6",
+      "frm-1",
+      "xp6-r",
+      "fdm-1",
+      "fdrm-1",
+      "xp series",
+      "xpp-1",
+      "xpc-8",
+      "xpm-8",
+      "xpr-8",
+      "b501 series",
+      "b501-white",
+      "b501-iv",
+      "b501-bl",
+      "b300-6",
+      "b300-6-iv"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0020": {
+    "components": [
+      "sounder base",
+      "relay base",
+      "isolator base",
+      "plug-in detector base",
+      "standard base",
+      "intelligent sounder base",
+      "low-frequency sounder base"
+    ],
+    "error_codes": [],
+    "products": [
+      "b501 series",
+      "b501-white",
+      "b501-iv",
+      "b501-bl",
+      "b501a",
+      "b300-6",
+      "b300-6-iv",
+      "b210lp",
+      "b710lp",
+      "b710hd",
+      "b224bi-wh",
+      "b224bi-iv",
+      "b224bi",
+      "b501bh",
+      "b501bh-2",
+      "b501bht-2",
+      "b501bht",
+      "b200s-wh",
+      "b200s-iv",
+      "b200s",
+      "b200sr-wh",
+      "b200sr-iv",
+      "b200sr",
+      "b200s-lf-wh",
+      "b200s-lf-iv",
+      "b200s-lf",
+      "b200sr-lf-wh",
+      "b200sr-lf-iv",
+      "b200sr-lf",
+      "b224rb-wh",
+      "b224rb-iv",
+      "b224rb"
+    ],
+    "protocols": [
+      "ul 864 9th edition"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0021": {
+    "components": [
+      "photo detector",
+      "photo/heat detector",
+      "heat detector",
+      "smoke sensor",
+      "carbon monoxide sensor",
+      "infra-red sensor",
+      "multi-criteria sensor",
+      "photoelectric sensor",
+      "thermal sensor",
+      "beam smoke detector",
+      "electromechanical sensing cell",
+      "sensing chamber"
+    ],
+    "error_codes": [],
+    "products": [
+      "fsp-951-selft",
+      "fsp-951t-selft",
+      "fst-951-selft",
+      "fco-951",
+      "fco-951-iv",
+      "fpc-951",
+      "fpti-951",
+      "fpti-951-iv",
+      "fsco-951",
+      "fs-osi-ri",
+      "fsv-951",
+      "fsv-951-iv",
+      "fsv-951r",
+      "fsv-951r-iv",
+      "vesda-e",
+      "vep-a00-p-ntf",
+      "vep-a10-p-ntf",
+      "vep-a00-1p-ntf",
+      "veu-a00-ntf",
+      "veu-a10-ntf",
+      "vea-040-a00-ntf",
+      "vea-040-a10-ntf",
+      "vep-a00-p-ntf-ul",
+      "vep-a10-p-ntf-ul",
+      "vep-a00-1p-ntf-ul",
+      "veu-a00-ntf-ul",
+      "veu-a10-ntf-ul",
+      "vea-040-a00-ntf-ul",
+      "vea-040-a10-ntf-ul",
+      "ves-a00-p-ntf-ul",
+      "ves-a10-p-ntf-ul",
+      "fco-851",
+      "fsb-200s",
+      "fsb-200"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0022": {
+    "components": [
+      "photoelectric sensing chamber",
+      "carbon monoxide co sensor",
+      "thermal sensor",
+      "infra-red ir sensor",
+      "electromechanical sensing cell",
+      "ionization sensing chamber",
+      "sensitivity testing"
+    ],
+    "error_codes": [],
+    "products": [
+      "fco-851",
+      "fsb-200s",
+      "fsb-200",
+      "fapt-851",
+      "fapt-751",
+      "ipx-751",
+      "fsc-851",
+      "fsi-851",
+      "fsi-751",
+      "cpx-751",
+      "cpx-551"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0023": {
+    "components": [
+      "photoelectric sensing chamber",
+      "thermal sensors",
+      "thermistor sensing circuit",
+      "alarm relay",
+      "laser diode",
+      "special optics",
+      "signal processing",
+      "addressable relay module"
+    ],
+    "error_codes": [],
+    "products": [
+      "fsp-951",
+      "fsp-951-iv",
+      "fsp-951t",
+      "fsp-951t-iv",
+      "fsp-951r",
+      "fsp-951r-iv",
+      "fsp-851",
+      "fsp-851t",
+      "fsp-851r",
+      "fsp-751",
+      "fsp-751t",
+      "sdx-551",
+      "sdx-751",
+      "sdx-551th",
+      "fst-951",
+      "fst-951-iv",
+      "fst-951r",
+      "fst-951r-iv",
+      "fst-951h",
+      "fst-951h-iv",
+      "fst-851",
+      "fst-851r",
+      "fst-851h",
+      "fst-751",
+      "fst-751r",
+      "fdx-551",
+      "fdx-551r",
+      "fsd-751p",
+      "fsd-751rp",
+      "fsd-751pl",
+      "fsd-751rpl",
+      "dnr/w",
+      "dnrw",
+      "frm-1",
+      "fsh-751",
+      "hpx-751",
+      "fsl-751",
+      "lpx-751l",
+      "lpx-751",
+      "fsa-5000",
+      "fsa-8000",
+      "afp-300",
+      "afp-400",
+      "nfs-640",
+      "nfs2-640",
+      "nfs-320",
+      "nfs-3030",
+      "nfs2-3030",
+      "afp-200",
+      "am2020",
+      "afp1010",
+      "nfs-320sys"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0024": {
+    "components": [
+      "aspiration smoke detector",
+      "addressable monitor module",
+      "wireless gateway",
+      "photo detector",
+      "acclimate detector",
+      "fixed-temperature heat detector",
+      "rate-of-rise heat detector",
+      "monitor module",
+      "relay module",
+      "battery charger",
+      "notification appliance circuits",
+      "strobe synchronization"
+    ],
+    "error_codes": [],
+    "products": [
+      "afp-300",
+      "afp-400",
+      "nfs-640",
+      "nfs2-640",
+      "nfs-320",
+      "nfs-3030",
+      "nfs2-3030",
+      "lpx-751l",
+      "afp-200",
+      "am2020",
+      "afp1010",
+      "lpx-751",
+      "fsa-5000",
+      "fsa-8000",
+      "fsa-20000",
+      "fsa-20000p",
+      "nbg-12lx",
+      "bgx-101l",
+      "nbg-12lxsp",
+      "nbg-12lxp",
+      "n-mps-sa",
+      "n-mps-sac",
+      "n-mps-2a",
+      "n-mps-2ac",
+      "nfw-mps",
+      "fwsg",
+      "acps-610"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip",
+      "flashscan slc"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0025": {
+    "components": [
+      "notification appliance circuits",
+      "notification appliance synchronization",
+      "slc loop cards",
+      "control panel",
+      "led"
+    ],
+    "error_codes": [
+      "single open",
+      "single ground",
+      "short",
+      "short and open",
+      "short and ground",
+      "open and ground",
+      "communications loss"
+    ],
+    "products": [
+      "acps-2406",
+      "amps-24",
+      "pmb-aux",
+      "slm-318",
+      "n16"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip",
+      "classic loop interface",
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0026": {
+    "components": [
+      "monitor module",
+      "control module",
+      "detector"
+    ],
+    "error_codes": [
+      "single open trouble",
+      "single ground trouble",
+      "short trouble",
+      "open and ground trouble",
+      "communications loss trouble"
+    ],
+    "products": [
+      "am2020",
+      "afp1010",
+      "afp-300",
+      "afp-400"
+    ],
+    "protocols": [
+      "clip mode",
+      "flashscan mode"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0027": {
+    "components": [
+      "monitor module",
+      "control module",
+      "detector",
+      "led"
+    ],
+    "error_codes": [],
+    "products": [
+      "afp-100",
+      "aim-200",
+      "afp-200",
+      "n16",
+      "nfs-320",
+      "nfs2-640",
+      "nfs-640",
+      "nfs2-3030",
+      "nfs-3030",
+      "lpx-751",
+      "hpx-751"
+    ],
+    "protocols": [
+      "clip",
+      "flashscan"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0028": {
+    "components": [
+      "twisted unshielded pair",
+      "twisted-shielded pair",
+      "wire gauge",
+      "class a loop",
+      "class b loop",
+      "class x loop",
+      "conduit"
+    ],
+    "error_codes": [],
+    "products": [
+      "n16",
+      "nfs-3 20",
+      "nfs2-640",
+      "nfs-640",
+      "nfs2-3030",
+      "nfs-3030",
+      "lcm-320",
+      "lem-320",
+      "lib-200a",
+      "lib-400",
+      "afp-100",
+      "afp-200",
+      "afp-300/400",
+      "lib-200",
+      "aim-200",
+      "am2020",
+      "afp1010",
+      "nfs-320",
+      "nfs-320sys",
+      "slm-318"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0029": {
+    "components": [
+      "self-test detectors",
+      "twisted-unshielded pair",
+      "twisted-shielded pair",
+      "untwisted unshielded wire",
+      "shields"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "slm-318",
+      "clp-pcb",
+      "clp-2pcb",
+      "n16 loops",
+      "afp-100",
+      "afp-200",
+      "facp"
+    ],
+    "protocols": [
+      "class a",
+      "class b",
+      "class x"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0030": {
+    "components": [
+      "class a loops",
+      "class b loops",
+      "slc wiring"
+    ],
+    "error_codes": [],
+    "products": [
+      "afp-100",
+      "afp-200",
+      "afp-300",
+      "afp-400",
+      "lib-200",
+      "lib-200a",
+      "lib-400",
+      "aim-200",
+      "nfs-320",
+      "nfs2-640",
+      "nfs-640",
+      "nfs2-3030",
+      "nfs-3030",
+      "n16",
+      "slm-318",
+      "lcm-320",
+      "lem-320",
+      "facp"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0031": {
+    "components": [
+      "self-test detectors",
+      "twisted-shielded pair",
+      "twisted-unshielded pair",
+      "untwisted unshielded wire",
+      "12 awg",
+      "14 awg",
+      "16 awg",
+      "18 awg"
+    ],
+    "error_codes": [],
+    "products": [
+      "slm-318",
+      "slm-318 clp-2pcb",
+      "slm-318 clp- pcb",
+      "slm-318/n16",
+      "nfs-320",
+      "nfs2-640",
+      "nfs-640",
+      "lcm-320",
+      "lem-320",
+      "lib-200a",
+      "lib-400",
+      "afp-100",
+      "afp-200",
+      "afp-300/400",
+      "lib-200",
+      "aim-200",
+      "am2020",
+      "afp1010"
+    ],
+    "protocols": [
+      "two-wire slc",
+      "class b",
+      "class a",
+      "class x",
+      "nfpa class b",
+      "nfpa class a",
+      "nfpa class x"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0032": {
+    "components": [
+      "twisted pair",
+      "twisted-shielded pair",
+      "slc terminal block",
+      "b",
+      "branch a",
+      "branch b",
+      "branch c"
+    ],
+    "error_codes": [],
+    "products": [
+      "lib-200",
+      "lib-200a",
+      "lib-400",
+      "system 5000",
+      "aim-200",
+      "afp-100",
+      "afp-200",
+      "afp-300",
+      "afp-400"
+    ],
+    "protocols": [
+      "nfpa class a",
+      "nfpa class x"
+    ],
+    "voltages": [
+      "27.6v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0033": {
+    "components": [
+      "self-test detectors",
+      "slc channel b out",
+      "slc channel a return",
+      "slc terminal",
+      "loop module",
+      "slc out",
+      "slc return"
+    ],
+    "error_codes": [],
+    "products": [
+      "slm-318",
+      "clp-2pcb",
+      "slm-318/n16",
+      "nfs-320",
+      "nfs2-640",
+      "nfs-640",
+      "lcm-320",
+      "lem-320",
+      "lib-200a",
+      "lib-400",
+      "afp-100",
+      "afp-200",
+      "afp-300/400",
+      "lib-200",
+      "aim-200"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0034": {
+    "components": [
+      "control panel terminal blocks",
+      "power module boards",
+      "signaling loop modules",
+      "slc loops",
+      "slc terminal block",
+      "loop control modules",
+      "loop expander modules"
+    ],
+    "error_codes": [],
+    "products": [
+      "n16",
+      "slm-318",
+      "pmb-aux",
+      "nfs2-3030",
+      "nfs-3030",
+      "lcm-320",
+      "lem-320"
+    ],
+    "protocols": [
+      "clip mode",
+      "flashscan mode"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0035": {
+    "components": [
+      "terminal blocks",
+      "loop expander modules",
+      "control panel terminal blocks",
+      "facp s main circuit board",
+      "tb13",
+      "tb1",
+      "tb16",
+      "tb6",
+      "tb5"
+    ],
+    "error_codes": [],
+    "products": [
+      "nfs2-640",
+      "nfs-320",
+      "nfs-320sys",
+      "lem-320",
+      "nfs-640",
+      "afp-100",
+      "afp-200"
+    ],
+    "protocols": [
+      "clip mode",
+      "flashscan mode"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0036": {
+    "components": [
+      "slc loop",
+      "control panel terminal blocks",
+      "tb1",
+      "tb2",
+      "tb5",
+      "tb6",
+      "p8",
+      "main circuit board",
+      "slc loop port a",
+      "slc loop port b",
+      "earth ground"
+    ],
+    "error_codes": [],
+    "products": [
+      "afp-300",
+      "afp-400",
+      "am2020",
+      "afp1010",
+      "lib-200a",
+      "lib-400",
+      "system 5000",
+      "aim-200",
+      "afc-600"
+    ],
+    "protocols": [
+      "slc",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0037": {
+    "components": [
+      "shield",
+      "shield drain wire",
+      "foil",
+      "connector clamp",
+      "connector screw",
+      "metal conduit",
+      "slc terminal block",
+      "control box",
+      "cabinet"
+    ],
+    "error_codes": [],
+    "products": [
+      "afp-100",
+      "afp-200",
+      "afp-300/400",
+      "lib-200",
+      "aim-200",
+      "n16",
+      "nfs-320",
+      "nfs-320sys",
+      "nfs2-640",
+      "nfs-640",
+      "nfs2-3030",
+      "nfs-3030",
+      "slm-318",
+      "lcm-320",
+      "lem-320",
+      "lib-200a",
+      "lib-400"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0038": {
+    "components": [
+      "partial conduit",
+      "shielded wire",
+      "metal conduit",
+      "junction box",
+      "wire nuts",
+      "shield drain wire",
+      "twisted-pair wire",
+      "floating shield"
+    ],
+    "error_codes": [],
+    "products": [
+      "afp-100",
+      "afp-200",
+      "afp-300/400",
+      "lib-200",
+      "aim-200",
+      "n16",
+      "nfs-320",
+      "nfs-320sys",
+      "nfs2-640",
+      "nfs-640",
+      "nfs2-3030",
+      "nfs-3030",
+      "slm-318",
+      "lcm-320",
+      "lem-320",
+      "lib-200a",
+      "lib-400"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0039": {
+    "components": [
+      "slc wiring",
+      "isolators",
+      "two-wire addressable detector",
+      "addressable module"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "control panel"
+    ],
+    "protocols": [
+      "nfpa 72 class b",
+      "nfpa 72 class a"
+    ],
+    "voltages": [
+      "b"
+    ]
+  },
+  "slc_wiring_manual#chunk_0040": {
+    "components": [
+      "slc circuits",
+      "isolators",
+      "slc return",
+      "slc out"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "control panel",
+      "addressable detector",
+      "addressable module"
+    ],
+    "protocols": [
+      "nfpa class a slc",
+      "slc"
+    ],
+    "voltages": [
+      "b",
+      "a"
+    ]
+  },
+  "slc_wiring_manual#chunk_0041": {
+    "components": [
+      "integral relay",
+      "relay coil",
+      "terminals 3",
+      "terminals 4",
+      "isolator base",
+      "isolator module",
+      "fault isolator module",
+      "slc loop",
+      "slc branch",
+      "slc segment",
+      "sounder bases",
+      "relay bases"
+    ],
+    "error_codes": [],
+    "products": [
+      "fault isolator module iso-x",
+      "isolator detector base b224bi",
+      "isolator detector base b224bi-wh",
+      "isolator detector base b224bi-iv",
+      "six fault isolator module iso-6",
+      "afp-300",
+      "afp-400",
+      "n16",
+      "nfs-320",
+      "nfs-320sys",
+      "nfs2-640",
+      "nfs2-3030",
+      "nfs-3030",
+      "nfs-640",
+      "afp-100",
+      "afp-200"
+    ],
+    "protocols": [
+      "flashscan-mode",
+      "clip-mode"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0042": {
+    "components": [
+      "and/or isolator bases",
+      "isolator modules",
+      "isolator bases",
+      "slc isolated branch"
+    ],
+    "error_codes": [],
+    "products": [
+      "afp-300",
+      "afp-400",
+      "n16",
+      "nfs-320",
+      "nfs-320sys",
+      "nfs2-640",
+      "nfs2-3030",
+      "nfs-3030",
+      "nfs-640",
+      "afp-100",
+      "afp-200",
+      "iso-x isolator module"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0043": {
+    "components": [
+      "isolator terminals",
+      "isolator detector bases",
+      "isolator base",
+      "isolator",
+      "slc circuits",
+      "slc return",
+      "detector bases",
+      "detectors",
+      "control panel"
+    ],
+    "error_codes": [
+      "short circuit fault",
+      "trouble warning"
+    ],
+    "products": [
+      "iso-6",
+      "iso-x",
+      "b224bi-wh",
+      "b224bi-iv",
+      "b224bi",
+      "flashscan detectors",
+      "clip mode detectors",
+      "slc-iso-6"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0044": {
+    "components": [
+      "isolator base",
+      "detector",
+      "control panel",
+      "slc return",
+      "slc out"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "isolator detector bases",
+      "b224bi-wh",
+      "b224bi-iv"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0045": {
+    "components": [
+      "slc circuits",
+      "isolated branch",
+      "slc b"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "isolator module",
+      "iso-x modules",
+      "addressable detector",
+      "addressable pull station",
+      "control panel"
+    ],
+    "protocols": [
+      "nfpa class b slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0046": {
+    "components": [
+      "isolator module",
+      "slc circuits",
+      "slc loop",
+      "isolated branch",
+      "iso-6",
+      "iso-x"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "iso-6 six fault isolator module",
+      "iso-x",
+      "slc isolator",
+      "fire alarm control panel"
+    ],
+    "protocols": [
+      "slc",
+      "nfpa class b"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0047": {
+    "components": [
+      "isolator module",
+      "isolator base",
+      "control panel",
+      "two-wire addressable detector",
+      "addressable pull station",
+      "facp"
+    ],
+    "error_codes": [],
+    "products": [
+      "afp-100",
+      "afp-200",
+      "am2020",
+      "afp1010",
+      "system 5000",
+      "aim-200",
+      "n16",
+      "nfs-320",
+      "nfs2-640",
+      "nfs2-3030",
+      "nfs-640",
+      "nfs-3030",
+      "afp-300",
+      "afp-400"
+    ],
+    "protocols": [
+      "nfpa class a slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0048": {
+    "components": [
+      "isolator base",
+      "isolator module",
+      "isolator base mounting plate",
+      "close-nipple connection"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "isolator detector bases",
+      "isolator modules",
+      "addressable detector",
+      "two-wire isolator detector",
+      "addressable pull station",
+      "control panel afp-100",
+      "afp-200",
+      "am2020",
+      "afp1010",
+      "system 5000",
+      "aim-200",
+      "n16",
+      "nfs-320",
+      "nfs2-640",
+      "nfs2-3030",
+      "nfs-640",
+      "nfs-3030",
+      "afp-300",
+      "afp-400",
+      "b224bi-wh",
+      "b224bi-iv"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0049": {
+    "components": [
+      "monitor modules",
+      "initiating device circuits",
+      "transponders",
+      "rotary switches",
+      "idc return",
+      "idc out"
+    ],
+    "error_codes": [],
+    "products": [
+      "fmm-1",
+      "fzm-1",
+      "notifier slc"
+    ],
+    "protocols": [
+      "nfpa class b",
+      "class a",
+      "slc"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0050": {
+    "components": [
+      "monitor module",
+      "miniature monitor module",
+      "rotary switches",
+      "control panels",
+      "detectors",
+      "relay modules",
+      "two-wire sensor",
+      "three-wire sensor"
+    ],
+    "error_codes": [],
+    "products": [
+      "fmm-101",
+      "fmm-4-20",
+      "nfs2-3030"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0051": {
+    "components": [
+      "monitor modules",
+      "rotary switches",
+      "breakaway tab",
+      "module terminals"
+    ],
+    "error_codes": [],
+    "products": [
+      "fmm-1",
+      "facp"
+    ],
+    "protocols": [
+      "slc",
+      "nfpa class b idc"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0052": {
+    "components": [
+      "rotary switches",
+      "module terminals",
+      "filtered regulated resettable 24 vdc power",
+      "47k elr"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "fmm-1 module",
+      "monitor modules",
+      "manual pull station",
+      "heat detector",
+      "four-wire detector base"
+    ],
+    "protocols": [
+      "nfpa class a idc",
+      "nfpa class b idc",
+      "slc"
+    ],
+    "voltages": [
+      "24v",
+      "210 microamps 24 vdc"
+    ]
+  },
+  "slc_wiring_manual#chunk_0053": {
+    "components": [
+      "rotary switches",
+      "module terminals",
+      "initiating device circuit",
+      "normally open contact devices",
+      "power filtered",
+      "regulated",
+      "resettable",
+      "supervised"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "zone interface modules",
+      "fzm-1 module",
+      "fmm-1 idc",
+      "detector base",
+      "heat detector",
+      "manual pull station"
+    ],
+    "protocols": [
+      "nfpa class b idc",
+      "nfpa class a idc"
+    ],
+    "voltages": [
+      "24v",
+      "210 microamps 24 vdc"
+    ]
+  },
+  "slc_wiring_manual#chunk_0054": {
+    "components": [
+      "monitor modules",
+      "zone interface modules",
+      "initiating device circuit",
+      "two-wire smoke detectors",
+      "rotary switches",
+      "elr"
+    ],
+    "error_codes": [],
+    "products": [
+      "fzm-1",
+      "n16",
+      "nfs-320",
+      "nfs-320sys",
+      "nfs2-640/e",
+      "nfs-640",
+      "nfs2-3030",
+      "nfs-3030"
+    ],
+    "protocols": [
+      "slc",
+      "flashscan"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0055": {
+    "components": [
+      "slc",
+      "two-wire smoke detectors",
+      "3.9k elr"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "zone interface modules",
+      "monitor modules",
+      "fzm-1",
+      "n16",
+      "nfs-320",
+      "nfs-320sys",
+      "nfs2-640",
+      "nfs-640",
+      "nfs2-3030",
+      "nfs-3030"
+    ],
+    "protocols": [
+      "flashscan"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0056": {
+    "components": [
+      "notification appliance circuit",
+      "nac",
+      "solenoid",
+      "jumper j1",
+      "rotary switches"
+    ],
+    "error_codes": [],
+    "products": [
+      "fcm-1",
+      "fcm-1-rel",
+      "nfs2-3030",
+      "nfs2-640",
+      "nfs-320 c",
+      "nfs-320sys"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0057": {
+    "components": [
+      "addressable control modules",
+      "class b nac",
+      "notification appliance circuit",
+      "power supervision relay",
+      "end-of-line resistor 47k",
+      "solenoid",
+      "jumper j1",
+      "screw terminals"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "fcm-1-rel",
+      "nfs2-3030",
+      "nfs2-640",
+      "nfs-320 c",
+      "nfs-320sys",
+      "flashscan"
+    ],
+    "protocols": [
+      "ul 864 10th edition",
+      "flashscan",
+      "clip mode"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0058": {
+    "components": [
+      "control modules",
+      "notification appliance circuit",
+      "power supervision relay",
+      "elr 47k 1/2-watt",
+      "alarm notification appliances",
+      "relays",
+      "mechanical bells",
+      "horns",
+      "screw terminals"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "fcm-1",
+      "flashscan"
+    ],
+    "protocols": [
+      "slc",
+      "flashscan"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0059": {
+    "components": [
+      "releasing device",
+      "manual releasing disconnect switch",
+      "solenoid",
+      "power supply",
+      "battery backup",
+      "jumper j1"
+    ],
+    "error_codes": [],
+    "products": [
+      "nfs2-3030",
+      "nfs2-640",
+      "nfs-320 c",
+      "nfs-320sys",
+      "fcm-1-rel",
+      "facp",
+      "mrd-1",
+      "fmm-101"
+    ],
+    "protocols": [
+      "ul 864",
+      "nfpa 70",
+      "ul-listed"
+    ],
+    "voltages": [
+      "24v",
+      "12v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0060": {
+    "components": [
+      "control modules",
+      "manual releasing disconnect switch",
+      "battery backup",
+      "power supply"
+    ],
+    "error_codes": [],
+    "products": [
+      "fcm-1-rel",
+      "nfs2-3030",
+      "nfs2-640",
+      "nfs-320 c",
+      "nfs-320sys",
+      "mrd-1",
+      "fmm-101"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0061": {
+    "components": [
+      "form-c relay contacts",
+      "relay module",
+      "transponders",
+      "control panel"
+    ],
+    "error_codes": [],
+    "products": [
+      "frm-1",
+      "notifier slc"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "3v",
+      "125v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0062": {
+    "components": [
+      "class b idcs",
+      "form-c relay contacts",
+      "rotary switches",
+      "relay output",
+      "monitored input"
+    ],
+    "error_codes": [],
+    "products": [
+      "fdm-1",
+      "fmm-1",
+      "fdrm-1"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "25v",
+      "3v",
+      "70.7v",
+      "125v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0063": {
+    "components": [
+      "addressable dual monitor/dual relay module",
+      "initiating device circuit",
+      "dual monitor modules",
+      "rotary switches",
+      "idc"
+    ],
+    "error_codes": [],
+    "products": [
+      "fdrm-1",
+      "fdm-1",
+      "flashscan",
+      "clip slc"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip slc",
+      "nfpa class b"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0064": {
+    "components": [
+      "slc-idcb3fdm",
+      "base address",
+      "47k elr",
+      "idc circuit h",
+      "idc circuit l"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "multiple input/output modules",
+      "dual monitor modules",
+      "heat detector",
+      "manual pull station",
+      "fdm-1"
+    ],
+    "protocols": [
+      "nfpa class b idc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0065": {
+    "components": [
+      "detector base",
+      "aspiration smoke detectors",
+      "sounder base",
+      "isolator base",
+      "relay detector base",
+      "low-frequency sounder base",
+      "programmable sounder base",
+      "programmable low-frequency sounder base",
+      "leds",
+      "3.5 display"
+    ],
+    "error_codes": [],
+    "products": [
+      "b501 series",
+      "b501-white",
+      "b501-iv",
+      "b501-bl",
+      "b300-6",
+      "b300-6-iv",
+      "b210lp",
+      "b710hd detector base",
+      "b224bi-wh",
+      "b224bi-iv",
+      "b224rb-wh",
+      "b224rb-iv",
+      "b200s-wh",
+      "b200s-iv",
+      "b200s-lf-wh",
+      "b200s-lf-iv",
+      "b200sr-wh",
+      "b200sr-iv",
+      "b200sr-lf-wh",
+      "b200sr-lf-iv",
+      "b501bh",
+      "b501bh-2",
+      "b501bht-2",
+      "vesda-e series",
+      "vep-a00-p-ntf",
+      "vep-a10-p-ntf",
+      "vep-a00-1p-ntf",
+      "veu-a00-ntf",
+      "veu-a10-ntf",
+      "vea-040-a00-ntf",
+      "vea-040-a10-ntf",
+      "vep-a00-p-ntf-ul",
+      "vep-a10-p-ntf-ul",
+      "vep-a00-1p-ntf-ul",
+      "veu-a00-ntf-ul",
+      "veu-a10-ntf-ul",
+      "vea-040-a00-ntf-ul",
+      "vea-040-a10-ntf-ul",
+      "ves-a00-p-ntf-ul",
+      "ves-a10-p-ntf-ul",
+      "fsa-5000 intelligent faast xs",
+      "fsa-8000 intelligent faast xm"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0066": {
+    "components": [
+      "leds",
+      "3.5 display",
+      "addressable pipes",
+      "bases"
+    ],
+    "error_codes": [],
+    "products": [
+      "vep-a00-1p-ntf-ul",
+      "veu-a00-ntf-ul",
+      "veu-a10-ntf-ul",
+      "vea-040-a00-ntf-ul",
+      "vea-040-a10-ntf-ul",
+      "ves-a00-p-ntf-ul",
+      "ves-a10-p-ntf-ul",
+      "fsa-5000",
+      "fsa-8000",
+      "fsa-20000",
+      "fsa-20000p",
+      "nfs-320",
+      "nfs-320sys",
+      "nfs2-640",
+      "nfs2-3030"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0067": {
+    "components": [
+      "intelligent detectors",
+      "intelligent detector bases",
+      "wireless gateway",
+      "detector base",
+      "wireless relay",
+      "modules"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "fwsg a wireless gateway",
+      "n16",
+      "nfs-320",
+      "nfs-320sys",
+      "nfs2-640",
+      "nfs2-3030",
+      "ra100z remote led annunciator",
+      "b501",
+      "b300-6",
+      "b210lp"
+    ],
+    "protocols": [
+      "flashscan slc",
+      "swift wireless gateway"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0068": {
+    "components": [
+      "detector base",
+      "intelligent detectors",
+      "intelligent detector bases",
+      "remote led annunciator",
+      "spade lug",
+      "terminal 2"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "b710hd detector base",
+      "harsh detector",
+      "ra100z remote led annunciator",
+      "wireless gateway"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0069": {
+    "components": [
+      "isolator base",
+      "isolator module",
+      "relay base",
+      "mounting plate",
+      "terminals",
+      "conduit"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "intelligent detectors",
+      "intelligent detector bases",
+      "wireless gateway",
+      "isolator base",
+      "isolator module",
+      "b224rb relay base",
+      "b224bi-wh isolator base",
+      "b224bi-iv isolator base",
+      "b224bi series"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0070": {
+    "components": [
+      "remote led annunciator",
+      "power supply",
+      "power supervision relays",
+      "modules"
+    ],
+    "error_codes": [],
+    "products": [
+      "b200s",
+      "b200s-lf",
+      "b200sr",
+      "b200sr-lf",
+      "ra100z",
+      "ra400z",
+      "sounder base",
+      "sounder interconnect",
+      "wireless gateway"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0071": {
+    "components": [
+      "facp",
+      "door u",
+      "backbox"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "intelligent detectors",
+      "intelligent detector bases",
+      "wireless gateway",
+      "aspiration detectors",
+      "vesda-e ves"
+    ],
+    "protocols": [
+      "class b"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0072": {
+    "components": [
+      "facp",
+      "door",
+      "backbox"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "aspiration detectors",
+      "intelligent detectors",
+      "intelligent detector bases",
+      "wireless gateway",
+      "vesda-e veu",
+      "vesda-e vep"
+    ],
+    "protocols": [
+      "class b",
+      "class a"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0073": {
+    "components": [
+      "facp",
+      "backbox"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "intelligent detectors",
+      "intelligent detector bases",
+      "wireless gateway",
+      "aspiration detectors",
+      "vesda-e vea"
+    ],
+    "protocols": [
+      "class b"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0074": {
+    "components": [
+      "intelligent faast detectors",
+      "intelligent detectors",
+      "intelligent detector bases",
+      "wireless gateway",
+      "facp",
+      "term blk"
+    ],
+    "error_codes": [],
+    "products": [
+      "fsa-5000",
+      "fsa-8000",
+      "fsa-20000",
+      "fsa-20000p",
+      "nfs-320",
+      "nfs-320sys",
+      "nfs2-640",
+      "nfs2-3030",
+      "verifire tools"
+    ],
+    "protocols": [
+      "slc",
+      "modbus"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0075": {
+    "components": [
+      "intelligent detectors",
+      "intelligent detector bases",
+      "photo detector",
+      "photo/heat detector",
+      "fixed-temperature heat detector",
+      "rate-of-rise heat detector",
+      "monitor module",
+      "facp aux",
+      "power supply"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "wireless gateway",
+      "fwsg a",
+      "faast detectors",
+      "fsa-5000 intelligent faast xs",
+      "fsa-8000 intelligent faast xm",
+      "fsa-20000 intelligent faast xt",
+      "fsa-20000p intelligent faast xt pro",
+      "n16",
+      "nfs-320",
+      "nfs-320sys",
+      "nfs2-640",
+      "nfs2-3030",
+      "pipeiq",
+      "verifire tools"
+    ],
+    "protocols": [
+      "flashscan slc loop",
+      "flashscan loop",
+      "clip loop"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0076": {
+    "components": [
+      "slc out+/in",
+      "slc in+/out",
+      "slc- common",
+      "slc power select 2",
+      "power +24vdc",
+      "power ground",
+      "slc power- select 1",
+      "jumpers"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "slc intelligent detectors",
+      "intelligent detector bases",
+      "wireless gateway",
+      "fwsg a",
+      "wireless network gateway",
+      "facp"
+    ],
+    "protocols": [
+      "slc",
+      "class a",
+      "class b"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0077": {
+    "components": [
+      "terminal a5",
+      "terminal a6",
+      "terminal a7"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "intelligent detectors",
+      "intelligent detector bases",
+      "wireless gateway",
+      "fwsg a",
+      "swift gateway",
+      "facp"
+    ],
+    "protocols": [
+      "slc",
+      "class a",
+      "class b"
+    ],
+    "voltages": [
+      "24v",
+      "10.8.1"
+    ]
+  },
+  "slc_wiring_manual#chunk_0078": {
+    "components": [
+      "manual pull station",
+      "key-lock reset"
+    ],
+    "error_codes": [],
+    "products": [
+      "nbg-12lx",
+      "nbg-12lxsp",
+      "nbg-12lxp"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip",
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0079": {
+    "components": [
+      "detectors",
+      "nacs",
+      "four-wire devices",
+      "end-of-line relay",
+      "notification appliance devices",
+      "power supervision relay",
+      "intelligent module",
+      "normally closed contacts",
+      "supervised circuit"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "afp-100",
+      "mps-24b",
+      "afp-200",
+      "fcps-24",
+      "nfs-640",
+      "mps-24a",
+      "cps-24",
+      "nfs2-640",
+      "nfs-320",
+      "nfs-320sys",
+      "fcps-24s6",
+      "fcps-24s8",
+      "mps-400",
+      "acps-2406",
+      "amps-24",
+      "acps-610",
+      "aps2-6r",
+      "pmb-aux",
+      "fcm-1",
+      "fzm-1"
+    ],
+    "protocols": [
+      "flashscan",
+      "nfpa 72-2013",
+      "ul 864 10th edition"
+    ],
+    "voltages": [
+      "24v",
+      "18.1v",
+      "20.1v",
+      "19.4v",
+      "19.1v",
+      "19.15v",
+      "19.6v",
+      "19.48v",
+      "19.23v",
+      "19.8v",
+      "20.14v",
+      "19.57v",
+      "20v",
+      "20.03v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0080": {
+    "components": [
+      "relay",
+      "nac circuit",
+      "idc circuit",
+      "control module",
+      "eolr",
+      "47k resistor",
+      "3.9k resistor"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "fcm-1",
+      "fzm-1",
+      "fmm-1",
+      "eolr-1",
+      "slc loop",
+      "power supervision relay"
+    ],
+    "protocols": [
+      "class b"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0081": {
+    "components": [
+      "addressable control module",
+      "notification appliance circuit",
+      "power supervision relay",
+      "elr",
+      "nac terminal block",
+      "internal resistor"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "fcm-1",
+      "facp"
+    ],
+    "protocols": [
+      "class b",
+      "class a"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0082": {
+    "components": [
+      "nac",
+      "elr",
+      "nac terminal block",
+      "internal jumper"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "fcm-1",
+      "facp"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0083": {
+    "components": [
+      "control panel",
+      "slc devices",
+      "auxiliary power supply"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc"
+    ],
+    "protocols": [],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0084": {
+    "components": [
+      "surge protector",
+      "surge suppressor",
+      "ul-listed enclosure",
+      "nut",
+      "common ground"
+    ],
+    "error_codes": [],
+    "products": [
+      "primary surge protector",
+      "secondary surge protectors",
+      "slc loop",
+      "control panel"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "33v",
+      "5v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0085": {
+    "components": [
+      "solenoid a",
+      "solenoid b/a",
+      "relay common",
+      "normally open",
+      "normally closed"
+    ],
+    "error_codes": [],
+    "products": [
+      "frm-1",
+      "fcm-1",
+      "fzm-1",
+      "notifier slc"
+    ],
+    "protocols": [
+      "slc",
+      "class a supervision",
+      "class a/b supervision"
+    ],
+    "voltages": [
+      "vdc"
+    ]
+  },
+  "slc_wiring_manual#chunk_0086": {
+    "components": [
+      "terminal",
+      "riser"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "fmm-1",
+      "ftm-1"
+    ],
+    "protocols": [
+      "class a",
+      "class b",
+      "class a/b",
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0087": {
+    "components": [
+      "terminal",
+      "class a supervision",
+      "class a/b supervision"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "fdm-1"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0088": {
+    "components": [
+      "detector base",
+      "remote led annunciator",
+      "female disconnect",
+      "cable shield",
+      "terminal 1"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "b710lp",
+      "b501",
+      "ra100z"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0089": {
+    "components": [
+      "isolator base",
+      "relay base",
+      "plug-in relay detector base",
+      "detector base"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "b224bi",
+      "b224bi-wh",
+      "b224bi-iv",
+      "b224rb",
+      "iso-x isolator module"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0090": {
+    "components": [
+      "sounder interconnect",
+      "power supply"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier",
+      "b501bh -2",
+      "b501bht -2",
+      "sounder base",
+      "intelligent detector base"
+    ],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0091": {
+    "components": [
+      "photoelectric sensing chamber",
+      "thermal sensors",
+      "carbon monoxide sensor",
+      "infra-red sensor",
+      "photoelectric sensor",
+      "thermal rate of rise sensor",
+      "multi-criteria smoke sensor",
+      "photoelectric smoke sensor"
+    ],
+    "error_codes": [],
+    "products": [
+      "n16",
+      "slm-318",
+      "clp-2pcb",
+      "clp-pcb",
+      "fsp-951-selft",
+      "fsp-951t-selft",
+      "fst-951-selft",
+      "fsp-951",
+      "fsp-951a",
+      "fsp-951-iv",
+      "fsp-951a-iv",
+      "fsp-951r",
+      "fsp-951ra",
+      "fsp-951r-iv",
+      "fsp-951ra-iv",
+      "fsp-951t",
+      "fsp-951ta",
+      "fsp-951t-iv",
+      "fsp-951ta-iv",
+      "fst-951",
+      "fst-951a",
+      "fst-951-iv",
+      "fst-951a-iv",
+      "fst-951r",
+      "fst-951ra",
+      "fst-951r-iv",
+      "fst-951ra-iv",
+      "fst-951h",
+      "fst-951ha",
+      "fst-951h-iv",
+      "fst-951ha-iv",
+      "fco-951",
+      "fco-951a",
+      "fco-951-iv",
+      "fco-951a-iv",
+      "fpc-951",
+      "fpc-951a",
+      "fpti-951",
+      "fpti-951a",
+      "fpti-951-iv",
+      "fpti-951a-iv",
+      "fsco-951",
+      "fsco-951a",
+      "fsv-951",
+      "fsv-951a",
+      "fsv-951-iv",
+      "fsv-951a-iv",
+      "fsv-951r",
+      "fsv-951ra"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0092": {
+    "components": [
+      "photoelectric sensor",
+      "carbon monoxide sensor",
+      "heat detector",
+      "infra-red sensor",
+      "thermal sensor"
+    ],
+    "error_codes": [],
+    "products": [
+      "fpc-951",
+      "fpc-951a",
+      "fpti-951",
+      "fpti-951a",
+      "fpti-951-iv",
+      "fpti-951a-iv",
+      "fsco-951",
+      "fsco-951a",
+      "fsv-951",
+      "fsv-951a",
+      "fsv-951-iv",
+      "fsv-951a-iv",
+      "fsv-951r",
+      "fsv-951ra",
+      "fsv-951r-iv",
+      "fsv-951ra-iv"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0093": {
+    "components": [
+      "photoelectric sensing chamber",
+      "ionization sensing chamber",
+      "thermal sensors",
+      "thermistor sensing circuit",
+      "carbon monoxide sensors",
+      "laser diode",
+      "special optics",
+      "signal processing"
+    ],
+    "error_codes": [],
+    "products": [
+      "fs-osi-ri",
+      "fs-osi-ria",
+      "fsb-200",
+      "fsb-200s",
+      "fsb-200a",
+      "fsb-200sa",
+      "fapt-851",
+      "fapt-851a",
+      "fsi-851",
+      "fsi-851a",
+      "fsp-851",
+      "fsp-851a",
+      "fsp-851t",
+      "fsp-851ta",
+      "fsp-851r",
+      "fsp-851ra",
+      "fst-851",
+      "fst-851a",
+      "fst-851r",
+      "fst-851ra",
+      "fst-851h",
+      "fst-851ha",
+      "fsd-751pl",
+      "fsd-751pla",
+      "fsd-751rpl",
+      "fsd-751rpla",
+      "fsh-751",
+      "fsh-751a",
+      "fsl-751",
+      "fsl-751a",
+      "fsc-851",
+      "fsc-851a",
+      "fco-851",
+      "fco-851a",
+      "fsa-5000",
+      "fsa-5000a",
+      "fsa-8000",
+      "fsa-8000a",
+      "fsa-20000",
+      "fsa-20000a",
+      "fsa-20000p",
+      "vesda-e",
+      "vep-a00-p-ntf",
+      "vep-a10-p-ntf",
+      "vep-a00-1p-ntf",
+      "veu-a00-ntf",
+      "veu-a10-ntf",
+      "vea-040-a00-ntf",
+      "vea-040-a10-ntf",
+      "vep-a00-p-ntf-ul",
+      "vep-a10-p-ntf-ul"
+    ],
+    "protocols": [
+      "flashscan",
+      "clip"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0094": {
+    "components": [
+      "addressable vesda-e",
+      "1 pipe",
+      "40 point",
+      "3.5 display",
+      "leds",
+      "slc device"
+    ],
+    "error_codes": [],
+    "products": [
+      "vep-a00-1p-ntf",
+      "veu-a00-ntf",
+      "veu-a10-ntf",
+      "vea-040-a00-ntf",
+      "vea-040-a10-ntf",
+      "vep-a00-p-ntf-ul",
+      "vep-a10-p-ntf-ul",
+      "vep-a00-1p-ntf-ul",
+      "veu-a00-ntf-ul",
+      "veu-a10-ntf-ul",
+      "vea-040-a00-ntf-ul",
+      "vea-040-a10-ntf-ul"
+    ],
+    "protocols": [
+      "ul 268 6th edition",
+      "ulc vep-a00-1p-ntf",
+      "ul 268 7th edition",
+      "ulc veu-a00-ntf",
+      "ulc veu-a10-ntf",
+      "ulc vea-040-a00-ntf",
+      "ulc vea-040-a10-ntf"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0095": {
+    "components": [
+      "leds",
+      "3.5 display",
+      "sounder base",
+      "temporal sounder",
+      "relay base",
+      "isolator base",
+      "co detector markings",
+      "manual pull stations",
+      "two-wire smoke detectors",
+      "four-wire smoke detectors",
+      "heat detectors",
+      "waterflow devices",
+      "supervisory devices",
+      "notification appliance circuits",
+      "screw terminal connectors",
+      "hex key reset",
+      "keyswitch",
+      "key"
+    ],
+    "error_codes": [],
+    "products": [
+      "ves-a00-p-ntf-ul",
+      "vesda-e",
+      "ves-a10-p-ntf-ul",
+      "b300-6",
+      "b3006a",
+      "b300-6-iv",
+      "b3006a-iv",
+      "b210lp",
+      "b210lpa",
+      "b501",
+      "b501a",
+      "b501-white",
+      "b501-iv",
+      "b501-bl",
+      "b710lp",
+      "b710lpa",
+      "b501bh",
+      "b501bht",
+      "b501bha",
+      "b501bhta",
+      "b501bh-2",
+      "b501bht-2",
+      "b224rb-wh",
+      "b224rb-iv",
+      "b224rba-wh",
+      "b224rba-iv",
+      "b224bi-wh",
+      "b224bi-iv",
+      "b224bia-wh",
+      "b224bia-iv",
+      "b710hd",
+      "b710hda",
+      "b200s-wh",
+      "b200s-iv",
+      "b200sa-wh",
+      "b200sa-iv",
+      "b200scoa-wh",
+      "b200scoa-iv",
+      "b200sr-wh",
+      "b200sr-iv",
+      "b200sra-wh",
+      "b200sra-iv",
+      "fmm-1",
+      "fmm-1a",
+      "fzm-1",
+      "fzm-1a",
+      "fdm-1",
+      "fdm-1a",
+      "fmm-101",
+      "fmm-101a",
+      "nbg-12lx",
+      "n-mps-sa",
+      "n-mps-sac",
+      "n-mps-2a",
+      "n-mps-2ac",
+      "fcm-1",
+      "fcm-1a"
+    ],
+    "protocols": [
+      "flashscan",
+      "ul 268",
+      "ul 8th edition",
+      "ul 9th edition",
+      "nfpa class a",
+      "nfpa class b"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0096": {
+    "components": [
+      "hex-key reset",
+      "screw terminal connectors",
+      "keyswitch",
+      "n/c ancillary contact",
+      "thermoplastic cover",
+      "4-inch square mounting box",
+      "notification appliance circuits",
+      "supervised nacs",
+      "slc device"
+    ],
+    "error_codes": [],
+    "products": [
+      "n-mps series",
+      "n-mps-sa",
+      "n-mps-sac",
+      "n-mps-2a",
+      "n-mps-2ac",
+      "fcm-1",
+      "fcm-1a",
+      "fcm-1-rel",
+      "fcm-1-rela",
+      "nfs2-3030",
+      "nfs2-640",
+      "nfs-320 c",
+      "nfs-320sys"
+    ],
+    "protocols": [
+      "flashscan",
+      "ul-listed",
+      "ulc-listed",
+      "nfpa class b",
+      "nfpa class a"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0097": {
+    "components": [
+      "relay control module",
+      "firefighter s telephone module",
+      "fault isolator module",
+      "dual class b monitor",
+      "form-c relay module",
+      "nac circuits",
+      "speaker circuits",
+      "telephone circuits",
+      "form-c relays",
+      "class-b addressable initiating device circuits",
+      "conventional two-wire detectors"
+    ],
+    "error_codes": [],
+    "products": [
+      "frm-1",
+      "frm-1a",
+      "fcm-1",
+      "ftm-1",
+      "ftm-1a",
+      "iso-x",
+      "iso-xa",
+      "iso-6",
+      "iso-6a",
+      "fdrm-1",
+      "fdrm-1a",
+      "xp6-c",
+      "xp6-ca",
+      "xp6-r",
+      "xp6-ra",
+      "xp10-m",
+      "xp10-ma",
+      "xp6-ma",
+      "xp6-maa"
+    ],
+    "protocols": [
+      "flashscan"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0098": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "notifier slc"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0099": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "notifier slc"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0100": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "notifier slc"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0101": {
+    "components": [
+      "sounder bases",
+      "detector bases",
+      "isolator bases",
+      "relay bases",
+      "auxiliary devices",
+      "addressable devices",
+      "addressable modules",
+      "analog intelligent devices",
+      "aspiration detectors",
+      "beam smoke detectors",
+      "building entry/exit",
+      "cabinet",
+      "circuit fault",
+      "circuit speaker/telephone",
+      "common ground",
+      "communications loop",
+      "connector screw",
+      "control modules",
+      "dc resistance",
+      "detectors",
+      "dry contact ratings",
+      "dry-contact",
+      "dual monitor modules",
+      "dual monitor/dual relay modules",
+      "duct detectors",
+      "end-of-line-resistor",
+      "fault isolator modules",
+      "floating segments",
+      "form-c contacts",
+      "form-c relays",
+      "four-wire configuration",
+      "monitor modules",
+      "miniature monitor modules",
+      "relay modules",
+      "supervised devices"
+    ],
+    "error_codes": [],
+    "products": [
+      "notifier slc",
+      "afc-600",
+      "afp-100",
+      "afp-200",
+      "afp-300",
+      "afp-400",
+      "aim-200",
+      "am2020",
+      "afp1010",
+      "amps-24/e",
+      "aps2-6r",
+      "b200s-lf-wh",
+      "b200s-lf-iv",
+      "b200sr-lf-wh",
+      "b200sr-lf-iv",
+      "b200sr-wh",
+      "b200sr-iv",
+      "b200s-wh",
+      "b200s-iv",
+      "b210lp",
+      "b224bi",
+      "b224bi-wh",
+      "b224bi-iv",
+      "b224rb-wh",
+      "b224rb-iv",
+      "b300-6/-iv",
+      "b501 series",
+      "b501a",
+      "b501bh/-2",
+      "b501bht-2",
+      "b501-bl",
+      "b501-iv",
+      "b501-white",
+      "b710hd",
+      "cpx-551",
+      "cpx-751",
+      "faast",
+      "faast xs",
+      "faast xm",
+      "faast xt",
+      "faast xt pro",
+      "fapt-751",
+      "fapt-851",
+      "fco-851",
+      "fco-951/-iv",
+      "fcps-24",
+      "fdm-1",
+      "fdrm-1",
+      "fcm-1",
+      "fcm-1-rel",
+      "fmm-1",
+      "fmm-101",
+      "fmm-4-20",
+      "fpc-951",
+      "fpti-951/-iv",
+      "frm-1",
+      "fsa-5000",
+      "fsa-8000",
+      "fsa-20000",
+      "fsa-20000p",
+      "fsb-200",
+      "fsb-200s",
+      "fsc-851",
+      "fsco-951",
+      "fsd-751p",
+      "fsd-751pl",
+      "fsi-751",
+      "fsi-851",
+      "fsl-751",
+      "fs-osi-ri a",
+      "fsp-751",
+      "slm-318"
+    ],
+    "protocols": [
+      "clip",
+      "flashscan"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0102": {
+    "components": [
+      "floating segments",
+      "terminal designations",
+      "form-c contacts",
+      "form-c relays",
+      "four-wire configuration",
+      "harsh bases",
+      "harsh",
+      "idc",
+      "initiating device circuits",
+      "integral relay",
+      "intelliquad",
+      "isolator bases",
+      "isolator devices",
+      "isolator modules",
+      "junction box"
+    ],
+    "error_codes": [],
+    "products": [
+      "fco-851",
+      "fco-951/-iv",
+      "fcps-24",
+      "fdm-1",
+      "fdrm-1",
+      "fire alarm control panels",
+      "flashscan",
+      "fmm-1",
+      "fmm-101",
+      "fmm-4-20",
+      "fpc-951",
+      "fpti-951/-iv",
+      "frm-1",
+      "fsa-5000",
+      "fsa-8000",
+      "fsa-20000",
+      "fsa-20000p",
+      "fsb-200",
+      "fsb-200s",
+      "fsc-851",
+      "fsco-951",
+      "fsd-751p",
+      "fsd-751pl",
+      "fsi-751",
+      "fsi-851",
+      "fsl-751",
+      "fs-osi-ri a",
+      "fsp-751",
+      "fsp-751t",
+      "fsp-851",
+      "fsp-851t",
+      "fsp-951/-iv",
+      "fsp-951r/-iv",
+      "fsp-951-selft",
+      "fsp-951t/-iv",
+      "fsp-951t-selft",
+      "fst-751/r",
+      "fst-851",
+      "fst-851r",
+      "fst-951/-iv",
+      "fst-951h/-iv",
+      "fst-951r/-iv",
+      "fst-951-selft",
+      "fsv-951/-iv",
+      "fsv-951a/-iv",
+      "fsv-951r/-iv",
+      "fsv-951ra/-iv",
+      "ftm-1",
+      "fwsg a",
+      "fzm-1",
+      "ipx-751",
+      "b224bi-wh",
+      "b224bi-iv"
+    ],
+    "protocols": [
+      "flashscan"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0103": {
+    "components": [
+      "key-lock reset",
+      "led annunciator",
+      "led operation",
+      "manual releasing disconnect switch",
+      "metal conduit",
+      "miniature monitor modules",
+      "module circuits",
+      "addressable modules",
+      "control modules",
+      "h-type modules",
+      "isolator modules",
+      "monitor modules",
+      "wireless monitor modules",
+      "relay modules",
+      "v-type modules",
+      "dual monitor modules",
+      "zone interface modules",
+      "multiple input/output modules",
+      "multiplex subsystem",
+      "nac",
+      "nac power",
+      "nac terminal block",
+      "notification appliance circuit",
+      "notification appliances",
+      "output relay connections",
+      "power supervision relay",
+      "power supplies",
+      "power-limited",
+      "pull stations",
+      "ratings dry contact",
+      "relay bases",
+      "releasing device",
+      "remote switching center",
+      "rotary switches",
+      "security service",
+      "self-test detectors",
+      "shield drain wire",
+      "shielded wire",
+      "shield-termination",
+      "short circuit",
+      "signaling line circuit",
+      "slc terminal block",
+      "sounder bases",
+      "speaker circuit",
+      "sprinkler supervision",
+      "standard bases",
+      "supervised circuits",
+      "supervised devices",
+      "suppressors surge",
+      "surge protectors",
+      "telephone circuit"
+    ],
+    "error_codes": [],
+    "products": [
+      "lcm-320",
+      "lem-320",
+      "lib-200",
+      "lib-200a",
+      "lib-400",
+      "lpx-751/l",
+      "mps-24a",
+      "mps-24b",
+      "mps-400",
+      "n16 series",
+      "inspire series",
+      "nbg-12lx",
+      "nfs2-3030",
+      "nfs-3030",
+      "nfs2-640",
+      "nfs-320",
+      "nfs-640",
+      "notifier inspire series",
+      "pipeiq",
+      "pmb-aux",
+      "ra100z",
+      "fcm-1-rel",
+      "rfx wireless interface",
+      "slm-318",
+      "system 5000",
+      "aim-200"
+    ],
+    "protocols": [
+      "polling protocols",
+      "slc"
+    ],
+    "voltages": [
+      "vdc power"
+    ]
+  },
+  "slc_wiring_manual#chunk_0104": {
+    "components": [
+      "terminal block",
+      "sounder bases",
+      "speaker circuit",
+      "sprinkler supervision",
+      "standard bases",
+      "supervised circuits",
+      "supervised devices",
+      "suppressors",
+      "surge protectors",
+      "telephone circuit",
+      "terminal block nac",
+      "transponders",
+      "twisted shielded pair wiring",
+      "twisted unshielded pair wiring",
+      "twisted-pair wire",
+      "two-wire configuration",
+      "two-wire detectors",
+      "wire nuts",
+      "wire size",
+      "wireless gateway",
+      "wiring isolator bases",
+      "isolator modules",
+      "multiple input/output modules",
+      "nacs",
+      "pull stations",
+      "relay modules",
+      "slcs",
+      "wiring pair",
+      "wiring style requirements",
+      "zone interface modules"
+    ],
+    "error_codes": [],
+    "products": [
+      "slm-318",
+      "swift",
+      "system 5000",
+      "aim-200",
+      "vea",
+      "vep",
+      "ves",
+      "vesda",
+      "vesda-e",
+      "veu",
+      "view",
+      "xp series transponders",
+      "xp10-m a",
+      "xp5-c transponder",
+      "xp5-m transponder",
+      "xp6-c a",
+      "xp6-ma a",
+      "xp6-r a"
+    ],
+    "protocols": [
+      "slc",
+      "two-wire slc",
+      "four-wire slc"
+    ],
+    "voltages": [
+      "24v"
+    ]
+  },
+  "slc_wiring_manual#chunk_0105": {
+    "components": [],
+    "error_codes": [],
+    "products": [],
+    "protocols": [
+      "slc"
+    ],
+    "voltages": []
+  },
+  "slc_wiring_manual#chunk_0106": {
+    "components": [],
+    "error_codes": [],
+    "products": [
+      "notifier"
+    ],
+    "protocols": [],
+    "voltages": []
+  },
+  "zone_expander_data_sheet#chunk_0000": {
+    "components": [
+      "monitored contact inputs",
+      "contact outputs",
+      "line input",
+      "audio output ports",
+      "power amplifiers",
+      "volume controllers",
+      "led indicators",
+      "speaker outputs",
+      "dry contact inputs",
+      "dry contact outputs"
+    ],
+    "error_codes": [],
+    "products": [
+      "intevio public address device",
+      "rk-zone8",
+      "rk-mcu"
+    ],
+    "protocols": [],
+    "voltages": [
+      "24v",
+      "1v"
+    ]
+  },
+  "zone_expander_data_sheet#chunk_0001": {
+    "components": [
+      "fuse t2al 250v",
+      "contact inputs",
+      "contact outputs",
+      "loudspeaker circuit",
+      "power amplifier",
+      "dc power output"
+    ],
+    "error_codes": [],
+    "products": [
+      "rk-zone8",
+      "8-zone expander",
+      "rk-z0ne8"
+    ],
+    "protocols": [],
+    "voltages": [
+      "ac 100-240v",
+      "50/60 hz",
+      "21.5 vdc-28.5 vdc",
+      "ac 250 v",
+      "dc 30v",
+      "24v"
+    ]
+  }
+}

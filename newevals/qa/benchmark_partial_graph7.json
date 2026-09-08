@@ -1,0 +1,193 @@
+[
+  {
+    "answer": "The LSECS guide says ONYX Series panels are expandable with NOTI-FIRE-NET, and ONYX DVC adds multi-channel audio evacuation and paging with 8 audio channels and 5 firefighter telephone channels that can broadcast distinct messages throughout an entire facility or across a campus.",
+    "answer_entity": "ONYX|NOTI-FIRE-NET|DVC",
+    "category": "multi_hop",
+    "contexts": [
+      "ONYX Series panels are easily expanded with NOTI-FIRE-NET, NOTIFIER's intelligent fire alarm network.",
+      "ONYX DVC features 8 channels of industry leading quality audio, 5 firefighter telephone channels, wire, fiber or mixed media networking options, and can broadcast multiple, distinct messages throughout an entire facility or across a campus simultaneously."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q009",
+    "query_class": "multi_hop",
+    "question": "According to the LSECS guide, how do ONYX Series panels, NOTI-FIRE-NET, and DVC work together for large facilities or campuses?",
+    "question_entities": [
+      "onyx noti-fire-net dvc",
+      "network expansion",
+      "dvc facility broadcast"
+    ],
+    "reasoning_type": "synthesis",
+    "source_eval_id": "9",
+    "source_fields": [
+      "network_expansion",
+      "dvc_facility_broadcast"
+    ],
+    "source_product": "ONYX|NOTI-FIRE-NET|DVC",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The LSECS guide positions ONYX Series as a flexible, expandable, backward compatible intelligent fire alarm platform that can be networked with NOTI-FIRE-NET and integrated with Digital Voice Command.",
+    "answer_entity": "ONYX",
+    "category": "theme_summary",
+    "contexts": [
+      "NOTIFIER's ONYX Series of intelligent fire alarm control panels have the flexibility to meet the needs of any size application.",
+      "ONYX Series panels are easily expanded with NOTI-FIRE-NET.",
+      "ONYX Series panels and NOTI-FIRE-NET are completely backward compatible with existing NOTIFIER intelligent systems.",
+      "Optional Integrated Digital Voice Command (DVC)."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q011",
+    "query_class": "theme_summary",
+    "question": "Summarize how the LSECS guide positions the ONYX Series platform.",
+    "question_entities": [
+      "onyx",
+      "platform positioning",
+      "network expansion",
+      "backward compatibility",
+      "dvc integration"
+    ],
+    "reasoning_type": "summary",
+    "source_eval_id": "11",
+    "source_fields": [
+      "platform_positioning",
+      "network_expansion",
+      "backward_compatibility",
+      "dvc_integration"
+    ],
+    "source_product": "ONYX",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "Within the DVC system, the DAA2 amplifier amplifies one channel of digital audio, can support a second channel with a BDA card, distributes audio on up to four outputs, and communicates with the DVC through Digital Audio Ports for control, audio, trouble, address, firefighter telephone data, and live voice paging.",
+    "answer_entity": "DAA2|DVC",
+    "category": "theme_summary",
+    "contexts": [
+      "Amplifies one channel of digital audio (two channels using the BDA card as a second channel) and distributes it on up to four outputs.",
+      "When used with a DAA2 series amplifier, a BDA can be added to support a second audio channel.",
+      "Digital Audio Ports A and B allow digital communication with the DVC over the Digital Audio Loop; control, audio, trouble, address and firefighter telephone data; and live voice paging can be communicated through these ports."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q012",
+    "query_class": "theme_summary",
+    "question": "Summarize the role of the DAA2 amplifier within the DVC system.",
+    "question_entities": [
+      "daa2 dvc",
+      "audio amplification",
+      "second audio channel",
+      "digital audio ports"
+    ],
+    "reasoning_type": "summary",
+    "source_eval_id": "12",
+    "source_fields": [
+      "audio_amplification",
+      "second_audio_channel",
+      "digital_audio_ports"
+    ],
+    "source_product": "DAA2|DVC",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "The DAA2 digital audio ports connect the amplifier to the DVC over the Digital Audio Loop and carry control, audio, trouble, address, firefighter telephone data, and live voice paging.",
+    "answer_entity": "DAA2|DVC",
+    "category": "relationship_reasoning",
+    "contexts": [
+      "Digital Audio Ports A and B allow digital communication with the DVC over the Digital Audio Loop; control, audio, trouble, address and firefighter telephone data; and live voice paging can be communicated through these ports."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q013",
+    "query_class": "relationship_reasoning",
+    "question": "How are the DAA2 digital audio ports related to DVC control and firefighter telephone or live paging traffic?",
+    "question_entities": [
+      "daa2 dvc",
+      "digital audio ports"
+    ],
+    "reasoning_type": "relationship",
+    "source_eval_id": "13",
+    "source_fields": [
+      "digital_audio_ports"
+    ],
+    "source_product": "DAA2|DVC",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "ONYX DVC provides 8 channels of audio and 5 firefighter telephone channels, while the DAA2 amplifies one channel of digital audio, or two channels when a BDA card is added, and distributes it on up to four outputs.",
+    "answer_entity": "ONYX DVC|DAA2",
+    "category": "comparison",
+    "contexts": [
+      "ONYX DVC features 8 channels of industry leading quality audio, 5 firefighter telephone channels.",
+      "Amplifies one channel of digital audio (two channels using the BDA card as a second channel) and distributes it on up to four outputs."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q022",
+    "query_class": "comparison",
+    "question": "How does ONYX DVC's channel capacity compare with DAA2's amplification role?",
+    "question_entities": [
+      "onyx dvc daa2",
+      "dvc facility broadcast",
+      "audio amplification"
+    ],
+    "reasoning_type": "synthesis",
+    "source_eval_id": "22",
+    "source_fields": [
+      "dvc_facility_broadcast",
+      "audio_amplification"
+    ],
+    "source_product": "ONYX DVC|DAA2",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "A second audio channel can be added to a DAA2 series amplifier with a BDA, and an isolated alarm bus input can be used for backup activation of alarm messages when normal digital communication is lost.",
+    "answer_entity": "DAA2|BDA",
+    "category": "multi_hop",
+    "contexts": [
+      "Alternately, when used with a DAA2 series amplifier, a BDA can be added to support a second audio channel.",
+      "? Isolated alarm bus input, to be used for backup activation of alarm messages when normal digital communication is lost."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q024",
+    "query_class": "multi_hop",
+    "question": "According to the DAA2 manual, how can a second audio channel be added and how can alarm messages still be activated if normal digital communication is lost?",
+    "question_entities": [
+      "daa2 bda",
+      "second audio channel",
+      "isolated alarm bus input"
+    ],
+    "reasoning_type": "synthesis",
+    "source_eval_id": "24",
+    "source_fields": [
+      "second_audio_channel",
+      "isolated_alarm_bus_input"
+    ],
+    "source_product": "DAA2|BDA",
+    "source_split": "hard_label_benchmark_28"
+  },
+  {
+    "answer": "According to the LSECS guide, the NFS2-3030/ONYX platform is suited to large or growing facilities because it supports over 3,000 intelligent devices on ten Signaling Line Circuits, is appropriate for multiple campus buildings with a single panel, and can be expanded with NOTI-FIRE-NET while remaining backward compatible with existing NOTIFIER intelligent systems.",
+    "answer_entity": "NFS2-3030|ONYX|NOTI-FIRE-NET",
+    "category": "theme_summary",
+    "contexts": [
+      "The NFS2-3030 supports over 3,000 intelligent devices on ten Signaling Line Circuits (SLCs) - perfect for protecting high-rises, large manufacturing plants, or multiple campus buildings with a single panel.",
+      "When additional protection is required, the NFS2-3030 can be expanded using NOTI-FIRE-NET.",
+      "ONYX Series panels and NOTI-FIRE-NET are completely backward compatible with existing NOTIFIER intelligent systems."
+    ],
+    "gold_reasoning_path": [],
+    "id": "q026",
+    "query_class": "theme_summary",
+    "question": "Summarize why the NFS2-3030/ONYX platform is suited to large or growing facilities according to the LSECS guide.",
+    "question_entities": [
+      "nfs2-3030 onyx noti-fire-net",
+      "nfs2 3030 scale",
+      "network expansion",
+      "backward compatibility"
+    ],
+    "reasoning_type": "summary",
+    "source_eval_id": "26",
+    "source_fields": [
+      "nfs2_3030_scale",
+      "network_expansion",
+      "backward_compatibility"
+    ],
+    "source_product": "NFS2-3030|ONYX|NOTI-FIRE-NET",
+    "source_split": "hard_label_benchmark_28"
+  }
+]

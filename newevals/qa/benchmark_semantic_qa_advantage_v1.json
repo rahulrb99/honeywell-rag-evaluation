@@ -1,0 +1,177 @@
+[
+  {
+    "id": "semantic_qa_001",
+    "question": "What detector type is listed together with heat detectors in the fire alarm system description?",
+    "answer": "smoke detectors",
+    "answer_entity": "smoke detectors",
+    "category": "semantic_relation_answerability",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_qa_advantage_v1",
+    "source_product": "heat detectors",
+    "source_fields": [
+      "has_component"
+    ],
+    "contexts": [],
+    "question_entities": [
+      "heat detectors"
+    ],
+    "gold_reasoning_path": [
+      [
+        "heat detectors",
+        "has_component",
+        "smoke detectors"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_qa_002",
+    "question": "What detector type is listed with manual pull stations in the fire alarm system description?",
+    "answer": "smoke detectors",
+    "answer_entity": "smoke detectors",
+    "category": "semantic_relation_answerability",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_qa_advantage_v1",
+    "source_product": "manual pull stations",
+    "source_fields": [
+      "has_component"
+    ],
+    "contexts": [],
+    "question_entities": [
+      "manual pull stations"
+    ],
+    "gold_reasoning_path": [
+      [
+        "manual pull stations",
+        "has_component",
+        "smoke detectors"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_qa_003",
+    "question": "What detector type appears with audible warning devices in the fire alarm system description?",
+    "answer": "smoke detectors",
+    "answer_entity": "smoke detectors",
+    "category": "semantic_relation_answerability",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_qa_advantage_v1",
+    "source_product": "audible warning devices",
+    "source_fields": [
+      "has_component"
+    ],
+    "contexts": [],
+    "question_entities": [
+      "audible warning devices"
+    ],
+    "gold_reasoning_path": [
+      [
+        "audible warning devices",
+        "has_component",
+        "smoke detectors"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_qa_004",
+    "question": "What detector type is part of the fire alarm system with the control panel?",
+    "answer": "smoke detectors",
+    "answer_entity": "smoke detectors",
+    "category": "semantic_relation_answerability",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_qa_advantage_v1",
+    "source_product": "fire alarm control panel",
+    "source_fields": [
+      "has_component"
+    ],
+    "contexts": [],
+    "question_entities": [
+      "fire alarm control panel"
+    ],
+    "gold_reasoning_path": [
+      [
+        "fire alarm control panel",
+        "has_component",
+        "smoke detectors"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_qa_005",
+    "question": "What detector type is associated with the FACP in the system description?",
+    "answer": "smoke detectors",
+    "answer_entity": "smoke detectors",
+    "category": "semantic_relation_answerability",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_qa_advantage_v1",
+    "source_product": "facp",
+    "source_fields": [
+      "has_component"
+    ],
+    "contexts": [],
+    "question_entities": [
+      "facp"
+    ],
+    "gold_reasoning_path": [
+      [
+        "facp",
+        "has_component",
+        "smoke detectors"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_qa_006",
+    "question": "What device category is the FCM-1 described with?",
+    "answer": "detectors",
+    "answer_entity": "detectors",
+    "category": "semantic_relation_answerability",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_qa_advantage_v1",
+    "source_product": "fcm-1",
+    "source_fields": [
+      "has_component|installed_with"
+    ],
+    "contexts": [],
+    "question_entities": [
+      "fcm-1"
+    ],
+    "gold_reasoning_path": [
+      [
+        "fcm-1",
+        "has_component|installed_with",
+        "detectors"
+      ]
+    ]
+  },
+  {
+    "id": "semantic_qa_007",
+    "question": "What device category is associated with the NFS2-3030?",
+    "answer": "detectors",
+    "answer_entity": "detectors",
+    "category": "semantic_relation_answerability",
+    "query_class": "relationship_reasoning",
+    "reasoning_type": "semantic_edge_lookup",
+    "source_split": "semantic_qa_advantage_v1",
+    "source_product": "nfs2-3030",
+    "source_fields": [
+      "has_component|compatible_with"
+    ],
+    "contexts": [],
+    "question_entities": [
+      "nfs2-3030"
+    ],
+    "gold_reasoning_path": [
+      [
+        "nfs2-3030",
+        "has_component|compatible_with",
+        "detectors"
+      ]
+    ]
+  }
+]
