@@ -5,3 +5,4 @@ streamlit
 plotly
 networkx
 openai
+python-dotenv
